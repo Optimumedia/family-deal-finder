@@ -1,0 +1,186 @@
+# ============================================================================
+#  Offers typed in by hand from agency pages we looked at in a browser.
+#  Each entry is ONE price sighting (a snapshot). To record a new price for the
+#  same offer, add another entry with the same hotel/check_in/nights/board/room
+#  and a newer `seen` date — that builds the price history.
+#
+#  occupancy: "2+2" = 2 adults + the twins (real family price);
+#             "2+0" = the agency price was for 2 adults only (kids' cost unknown).
+#  was_eur:   the agency's "before discount" price (stated, not trusted until
+#             our own history backs it up).
+# ============================================================================
+
+# Fibula Black Friday Greece — search 20.06.2027, 7 nights, 2 adults + 2 kids aged 3, half board.
+[[offer]]
+hotel = "xenios-dolphin-beach"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Superior Room Garden View"
+occupancy = "2+2"
+price_eur = 1046
+was_eur = 1341
+discount_label = "Early Booking -22% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "xenios-anastasia"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Standard Room Limited View"
+occupancy = "2+2"
+price_eur = 1205
+was_eur = 1721
+discount_label = "Early Booking -30% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "xenios-possidi-paradise"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Superior Room Garden View"
+occupancy = "2+2"
+price_eur = 1264
+was_eur = 1621
+discount_label = "Early Booking -22% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "alexandros-palace"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Standard Family Room Garden View"
+occupancy = "2+2"
+price_eur = 1648
+was_eur = 2354
+discount_label = "Early Booking -30% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "lagomandra-beach"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Family Room"
+occupancy = "2+2"
+price_eur = 1828
+was_eur = 2150
+discount_label = "Early Booking -15% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "porto-carras-meliton"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Junior Suite Golf View"
+occupancy = "2+2"
+price_eur = 1865
+was_eur = 2805
+discount_label = "Early Booking -30% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "elinotel-apolamare"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Superior Room Garden View"
+occupancy = "2+2"
+price_eur = 1888
+was_eur = 2517
+discount_label = "Early Booking -25% + Black Friday -5%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "sani-beach"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/grcija"
+seen = "2026-11-25"
+check_in = "2027-06-20"
+nights = 7
+board = "HB"
+room = "Family Room Garden View"
+occupancy = "2+2"
+price_eur = 6144
+
+# Fibula Black Friday Bulgaria winter — prices shown for 2 adults, 5 nights.
+[[offer]]
+hotel = "casa-karina-bansko"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/bugarija-zima"
+seen = "2026-11-25"
+check_in = "2027-01-30"
+nights = 5
+board = "HB"
+room = "Apartment 1 bedroom (AP2)"
+occupancy = "2+0"
+price_eur = 880
+discount_label = "Ski up to -20% + Black Friday -7%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "st-ivan-rilski-bansko"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/bugarija-zima"
+seen = "2026-11-25"
+check_in = "2027-02-01"
+nights = 5
+board = "HB"
+room = "Studio anex room (STU2)"
+occupancy = "2+0"
+price_eur = 1118
+discount_label = "Ski up to -20% + Black Friday -7%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "bansko-spa-holidays"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/bugarija-zima"
+seen = "2026-11-25"
+check_in = "2027-01-29"
+nights = 5
+board = "BB"
+room = "Deluxe Room (DBL)"
+occupancy = "2+0"
+price_eur = 574
+discount_label = "Ski up to -20% + Black Friday -7%"
+valid_until = "2026-11-28"
+
+[[offer]]
+hotel = "royal-park-bansko"
+source = "Fibula (manual)"
+url = "https://www.fibula.com.mk/promo/black-friday/bugarija-zima"
+seen = "2026-11-25"
+check_in = "2027-01-29"
+nights = 5
+board = "BB"
+room = "Standard Room (DBL)"
+occupancy = "2+0"
+price_eur = 425
+discount_label = "Ski up to -20% + Black Friday -7%"
+valid_until = "2026-11-28"

@@ -1,0 +1,64 @@
+# ============================================================================
+#  Family Deal Finder — vacations for 2 adults + twins, from Skopje
+#  Every rule and weight lives here. Edit, save, next run uses it.
+# ============================================================================
+
+[family]
+adults = 2
+# Exact birthdate of the twins (YYYY-MM-DD). Used to work out their age ON THE
+# TRIP DATE (cot age limits, "kids free up to 3.99", kids' club minimum age).
+# Left empty = assume the oldest a 3-year-old on 2026-11-25 can be (safe side).
+kids_birthdate = ""
+kids = 2
+cots_needed = 2
+home = "Skopje"
+home_lat = 41.9961
+home_lng = 21.4317
+
+[reach]
+# Hard rule: a direct flight from Skopje (SKP) OR at most this much driving.
+max_drive_minutes = 300
+# Routers ignore border queues: add this to every drive that crosses a border.
+border_buffer_minutes = 30
+# The free router (OSRM) is slower than real driving on Greek/Bulgarian roads.
+# Up to this much over the limit counts as "borderline — check the route",
+# not as "doesn't fit". Beyond it the hotel is excluded.
+tolerance_minutes = 45
+
+[summer]
+# Hard rules for the summer (beach) season.
+need_board = ["HB", "FB", "AI"]     # breakfast + dinner at least
+max_beach_m = 150
+need_sand = true
+
+[winter]
+# Hard rules for the winter season.
+need_separate_bedroom = true        # parents in the bedroom, twins in cots in the other room
+
+[deal]
+# "Real" discount = below this hotel's own lowest price of the last N days.
+history_days = 30
+# Price-drop alert threshold on a watched / known offer.
+drop_alert_pct = 7
+# A stated discount counts less until our own price history backs it up.
+stated_weight = 0.5
+
+[score]
+# Overall = family_weight * Family Fit + (1 - family_weight) * Deal quality.
+family_weight = 0.55
+# While a must-have is unknown (cots, beach type, ...) the rating is capped here.
+unknown_cap = 69
+
+[sources]
+# Offers typed in from agency pages we looked at by hand (data/offers.toml).
+manual = true
+# Polite scraping settings for automatic sources (none enabled yet — see README).
+delay_seconds = 6
+jitter_seconds = 4
+timeout_seconds = 30
+
+[email]
+# Daily digest. SMTP settings live in the git-ignored file .email
+# (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_TO). Without it the
+# digest is only written to data/digest.txt.
+enabled = true

@@ -1,0 +1,1604 @@
+{
+ "generated": "2026-11-25T21:55",
+ "family": {
+  "adults": 2,
+  "kids": 2,
+  "home": "Skopje",
+  "max_drive_minutes": 300
+ },
+ "alerts": [
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Alexandros Palace — €1,648 (2+2, 7 nights HB, from 2027-06-20)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "text": "Offer ends in 3 days (2026-11-28): Bansko SPA & Holidays — €574 (2+0, 5 nights BB, from 2027-01-29)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "text": "Offer ends in 3 days (2026-11-28): Casa Karina Apartments — €880 (2+0, 5 nights HB, from 2027-01-30)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Elinotel Apolamare — €1,888 (2+2, 7 nights HB, from 2027-06-20)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Lagomandra Beach & Suites — €1,828 (2+2, 7 nights HB, from 2027-06-20)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Porto Carras Meliton — €1,865 (2+2, 7 nights HB, from 2027-06-20)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "text": "Offer ends in 3 days (2026-11-28): Royal Park Hotel & Apartments — €425 (2+0, 5 nights BB, from 2027-01-29)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "text": "Offer ends in 3 days (2026-11-28): St. Ivan Rilski Hotel, Spa & Apartments — €1,118 (2+0, 5 nights HB, from 2027-02-01)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Xenios Anastasia Resort & Spa — €1,205 (2+2, 7 nights HB, from 2027-06-20)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Xenios Dolphin Beach — €1,046 (2+2, 7 nights HB, from 2027-06-20)"
+  },
+  {
+   "icon": "⏰",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "text": "Offer ends in 3 days (2026-11-28): Xenios Possidi Paradise — €1,264 (2+2, 7 nights HB, from 2027-06-20)"
+  }
+ ],
+ "items": [
+  {
+   "key": "xenios-anastasia|2027-06-20|7|HB|Standard Room Limited View|2+2|Fibula (manual)",
+   "hotel_id": "xenios-anastasia",
+   "name": "Xenios Anastasia Resort & Spa",
+   "stars": 5,
+   "area": "Nea Skioni, Kassandra, Halkidiki",
+   "season": "summer",
+   "lat": 39.95,
+   "lng": 23.535,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Standard Room Limited View",
+   "occupancy": "2+2",
+   "price_eur": 1205.0,
+   "was_eur": 1721.0,
+   "discount_label": "Early Booking -30% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1205.0
+    }
+   ],
+   "overall": 54.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 39.6,
+    "raw": 66.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 316,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 72.5,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 30.0,
+    "peer_pct": 34.1,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Xenios Anastasia Resort & Spa team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Standard Room Limited View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "alexandros-palace|2027-06-20|7|HB|Standard Family Room Garden View|2+2|Fibula (manual)",
+   "hotel_id": "alexandros-palace",
+   "name": "Alexandros Palace",
+   "stars": 5,
+   "area": "Ouranoupoli, Athos, Halkidiki",
+   "season": "summer",
+   "lat": 40.333,
+   "lng": 23.958,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Standard Family Room Garden View",
+   "occupancy": "2+2",
+   "price_eur": 1648.0,
+   "was_eur": 2354.0,
+   "discount_label": "Early Booking -30% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1648.0
+    }
+   ],
+   "overall": 53.6,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 43.2,
+    "raw": 72.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 330,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 66.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 30.0,
+    "peer_pct": 9.8,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Alexandros Palace team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Standard Family Room Garden View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "xenios-possidi-paradise|2027-06-20|7|HB|Superior Room Garden View|2+2|Fibula (manual)",
+   "hotel_id": "xenios-possidi-paradise",
+   "name": "Xenios Possidi Paradise",
+   "stars": 4,
+   "area": "Possidi, Kassandra, Halkidiki",
+   "season": "summer",
+   "lat": 39.966,
+   "lng": 23.375,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Superior Room Garden View",
+   "occupancy": "2+2",
+   "price_eur": 1264.0,
+   "was_eur": 1621.0,
+   "discount_label": "Early Booking -22% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1264.0
+    }
+   ],
+   "overall": 51.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 35.9,
+    "raw": 59.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 309,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 70.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 22.0,
+    "peer_pct": 30.9,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Xenios Possidi Paradise team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Superior Room Garden View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "xenios-dolphin-beach|2027-06-20|7|HB|Superior Room Garden View|2+2|Fibula (manual)",
+   "hotel_id": "xenios-dolphin-beach",
+   "name": "Xenios Dolphin Beach",
+   "stars": 3,
+   "area": "Possidi, Kassandra, Halkidiki",
+   "season": "summer",
+   "lat": 39.968,
+   "lng": 23.371,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Superior Room Garden View",
+   "occupancy": "2+2",
+   "price_eur": 1046.0,
+   "was_eur": 1341.0,
+   "discount_label": "Early Booking -22% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1046.0
+    }
+   ],
+   "overall": 49.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 32.3,
+    "raw": 53.8,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 309,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 70.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 22.0,
+    "peer_pct": 42.8,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Xenios Dolphin Beach team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Superior Room Garden View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "porto-carras-meliton|2027-06-20|7|HB|Junior Suite Golf View|2+2|Fibula (manual)",
+   "hotel_id": "porto-carras-meliton",
+   "name": "Porto Carras Meliton",
+   "stars": 5,
+   "area": "Neos Marmaras, Sithonia, Halkidiki",
+   "season": "summer",
+   "lat": 40.083,
+   "lng": 23.802,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Junior Suite Golf View",
+   "occupancy": "2+2",
+   "price_eur": 1865.0,
+   "was_eur": 2805.0,
+   "discount_label": "Early Booking -30% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1865.0
+    }
+   ],
+   "overall": 47.5,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 39.6,
+    "raw": 66.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 338,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 57.2,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 33.5,
+    "peer_pct": -13.2,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Porto Carras Meliton team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Junior Suite Golf View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "elinotel-apolamare|2027-06-20|7|HB|Superior Room Garden View|2+2|Fibula (manual)",
+   "hotel_id": "elinotel-apolamare",
+   "name": "Elinotel Apolamare",
+   "stars": 5,
+   "area": "Hanioti, Kassandra, Halkidiki",
+   "season": "summer",
+   "lat": 39.958,
+   "lng": 23.588,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Superior Room Garden View",
+   "occupancy": "2+2",
+   "price_eur": 1888.0,
+   "was_eur": 2517.0,
+   "discount_label": "Early Booking -25% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1888.0
+    }
+   ],
+   "overall": 47.3,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 39.6,
+    "raw": 66.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 327,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 56.7,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 25.0,
+    "peer_pct": -14.6,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Elinotel Apolamare team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Superior Room Garden View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "lagomandra-beach|2027-06-20|7|HB|Family Room|2+2|Fibula (manual)",
+   "hotel_id": "lagomandra-beach",
+   "name": "Lagomandra Beach & Suites",
+   "stars": 4,
+   "area": "Neos Marmaras, Sithonia, Halkidiki",
+   "season": "summer",
+   "lat": 40.124,
+   "lng": 23.766,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Family Room",
+   "occupancy": "2+2",
+   "price_eur": 1828.0,
+   "was_eur": 2150.0,
+   "discount_label": "Early Booking -15% + Black Friday -5%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1828.0
+    }
+   ],
+   "overall": 43.2,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 36.8,
+    "raw": 61.4,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "Direct flight or ≤5h drive",
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 324,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 51.1,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 15.0,
+    "peer_pct": -10.9,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Lagomandra Beach & Suites team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Family Room on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "bansko-spa-holidays|2027-01-29|5|BB|Deluxe Room (DBL)|2+0|Fibula (manual)",
+   "hotel_id": "bansko-spa-holidays",
+   "name": "Bansko SPA & Holidays",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.832,
+   "lng": 23.481,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-01-29",
+   "nights": 5,
+   "board": "BB",
+   "room": "Deluxe Room (DBL)",
+   "occupancy": "2+0",
+   "price_eur": 574.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 574.0
+    }
+   ],
+   "overall": 39.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 31.2,
+    "raw": 52.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "no",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 2 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 49.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": 34.8,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 29.01.2027–03.02.2027, 2 adults + twins\n\nHello Bansko SPA & Holidays team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Deluxe Room (DBL) on BB from 29.01.2027 to 03.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "sani-beach|2027-06-20|7|HB|Family Room Garden View|2+2|Fibula (manual)",
+   "hotel_id": "sani-beach",
+   "name": "Sani Beach",
+   "stars": 5,
+   "area": "Sani, Kassandra, Halkidiki",
+   "season": "summer",
+   "lat": 40.103,
+   "lng": 23.315,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
+   "check_in": "2027-06-20",
+   "nights": 7,
+   "board": "HB",
+   "room": "Family Room Garden View",
+   "occupancy": "2+2",
+   "price_eur": 6144.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 6144.0
+    }
+   ],
+   "overall": 37.6,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 43.9,
+    "raw": 73.2,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 6 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "sand_beach",
+      "label": "Sandy beach",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "beachfront",
+      "label": "Beach ≤150 m",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "shallow_entry",
+      "label": "Shallow, gradual entry",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 6 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 290,
+    "kids_age": 4.56
+   },
+   "deal": {
+    "score": 30.0,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": -272.8,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Sani Beach team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Family Room Garden View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "royal-park-bansko|2027-01-29|5|BB|Standard Room (DBL)|2+0|Fibula (manual)",
+   "hotel_id": "royal-park-bansko",
+   "name": "Royal Park Hotel & Apartments",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.828,
+   "lng": 23.476,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-01-29",
+   "nights": 5,
+   "board": "BB",
+   "room": "Standard Room (DBL)",
+   "occupancy": "2+0",
+   "price_eur": 425.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 425.0
+    }
+   ],
+   "overall": 37.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 27.5,
+    "raw": 45.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "no",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 2 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 252,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 49.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": 51.7,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 29.01.2027–03.02.2027, 2 adults + twins\n\nHello Royal Park Hotel & Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Standard Room (DBL) on BB from 29.01.2027 to 03.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "st-ivan-rilski-bansko|2027-02-01|5|HB|Studio anex room (STU2)|2+0|Fibula (manual)",
+   "hotel_id": "st-ivan-rilski-bansko",
+   "name": "St. Ivan Rilski Hotel, Spa & Apartments",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.829,
+   "lng": 23.478,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-02-01",
+   "nights": 5,
+   "board": "HB",
+   "room": "Studio anex room (STU2)",
+   "occupancy": "2+0",
+   "price_eur": 1118.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1118.0
+    }
+   ],
+   "overall": 35.5,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 40.4,
+    "raw": 67.4,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 2 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 01.02.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 252,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 29.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": -94.8,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.02.2027–06.02.2027, 2 adults + twins\n\nHello St. Ivan Rilski Hotel, Spa & Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Studio anex room (STU2) on HB from 01.02.2027 to 06.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 01.02.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "casa-karina-bansko|2027-01-30|5|HB|Apartment 1 bedroom (AP2)|2+0|Fibula (manual)",
+   "hotel_id": "casa-karina-bansko",
+   "name": "Casa Karina Apartments",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.825,
+   "lng": 23.484,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-01-30",
+   "nights": 5,
+   "board": "HB",
+   "room": "Apartment 1 bedroom (AP2)",
+   "occupancy": "2+0",
+   "price_eur": 880.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 880.0
+    }
+   ],
+   "overall": 32.7,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 35.3,
+    "raw": 58.8,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 2 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 30.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 253,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 29.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": -53.3,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 30.01.2027–04.02.2027, 2 adults + twins\n\nHello Casa Karina Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Apartment 1 bedroom (AP2) on HB from 30.01.2027 to 04.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 30.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  }
+ ]
+}

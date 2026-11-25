@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+data/trips.db
+data/digest.txt
+data/local-run.log
+.email
+.claude/
