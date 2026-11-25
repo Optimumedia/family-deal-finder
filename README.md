@@ -53,7 +53,8 @@ MAIL_TO=you@gmail.com
 |---|---|
 | **Manual sightings** (`data/offers.toml`) | ✅ Live. Seeded with Fibula Black Friday prices from 25.11.2026. |
 | Fibula (fibula.com.mk) | ⛔ **Not scraped.** Its prices load from a private API host, and its robots.txt disallows `/api/` and `/search?`. The proper route is to ask Fibula for B2B/XML access. |
-| Falcon, Travelland (Serbian agencies) | 🔜 robots.txt allows them. Next candidates for automatic sources. Falcon's 2027 price tables were still empty on 25.11.2026. |
+| **Travelland** (travelland.rs) | ✅ **Automatic.** robots.txt allows all paths. It reads Bansko, Borovets, Pamporovo, Kassandra and Sithonia. Cards give a "from" price per person per night, plus the old price, the discount % and a "valid until" date. They don't give the board or the kids' price, so offers are stored as 2 adults × nights with the board unknown. Halkidiki 2027 said "offers coming soon" on 25.11.2026; it's picked up automatically once published. |
+| Falcon (falcon.rs) | 🔜 robots.txt allows it. Its 2027 price tables were still empty on 25.11.2026. |
 | Hotels' own pages | 🔜 For child and cot policies. |
 | SerpApi Google Hotels (free tier) | 🔜 Price cross-check with real child ages. |
 | Booking.com, Airbnb, Wizz Air | ❌ Excluded: their terms forbid scraping. |

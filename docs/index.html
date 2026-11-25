@@ -111,7 +111,7 @@ function card(it){
     <div class="top"><div><div class="name">${esc(it.name)} ${'★'.repeat(it.stars||0)}</div><div class="area">${esc(it.area)}</div></div>
       <div class="tier">${it.tier.icon} ${esc(it.tier.label)}<small>score ${Math.round(it.overall)}</small></div></div>
     <div><span class="price">${eur(it.price_eur)}</span>${it.was_eur?`<s>${eur(it.was_eur)}</s>`:''} <span class="meta">${occ}</span></div>
-    <div class="meta">${it.nights} nights from ${fmtDate(it.check_in)} · ${esc(it.board)} · ${esc(it.room||'')} · 🚗 ${hm(f.drive_minutes)} from Skopje</div>
+    <div class="meta">${it.nights} nights from ${fmtDate(it.check_in)} · ${it.board==='?'?'board unknown':esc(it.board)} · ${esc(it.room||'')} · 🚗 ${hm(f.drive_minutes)} from Skopje</div>
     <div class="chips">${dealChips(it)}</div>
     <ul class="check">${checks}</ul>
     ${why.length?`<div class="warnbox">${why.map(esc).join('<br>')}</div>`:''}

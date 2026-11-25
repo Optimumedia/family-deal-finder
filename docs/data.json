@@ -1,68 +1,12 @@
 {
- "generated": "2026-11-25T21:55",
+ "generated": "2026-11-25T22:02",
  "family": {
   "adults": 2,
   "kids": 2,
   "home": "Skopje",
   "max_drive_minutes": 300
  },
- "alerts": [
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Alexandros Palace — €1,648 (2+2, 7 nights HB, from 2027-06-20)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "text": "Offer ends in 3 days (2026-11-28): Bansko SPA & Holidays — €574 (2+0, 5 nights BB, from 2027-01-29)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "text": "Offer ends in 3 days (2026-11-28): Casa Karina Apartments — €880 (2+0, 5 nights HB, from 2027-01-30)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Elinotel Apolamare — €1,888 (2+2, 7 nights HB, from 2027-06-20)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Lagomandra Beach & Suites — €1,828 (2+2, 7 nights HB, from 2027-06-20)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Porto Carras Meliton — €1,865 (2+2, 7 nights HB, from 2027-06-20)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "text": "Offer ends in 3 days (2026-11-28): Royal Park Hotel & Apartments — €425 (2+0, 5 nights BB, from 2027-01-29)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "text": "Offer ends in 3 days (2026-11-28): St. Ivan Rilski Hotel, Spa & Apartments — €1,118 (2+0, 5 nights HB, from 2027-02-01)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Xenios Anastasia Resort & Spa — €1,205 (2+2, 7 nights HB, from 2027-06-20)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Xenios Dolphin Beach — €1,046 (2+2, 7 nights HB, from 2027-06-20)"
-  },
-  {
-   "icon": "⏰",
-   "url": "https://www.fibula.com.mk/promo/black-friday/grcija",
-   "text": "Offer ends in 3 days (2026-11-28): Xenios Possidi Paradise — €1,264 (2+2, 7 nights HB, from 2027-06-20)"
-  }
- ],
+ "alerts": [],
  "items": [
   {
    "key": "xenios-anastasia|2027-06-20|7|HB|Standard Room Limited View|2+2|Fibula (manual)",
@@ -180,7 +124,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 316,
+    "drive_minutes": 316.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -310,7 +254,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 330,
+    "drive_minutes": 330.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -440,7 +384,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 309,
+    "drive_minutes": 309.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -570,7 +514,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 309,
+    "drive_minutes": 309.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -700,7 +644,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 338,
+    "drive_minutes": 338.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -830,7 +774,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 327,
+    "drive_minutes": 327.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -960,7 +904,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 324,
+    "drive_minutes": 324.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -975,35 +919,35 @@
    "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Lagomandra Beach & Suites team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Family Room on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
   },
   {
-   "key": "bansko-spa-holidays|2027-01-29|5|BB|Deluxe Room (DBL)|2+0|Fibula (manual)",
-   "hotel_id": "bansko-spa-holidays",
-   "name": "Bansko SPA & Holidays",
-   "stars": 4,
+   "key": "tl-113685|2027-03-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-113685",
+   "name": "Elida",
+   "stars": 3,
    "area": "Bansko, Bulgaria",
    "season": "winter",
-   "lat": 41.832,
-   "lng": 23.481,
-   "notes": null,
-   "source": "Fibula (manual)",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "check_in": "2027-01-29",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-elida/113685/",
+   "check_in": "2027-03-01",
    "nights": 5,
-   "board": "BB",
-   "room": "Deluxe Room (DBL)",
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
    "occupancy": "2+0",
-   "price_eur": 574.0,
-   "was_eur": null,
-   "discount_label": "Ski up to -20% + Black Friday -7%",
-   "valid_until": "2026-11-28",
+   "price_eur": 300.0,
+   "was_eur": 330.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
    "first_seen": "2026-11-25",
    "last_seen": "2026-11-25",
    "history": [
     {
      "seen": "2026-11-25",
-     "price_eur": 574.0
+     "price_eur": 300.0
     }
    ],
-   "overall": 39.4,
+   "overall": 40.5,
    "tier": {
     "key": "watch",
     "icon": "👀",
@@ -1012,8 +956,8 @@
    "capped": false,
    "excluded": false,
    "family": {
-    "score": 31.2,
-    "raw": 52.0,
+    "score": 27.9,
+    "raw": 46.4,
     "confidence": 0.6,
     "checklist": [
      {
@@ -1025,7 +969,7 @@
      },
      {
       "key": "cots",
-      "label": "2 cots for twins aged 4 years 2 months",
+      "label": "2 cots for twins aged 4 years 3 months",
       "state": "unknown",
       "must": true,
       "verified": false
@@ -1033,14 +977,14 @@
      {
       "key": "separate_bedroom",
       "label": "Separate bedroom (cots in the other room)",
-      "state": "yes",
+      "state": "unknown",
       "must": true,
       "verified": false
      },
      {
       "key": "board",
       "label": "Breakfast + dinner",
-      "state": "no",
+      "state": "unknown",
       "must": false,
       "verified": false
      },
@@ -1068,6 +1012,381 @@
      {
       "key": "family_room",
       "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 01.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.26
+   },
+   "deal": {
+    "score": 55.9,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.1,
+    "peer_pct": 39.4,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.03.2027–06.03.2027, 2 adults + twins\n\nHello Elida team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.03.2027 to 06.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 01.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111047|2027-03-11|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111047",
+   "name": "Dumanov",
+   "stars": 3,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-dumanov/111047/",
+   "check_in": "2027-03-11",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 310.0,
+   "was_eur": 340.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 310.0
+    }
+   ],
+   "overall": 40.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 27.9,
+    "raw": 46.4,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 11.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.29
+   },
+   "deal": {
+    "score": 55.7,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 8.8,
+    "peer_pct": 37.4,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 11.03.2027–16.03.2027, 2 adults + twins\n\nHello Dumanov team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 11.03.2027 to 16.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 11.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-113807|2027-03-12|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-113807",
+   "name": "Forestia (ex. Moura)",
+   "stars": 3,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-forestia-ex-moura/113807/",
+   "check_in": "2027-03-12",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 390.0,
+   "was_eur": 430.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 390.0
+    }
+   ],
+   "overall": 40.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 47.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 12.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.29
+   },
+   "deal": {
+    "score": 54.5,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.3,
+    "peer_pct": 21.2,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 12.03.2027–17.03.2027, 2 adults + twins\n\nHello Forestia (ex. Moura) team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 12.03.2027 to 17.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 12.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "st-ivan-rilski-bansko|2027-02-01|5|HB|Studio anex room (STU2)|2+0|Fibula (manual)",
+   "hotel_id": "st-ivan-rilski-bansko",
+   "name": "St. Ivan Rilski Hotel, Spa & Apartments",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.829,
+   "lng": 23.478,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-02-01",
+   "nights": 5,
+   "board": "HB",
+   "room": "Studio anex room (STU2)",
+   "occupancy": "2+0",
+   "price_eur": 1118.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 1118.0
+    }
+   ],
+   "overall": 40.0,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 40.4,
+    "raw": 67.4,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
       "state": "yes",
       "must": false,
       "verified": false
@@ -1078,25 +1397,400 @@
      "2 cots for twins aged 4 years 2 months"
     ],
     "questions": [
-     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 01.02.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 252.0,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 39.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": null,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.02.2027–06.02.2027, 2 adults + twins\n\nHello St. Ivan Rilski Hotel, Spa & Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Studio anex room (STU2) on HB from 01.02.2027 to 06.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 01.02.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111164|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111164",
+   "name": "Grand Royale Apart Hotel & Spa",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-grand-royale-apart-hotel-spa/111164/",
+   "check_in": "2026-12-01",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 380.0,
+   "was_eur": 420.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-12-22",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 380.0
+    }
+   ],
+   "overall": 38.6,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
      "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
      "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?",
      "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
     ],
     "drive_minutes": 251,
-    "kids_age": 4.18
+    "kids_age": 4.01
    },
    "deal": {
-    "score": 49.5,
-    "verdict": "none",
+    "score": 50.5,
+    "verdict": "stated",
     "real_pct": null,
-    "stated_pct": null,
-    "peer_pct": 34.8,
-    "days_left": 3,
+    "stated_pct": 9.5,
+    "peer_pct": 23.2,
+    "days_left": 27,
     "history_points": 1
    },
-   "email": "Subject: Family booking question – 29.01.2027–03.02.2027, 2 adults + twins\n\nHello Bansko SPA & Holidays team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Deluxe Room (DBL) on BB from 29.01.2027 to 03.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Grand Royale Apart Hotel & Spa team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111052|2027-01-11|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111052",
+   "name": "Evelina Palace",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-evelina-palace/111052/",
+   "check_in": "2027-01-11",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 450.0,
+   "was_eur": 500.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 450.0
+    }
+   ],
+   "overall": 38.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 1 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 1 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 1 months old on 11.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.13
+   },
+   "deal": {
+    "score": 50.1,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 10.0,
+    "peer_pct": 9.1,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 11.01.2027–16.01.2027, 2 adults + twins\n\nHello Evelina Palace team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 11.01.2027 to 16.01.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 1 months old on 11.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111206|2026-12-14|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111206",
+   "name": "Apart Hotel Winslow Infinity",
+   "stars": null,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-apart-hotel-winslow-infinity/111206/",
+   "check_in": "2026-12-14",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 350.0,
+   "was_eur": 410.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-12-27",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 350.0
+    }
+   ],
+   "overall": 37.7,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 27.9,
+    "raw": 46.4,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 14.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.05
+   },
+   "deal": {
+    "score": 49.7,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 14.6,
+    "peer_pct": 29.3,
+    "days_left": 32,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 14.12.2026–19.12.2026, 2 adults + twins\n\nHello Apart Hotel Winslow Infinity team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 14.12.2026 to 19.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 14.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
   },
   {
    "key": "sani-beach|2027-06-20|7|HB|Family Room Garden View|2+2|Fibula (manual)",
@@ -1213,7 +1907,7 @@
      "Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?"
     ],
-    "drive_minutes": 290,
+    "drive_minutes": 290.0,
     "kids_age": 4.56
    },
    "deal": {
@@ -1226,6 +1920,1753 @@
     "history_points": 1
    },
    "email": "Subject: Family booking question – 20.06.2027–27.06.2027, 2 adults + twins\n\nHello Sani Beach team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Family Room Garden View on HB from 20.06.2027 to 27.06.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 6 months old on 20.06.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow for small children?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111049|2027-03-16|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111049",
+   "name": "Elegant Lux",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-elegant-lux/111049/",
+   "check_in": "2027-03-16",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 470.0,
+   "was_eur": 520.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 470.0
+    }
+   ],
+   "overall": 37.6,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 16.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.3
+   },
+   "deal": {
+    "score": 48.3,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.6,
+    "peer_pct": 5.1,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 16.03.2027–21.03.2027, 2 adults + twins\n\nHello Elegant Lux team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 16.03.2027 to 21.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 16.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111037|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111037",
+   "name": "Chalet Evergreen (ex. Breza)",
+   "stars": 3,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-chalet-evergreen-ex-breza/111037/",
+   "check_in": "2026-12-01",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 410.0,
+   "was_eur": 490.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-12-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 410.0
+    }
+   ],
+   "overall": 37.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 47.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.01
+   },
+   "deal": {
+    "score": 47.8,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 16.3,
+    "peer_pct": 17.2,
+    "days_left": 33,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Chalet Evergreen (ex. Breza) team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "casa-karina-bansko|2027-01-30|5|HB|Apartment 1 bedroom (AP2)|2+0|Fibula (manual)",
+   "hotel_id": "casa-karina-bansko",
+   "name": "Casa Karina Apartments",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.825,
+   "lng": 23.484,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-01-30",
+   "nights": 5,
+   "board": "HB",
+   "room": "Apartment 1 bedroom (AP2)",
+   "occupancy": "2+0",
+   "price_eur": 880.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 880.0
+    }
+   ],
+   "overall": 37.2,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 35.3,
+    "raw": 58.8,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 2 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 30.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 253.0,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 39.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": null,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 30.01.2027–04.02.2027, 2 adults + twins\n\nHello Casa Karina Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Apartment 1 bedroom (AP2) on HB from 30.01.2027 to 04.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 30.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111048|2027-03-07|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111048",
+   "name": "Edelweiss",
+   "stars": 3,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-edelweiss/111048/",
+   "check_in": "2027-03-07",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 520.0,
+   "was_eur": 610.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 520.0
+    }
+   ],
+   "overall": 37.2,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 47.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 07.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.28
+   },
+   "deal": {
+    "score": 47.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 14.8,
+    "peer_pct": -6.1,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 07.03.2027–12.03.2027, 2 adults + twins\n\nHello Edelweiss team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 07.03.2027 to 12.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 07.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111106|2027-03-05|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111106",
+   "name": "Malina Villas",
+   "stars": 3,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-malina-villas/111106/",
+   "check_in": "2027-03-05",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 490.0,
+   "was_eur": 540.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-12-01",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 490.0
+    }
+   ],
+   "overall": 36.7,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 47.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 05.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.27
+   },
+   "deal": {
+    "score": 46.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.3,
+    "peer_pct": 1.0,
+    "days_left": 6,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 05.03.2027–10.03.2027, 2 adults + twins\n\nHello Malina Villas team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 05.03.2027 to 10.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 05.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111208|2027-02-28|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111208",
+   "name": "Mpm Hotel Musala",
+   "stars": 4,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-mpm-hotel-musala/111208/",
+   "check_in": "2027-02-28",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 690.0,
+   "was_eur": 870.0,
+   "discount_label": "Travelland -20%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 690.0
+    }
+   ],
+   "overall": 36.1,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 29.7,
+    "raw": 49.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 28.02.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.26
+   },
+   "deal": {
+    "score": 44.0,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 20.7,
+    "peer_pct": -40.8,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 28.02.2027–05.03.2027, 2 adults + twins\n\nHello Mpm Hotel Musala team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 28.02.2027 to 05.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 28.02.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111032|2027-03-09|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111032",
+   "name": "Belvedere Holiday Club",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-belvedere-holiday-club/111032/",
+   "check_in": "2027-03-09",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 530.0,
+   "was_eur": 590.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 530.0
+    }
+   ],
+   "overall": 35.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 09.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.28
+   },
+   "deal": {
+    "score": 43.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 10.2,
+    "peer_pct": -8.2,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 09.03.2027–14.03.2027, 2 adults + twins\n\nHello Belvedere Holiday Club team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 09.03.2027 to 14.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 09.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111060|2026-11-25|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111060",
+   "name": "Grand Hotel Bansko",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-grand-hotel-bansko/111060/",
+   "check_in": "2026-11-25",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 890.0,
+   "was_eur": 1110.0,
+   "discount_label": "Travelland -20%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 890.0
+    }
+   ],
+   "overall": 35.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 3 years 11 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 3 years 11 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 3 years 11 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.0
+   },
+   "deal": {
+    "score": 43.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 19.8,
+    "peer_pct": -81.6,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 25.11.2026–30.11.2026, 2 adults + twins\n\nHello Grand Hotel Bansko team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 25.11.2026 to 30.11.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 3 years 11 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111076|2027-03-08|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111076",
+   "name": "Iceberg Borovets",
+   "stars": 4,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-iceberg-borovets/111076/",
+   "check_in": "2027-03-08",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 500.0,
+   "was_eur": 520.0,
+   "discount_label": "Travelland -5%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 500.0
+    }
+   ],
+   "overall": 35.0,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 29.7,
+    "raw": 49.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 08.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.28
+   },
+   "deal": {
+    "score": 41.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 3.8,
+    "peer_pct": -2.0,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 08.03.2027–13.03.2027, 2 adults + twins\n\nHello Iceberg Borovets team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 08.03.2027 to 13.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 08.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "bansko-spa-holidays|2027-01-29|5|BB|Deluxe Room (DBL)|2+0|Fibula (manual)",
+   "hotel_id": "bansko-spa-holidays",
+   "name": "Bansko SPA & Holidays",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.832,
+   "lng": 23.481,
+   "notes": null,
+   "source": "Fibula (manual)",
+   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
+   "check_in": "2027-01-29",
+   "nights": 5,
+   "board": "BB",
+   "room": "Deluxe Room (DBL)",
+   "occupancy": "2+0",
+   "price_eur": 574.0,
+   "was_eur": null,
+   "discount_label": "Ski up to -20% + Black Friday -7%",
+   "valid_until": "2026-11-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 574.0
+    }
+   ],
+   "overall": 34.9,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 31.2,
+    "raw": 52.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 2 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "no",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 2 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251.0,
+    "kids_age": 4.18
+   },
+   "deal": {
+    "score": 39.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": null,
+    "days_left": 3,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 29.01.2027–03.02.2027, 2 adults + twins\n\nHello Bansko SPA & Holidays team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Deluxe Room (DBL) on BB from 29.01.2027 to 03.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "casa-karina-bansko|2026-11-25|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "casa-karina-bansko",
+   "name": "Casa Karina Apartments",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.825,
+   "lng": 23.484,
+   "notes": null,
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-casa-karina/111088/",
+   "check_in": "2026-11-25",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 400.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 400.0
+    }
+   ],
+   "overall": 34.5,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 32.3,
+    "raw": 53.8,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 3 years 11 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 3 years 11 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 3 years 11 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 253.0,
+    "kids_age": 4.0
+   },
+   "deal": {
+    "score": 37.2,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": 19.2,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 25.11.2026–30.11.2026, 2 adults + twins\n\nHello Casa Karina Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 25.11.2026 to 30.11.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 3 years 11 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111156|2026-12-05|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111156",
+   "name": "Radina's Way",
+   "stars": 4,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-radina-s-way/111156/",
+   "check_in": "2026-12-05",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 520.0,
+   "was_eur": 620.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-12-28",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 520.0
+    }
+   ],
+   "overall": 33.6,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 29.7,
+    "raw": 49.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 05.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.02
+   },
+   "deal": {
+    "score": 38.3,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 16.1,
+    "peer_pct": -6.1,
+    "days_left": 33,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 05.12.2026–10.12.2026, 2 adults + twins\n\nHello Radina's Way team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 05.12.2026 to 10.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 05.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111237|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111237",
+   "name": "Gardenia Park Hotel",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-gardenia-park-hotel/111237/",
+   "check_in": "2026-12-01",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 300.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 300.0
+    }
+   ],
+   "overall": 33.6,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.01
+   },
+   "deal": {
+    "score": 39.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": 39.4,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Gardenia Park Hotel team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111005|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111005",
+   "name": "Four Points By Sheraton Bansko (ex. Strazite)",
+   "stars": 4,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-four-points-by-sheraton-bansko-ex-strazite/111005/",
+   "check_in": "2026-12-01",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 610.0,
+   "was_eur": 770.0,
+   "discount_label": "Travelland -20%",
+   "valid_until": "2026-12-23",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 610.0
+    }
+   ],
+   "overall": 33.5,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 48.0,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 251,
+    "kids_age": 4.01
+   },
+   "deal": {
+    "score": 39.2,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 20.8,
+    "peer_pct": -24.5,
+    "days_left": 28,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Four Points By Sheraton Bansko (ex. Strazite) team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
   },
   {
    "key": "royal-park-bansko|2027-01-29|5|BB|Standard Room (DBL)|2+0|Fibula (manual)",
@@ -1256,7 +3697,7 @@
      "price_eur": 425.0
     }
    ],
-   "overall": 37.4,
+   "overall": 32.9,
    "tier": {
     "key": "watch",
     "icon": "👀",
@@ -1338,50 +3779,50 @@
      "What is the minimum age for the kids' club, and do children need to be potty-trained?",
      "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
     ],
-    "drive_minutes": 252,
+    "drive_minutes": 252.0,
     "kids_age": 4.18
    },
    "deal": {
-    "score": 49.5,
+    "score": 39.5,
     "verdict": "none",
     "real_pct": null,
     "stated_pct": null,
-    "peer_pct": 51.7,
+    "peer_pct": null,
     "days_left": 3,
     "history_points": 1
    },
    "email": "Subject: Family booking question – 29.01.2027–03.02.2027, 2 adults + twins\n\nHello Royal Park Hotel & Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Standard Room (DBL) on BB from 29.01.2027 to 03.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 29.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
   },
   {
-   "key": "st-ivan-rilski-bansko|2027-02-01|5|HB|Studio anex room (STU2)|2+0|Fibula (manual)",
-   "hotel_id": "st-ivan-rilski-bansko",
-   "name": "St. Ivan Rilski Hotel, Spa & Apartments",
+   "key": "tl-111098|2027-03-06|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111098",
+   "name": "Lion Bansko",
    "stars": 4,
    "area": "Bansko, Bulgaria",
    "season": "winter",
-   "lat": 41.829,
-   "lng": 23.478,
-   "notes": null,
-   "source": "Fibula (manual)",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "check_in": "2027-02-01",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/bansko/hotel-lion-bansko/111098/",
+   "check_in": "2027-03-06",
    "nights": 5,
-   "board": "HB",
-   "room": "Studio anex room (STU2)",
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
    "occupancy": "2+0",
-   "price_eur": 1118.0,
-   "was_eur": null,
-   "discount_label": "Ski up to -20% + Black Friday -7%",
-   "valid_until": "2026-11-28",
+   "price_eur": 500.0,
+   "was_eur": 560.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2027-03-27",
    "first_seen": "2026-11-25",
    "last_seen": "2026-11-25",
    "history": [
     {
      "seen": "2026-11-25",
-     "price_eur": 1118.0
+     "price_eur": 500.0
     }
    ],
-   "overall": 35.5,
+   "overall": 32.1,
    "tier": {
     "key": "watch",
     "icon": "👀",
@@ -1390,8 +3831,8 @@
    "capped": false,
    "excluded": false,
    "family": {
-    "score": 40.4,
-    "raw": 67.4,
+    "score": 28.8,
+    "raw": 48.0,
     "confidence": 0.6,
     "checklist": [
      {
@@ -1403,7 +3844,7 @@
      },
      {
       "key": "cots",
-      "label": "2 cots for twins aged 4 years 2 months",
+      "label": "2 cots for twins aged 4 years 3 months",
       "state": "unknown",
       "must": true,
       "verified": false
@@ -1411,14 +3852,14 @@
      {
       "key": "separate_bedroom",
       "label": "Separate bedroom (cots in the other room)",
-      "state": "yes",
+      "state": "unknown",
       "must": true,
       "verified": false
      },
      {
       "key": "board",
       "label": "Breakfast + dinner",
-      "state": "yes",
+      "state": "unknown",
       "must": false,
       "verified": false
      },
@@ -1439,73 +3880,74 @@
      {
       "key": "kids_pool",
       "label": "Kids' pool",
-      "state": "yes",
+      "state": "unknown",
       "must": false,
       "verified": false
      },
      {
       "key": "family_room",
       "label": "Family room fits 2+2",
-      "state": "yes",
+      "state": "unknown",
       "must": false,
       "verified": false
      }
     ],
     "failed": [],
     "unknown_musts": [
-     "2 cots for twins aged 4 years 2 months"
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
     ],
     "questions": [
-     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 01.02.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 06.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
      "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
      "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?",
      "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
     ],
-    "drive_minutes": 252,
-    "kids_age": 4.18
+    "drive_minutes": 251,
+    "kids_age": 4.27
    },
    "deal": {
-    "score": 29.5,
-    "verdict": "none",
+    "score": 36.2,
+    "verdict": "stated",
     "real_pct": null,
-    "stated_pct": null,
-    "peer_pct": -94.8,
-    "days_left": 3,
+    "stated_pct": 10.7,
+    "peer_pct": -2.0,
+    "days_left": 122,
     "history_points": 1
    },
-   "email": "Subject: Family booking question – 01.02.2027–06.02.2027, 2 adults + twins\n\nHello St. Ivan Rilski Hotel, Spa & Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Studio anex room (STU2) on HB from 01.02.2027 to 06.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 01.02.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+   "email": "Subject: Family booking question – 06.03.2027–11.03.2027, 2 adults + twins\n\nHello Lion Bansko team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 06.03.2027 to 11.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 06.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
   },
   {
-   "key": "casa-karina-bansko|2027-01-30|5|HB|Apartment 1 bedroom (AP2)|2+0|Fibula (manual)",
-   "hotel_id": "casa-karina-bansko",
-   "name": "Casa Karina Apartments",
+   "key": "tl-111171|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111171",
+   "name": "Samokov",
    "stars": 4,
-   "area": "Bansko, Bulgaria",
+   "area": "Borovets, Bulgaria",
    "season": "winter",
-   "lat": 41.825,
-   "lng": 23.484,
-   "notes": null,
-   "source": "Fibula (manual)",
-   "url": "https://www.fibula.com.mk/promo/black-friday/bugarija-zima",
-   "check_in": "2027-01-30",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-samokov/111171/",
+   "check_in": "2026-12-01",
    "nights": 5,
-   "board": "HB",
-   "room": "Apartment 1 bedroom (AP2)",
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
    "occupancy": "2+0",
-   "price_eur": 880.0,
+   "price_eur": 440.0,
    "was_eur": null,
-   "discount_label": "Ski up to -20% + Black Friday -7%",
-   "valid_until": "2026-11-28",
+   "discount_label": null,
+   "valid_until": null,
    "first_seen": "2026-11-25",
    "last_seen": "2026-11-25",
    "history": [
     {
      "seen": "2026-11-25",
-     "price_eur": 880.0
+     "price_eur": 440.0
     }
    ],
-   "overall": 32.7,
+   "overall": 31.6,
    "tier": {
     "key": "watch",
     "icon": "👀",
@@ -1514,8 +3956,8 @@
    "capped": false,
    "excluded": false,
    "family": {
-    "score": 35.3,
-    "raw": 58.8,
+    "score": 29.7,
+    "raw": 49.5,
     "confidence": 0.6,
     "checklist": [
      {
@@ -1527,7 +3969,7 @@
      },
      {
       "key": "cots",
-      "label": "2 cots for twins aged 4 years 2 months",
+      "label": "2 cots for twins aged 4 years 0 months",
       "state": "unknown",
       "must": true,
       "verified": false
@@ -1535,14 +3977,14 @@
      {
       "key": "separate_bedroom",
       "label": "Separate bedroom (cots in the other room)",
-      "state": "yes",
+      "state": "unknown",
       "must": true,
       "verified": false
      },
      {
       "key": "board",
       "label": "Breakfast + dinner",
-      "state": "yes",
+      "state": "unknown",
       "must": false,
       "verified": false
      },
@@ -1570,35 +4012,1679 @@
      {
       "key": "family_room",
       "label": "Family room fits 2+2",
-      "state": "yes",
+      "state": "unknown",
       "must": false,
       "verified": false
      }
     ],
     "failed": [],
     "unknown_musts": [
-     "2 cots for twins aged 4 years 2 months"
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
     ],
     "questions": [
-     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 30.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
      "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
      "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
      "What is the minimum age for the kids' club, and do children need to be potty-trained?",
      "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
     ],
-    "drive_minutes": 253,
-    "kids_age": 4.18
+    "drive_minutes": 239,
+    "kids_age": 4.01
    },
    "deal": {
-    "score": 29.5,
+    "score": 33.9,
     "verdict": "none",
     "real_pct": null,
     "stated_pct": null,
-    "peer_pct": -53.3,
-    "days_left": 3,
+    "peer_pct": 11.1,
+    "days_left": null,
     "history_points": 1
    },
-   "email": "Subject: Family booking question – 30.01.2027–04.02.2027, 2 adults + twins\n\nHello Casa Karina Apartments team,\n\nWe are a family from Skopje (2 adults and young twins) looking at Apartment 1 bedroom (AP2) on HB from 30.01.2027 to 04.02.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 2 months old on 30.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Samokov team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111099|2027-03-06|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111099",
+   "name": "Lion Borovets",
+   "stars": 4,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-lion-borovets/111099/",
+   "check_in": "2027-03-06",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 530.0,
+   "was_eur": 590.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2027-03-27",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 530.0
+    }
+   ],
+   "overall": 31.4,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 29.7,
+    "raw": 49.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 06.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.27
+   },
+   "deal": {
+    "score": 33.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 10.2,
+    "peer_pct": -8.2,
+    "days_left": 122,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 06.03.2027–11.03.2027, 2 adults + twins\n\nHello Lion Borovets team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 06.03.2027 to 11.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 06.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111062|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111062",
+   "name": "Flora Complex",
+   "stars": null,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-flora-complex/111062/",
+   "check_in": "2026-12-01",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 680.0,
+   "was_eur": 750.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-12-23",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 680.0
+    }
+   ],
+   "overall": 29.8,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 28.8,
+    "raw": 47.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.01
+   },
+   "deal": {
+    "score": 31.0,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.3,
+    "peer_pct": -38.8,
+    "days_left": 28,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Flora Complex team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111159|2026-11-25|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111159",
+   "name": "Rila Borovets",
+   "stars": 4,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-rila-borovets/111159/",
+   "check_in": "2026-11-25",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 490.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 490.0
+    }
+   ],
+   "overall": 29.8,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 29.7,
+    "raw": 49.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 3 years 11 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 3 years 11 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 3 years 11 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.0
+   },
+   "deal": {
+    "score": 29.9,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": 1.0,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 25.11.2026–30.11.2026, 2 adults + twins\n\nHello Rila Borovets team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 25.11.2026 to 30.11.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 3 years 11 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111077|2026-12-19|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111077",
+   "name": "Iglika Borovets Hotel",
+   "stars": 4,
+   "area": "Borovets, Bulgaria",
+   "season": "winter",
+   "lat": 42.266,
+   "lng": 23.606,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/borovec/hotel-iglika-borovets-hotel/111077/",
+   "check_in": "2026-12-19",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 630.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 630.0
+    }
+   ],
+   "overall": 25.1,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 29.7,
+    "raw": 49.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 19.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 239,
+    "kids_age": 4.06
+   },
+   "deal": {
+    "score": 19.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": -28.6,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 19.12.2026–24.12.2026, 2 adults + twins\n\nHello Iglika Borovets Hotel team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 19.12.2026 to 24.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 19.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111117|2027-02-28|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111117",
+   "name": "Mpm Hotel Merryan",
+   "stars": 3,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-mpm-hotel-merryan/111117/",
+   "check_in": "2027-02-28",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 390.0,
+   "was_eur": 460.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 390.0
+    }
+   ],
+   "overall": 35.2,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 24.2,
+    "raw": 40.3,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 28.02.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.26
+   },
+   "deal": {
+    "score": 48.6,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 15.2,
+    "peer_pct": 21.2,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 28.02.2027–05.03.2027, 2 adults + twins\n\nHello Mpm Hotel Merryan team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 28.02.2027 to 05.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 28.02.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111367|2027-03-11|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111367",
+   "name": "Finlandia",
+   "stars": 4,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-finlandia/111367/",
+   "check_in": "2027-03-11",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 440.0,
+   "was_eur": 490.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 440.0
+    }
+   ],
+   "overall": 32.3,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 25.1,
+    "raw": 41.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 11.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.29
+   },
+   "deal": {
+    "score": 41.1,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 10.2,
+    "peer_pct": 11.1,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 11.03.2027–16.03.2027, 2 adults + twins\n\nHello Finlandia team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 11.03.2027 to 16.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 11.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111123|2027-03-03|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111123",
+   "name": "Mursalitsa",
+   "stars": 3,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-mursalitsa/111123/",
+   "check_in": "2027-03-03",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 540.0,
+   "was_eur": 630.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 540.0
+    }
+   ],
+   "overall": 29.2,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 24.2,
+    "raw": 40.3,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 03.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.27
+   },
+   "deal": {
+    "score": 35.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 14.3,
+    "peer_pct": -10.2,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 03.03.2027–08.03.2027, 2 adults + twins\n\nHello Mursalitsa team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 03.03.2027 to 08.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 03.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111133|2027-03-07|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111133",
+   "name": "Orpheus",
+   "stars": 4,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-orpheus/111133/",
+   "check_in": "2027-03-07",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 670.0,
+   "was_eur": 790.0,
+   "discount_label": "Travelland -15%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 670.0
+    }
+   ],
+   "overall": 27.4,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 25.1,
+    "raw": 41.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 07.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.28
+   },
+   "deal": {
+    "score": 30.1,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 15.2,
+    "peer_pct": -36.7,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 07.03.2027–12.03.2027, 2 adults + twins\n\nHello Orpheus team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 07.03.2027 to 12.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 07.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111132|2027-03-04|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111132",
+   "name": "Orlovets",
+   "stars": 5,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-orlovets/111132/",
+   "check_in": "2027-03-04",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 640.0,
+   "was_eur": 710.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 640.0
+    }
+   ],
+   "overall": 26.2,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 26.1,
+    "raw": 43.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 04.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.27
+   },
+   "deal": {
+    "score": 26.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.9,
+    "peer_pct": -30.6,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 04.03.2027–09.03.2027, 2 adults + twins\n\nHello Orlovets team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 04.03.2027 to 09.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 04.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111143|2027-03-04|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111143",
+   "name": "Perelik",
+   "stars": 5,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-perelik/111143/",
+   "check_in": "2027-03-04",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 640.0,
+   "was_eur": 710.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2026-11-30",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 640.0
+    }
+   ],
+   "overall": 26.2,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 26.1,
+    "raw": 43.5,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 04.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.27
+   },
+   "deal": {
+    "score": 26.4,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.9,
+    "peer_pct": -30.6,
+    "days_left": 5,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 04.03.2027–09.03.2027, 2 adults + twins\n\nHello Perelik team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 04.03.2027 to 09.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 04.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111700|2027-03-21|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111700",
+   "name": "Snezhanka",
+   "stars": 3,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-snezhanka/111700/",
+   "check_in": "2027-03-21",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 470.0,
+   "was_eur": 520.0,
+   "discount_label": "Travelland -10%",
+   "valid_until": "2027-03-31",
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 470.0
+    }
+   ],
+   "overall": 26.0,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 24.2,
+    "raw": 40.3,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 3 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 3 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 21.03.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.31
+   },
+   "deal": {
+    "score": 28.3,
+    "verdict": "stated",
+    "real_pct": null,
+    "stated_pct": 9.6,
+    "peer_pct": 5.1,
+    "days_left": 126,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 21.03.2027–26.03.2027, 2 adults + twins\n\nHello Snezhanka team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 21.03.2027 to 26.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 3 months old on 21.03.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111087|2026-12-01|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111087",
+   "name": "Kamelia Complex",
+   "stars": 4,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-kamelia-complex/111087/",
+   "check_in": "2026-12-01",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 440.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 440.0
+    }
+   ],
+   "overall": 24.6,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 25.1,
+    "raw": 41.9,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 0 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 0 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.01
+   },
+   "deal": {
+    "score": 23.9,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": 11.1,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 01.12.2026–06.12.2026, 2 adults + twins\n\nHello Kamelia Complex team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 01.12.2026 to 06.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 0 months old on 01.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "tl-111380|2027-01-04|5|?|cheapest unit (po osobi od)|2+0|Travelland",
+   "hotel_id": "tl-111380",
+   "name": "Dafovska",
+   "stars": 3,
+   "area": "Pamporovo, Bulgaria",
+   "season": "winter",
+   "lat": 41.652,
+   "lng": 24.692,
+   "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
+   "source": "Travelland",
+   "url": "https://www.travelland.rs/smestaj/bugarska/pamporovo/hotel-dafovska/111380/",
+   "check_in": "2027-01-04",
+   "nights": 5,
+   "board": "?",
+   "room": "cheapest unit (po osobi od)",
+   "occupancy": "2+0",
+   "price_eur": 600.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 600.0
+    }
+   ],
+   "overall": 18.0,
+   "tier": {
+    "key": "out",
+    "icon": "✗",
+    "label": "Doesn't fit"
+   },
+   "capped": false,
+   "excluded": true,
+   "family": {
+    "score": 24.2,
+    "raw": 40.3,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "no",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 4 years 1 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Breakfast + dinner",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [
+     "Direct flight or ≤5h drive"
+    ],
+    "unknown_musts": [
+     "2 cots for twins aged 4 years 1 months",
+     "Separate bedroom (cots in the other room)"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 4 years 1 months old on 04.01.2027? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?",
+     "What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?"
+    ],
+    "drive_minutes": 424,
+    "kids_age": 4.11
+   },
+   "deal": {
+    "score": 10.5,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": -22.4,
+    "days_left": null,
+    "history_points": 1
+   },
+   "email": "Subject: Family booking question – 04.01.2027–09.01.2027, 2 adults + twins\n\nHello Dafovska team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 04.01.2027 to 09.01.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 4 years 1 months old on 04.01.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
   }
  ]
 }

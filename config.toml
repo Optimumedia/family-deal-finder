@@ -57,6 +57,57 @@ delay_seconds = 6
 jitter_seconds = 4
 timeout_seconds = 30
 
+[sources.travelland]
+# travelland.rs — robots.txt allows all paths. Prices are "from, per person per
+# night" without board or kids' price, so offers are stored as 2 adults × nights.
+enabled = true
+max_list_pages = 5          # 12 offers per page
+
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/bugarska/bansko/"
+season = "winter"
+area = "Bansko, Bulgaria"
+country = "BG"
+lat = 41.83
+lng = 23.48
+nights = 5
+
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/bugarska/borovec/"
+season = "winter"
+area = "Borovets, Bulgaria"
+country = "BG"
+lat = 42.266
+lng = 23.606
+nights = 5
+
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/bugarska/pamporovo/"
+season = "winter"
+area = "Pamporovo, Bulgaria"
+country = "BG"
+lat = 41.652
+lng = 24.692
+nights = 5
+
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/grcka/letovanje/hoteli/halkidiki/kasandra/"
+season = "summer"
+area = "Kassandra, Halkidiki"
+country = "GR"
+lat = 40.02
+lng = 23.43
+nights = 7
+
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/grcka/letovanje/hoteli/halkidiki/sitonija/"
+season = "summer"
+area = "Sithonia, Halkidiki"
+country = "GR"
+lat = 40.10
+lng = 23.80
+nights = 7
+
 [email]
 # Daily digest. SMTP settings live in the git-ignored file .email
 # (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_TO). Without it the
