@@ -80,7 +80,7 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .reset{background:none;border:0;color:var(--teal-d);font:600 13.5px var(--font);cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- results header ---------- */
-.rhead{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px;margin-bottom:12px}
+.rhead{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 12px;margin-bottom:10px}
 .rhead h1{margin:0;font-size:22px;letter-spacing:-.015em;font-weight:700;line-height:1.25}
 .rhead .sub{color:var(--muted);font-size:14px;margin-top:2px}
 .sorts{display:flex;flex-wrap:wrap;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;margin-left:auto}
@@ -89,14 +89,14 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .sorts button:hover:not([aria-pressed=true]),.views button:hover:not([aria-pressed=true]){background:var(--sunk)}
 .views{display:flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
 .views button{display:flex;align-items:center;gap:6px}
-.note{display:flex;gap:12px;align-items:flex-start;background:var(--teal-soft);border:1px solid var(--teal-line);border-radius:var(--r-m);padding:12px 16px;font-size:14px;margin-bottom:14px;color:var(--ink)}
+.note{display:flex;gap:10px;align-items:flex-start;background:var(--teal-soft);border:1px solid var(--teal-line);border-radius:var(--r-m);padding:9px 14px;font-size:13.5px;margin-bottom:12px;color:var(--ink)}
 .note .i{color:var(--teal-d);margin-top:2px}
 .news{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:12px 16px;margin-bottom:14px}
 .news h2{font-size:14px;margin:0 0 6px}.news ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-2)}
 
 /* ---------- hotel row ---------- */
-.list{display:flex;flex-direction:column;gap:14px}
-.row{display:grid;grid-template-columns:220px minmax(0,1fr) 250px;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:12px;box-shadow:var(--shadow-1);transition:box-shadow .2s ease,border-color .2s ease}
+.list{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:196px minmax(0,1fr) 248px;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:10px;box-shadow:var(--shadow-1);transition:box-shadow .2s ease,border-color .2s ease}
 .row:hover{box-shadow:var(--shadow-2);border-color:var(--line-2)}
 .row.out{opacity:.72}
 .row.flash{outline:3px solid var(--teal);outline-offset:3px}
@@ -111,8 +111,8 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 @keyframes pop{0%{transform:scale(.6)}100%{transform:scale(1)}}
 .tray{animation:rise .35s cubic-bezier(.16,1,.3,1)}@keyframes rise{from{transform:translate(-50%,16px);opacity:0}}
 .kindtag{position:absolute;left:8px;top:8px;background:rgba(18,38,43,.82);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px}
-.mid{min-width:0;display:flex;flex-direction:column;gap:6px}
-.name{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.mid{min-width:0;display:flex;flex-direction:column;gap:5px;padding-top:2px}
+.name{margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
 .name a{color:var(--teal-d);text-decoration:none}
 .name a:hover{text-decoration:underline}
 .stars{color:#D99A00;margin-left:6px;white-space:nowrap;display:inline-flex;gap:1px;vertical-align:1px}.stars svg.st{width:13px;height:13px;fill:currentColor;stroke-width:1}
@@ -125,7 +125,7 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .chip.warn{background:var(--warn-bg);color:var(--warn)}
 .chip.bad{background:var(--bad-bg);color:var(--bad)}
 .chip.ask{background:transparent;border:1px dashed var(--line-2);color:var(--ink-2)}
-.fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px;font-size:13px;margin:2px 0 0;padding:0;list-style:none}
+.fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 14px;font-size:13px;margin:2px 0 0;padding:0;list-style:none}
 .fit li{display:flex;gap:6px;align-items:baseline;color:var(--ink-2)}
 .mk{flex:none;width:14px;height:14px;border-radius:50%;display:inline-grid;place-items:center;font-size:10px;font-weight:800;transform:translateY(2px)}
 .mk.yes{background:var(--good);color:#fff}
@@ -142,14 +142,14 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .more table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
 .more th{text-align:left;color:var(--muted);font-weight:600;padding:4px 8px 4px 0;border-bottom:1px solid var(--line)}
 .more td{padding:6px 8px 6px 0;border-bottom:1px solid var(--line);vertical-align:top}
-.price{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:2px;border-left:1px solid var(--line);padding-left:16px}
+.price{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:2px;border-left:1px solid var(--line);padding-left:14px}
 .badge{display:inline-flex;gap:6px;align-items:center;background:var(--coral-bg);color:var(--coral);font-weight:700;font-size:12.5px;border-radius:6px;padding:3px 8px}
 .was{color:var(--muted);text-decoration:line-through;font-size:14px}
 .big{font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1}
 .qual{font-size:12.5px;color:var(--ink-2);line-height:1.35}
 .qual.warn{color:var(--warn);font-weight:600}
 .pn{font-size:12.5px;color:var(--muted)}
-.ins{width:100%;margin-top:4px}
+.ins{width:100%;margin-top:2px}
 .ins .bar{position:relative;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--good-bg),var(--sand),var(--bad-bg))}
 .ins .dot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--ink);transform:translate(-50%,-50%)}
 .ins p{margin:4px 0 0;font-size:12px;color:var(--muted);text-align:right}
@@ -157,7 +157,9 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .verdict{font-size:12.5px;font-weight:600;display:flex;gap:5px;align-items:center;justify-content:flex-end}
 .verdict.real{color:var(--good)} .verdict.stated{color:var(--muted)} .verdict.fake{color:var(--bad)}
 .dead{font-weight:700;color:var(--coral)}
-.actions{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:auto;padding-top:4px}
+.actions{display:flex;flex-direction:row;gap:6px;width:100%;margin-top:auto;padding-top:6px}
+.actions .btn.primary{flex:1}.btn.ask{padding:7px 10px;gap:4px;flex:none}.askn{font-size:12.5px}
+.ptop{display:flex;gap:8px;align-items:center;justify-content:flex-end}
 .actions .btn{min-height:36px;padding:7px 12px;white-space:nowrap}
 .linkbtn{appearance:none;border:0;background:none;color:var(--teal-d);font:600 13px var(--font);display:inline-flex;gap:6px;align-items:center;justify-content:center;padding:6px 4px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:32px}
 .linkbtn .i{width:15px;height:15px}
@@ -207,7 +209,8 @@ dialog::backdrop{background:rgba(10,24,27,.55)}
 #mail textarea{width:100%;height:320px;border:1px solid var(--line-2);border-radius:var(--r-s);padding:12px;font:14px/1.5 var(--font);color:var(--ink);background:var(--page);resize:vertical}
 
 /* ---------- responsive ---------- */
-@media (max-width:1180px){.row{grid-template-columns:200px minmax(0,1fr) 210px}}
+@media (max-width:1320px){.fit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1180px){.row{grid-template-columns:180px minmax(0,1fr) 226px}}
 @media (max-width:1000px){
   .wrap{grid-template-columns:minmax(0,1fr)}
   aside{position:static;max-height:none;display:grid;grid-template-columns:1fr}
@@ -222,7 +225,8 @@ dialog::backdrop{background:rgba(10,24,27,.55)}
   .row{grid-template-columns:1fr;gap:12px}
   .price{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:12px;align-items:stretch;text-align:left}
   .verdict{justify-content:flex-start}
-  .actions{flex-direction:row}.actions .btn{flex:1}
+  .ptop{justify-content:flex-start}
+  .actions{flex-direction:row}
   .sorts{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap}
   .rhead h1{font-size:19px}
   .tray .names{display:none}
@@ -234,6 +238,7 @@ dialog::backdrop{background:rgba(10,24,27,.55)}
 main,.rhead > div,.mid{min-width:0}
 .sorts{max-width:100%;overflow-x:auto}
 .sorts button,.views button{white-space:nowrap}
+.sortlbl{font-size:13px;color:var(--muted);padding:0 4px 0 10px;align-self:center}
 @media (max-width:720px){
   .tabs{overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}.tabs::-webkit-scrollbar{display:none}
   .tab{flex:none}
@@ -331,12 +336,12 @@ main,.rhead > div,.mid{min-width:0}
   <main id="results" role="tabpanel" aria-labelledby="tab-summer" tabindex="-1">
     <div class="rhead">
       <div><h1 id="title">Loading offers…</h1><div class="sub" id="subtitle" aria-live="polite"></div></div>
-      <div class="sorts" role="group" aria-label="Sort by">
+      <div class="sorts" role="group" aria-label="Sort by"><span class="sortlbl">Sort</span>
         <button data-sort="best" aria-pressed="true">Best for us</button>
-        <button data-sort="price">Lowest price</button>
+        <button data-sort="price">Price</button>
         <button data-sort="night">Per night</button>
-        <button data-sort="discount">Biggest discount</button>
-        <button data-sort="drive">Shortest drive</button>
+        <button data-sort="discount">Discount</button>
+        <button data-sort="drive">Drive time</button>
       </div>
       <div class="views" role="group" aria-label="View">
         <button data-view="list" aria-pressed="true"><svg class="i"><use href="#i-list"/></svg>List</button>
@@ -467,7 +472,7 @@ function fitList(o){
 function insight(o){
   const h = o.history || [], dl = o.deal.days_left;
   const ends = dl != null && dl >= 0 ? ` · <span class="dead">ends ${dl === 0 ? 'today' : `in ${dl} day${dl === 1 ? '' : 's'}`}</span>` : '';
-  if (h.length < 2) return `<div class="ins pending" role="img" aria-label="Price history: 1 check so far"><div class="bar"><span class="tick"></span></div><p>Not yet checked: 1 price check so far${ends}</p></div>`;
+  if (h.length < 2) return `<div class="ins pending" role="img" aria-label="Price history: 1 check so far"><div class="bar"><span class="tick"></span></div><p>1 price check so far${ends}</p></div>`;
   const ps = h.map(x => x.price_eur), lo = Math.min(...ps), hi = Math.max(...ps), now = ps[ps.length-1];
   const pos = hi === lo ? 50 : (now - lo) / (hi - lo) * 100;
   const word = pos < 34 ? 'low' : pos > 66 ? 'high' : 'typical';
@@ -482,20 +487,18 @@ function verdict(o){
 function priceBlock(h){
   const o = h.best, pct = o.deal.real_pct ?? o.deal.stated_pct;
   const fam = o.occupancy === '2+2';
-  const qual = fam ? `2 adults + 2 kids${o.board !== '?' ? ' · ' + BOARD[o.board].toLowerCase() : ''}`
-                   : `2 adults only · kids' price unknown`;
+  const qual = fam ? `2 adults + 2 kids` : `2 adults only · kids extra`;
   const dl = o.deal.days_left;
   return `<div class="price">
-    ${pct ? `<span class="badge">${ic('tag')}${o.deal.verdict === 'real' ? 'Verified' : 'Agency says'} −${Math.round(pct)}%</span>` : ''}
-    ${o.was_eur ? `<span class="was"><span class="sr">was </span>${eur(o.was_eur)}</span>` : ''}
+    ${pct || o.was_eur ? `<div class="ptop">${o.was_eur ? `<span class="was"><span class="sr">was </span>${eur(o.was_eur)}</span>` : ''}${pct ? `<span class="badge">${ic('tag')}${o.deal.verdict === 'real' ? 'Verified' : 'Agency says'} −${Math.round(pct)}%</span>` : ''}</div>` : ''}
     <span class="big">${eur(o.price_eur)}</span>
-    <span class="qual${fam ? '' : ' warn'}" title="≈ ${eur(o.price_eur / o.nights)} a night">${qual} · ${o.nights} nights · ${esc(o.source.replace(' (manual)', ''))}</span>
+    <span class="qual${fam ? '' : ' warn'}" title="≈ ${eur(o.price_eur / o.nights)} a night · ${esc(o.source)}">${qual} · ${o.nights} nights</span>
     
     ${verdict(o)}
     ${insight(o)}
     <div class="actions">
-      <a class="btn primary" href="${esc(o.url)}" target="_blank" rel="noopener">See offer ${ic('ext')}</a>
-      ${o.email ? `<button class="linkbtn" data-mail="${esc(o.key)}">${ic('mail')}Ask the hotel (${o.family.questions.length} questions)</button>` : ''}
+      <a class="btn primary" href="${esc(o.url)}" target="_blank" rel="noopener" title="Opens ${esc(o.source.replace(' (manual)', ''))}">See offer at ${esc(o.source.replace(' (manual)', ''))} ${ic('ext')}</a>
+      ${o.email ? `<button class="btn ask" data-mail="${esc(o.key)}" aria-label="Ask the hotel: ${o.family.questions.length} questions" title="Ask the hotel (${o.family.questions.length} questions)">${ic('mail')}<span class="askn">${o.family.questions.length}</span></button>` : ''}
     </div></div>`;
 }
 function row(h){
@@ -506,7 +509,7 @@ function row(h){
   const camp = h.campaigns[0];
   const others = h.offers.slice(1);
   const out = h.excluded ? `<div class="why">${ic('x')} Doesn't fit: ${esc(f.failed.join(', '))}</div>` : '';
-  const capped = !h.excluded && f.unknown_musts.length ? `<div class="cap">${f.unknown_musts.length} must-have${f.unknown_musts.length>1?'s':''} to confirm with the hotel</div>` : '';
+  const capped = !h.excluded && f.unknown_musts.length ? `<div class="cap">${f.unknown_musts.length} to confirm with the hotel</div>` : '';
   return `<article class="row${h.excluded ? ' out' : ''}" data-id="${esc(h.id)}">
     ${photo(h)}
     <div class="mid">
@@ -550,11 +553,11 @@ function render(){
   const sname = season === 'summer' ? 'Summer 2027' : season === 'winter' ? 'Winter 2026/27' : 'Shortlist';
   $('#title').textContent = season === 'short' ? `${live.length + out.length} shortlisted hotel${live.length + out.length === 1 ? '' : 's'}` : `${sname}: ${live.length} hotels for us`;
   const within = live.filter(h => (h.best.family.drive_minutes ?? 0) <= LIMIT).length;
-  $('#subtitle').textContent = season === 'short' ? 'Your hearts are saved in this browser.' : `${within} within the 5h drive rule · ${live.length - within} borderline (up to 45 min over) · ${offers} offers from ${new Set(live.flatMap(h => h.offers.map(o => o.source))).size} sources${out.length ? ' · ' + out.length + ' ruled out' : ''}`;
+  $('#subtitle').textContent = season === 'short' ? 'Your hearts are saved in this browser.' : `${within} within 5h · ${live.length - within} borderline · ${offers} offers from ${new Set(live.flatMap(h => h.offers.map(o => o.source))).size} sources${out.length ? ' · ' + out.length + ' ruled out' : ''}`;
   const places = new Set(live.filter(h => typeof h.best.lat === 'number').map(h => h.best.lat.toFixed(2) + ',' + h.best.lng.toFixed(2))).size;
   $('#mapsum').innerHTML = `<b>${places} place${places === 1 ? '' : 's'} on the map</b>${live.length} hotels · pins coloured by drive time from Skopje`;
   const fam = live.filter(h => h.best.occupancy === '2+2').length;
-  $('#note-t').innerHTML = `<b>${fam} of ${live.length}</b> show a real price for all four of you. The rest are agency "from" prices for 2 adults, so ask for the kids' price before comparing. Discounts are the agency's claim until our own price history confirms them. <span class="leg">A hollow ring in a checklist means the agency says so but the hotel hasn't confirmed it.</span>`;
+  $('#note-t').innerHTML = `<b>${fam} of ${live.length}</b> have a real price for all four of you; the rest are 2-adult "from" prices. Discounts are the agency's claim until our price history confirms them. <span class="leg">Hollow ring = agency info, not confirmed by the hotel.</span>`;
   $('#note').hidden = season === 'short' || !live.length;
   const active = Object.entries(f).filter(([k,v]) => (v === true && k !== 'out') || (k === 'drive' && v < 345)).length + (f.kinds.length < 3) + f.areas.length;
   $('#fcount').textContent = active ? `(${active})` : '';
