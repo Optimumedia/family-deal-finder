@@ -8,6 +8,7 @@ adults = 2
 # Exact birthdate of the twins (YYYY-MM-DD). Used to work out their age ON THE
 # TRIP DATE (cot age limits, "kids free up to 3.99", kids' club minimum age).
 # Left empty = assume the oldest a 3-year-old on 2026-11-25 can be (safe side).
+# The real date lives in config.local.toml (git-ignored), so it is never published.
 kids_birthdate = ""
 kids = 2
 cots_needed = 2

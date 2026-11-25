@@ -22,8 +22,18 @@ AUTO_SOURCES = (travelland, olympic, oliverstravels, micazu)
 log = logging.getLogger("trips")
 
 
-def load_config(path: str | Path = "config.toml") -> dict:
-    return tomllib.loads(Path(path).read_text(encoding="utf-8"))
+def load_config(path: str | Path = "config.toml", local: str | None = "config.local.toml") -> dict:
+    """config.toml (public, in git) + config.local.toml next to it (private, git-ignored: e.g. the
+    twins' birthdate). Local values override the public ones, table by table."""
+    cfg = tomllib.loads(Path(path).read_text(encoding="utf-8"))
+    lp = Path(path).with_name(local) if local else None
+    if lp and lp.exists():
+        for section, values in tomllib.loads(lp.read_text(encoding="utf-8")).items():
+            if isinstance(values, dict) and isinstance(cfg.get(section), dict):
+                cfg[section] = {**cfg[section], **values}
+            else:
+                cfg[section] = values
+    return cfg
 
 
 def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict], list[dict]]:

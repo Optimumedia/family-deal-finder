@@ -7,3 +7,4 @@ data/local-run.log
 .claude/
 data/live-run.txt
 .venv/
+config.local.toml

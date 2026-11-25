@@ -6,7 +6,7 @@ from pathlib import Path
 
 from trips import db, run, score
 
-CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml")
+CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml", local=None)
 
 HOTEL = {"id": "h1", "name": "Test Beach", "stars": 4, "season": "summer", "area": "X", "lat": 40.0, "lng": 23.5,
          "border": True, "family": {"sand_beach": True, "beach_m": 20, "half_board": True, "verified": []}}
@@ -91,3 +91,15 @@ class Engine(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LocalConfig(unittest.TestCase):
+    def test_private_file_overrides_public(self):
+        with tempfile.TemporaryDirectory() as d:
+            pub = Path(d) / "config.toml"
+            pub.write_text('[family]\nkids = 2\nkids_birthdate = ""\n', encoding="utf-8")
+            (Path(d) / "config.local.toml").write_text('[family]\nkids_birthdate = "2021-03-03"\n', encoding="utf-8")
+            cfg = run.load_config(pub)
+            self.assertEqual(cfg["family"], {"kids": 2, "kids_birthdate": "2021-03-03"})
+            self.assertEqual(run.load_config(pub, local=None)["family"]["kids_birthdate"], "")
+            self.assertAlmostEqual(score.kids_age_on(cfg, "2027-06-20"), 6.3, places=1)

@@ -7,7 +7,7 @@ from trips import run
 from trips.sources import travelland as tl
 
 FIX = Path(__file__).parent / "fixtures"
-CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml")
+CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml", local=None)
 PAGE = {"url": "x", "season": "winter", "area": "Bansko, Bulgaria", "country": "BG", "lat": 41.83, "lng": 23.48,
         "nights": 5}
 

@@ -8,7 +8,7 @@ from trips import db, run, score
 from trips.sources import hotel_direct, micazu, oliverstravels, pagetext
 
 FIX = Path(__file__).parent / "fixtures"
-CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml")
+CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml", local=None)
 TODAY = date(2026, 11, 25)
 
 

@@ -7,7 +7,7 @@ from trips import run
 from trips.sources import olympic as ol
 
 FIX = Path(__file__).parent / "fixtures"
-CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml")
+CFG = run.load_config(Path(__file__).resolve().parents[1] / "config.toml", local=None)
 PAGE = {"url": "x", "season": "winter", "area": "Bansko, Bulgaria", "lat": 41.83, "lng": 23.48, "nights": 5,
         "check_in": "2027-01-15"}
 
