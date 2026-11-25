@@ -149,7 +149,7 @@ A cool, low-chroma neutral field with one action colour (sea teal), one claim co
 
 ### Primary
 - **Sea Teal** (sea-teal): the header band, primary buttons, selected sort and view segments, checkbox and range accents, text selection, focus outline, and near-drive map pins.
-- **Deep Teal** (deep-teal): links, hotel names, text buttons ("Show on map", "Reset", "Ask the hotel"), and primary-button hover.
+- **Deep Teal** (deep-teal): links, hotel names, text buttons ("Show on map", "Reset"), and primary-button hover.
 - **Teal Mist** (teal-mist) with **Teal Edge** (teal-edge): the explanatory note banner, the no-photo placeholder gradient, map-button hover, and "differs" cells in the compare table.
 
 ### Secondary
@@ -232,7 +232,7 @@ Plain, solid and quietly rounded.
 - **Shape:** gently rounded (8px), 40px minimum height (36px inside the price block).
 - **Primary:** sea-teal fill, white 600 14px text, 9px 14px padding; hover to deep teal. Used for "See offer", "Copy email", "Compare".
 - **Secondary:** white with a strong hairline border, ink text; hover to sunk.
-- **Text button:** deep-teal 600 13–13.5px, underlined at 3px offset, no fill ("Ask the hotel", "Reset").
+- **Text button:** deep-teal 600 13–13.5px, underlined at 3px offset, no fill ("Reset").
 - **Focus:** global 3px sea-teal outline at 2px offset.
 
 ### Segmented controls

@@ -33,7 +33,6 @@ No OTA does any of these.
 - Data refreshes at 13:00 and 17:30 when the home PC is on.
 - Fibula (the main Skopje agency) is entered by hand, because its prices sit behind robots-blocked APIs.
 - Each card links to the source offer, where booking happens. The dashboard never books.
-- "Ask the hotel" produces an email draft that the parents copy and send themselves.
 - Seasons: Summer (Halkidiki, Olympic Riviera, Thassos: sandy beaches, half board) and Winter (Bansko, Borovets, Pamporovo, Kopaonik: 1-bedroom apartments, 2 cots, ski kindergarten).
 
 ## Capabilities and Constraints

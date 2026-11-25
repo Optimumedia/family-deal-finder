@@ -158,11 +158,9 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .verdict.real{color:var(--good)} .verdict.stated{color:var(--muted)} .verdict.fake{color:var(--bad)}
 .dead{font-weight:700;color:var(--coral)}
 .actions{display:flex;flex-direction:row;gap:6px;width:100%;margin-top:auto;padding-top:6px}
-.actions .btn.primary{flex:1}.btn.ask{padding:7px 10px;gap:4px;flex:none}.askn{font-size:12.5px}
+.actions .btn.primary{flex:1}
 .ptop{display:flex;gap:8px;align-items:center;justify-content:flex-end}
 .actions .btn{min-height:36px;padding:7px 12px;white-space:nowrap}
-.linkbtn{appearance:none;border:0;background:none;color:var(--teal-d);font:600 13px var(--font);display:inline-flex;gap:6px;align-items:center;justify-content:center;padding:6px 4px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:32px}
-.linkbtn .i{width:15px;height:15px}
 .btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:var(--r-s);padding:9px 14px;font:600 14px var(--font);cursor:pointer;text-decoration:none;min-height:40px}
 .btn:hover{background:var(--sunk)}
 .btn.primary{background:var(--teal);color:var(--teal-ink);border-color:var(--teal)}
@@ -205,8 +203,6 @@ dialog::backdrop{background:rgba(10,24,27,.55)}
 .cmp tbody th{color:var(--muted);font-weight:600;width:170px;position:sticky;left:0;background:var(--surface)}
 .cmp img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-s);display:block;margin-bottom:8px;background:var(--sunk)}
 .cmp .diff{background:var(--teal-soft)}
-#mail{width:min(680px,calc(100vw - 32px))}
-#mail textarea{width:100%;height:320px;border:1px solid var(--line-2);border-radius:var(--r-s);padding:12px;font:14px/1.5 var(--font);color:var(--ink);background:var(--page);resize:vertical}
 
 /* ---------- responsive ---------- */
 @media (max-width:1320px){.fit{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -262,7 +258,6 @@ main,.rhead > div,.mid{min-width:0}
   <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M14.5 19a3.6 3.6 0 0 1 6.5-2"/></symbol>
   <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4zM9 4v14M15 6v14"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
   <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
@@ -363,15 +358,6 @@ main,.rhead > div,.mid{min-width:0}
 <dialog id="cmpDlg" aria-labelledby="cmpTitle">
   <div class="dhead"><h2 id="cmpTitle">Compare shortlisted hotels</h2><button class="x" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
   <div class="dbody" id="cmpBody"></div>
-</dialog>
-<dialog id="mail" aria-labelledby="mailTitle">
-  <div class="dhead"><h2 id="mailTitle">Ask the hotel</h2><button class="x" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
-  <div class="dbody">
-    <p style="margin:0 0 10px;color:var(--ink-2);font-size:14px">Check it, then send it from your own email. Nothing is sent from here.</p>
-    <label class="sr" for="mailText">Email to the hotel</label>
-    <textarea id="mailText"></textarea>
-    <div style="display:flex;gap:8px;margin-top:12px;align-items:center"><button class="btn primary" id="copy">Copy email</button><span id="copied" role="status" style="font-size:14px;color:var(--good)"></span></div>
-  </div>
 </dialog>
 
 <script>
@@ -498,7 +484,6 @@ function priceBlock(h){
     ${insight(o)}
     <div class="actions">
       <a class="btn primary" href="${esc(o.url)}" target="_blank" rel="noopener" title="Opens ${esc(o.source.replace(' (manual)', ''))}">See offer at ${esc(o.source.replace(' (manual)', ''))} ${ic('ext')}</a>
-      ${o.email ? `<button class="btn ask" data-mail="${esc(o.key)}" aria-label="Ask the hotel: ${o.family.questions.length} questions" title="Ask the hotel (${o.family.questions.length} questions)">${ic('mail')}<span class="askn">${o.family.questions.length}</span></button>` : ''}
     </div></div>`;
 }
 function row(h){
@@ -701,8 +686,6 @@ document.addEventListener('click', e => {
   if (s) { const id = s.dataset.short; short.has(id) ? short.delete(id) : short.add(id); store.set('short', [...short]);
     const on = short.has(id); $$(`[data-short="${CSS.escape(id)}"]`).forEach(b => { b.setAttribute('aria-pressed', on); b.setAttribute('aria-label', b.getAttribute('aria-label').replace(/^(Add|Remove)/, on ? 'Remove' : 'Add').replace(/ (to|from) shortlist/, on ? ' from shortlist' : ' to shortlist')); });
     syncTray(); if (season === 'short') render(); return; }
-  const m = e.target.closest('[data-mail]');
-  if (m) { const it = DATA.items.find(i => i.key === m.dataset.mail); $('#mailTitle').textContent = 'Ask ' + it.name; $('#mailText').value = it.email; $('#copied').textContent = ''; $('#mail')._from = m; $('#mail').showModal(); return; }
   if (e.target.closest('#showmore')) { shown += 30; render(); return; }
   if (e.target.closest('#empty-reset')) { $('#reset').click(); return; }
   const g = e.target.closest('[data-goto]'); if (g) { gotoRow(g.dataset.goto); return; }
@@ -710,7 +693,6 @@ document.addEventListener('click', e => {
 });
 $$('dialog').forEach(d => d.addEventListener('close', () => d._from?.focus()));
 $('#tray-cmp').addEventListener('click', e => { $('#cmpDlg')._from = e.currentTarget; compare(); });
-$('#copy').addEventListener('click', async () => { try { await navigator.clipboard.writeText($('#mailText').value); $('#copied').textContent = 'Copied. Paste it into your email.'; } catch { $('#mailText').select(); $('#copied').textContent = 'Selected: press Ctrl+C to copy.'; } });
 
 fetch('data.json', {cache:'no-cache'}).then(r => r.json()).then(init).catch(() => {
   $('#title').textContent = 'Could not load the offers';

@@ -64,7 +64,6 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
             "history": [{"seen": s["seen"], "price_eur": s["price_eur"]} for s in o["history"]],
             **{k: r[k] for k in ("overall", "tier", "capped", "excluded", "family", "deal")},
             "campaigns": [{k: c[k] for k in ("title", "pct", "valid_until", "url")} for c in camps.get(h["id"], [])],
-            "email": score.email_draft(h, o, r["family"]["questions"], cfg) if r["family"]["questions"] else "",
         }
         items.append(item)
         alerts += _alerts(con, item, cfg, today)

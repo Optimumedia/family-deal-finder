@@ -16,7 +16,7 @@ It's a personal tool with no paid services and no Telegram.
 5. Scores each offer:
    - **Family Fit (0–100):** sleep setup, beach or activities, travel, kids' facilities, food, health, logistics, reviews. This is multiplied by a confidence factor, which goes up as facts are verified.
    - **Deal quality (0–100):** our own price history first, then a comparison with similar offers, then the agency's "was" price at half weight. A "discount" that isn't cheaper than before is flagged `fake?`.
-   - The rating is capped while a must-have is still unknown. The dashboard drafts an **"Ask the hotel" email**. You review it and send it yourself, and nothing is ever sent automatically.
+   - The rating is capped while a must-have is still unknown. Unknown must-haves show as "ask" in the checklist, so you know what to check with the hotel.
 6. Writes `docs/data.json` for the dashboard (`docs/index.html`). It has Summer, Winter and Watchlist tabs, filters, price history, the family checklist and a "What's new" panel.
 7. **Email digest:** new good deals, price drops of 7% or more, and offers ending within 3 days. Each alert goes out once. Without a `.email` file the digest is only written to `data/digest.txt`.
 
