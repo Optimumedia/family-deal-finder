@@ -8,3 +8,9 @@ data/local-run.log
 data/live-run.txt
 .venv/
 config.local.toml
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/answer.txt
+.impeccable/sample-offers.jsonl
+.impeccable/decision-direction.json

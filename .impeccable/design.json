@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T23:30:00Z",
+  "title": "Design System: Family Deal Finder",
+  "extensions": {
+    "colorMeta": {
+      "sea-teal": {
+        "role": "primary",
+        "displayName": "Sea Teal",
+        "canonical": "oklch(48.9% 0.081 197)",
+        "tonalRamp": [
+          "#001214",
+          "#002E31",
+          "#004E50",
+          "#0E6F71",
+          "#449092",
+          "#6EB3B4",
+          "#97D7D7",
+          "#D9F5F5"
+        ]
+      },
+      "deep-teal": {
+        "role": "primary",
+        "displayName": "Deep Teal",
+        "canonical": "oklch(37.9% 0.061 198)",
+        "tonalRamp": [
+          "#001113",
+          "#002D2F",
+          "#084C4E",
+          "#356B6D",
+          "#5B8C8E",
+          "#81AFB0",
+          "#A8D3D4",
+          "#E0F3F3"
+        ]
+      },
+      "teal-mist": {
+        "role": "primary",
+        "displayName": "Teal Mist",
+        "canonical": "oklch(94.7% 0.016 192)",
+        "tonalRamp": [
+          "#040D0D",
+          "#1C2827",
+          "#394544",
+          "#576463",
+          "#788685",
+          "#9AA8A7",
+          "#BECDCC",
+          "#E9F0F0"
+        ]
+      },
+      "claim-coral": {
+        "role": "secondary",
+        "displayName": "Claim Coral",
+        "canonical": "oklch(49.4% 0.157 33)",
+        "tonalRamp": [
+          "#2E0000",
+          "#550000",
+          "#7E0F00",
+          "#A8331C",
+          "#CB5C45",
+          "#ED836C",
+          "#FFAA94",
+          "#FFE2D6"
+        ]
+      },
+      "coral-flare": {
+        "role": "secondary",
+        "displayName": "Coral Flare",
+        "canonical": "oklch(63.9% 0.181 33)",
+        "tonalRamp": [
+          "#2F0000",
+          "#560000",
+          "#800700",
+          "#AB2E17",
+          "#D74E35",
+          "#FE765B",
+          "#FF9F85",
+          "#FFDDD0"
+        ]
+      },
+      "sand": {
+        "role": "tertiary",
+        "displayName": "Sand",
+        "canonical": "oklch(92.4% 0.087 87)",
+        "tonalRamp": [
+          "#130900",
+          "#302301",
+          "#4F401A",
+          "#715F34",
+          "#958050",
+          "#BAA26D",
+          "#E0C68B",
+          "#FBEDCF"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(25.4% 0.028 216)",
+        "tonalRamp": [
+          "#000E12",
+          "#15282D",
+          "#33464B",
+          "#52656A",
+          "#74868B",
+          "#98A8AD",
+          "#BDCCD1",
+          "#E9F0F2"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "oklch(51.0% 0.025 215)",
+        "tonalRamp": [
+          "#030D10",
+          "#19282C",
+          "#34454A",
+          "#51656A",
+          "#73868B",
+          "#96A9AE",
+          "#BBCDD1",
+          "#E8F0F2"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(91.5% 0.010 197)",
+        "tonalRamp": [
+          "#070C0D",
+          "#202727",
+          "#3C4444",
+          "#5B6363",
+          "#7C8484",
+          "#9EA7A7",
+          "#C2CBCB",
+          "#EBEFEF"
+        ]
+      },
+      "page": {
+        "role": "neutral",
+        "displayName": "Page",
+        "canonical": "oklch(97.7% 0.003 197)",
+        "tonalRamp": [
+          "#0A0C0C",
+          "#232526",
+          "#404242",
+          "#5F6262",
+          "#808383",
+          "#A3A6A6",
+          "#C7CACA",
+          "#EDEFEF"
+        ]
+      },
+      "good": {
+        "role": "semantic",
+        "displayName": "Good",
+        "canonical": "oklch(46.7% 0.111 153)",
+        "tonalRamp": [
+          "#001400",
+          "#003109",
+          "#005124",
+          "#237242",
+          "#4F9464",
+          "#76B689",
+          "#9EDAAE",
+          "#DCF7E2"
+        ]
+      },
+      "warn": {
+        "role": "semantic",
+        "displayName": "Warn",
+        "canonical": "oklch(49.4% 0.109 67)",
+        "tonalRamp": [
+          "#200000",
+          "#411700",
+          "#653400",
+          "#8A5300",
+          "#AB7539",
+          "#CD9963",
+          "#F0BF8C",
+          "#FFEAD3"
+        ]
+      },
+      "bad": {
+        "role": "semantic",
+        "displayName": "Bad",
+        "canonical": "oklch(50.0% 0.182 30)",
+        "tonalRamp": [
+          "#330000",
+          "#5B0000",
+          "#850000",
+          "#B12016",
+          "#D55041",
+          "#F87A68",
+          "#FFA391",
+          "#FFDFD5"
+        ]
+      },
+      "teal-edge": {
+        "role": "primary",
+        "displayName": "Teal Edge"
+      },
+      "claim-coral-wash": {
+        "role": "secondary",
+        "displayName": "Claim Coral Wash"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface"
+      },
+      "sunk": {
+        "role": "neutral",
+        "displayName": "Sunk"
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong"
+      },
+      "good-wash": {
+        "role": "semantic",
+        "displayName": "Good Wash"
+      },
+      "warn-wash": {
+        "role": "semantic",
+        "displayName": "Warn Wash"
+      },
+      "bad-wash": {
+        "role": "semantic",
+        "displayName": "Bad Wash"
+      }
+    },
+    "typographyMeta": {
+      "price": {
+        "displayName": "Price",
+        "purpose": "The family price in each row's price block."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Results heading; 19px under 720px."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Hotel names in deep teal."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text, tabular figures on."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Area lines, checklist, legend."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Chips, badge, qualifiers, verdicts."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rest",
+        "value": "0 1px 2px rgba(18,38,43,.06),0 2px 8px rgba(18,38,43,.05)",
+        "purpose": "Summary bar, panels, rows, map frame at rest."
+      },
+      {
+        "name": "lifted",
+        "value": "0 2px 4px rgba(18,38,43,.08),0 10px 28px rgba(18,38,43,.12)",
+        "purpose": "Row hover, shortlist tray, dialogs."
+      },
+      {
+        "name": "floating-control",
+        "value": "0 1px 4px rgba(0,0,0,.18)",
+        "purpose": "Heart button over a photo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "lift",
+        "value": "box-shadow .2s ease, border-color .2s ease",
+        "purpose": "Hotel-row hover lift."
+      },
+      {
+        "name": "rise",
+        "value": ".35s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shortlist tray entrance."
+      },
+      {
+        "name": "pop",
+        "value": ".32s cubic-bezier(.2,.9,.3,1.4)",
+        "purpose": "Heart fill when shortlisted."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-row",
+        "value": "1180px"
+      },
+      {
+        "name": "single-column",
+        "value": "1000px"
+      },
+      {
+        "name": "phone",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sea-teal action such as See offer, Copy email, Compare.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">See offer <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5\"/></svg></button>",
+      "css": ".ds-btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #C7D4D4;background:#fff;color:#12262B;border-radius:8px;padding:9px 14px;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-weight:600;font-size:14px;min-height:40px;cursor:pointer}.ds-btn:focus-visible{outline:3px solid #0B6E70;outline-offset:2px}.ds-btn-primary{background:#0B6E70;color:#fff;border-color:#0B6E70}.ds-btn-primary:hover{background:#084C4E}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White bordered button for lesser actions such as Show more or Filters.",
+      "html": "<button class=\"ds-btn2\">Show more hotels</button>",
+      "css": ".ds-btn2{appearance:none;display:inline-flex;align-items:center;gap:7px;border:1px solid #C7D4D4;background:#fff;color:#12262B;border-radius:8px;padding:9px 14px;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-weight:600;font-size:14px;min-height:40px;cursor:pointer}.ds-btn2:hover{background:#EEF3F3}.ds-btn2:focus-visible{outline:3px solid #0B6E70;outline-offset:2px}"
+    },
+    {
+      "name": "Segmented Sort",
+      "kind": "custom",
+      "refersTo": "segment-selected",
+      "description": "Pill track for sort order and List/Map; selected segment fills teal.",
+      "html": "<div class=\"ds-seg\"><button aria-pressed=\"true\">Best for us</button><button aria-pressed=\"false\">Lowest price</button><button aria-pressed=\"false\">Shortest drive</button></div>",
+      "css": ".ds-seg{display:inline-flex;gap:4px;padding:4px;background:#fff;border:1px solid #DCE5E5;border-radius:999px}.ds-seg button{appearance:none;border:0;background:none;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-weight:600;font-size:13.5px;color:#3E5257;padding:7px 13px;border-radius:999px;min-height:34px;cursor:pointer}.ds-seg button[aria-pressed=true]{background:#0B6E70;color:#fff}.ds-seg button:hover:not([aria-pressed=true]){background:#EEF3F3}.ds-seg button:focus-visible{outline:3px solid #0B6E70;outline-offset:2px}"
+    },
+    {
+      "name": "Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill facts on a hotel row: neutral, good, warn, and dashed ask.",
+      "html": "<div class=\"ds-chips\"><span class=\"ds-chip ds-warn\">5h16 · 16 min over 5h</span><span class=\"ds-chip ds-good\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M16 21V3c-2 1-3 4-3 7h3\"/></svg>Half board</span><span class=\"ds-chip\">20 Jun 2027 · 7 nights</span><span class=\"ds-chip ds-ask\">Board not stated</span></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px}.ds-chip{display:inline-flex;align-items:center;gap:5px;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:#EEF3F3;color:#3E5257;border:1px solid transparent}.ds-chip svg{width:14px;height:14px}.ds-good{background:#E3F3E8;color:#176B3A}.ds-warn{background:#FFF1D6;color:#8A5300}.ds-ask{background:transparent;border:1px dashed #C7D4D4}"
+    },
+    {
+      "name": "Price Block",
+      "kind": "custom",
+      "refersTo": "badge-claim",
+      "description": "Signature: claim badge, struck was, family price, qualifier, insight strip.",
+      "html": "<div class=\"ds-price\"><span class=\"ds-badge\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12V4h8l10 10-8 8L3 12z\"/><circle cx=\"7.5\" cy=\"8\" r=\"1.3\"/></svg>Agency says −30%</span><span class=\"ds-was\">€1,721</span><span class=\"ds-big\">€1,205</span><span class=\"ds-qual\">2 adults + 2 kids · half board · 7 nights · Fibula</span><div class=\"ds-ins\"><div class=\"ds-bar\"><span class=\"ds-tick\"></span></div><p>Not yet checked: 1 price check so far · <b>ends in 3 days</b></p></div></div>",
+      "css": ".ds-price{font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-feature-settings:'tnum' 1;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:2px;width:250px;color:#12262B}.ds-badge{display:inline-flex;gap:6px;align-items:center;background:#FDE9E4;color:#A8331C;font-weight:700;font-size:12.5px;border-radius:6px;padding:3px 8px}.ds-was{color:#566A6F;text-decoration:line-through;font-size:14px}.ds-big{font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1}.ds-qual{font-size:12.5px;color:#3E5257;line-height:1.35}.ds-ins{width:100%;margin-top:4px}.ds-bar{position:relative;height:8px;border-radius:999px;background:#FFE3A3}.ds-tick{position:absolute;left:50%;top:-3px;width:2px;height:14px;background:#12262B;border-radius:2px}.ds-ins p{margin:4px 0 0;font-size:12px;color:#566A6F}.ds-ins b{color:#A8331C}"
+    },
+    {
+      "name": "Hotel Row",
+      "kind": "card",
+      "refersTo": "hotel-row",
+      "description": "White 16px-cornered result row that lifts on hover.",
+      "html": "<article class=\"ds-row\"><div class=\"ds-ph\"></div><div><h3 class=\"ds-name\">Xenios Anastasia Resort &amp; Spa</h3><p class=\"ds-area\">Nea Skioni, Kassandra, Halkidiki</p></div></article>",
+      "css": ".ds-row{display:grid;grid-template-columns:160px 1fr;gap:18px;background:#fff;border:1px solid #DCE5E5;border-radius:16px;padding:12px;box-shadow:0 1px 2px rgba(18,38,43,.06),0 2px 8px rgba(18,38,43,.05);transition:box-shadow .2s ease,border-color .2s ease;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;}.ds-row:hover{box-shadow:0 2px 4px rgba(18,38,43,.08),0 10px 28px rgba(18,38,43,.12);border-color:#C7D4D4}.ds-ph{aspect-ratio:4/3;border-radius:12px;background:linear-gradient(160deg,#E2F1F0,#EEF3F3)}.ds-name{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.25;color:#084C4E}.ds-area{margin:6px 0 0;font-size:13.5px;color:#3E5257}"
+    },
+    {
+      "name": "Header Tabs",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Sea-teal header band with season tabs and a white selected underline.",
+      "html": "<nav class=\"ds-top\"><button class=\"ds-tab\" aria-selected=\"true\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/></svg>Summer <span class=\"ds-n\">70</span></button><button class=\"ds-tab\" aria-selected=\"false\">Winter <span class=\"ds-n\">55</span></button></nav>",
+      "css": ".ds-top{background:#0B6E70;padding:6px 16px 0;display:flex;gap:4px}.ds-tab{appearance:none;border:0;background:transparent;color:#D9F0EE;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-weight:600;font-size:15px;padding:12px 16px 13px;border-radius:999px 999px 0 0;cursor:pointer;display:flex;gap:8px;align-items:center;position:relative}.ds-tab:hover{color:#fff;background:rgba(255,255,255,.08)}.ds-tab:focus-visible{outline:3px solid #fff;outline-offset:-3px}.ds-tab[aria-selected=true]{color:#fff}.ds-tab[aria-selected=true]::after{content:'';position:absolute;left:14px;right:14px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:#fff}.ds-n{font-size:12.5px;background:rgba(255,255,255,.16);border-radius:999px;padding:1px 8px}"
+    },
+    {
+      "name": "Fit Checklist",
+      "kind": "custom",
+      "description": "Confirmed, unverified, unknown and failed marks for the family's must-haves.",
+      "html": "<ul class=\"ds-fit\"><li><span class=\"ds-mk ds-yes\"><svg viewBox=\"0 0 24 24\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12.5 4.5 4.5L19 7.5\"/></svg></span>Sandy beach</li><li><span class=\"ds-mk ds-unv\"></span>Kids' pool</li><li><span class=\"ds-mk ds-unk\"></span>2 cots for the twins — ask</li><li><span class=\"ds-mk ds-no\"><svg viewBox=\"0 0 24 24\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7l10 10M17 7 7 17\"/></svg></span>Separate bedroom</li></ul>",
+      "css": ".ds-fit{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;font-family:\"Onest\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-size:13px;color:#3E5257}.ds-fit li{display:flex;gap:6px;align-items:baseline}.ds-mk{flex:none;width:14px;height:14px;border-radius:50%;display:inline-grid;place-items:center;transform:translateY(2px);box-sizing:border-box}.ds-yes{background:#176B3A;color:#fff}.ds-unv{border:2px solid #176B3A}.ds-unk{border:2px dashed #566A6F}.ds-no{background:#B42318;color:#fff}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Honest Results Page",
+    "overview": "This is the travel-results page everyone already knows from Booking, Airbnb and Kayak, kept deliberately familiar and executed with more care. A solid sea-teal header carries the brand and season tabs; a white summary bar restates the search; a filter rail sits left and hotel rows stack in the main column. Nothing about the layout asks to be learned. The craft goes into the price block, where every number comes with its qualifier and a price-insight strip instead of an unexplained \"was\" badge.\n\nThe ground is white and cool off-white, light only. Teal is the colour of action and selection; coral is reserved for what an agency claims and what is about to run out; sand marks the middle of the price-insight bar. Density is moderate: laptop-first rows that show photo, fit checklist and price at once, collapsing to a single column on a phone.\n\nHonesty states are visual citizens, not footnotes: hollow rings for unverified answers, dashed rings for unknowns, dashed \"ask\" chips, and amber qualifiers for 2-adult prices all use the same system tokens as everything else.",
+    "keyCharacteristics": [
+      "Category-standard results layout: teal header, summary bar, 288px filter rail, hotel rows.",
+      "White surfaces on a cool off-white page, separated by hairlines and two soft shadows.",
+      "One typeface (Onest) for everything, tabular figures on by default.",
+      "Pills for anything you toggle; 8/12/16px corners for things you press, frame or read.",
+      "One authored inline SVG icon set at 1.75 stroke."
+    ],
+    "rules": [
+      {
+        "name": "The Claim Colour Rule",
+        "body": "Coral is only for what an agency claims (discounts, campaigns) and what runs out (deadlines), plus the shortlisted heart. It never marks a button, a link, or a selection.",
+        "section": "colors"
+      },
+      {
+        "name": "The Teal Means You Can Act Rule",
+        "body": "Sea teal fills only things you can press or have selected: the header, primary buttons, selected segments, form accents, focus. Body text is never teal; links and names are deep teal.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight Does It Rule",
+        "body": "Hierarchy comes from weight and size within Onest; there is no second typeface and no uppercase label style.",
+        "section": "typography"
+      },
+      {
+        "name": "The Figures Line Up Rule",
+        "body": "Tabular figures stay on globally (`font-feature-settings: \"tnum\" 1` on body); never switch prices to proportional figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lift on Hover Rule",
+        "body": "Rows rest at the Rest shadow and move to Lifted on hover (with a stronger hairline), over 0.2s ease. Nothing else changes elevation on interaction.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep every price beside its qualifier (who it covers, board, nights, source); a 2-adult price shows its qualifier in warn 600.",
+      "**Do** use sea teal for press-and-select only, and deep teal for links and hotel names.",
+      "**Do** draw icons from the inline SVG sprite: 24px viewBox, 1.75 stroke, round caps and joins, currentColor, 18px by default.",
+      "**Do** mark unknowns with dashed outlines and unverified answers with hollow rings, using the same semantic tokens as confirmed states.",
+      "**Do** keep elevation to the Rest and Lifted shadows, lifting rows on hover.",
+      "**Do** honour reduced motion: transitions switch off under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** use coral for buttons, links or selection; it belongs to claims, deadlines and the shortlisted heart.",
+      "**Don't** add a dark theme; the product is light only by the owner's choice.",
+      "**Don't** introduce a second typeface or proportional figures for prices.",
+      "**Don't** use hard, unblurred offset shadows; depth here is soft and ink-tinted.",
+      "**Don't** show a \"was\" price or discount without the insight strip and verdict that say whether it is real."
+    ]
+  }
+}

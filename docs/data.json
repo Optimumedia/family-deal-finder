@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T22:48",
+ "generated": "2026-11-25T22:50",
  "family": {
   "adults": 2,
   "kids": 2,
@@ -8338,6 +8338,132 @@
    },
    "campaigns": [],
    "email": "Subject: Family booking question – 25.11.2026–30.11.2026, 2 adults + twins\n\nHello Grand Hotel Bansko team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 25.11.2026 to 30.11.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 3 years 1 months old on 25.11.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
+  },
+  {
+   "key": "mz-51700|2026-12-14|5|SC|whole apartment (1 bedroom)|2+2|Micazu (owner)",
+   "hotel_id": "mz-51700",
+   "kind": "apartment",
+   "name": "Comfortable Ski Retreat",
+   "stars": null,
+   "area": "Bansko, Bulgaria",
+   "season": "winter",
+   "lat": 41.83,
+   "lng": 23.48,
+   "notes": "Rented from the owner: up to 5 persons, 1 bedroom(s), self-catering. Cot mentioned (likely 1 — ask for a second). High chair available.",
+   "image": null,
+   "source": "Micazu (owner)",
+   "url": "https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/comfortable-ski-retreat-51700/",
+   "check_in": "2026-12-14",
+   "nights": 5,
+   "board": "SC",
+   "room": "whole apartment (1 bedroom)",
+   "occupancy": "2+2",
+   "price_eur": 405.0,
+   "was_eur": null,
+   "discount_label": null,
+   "valid_until": null,
+   "first_seen": "2026-11-25",
+   "last_seen": "2026-11-25",
+   "history": [
+    {
+     "seen": "2026-11-25",
+     "price_eur": 405.0
+    }
+   ],
+   "overall": 35.3,
+   "tier": {
+    "key": "watch",
+    "icon": "👀",
+    "label": "Worth a look"
+   },
+   "capped": false,
+   "excluded": false,
+   "family": {
+    "score": 31.5,
+    "raw": 52.4,
+    "confidence": 0.6,
+    "checklist": [
+     {
+      "key": "reach",
+      "label": "Direct flight or ≤5h drive",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "cots",
+      "label": "2 cots for twins aged 3 years 1 months",
+      "state": "unknown",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "separate_bedroom",
+      "label": "Separate bedroom (cots in the other room)",
+      "state": "yes",
+      "must": true,
+      "verified": false
+     },
+     {
+      "key": "board",
+      "label": "Self-catering (own kitchen)",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "ski_school",
+      "label": "Ski kindergarten from age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_club",
+      "label": "Kids' club takes age 3",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "kids_pool",
+      "label": "Kids' pool",
+      "state": "unknown",
+      "must": false,
+      "verified": false
+     },
+     {
+      "key": "family_room",
+      "label": "Family room fits 2+2",
+      "state": "yes",
+      "must": false,
+      "verified": false
+     }
+    ],
+    "failed": [],
+    "unknown_musts": [
+     "2 cots for twins aged 3 years 1 months"
+    ],
+    "questions": [
+     "Can you guarantee 2 cots in one room for our twins, who will be 3 years 1 months old on 14.12.2026? What is your cot age limit, and are they full-size cots or travel cots?",
+     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
+     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
+     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
+    ],
+    "drive_minutes": 251.0,
+    "kids_age": 3.16
+   },
+   "deal": {
+    "score": 40.0,
+    "verdict": "none",
+    "real_pct": null,
+    "stated_pct": null,
+    "peer_pct": null,
+    "days_left": null,
+    "history_points": 1
+   },
+   "campaigns": [],
+   "email": "Subject: Family booking question – 14.12.2026–19.12.2026, 2 adults + twins\n\nHello Comfortable Ski Retreat team,\n\nWe are a family from Skopje (2 adults and young twins) looking at whole apartment (1 bedroom) on SC from 14.12.2026 to 19.12.2026. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 3 years 1 months old on 14.12.2026? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
   },
   {
    "key": "ol-102872|2027-06-20|7|?|cheapest unit, dates on request (po danu)|2+0|Olympic",
@@ -18625,131 +18751,6 @@
    },
    "campaigns": [],
    "email": "Subject: Family booking question – 28.02.2027–05.03.2027, 2 adults + twins\n\nHello Mpm Hotel Merryan team,\n\nWe are a family from Skopje (2 adults and young twins) looking at cheapest unit (po osobi od) on ? from 28.02.2027 to 05.03.2027. Before we book, could you please confirm in writing:\n\n1. Can you guarantee 2 cots in one room for our twins, who will be 3 years 4 months old on 28.02.2027? What is your cot age limit, and are they full-size cots or travel cots?\n2. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n3. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n4. What is the minimum age for the kids' club, and do children need to be potty-trained?\n5. What is the total price for 2 adults and two 3-year-olds for these dates, including the cots and the children's meals?\n\nThank you very much!\n"
-  },
-  {
-   "key": "mz-51700|2026-12-14|5|SC|whole apartment (1 bedroom)|2+2|Micazu (owner)",
-   "hotel_id": "mz-51700",
-   "kind": "apartment",
-   "name": "Comfortable Ski Retreat",
-   "stars": null,
-   "area": "Bansko, Bulgaria",
-   "season": "winter",
-   "lat": 41.83,
-   "lng": 23.48,
-   "notes": "Rented from the owner: up to 5 persons, 1 bedroom(s), self-catering. Cot mentioned (likely 1 — ask for a second). High chair available.",
-   "image": null,
-   "source": "Micazu (owner)",
-   "url": "https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/comfortable-ski-retreat-51700/",
-   "check_in": "2026-12-14",
-   "nights": 5,
-   "board": "SC",
-   "room": "whole apartment (1 bedroom)",
-   "occupancy": "2+2",
-   "price_eur": 405.0,
-   "was_eur": null,
-   "discount_label": null,
-   "valid_until": null,
-   "first_seen": "2026-11-25",
-   "last_seen": "2026-11-25",
-   "history": [
-    {
-     "seen": "2026-11-25",
-     "price_eur": 405.0
-    }
-   ],
-   "overall": 34.0,
-   "tier": {
-    "key": "out",
-    "icon": "✗",
-    "label": "Doesn't fit"
-   },
-   "capped": false,
-   "excluded": true,
-   "family": {
-    "score": 29.1,
-    "raw": 48.4,
-    "confidence": 0.6,
-    "checklist": [
-     {
-      "key": "reach",
-      "label": "Direct flight or ≤5h drive",
-      "state": "yes",
-      "must": true,
-      "verified": false
-     },
-     {
-      "key": "cots",
-      "label": "2 cots for twins aged 3 years 1 months",
-      "state": "no",
-      "must": true,
-      "verified": false
-     },
-     {
-      "key": "separate_bedroom",
-      "label": "Separate bedroom (cots in the other room)",
-      "state": "yes",
-      "must": true,
-      "verified": false
-     },
-     {
-      "key": "board",
-      "label": "Self-catering (own kitchen)",
-      "state": "yes",
-      "must": false,
-      "verified": false
-     },
-     {
-      "key": "ski_school",
-      "label": "Ski kindergarten from age 3",
-      "state": "unknown",
-      "must": false,
-      "verified": false
-     },
-     {
-      "key": "kids_club",
-      "label": "Kids' club takes age 3",
-      "state": "unknown",
-      "must": false,
-      "verified": false
-     },
-     {
-      "key": "kids_pool",
-      "label": "Kids' pool",
-      "state": "unknown",
-      "must": false,
-      "verified": false
-     },
-     {
-      "key": "family_room",
-      "label": "Family room fits 2+2",
-      "state": "yes",
-      "must": false,
-      "verified": false
-     }
-    ],
-    "failed": [
-     "2 cots for twins aged 3 years 1 months"
-    ],
-    "unknown_musts": [],
-    "questions": [
-     "Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?",
-     "Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?",
-     "What is the minimum age for the kids' club, and do children need to be potty-trained?"
-    ],
-    "drive_minutes": 251.0,
-    "kids_age": 3.16
-   },
-   "deal": {
-    "score": 40.0,
-    "verdict": "none",
-    "real_pct": null,
-    "stated_pct": null,
-    "peer_pct": null,
-    "days_left": null,
-    "history_points": 1
-   },
-   "campaigns": [],
-   "email": "Subject: Family booking question – 14.12.2026–19.12.2026, 2 adults + twins\n\nHello Comfortable Ski Retreat team,\n\nWe are a family from Skopje (2 adults and young twins) looking at whole apartment (1 bedroom) on SC from 14.12.2026 to 19.12.2026. Before we book, could you please confirm in writing:\n\n1. Which room or apartment type has a separate bedroom for us, with space for 2 cots in the other room?\n2. Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?\n3. What is the minimum age for the kids' club, and do children need to be potty-trained?\n\nThank you very much!\n"
   },
   {
    "key": "tl-111367|2027-03-11|5|?|cheapest unit (po osobi od)|2+0|Travelland",

@@ -84,7 +84,7 @@ def to_hotel_and_offer(lst: dict, oid: str, url: str, page: dict, cfg: dict, tod
         "direct_flight_skp": False,
         "border": True,
         "family": {"separate_bedroom": (lst["bedrooms"] or 0) >= 1, "family_room": True,
-                   **({"cots_max": 1} if lst["cot"] else {}), "verified": []},
+                   "verified": []},          # one cot mentioned proves nothing about a second: cots stay "ask"
         "image": lst.get("image"),
         "notes": f"Rented from the owner: up to {lst['max_persons']} persons, {lst['bedrooms']} bedroom(s), self-catering."
                  + (" Cot mentioned (likely 1 — ask for a second)." if lst["cot"] else "")

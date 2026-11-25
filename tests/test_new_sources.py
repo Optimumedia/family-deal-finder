@@ -102,7 +102,8 @@ class OwnerRentals(unittest.TestCase):
         lst = micazu.parse_listing(read("micazu_listing_bansko.html"))
         h, o = micazu.to_hotel_and_offer(lst, "51700", "u", self.PAGE, CFG, TODAY)
         self.assertEqual(o["price_eur"], 75 * 5 + 30)                 # 5 nights + final cleaning
-        self.assertEqual(h["family"]["cots_max"], 1)
+        self.assertNotIn("cots_max", h["family"])                      # 1 cot mentioned ≠ "no": stays unknown
+        self.assertIn("ask for a second", h["notes"])
         jan = {**self.PAGE, "check_in": "2027-01-15"}                  # no 2027 rates entered yet → skipped
         self.assertIsNone(micazu.to_hotel_and_offer(lst, "51700", "u", jan, CFG, TODAY))
 
