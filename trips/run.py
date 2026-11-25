@@ -14,7 +14,9 @@ from datetime import date, datetime
 from pathlib import Path
 
 from . import db, digest, geo, score
-from .sources import manual, travelland
+from .sources import manual, olympic, travelland
+
+AUTO_SOURCES = (travelland, olympic)
 
 log = logging.getLogger("trips")
 
@@ -97,6 +99,15 @@ def norm_name(name: str) -> str:
     return " ".join(_DROP.sub(" ", name.lower()).split())
 
 
+def _contains(a: str, b: str) -> bool:
+    """One name inside the other, word-aligned, and the shorter one is at least 2 words
+    (so a bare resort name like "bansko" never swallows "lion bansko")."""
+    if not a or not b:
+        return False
+    short, long_ = sorted((a, b), key=len)
+    return len(short.split()) >= 2 and f" {short} " in f" {long_} "
+
+
 def merge_auto(manual_hotels: list[dict], auto_hotels: list[dict], auto_offers: list[dict]) -> list[dict]:
     """Auto-found hotels that match a hand-curated one (same season, same normalised name)
     are folded into it, so its verified family facts are kept. Returns the auto hotels to add."""
@@ -105,8 +116,7 @@ def merge_auto(manual_hotels: list[dict], auto_hotels: list[dict], auto_offers: 
     for h in auto_hotels:
         n = norm_name(h["name"])
         hit = known.get((h["season"], n)) or next(
-            (hid for (season, kn), hid in known.items() if season == h["season"] and n and kn and (n in kn or kn in n)),
-            None)
+            (hid for (season, kn), hid in known.items() if season == h["season"] and _contains(n, kn)), None)
         if hit:
             remap[h["id"]] = hit
         else:
@@ -128,10 +138,14 @@ def main(argv=None) -> int:
     curated = manual.load_hotels()
     sightings = manual.load() if cfg["sources"].get("manual") else []
     if not args.offline:
-        auto_hotels, auto_offers = travelland.fetch(cfg, today)
-        for h in merge_auto(curated, auto_hotels, auto_offers):
-            db.upsert_hotel(con, h)
-        sightings += auto_offers
+        known = list(curated)
+        for src in AUTO_SOURCES:
+            auto_hotels, auto_offers = src.fetch(cfg, today)
+            added = merge_auto(known, auto_hotels, auto_offers)    # also matches hotels found by earlier sources
+            for h in added:
+                db.upsert_hotel(con, h)
+            known += added
+            sightings += auto_offers
     for h in curated:                      # curated facts always win
         db.upsert_hotel(con, h)
     new = sum(db.add_sighting(con, o) for o in sightings)

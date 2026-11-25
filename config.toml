@@ -108,6 +108,62 @@ lat = 40.10
 lng = 23.80
 nights = 7
 
+[sources.olympic]
+# olympic.rs — robots.txt allows all paths. Same platform as Travelland; cards show
+# the board when known, but no date window (check_in = the page's default date).
+enabled = true
+max_list_pages = 8          # 12 per page; Kassandra lists ~84 hotels
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/zimovanje/bugarska/bansko/"
+season = "winter"
+area = "Bansko, Bulgaria"
+country = "BG"
+lat = 41.83
+lng = 23.48
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/zimovanje/bugarska/borovec-zimovanje-skijanje/"
+season = "winter"
+area = "Borovets, Bulgaria"
+country = "BG"
+lat = 42.266
+lng = 23.606
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/zimovanje/srbija/kopaonik-zimovanje-skijanje/"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/grcka-promotivne-cene/halkidiki/kasandra/"
+season = "summer"
+area = "Kassandra, Halkidiki"
+country = "GR"
+lat = 40.02
+lng = 23.43
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/grcka-promotivne-cene/halkidiki/sitonija/"
+season = "summer"
+area = "Sithonia, Halkidiki"
+country = "GR"
+lat = 40.10
+lng = 23.80
+nights = 7
+check_in = "2027-06-20"
+
 [email]
 # Daily digest. SMTP settings live in the git-ignored file .email
 # (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_TO). Without it the
