@@ -66,6 +66,8 @@ class Villas(unittest.TestCase):
         tharo = next(x for x in v if x["name"] == "Villa Tharo")
         self.assertEqual((tharo["guests"], tharo["bedrooms"], tharo["low_gbp"], tharo["pct"]), (8, 4, 3862, 15))
         self.assertTrue(tharo["url"].endswith("/greece/halkidiki/villa-tharo/"))
+        self.assertEqual(tharo["image"], "https://pms-images.oliverstravels.com/dwellings/19148/main/6835d509c8c94.jpg?profile=sm")
+        self.assertTrue(all(x["image"] and x["image"].startswith("https://pms-images.oliverstravels.com/") for x in v))
 
     def test_villa_offer_is_whole_family_self_catering(self):
         v = next(x for x in oliverstravels.parse_region(read("oliver_halkidiki.html")) if x["name"] == "Villa Brosia")
@@ -94,6 +96,7 @@ class OwnerRentals(unittest.TestCase):
         self.assertEqual((lst["name"], lst["max_persons"], lst["bedrooms"]), ("Comfortable Ski Retreat", 5, 1))
         self.assertEqual(lst["periods"][0], {"from": "2025-12-30", "to": "2026-12-31", "night": 75.0, "week": 525.0})
         self.assertTrue(lst["cot"] and lst["high_chair"])
+        self.assertIsNone(lst["image"])                               # micazu's image host blocks hotlinks
 
     def test_offer_uses_period_covering_check_in(self):
         lst = micazu.parse_listing(read("micazu_listing_bansko.html"))

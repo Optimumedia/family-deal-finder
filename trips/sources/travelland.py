@@ -22,6 +22,7 @@ from html import unescape
 from urllib.parse import urlencode, urljoin
 
 from ..http import Blocked, PoliteSession, Unavailable
+from .pagetext import image_url
 
 log = logging.getLogger(__name__)
 BASE = "https://www.travelland.rs"
@@ -37,6 +38,7 @@ _NEW = re.compile(r'unit-price-total">\s*€\s*([\d.,]+)')
 _PCT = re.compile(r'percent-content-percent">\s*(\d+)\s*%')
 _LABEL = re.compile(r'unit-price-label">\s*([^<]+?)\s*<')
 _STARS = re.compile(r'(\d)\s*\*')
+_IMG = re.compile(r'<img[^>]*?\b(?:data-src|src)="([^"]+)"')
 
 
 def _num(s: str) -> float:
@@ -66,6 +68,7 @@ def parse_list(payload: str) -> tuple[list[dict], int]:
         hidden, valid, old, pct = _HIDDEN.search(body), _VALID.search(body), _OLD.search(body), _PCT.search(body)
         label = _LABEL.search(body)
         stars = _STARS.search(title)
+        img = _IMG.search(body)
         cards.append({
             "object_id": m.group("oid"),
             "url": urljoin(BASE, m.group("href")),
@@ -79,6 +82,7 @@ def parse_list(payload: str) -> tuple[list[dict], int]:
             "date_from": hidden.group(1) if hidden else None,
             "date_to": hidden.group(2) if hidden else None,
             "valid_until": date(int(valid.group(3)), int(valid.group(2)), int(valid.group(1))).isoformat() if valid else None,
+            "image": image_url(img.group(1), BASE) if img else None,
         })
     return cards, int(data.get("total") or 0)
 
@@ -109,6 +113,7 @@ def to_hotel_and_offer(card: dict, page: dict, cfg: dict, today: date) -> tuple[
         "direct_flight_skp": False,
         "border": True,
         "family": {"verified": []},
+        "image": card.get("image"),
         "notes": "Auto-added from Travelland. Family facts unknown — use 'Ask the hotel'.",
     }
     offer = {

@@ -22,6 +22,9 @@ class Olympic(unittest.TestCase):
         c = next(c for c in cards if c["object_id"] == "115313")
         self.assertEqual((c["name"], c["stars"], c["price"], c["old"]), ("GRAND HOTEL BANSKO", 5, 181.0, 226.0))
         self.assertEqual((c["badge"], c["valid_until"], c["unit"]), ("RANI BUKING", "2026-12-23", "po danu"))
+        self.assertEqual(c["image"], "https://mcdn.pro/data/objects/images/64317/64317_214_thumb_800x600.jpeg")
+        h, _ = ol.to_hotel_and_offer(c, PAGE, CFG, date(2026, 11, 25))
+        self.assertEqual(h["image"], c["image"])
 
     def test_on_request_cards_skipped_and_board_read(self):
         cards, total = self.load("olympic_list_kopaonik.json")

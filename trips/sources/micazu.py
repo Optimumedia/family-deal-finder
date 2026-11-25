@@ -56,6 +56,8 @@ def parse_listing(html: str) -> dict:
         "cot": bool(re.search(r"\b(cot|crib|baby bed)\b", t, re.I)),
         "high_chair": bool(re.search(r"high chair", t, re.I)),
         "kitchen": bool(re.search(r"kitchen", t, re.I)),
+        # No photo: images.micazu.nl refuses hotlinks (Cloudflare challenge + same-origin CORP).
+        "image": None,
     }
 
 
@@ -83,6 +85,7 @@ def to_hotel_and_offer(lst: dict, oid: str, url: str, page: dict, cfg: dict, tod
         "border": True,
         "family": {"separate_bedroom": (lst["bedrooms"] or 0) >= 1, "family_room": True,
                    **({"cots_max": 1} if lst["cot"] else {}), "verified": []},
+        "image": lst.get("image"),
         "notes": f"Rented from the owner: up to {lst['max_persons']} persons, {lst['bedrooms']} bedroom(s), self-catering."
                  + (" Cot mentioned (likely 1 — ask for a second)." if lst["cot"] else "")
                  + (" High chair available." if lst["high_chair"] else ""),

@@ -42,6 +42,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
     drives = {hid: db.cached_drive(con, hid, h["lat"], h["lng"]) for hid, h in hotels.items()} if offline \
         else geo.drive_minutes(con, hotels, home)
     offers = db.offers(con)
+    photos = db.images(con)
     camps = db.campaigns(con, since=(today - timedelta(days=3)).isoformat())
     items, alerts = [], []
     for o in offers:
@@ -55,6 +56,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
         item = {
             "key": o["key"], "hotel_id": h["id"], "kind": h.get("kind", "hotel"), "name": h["name"], "stars": h.get("stars"), "area": h.get("area"),
             "season": h["season"], "lat": h.get("lat"), "lng": h.get("lng"), "notes": h.get("notes"),
+            "image": h.get("image") or photos.get(h["id"]),
             "source": o["source"], "url": o["url"], "check_in": o["check_in"], "nights": o["nights"],
             "board": o["board"], "room": o["room"], "occupancy": o["occupancy"],
             "price_eur": now["price_eur"], "was_eur": now.get("was_eur"), "discount_label": now.get("discount_label"),
@@ -121,9 +123,13 @@ def _contains(a: str, b: str) -> bool:
     return len(short.split()) >= 2 and f" {short} " in f" {long_} "
 
 
-def merge_auto(manual_hotels: list[dict], auto_hotels: list[dict], auto_offers: list[dict]) -> list[dict]:
+def merge_auto(manual_hotels: list[dict], auto_hotels: list[dict], auto_offers: list[dict],
+               images: dict[str, str] | None = None) -> list[dict]:
     """Auto-found hotels that match a hand-curated one (same season, same normalised name)
-    are folded into it, so its verified family facts are kept. Returns the auto hotels to add."""
+    are folded into it, so its verified family facts are kept. Returns the auto hotels to add.
+    When `images` is given, the photo of a folded-in auto hotel is recorded there under the
+    known hotel's id (first one wins), for known hotels that have no photo of their own."""
+    has_photo = {h["id"] for h in manual_hotels if h.get("image")}
     known = {(h["season"], norm_name(h["name"])): h["id"] for h in manual_hotels}
     remap, add = {}, {}
     for h in auto_hotels:
@@ -132,6 +138,8 @@ def merge_auto(manual_hotels: list[dict], auto_hotels: list[dict], auto_offers: 
             (hid for (season, kn), hid in known.items() if season == h["season"] and _contains(n, kn)), None)
         if hit:
             remap[h["id"]] = hit
+            if images is not None and h.get("image") and hit not in has_photo:
+                images.setdefault(hit, h["image"])
         else:
             add[h["id"]] = h
     for o in auto_offers:
@@ -152,13 +160,16 @@ def main(argv=None) -> int:
     sightings = manual.load() if cfg["sources"].get("manual") else []
     if not args.offline:
         known = list(curated)
+        photos: dict[str, str] = {}        # known hotel id -> photo of an agency card folded into it
         for src in AUTO_SOURCES:
             auto_hotels, auto_offers = src.fetch(cfg, today)
-            added = merge_auto(known, auto_hotels, auto_offers)    # also matches hotels found by earlier sources
+            added = merge_auto(known, auto_hotels, auto_offers, photos)  # also matches hotels found by earlier sources
             for h in added:
                 db.upsert_hotel(con, h)
             known += added
             sightings += auto_offers
+        for hid, url in photos.items():
+            db.save_image(con, hid, url, today.isoformat())
     for h in curated:                      # curated facts always win
         db.upsert_hotel(con, h)
     new = sum(db.add_sighting(con, o) for o in sightings)

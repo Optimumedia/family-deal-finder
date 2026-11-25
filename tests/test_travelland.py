@@ -37,6 +37,14 @@ class Travelland(unittest.TestCase):
         self.assertEqual((c["price_pp"], c["old_pp"], c["pct"], c["stars"]), (61.0, 77.0, 20, 4))
         self.assertEqual((c["date_from"], c["valid_until"]), ("2026-12-01", "2026-12-23"))
 
+    def test_card_photo_hotlinked(self):
+        cards, _ = tl.parse_list(self.payload)
+        self.assertTrue(all(c["image"] and c["image"].startswith("https://mcdn.pro/") for c in cards))
+        self.assertEqual(cards[0]["image"], "https://mcdn.pro/data/objects/images/53424/53424_5581_thumb_800x600.jpeg")
+        c = next(c for c in cards if c["object_id"] == "111005")
+        h, _ = tl.to_hotel_and_offer(c, PAGE, CFG, date(2026, 11, 25))
+        self.assertEqual(h["image"], c["image"])
+
     def test_number_formats(self):
         self.assertEqual(tl._num("1.205"), 1205.0)
         self.assertEqual(tl._num("35,50"), 35.5)
@@ -73,6 +81,27 @@ class Travelland(unittest.TestCase):
         add = run.merge_auto(curated, [h], [o])
         self.assertEqual(add, [])
         self.assertEqual(o["hotel"], "casa-karina-bansko")
+
+    def test_merge_carries_photo_to_curated_hotel(self):
+        cards, _ = tl.parse_list(self.payload)
+        c = next(c for c in cards if c["object_id"] == "111088")
+        h, o = tl.to_hotel_and_offer(c, PAGE, CFG, date(2026, 11, 25))
+        photos = {}
+        run.merge_auto([{"id": "casa-karina-bansko", "name": "Casa Karina Apartments", "season": "winter"}],
+                       [h], [o], photos)
+        self.assertEqual(photos, {"casa-karina-bansko": c["image"]})
+        photos = {}                                                   # a curated photo is never replaced
+        run.merge_auto([{"id": "casa-karina-bansko", "name": "Casa Karina Apartments", "season": "winter",
+                         "image": "https://example.org/own.jpg"}], [h], [o], photos)
+        self.assertEqual(photos, {})
+
+    def test_image_url_made_absolute_https(self):
+        from trips.sources.pagetext import image_url
+        self.assertEqual(image_url("//cdn.x/a.jpg", tl.BASE), "https://cdn.x/a.jpg")
+        self.assertEqual(image_url("/img/a.jpg", tl.BASE), "https://www.travelland.rs/img/a.jpg")
+        self.assertEqual(image_url("http://cdn.x/a.jpg?a=1&amp;b=2", tl.BASE), "https://cdn.x/a.jpg?a=1&b=2")
+        self.assertIsNone(image_url("data:image/gif;base64,AAA", tl.BASE))
+        self.assertIsNone(image_url(None, tl.BASE))
 
 
 if __name__ == "__main__":

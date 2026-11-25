@@ -51,6 +51,11 @@ CREATE TABLE IF NOT EXISTS campaign (       -- offers announced on a hotel's own
     first_seen TEXT NOT NULL,
     last_seen TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS hotel_image (    -- photo URL (hotlinked, never stored) an agency card showed for
+    hotel_id TEXT PRIMARY KEY,        -- a hand-curated hotel; kept here because hotels.toml rewrites `hotel`
+    url TEXT NOT NULL,
+    seen TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS alert_sent (
     key TEXT PRIMARY KEY,
     sent_at TEXT NOT NULL
@@ -128,6 +133,15 @@ def offers(con) -> list[dict]:
             (r["key"],))]
         out.append(o)
     return out
+
+
+def save_image(con, hotel_id: str, url: str, seen: str) -> None:
+    con.execute("INSERT INTO hotel_image(hotel_id, url, seen) VALUES(?,?,?) "
+                "ON CONFLICT(hotel_id) DO UPDATE SET url=excluded.url, seen=excluded.seen", (hotel_id, url, seen))
+
+
+def images(con) -> dict[str, str]:
+    return {r["hotel_id"]: r["url"] for r in con.execute("SELECT hotel_id, url FROM hotel_image")}
 
 
 def cached_drive(con, hotel_id: str, lat: float, lng: float) -> float | None:

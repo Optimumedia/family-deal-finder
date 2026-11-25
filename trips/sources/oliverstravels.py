@@ -15,7 +15,7 @@ from datetime import date
 from urllib.parse import urljoin
 
 from ..http import Blocked, PoliteSession, Unavailable
-from .pagetext import html_to_text, money
+from .pagetext import html_to_text, image_url, money
 
 log = logging.getLogger(__name__)
 BASE = "https://oliverstravels.com"
@@ -23,12 +23,17 @@ SOURCE = "Oliver's Travels"
 _CARD = re.compile(r"See more (?P<name>.+?) (?P<region>[A-Z][\w-]+) , (?P<country>[A-Z][\w ]+?) (?P<guests>\d+) guests · "
                    r"(?P<bedrooms>\d+) bedrooms? · (?P<baths>\d+) bathrooms? (?P<tags>.*?)£(?P<low>[\d,]+)"
                    r"(?: - £(?P<high>[\d,]+))? per week")
+# Each card's photo slider: <a … href="/greece/halkidiki/villa-x/"><img src="https://pms-images…jpg?profile=sm" …>
+_PHOTO = re.compile(r'href="(/[a-z-]+/[a-z-]+/villa-[a-z0-9-]+/?)"[^>]*>\s*<img[^>]*?\bsrc="([^"]+)"')
 
 
 def parse_region(html: str) -> list[dict]:
     text = " ".join(html_to_text(html).split())
     slugs = dict.fromkeys(re.findall(r'href="(/[a-z-]+/[a-z-]+/villa-[a-z0-9-]+/?)"', html))
     by_name = {s.rstrip("/").split("/")[-1]: s for s in slugs}
+    photos: dict[str, str] = {}
+    for href, src in _PHOTO.findall(html):
+        photos.setdefault(href.rstrip("/").split("/")[-1], src)
     out = []
     for m in _CARD.finditer(text):
         name = m.group("name").strip()
@@ -40,6 +45,7 @@ def parse_region(html: str) -> list[dict]:
             "guests": int(m.group("guests")), "bedrooms": int(m.group("bedrooms")),
             "low_gbp": money(m.group("low")), "high_gbp": money(m.group("high")) if m.group("high") else None,
             "pct": pct, "tags": " ".join(tags.split()),
+            "image": image_url(photos.get(slug), BASE),
         })
     return out
 
@@ -63,6 +69,7 @@ def to_hotel_and_offer(v: dict, page: dict, cfg: dict, today: date) -> tuple[dic
         "direct_flight_skp": False,
         "border": True,
         "family": {"separate_bedroom": v["bedrooms"] >= 2, "family_room": True, "verified": []},
+        "image": v.get("image"),
         "notes": f"Whole villa: {v['guests']} guests, {v['bedrooms']} bedrooms. Self-catering. "
                  f"Weekly price range £{v['low_gbp']:,.0f}–£{(v['high_gbp'] or v['low_gbp']):,.0f} (low = off-peak).",
     }

@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 from datetime import date
 from html import unescape
+from urllib.parse import urljoin
 
 MONTHS = {m: i for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
@@ -14,6 +15,18 @@ def html_to_text(html: str) -> str:
     html = re.sub(r"(?i)<br\s*/?>|</(p|div|li|h\d|section|article)>", " \n ", html)
     text = unescape(re.sub(r"<[^>]+>", " ", html))
     return re.sub(r"[ \t\r\f\v]+", " ", text).strip()
+
+
+def image_url(src: str | None, base: str) -> str | None:
+    """A card's photo URL as an absolute https link (hotlinked from the source, never downloaded).
+    Protocol-relative ("//cdn…") and relative ("/img/…") URLs are made absolute; http → https."""
+    src = unescape((src or "").strip())
+    if not src or src.startswith("data:"):
+        return None
+    url = urljoin(base, "https:" + src if src.startswith("//") else src)
+    if url.startswith("http://"):
+        url = "https://" + url[len("http://"):]
+    return url if url.startswith("https://") else None
 
 
 def find_date(text: str, today: date) -> str | None:

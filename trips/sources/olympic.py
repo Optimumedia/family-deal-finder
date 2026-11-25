@@ -19,7 +19,8 @@ from html import unescape
 from urllib.parse import urlencode, urljoin
 
 from ..http import Blocked, PoliteSession, Unavailable
-from .travelland import _num, _title_case, destination_code
+from .pagetext import image_url
+from .travelland import _IMG, _num, _title_case, destination_code
 
 log = logging.getLogger(__name__)
 BASE = "https://www.olympic.rs"
@@ -57,6 +58,7 @@ def parse_list(payload: str) -> tuple[list[dict], int]:
         old, valid, unit = _OLD.search(block), _VALID.search(block), _UNIT.search(block)
         badge, board = _BADGE.search(block), _BOARD_TXT.search(block)
         loc = _LOC.search(block)
+        img = _IMG.search(block)
         stars = block.count("la-star text-warning")
         cards.append({
             "object_id": m.group("oid"),
@@ -73,6 +75,7 @@ def parse_list(payload: str) -> tuple[list[dict], int]:
             "badge": badge.group(1).strip() if badge else "",
             "valid_until": date(int(valid.group(3)), int(valid.group(2)), int(valid.group(1))).isoformat()
             if valid else None,
+            "image": image_url(img.group(1), BASE) if img else None,
         })
     return cards, int(data.get("total") or 0)
 
@@ -99,6 +102,7 @@ def to_hotel_and_offer(card: dict, page: dict, cfg: dict, today: date) -> tuple[
         "direct_flight_skp": False,
         "border": page.get("border", True),
         "family": {"verified": []},
+        "image": card.get("image"),
         "notes": "Auto-added from Olympic. Family facts unknown — use 'Ask the hotel'.",
     }
     offer = {
