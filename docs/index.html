@@ -40,6 +40,21 @@ dialog{border:1px solid var(--line);border-radius:14px;background:var(--card);co
 dialog textarea{width:100%;height:300px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px;font:13px/1.4 ui-monospace,Consolas,monospace}
 .empty{color:var(--muted);padding:30px;text-align:center}
 svg.spark{width:100%;height:34px}
+.views{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-left:auto}
+.views button{border:0;background:var(--card);color:var(--ink);padding:6px 12px;cursor:pointer;font-size:13.5px}
+.views button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+#mapWrap{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+#map{height:min(70vh,640px);width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 12px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.leaflet-container{font:inherit;background:var(--bg)}
+.leaflet-popup-content{margin:10px 12px;min-width:220px}
+.pop h4{margin:0 0 2px;font-size:14px}.pop .meta{margin-bottom:6px}
+.pop ol{margin:0;padding-left:18px;font-size:13px}.pop li{margin:3px 0}
+.pop button{border:0;background:none;color:#0f7b6c;cursor:pointer;padding:0;font:inherit;text-decoration:underline}
+@media (prefers-color-scheme:dark){.leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)}}
+.card.flash{outline:3px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -60,9 +75,14 @@ svg.spark{width:100%;height:34px}
     <label><input type="checkbox" id="family"> Real family price (2+2) only</label>
     <label>Type <select id="kind"><option value="">All</option><option value="hotel">Hotels</option><option value="villa">Villas</option><option value="apartment">Apartments</option></select></label>
     <label><input type="checkbox" id="out"> Show "doesn't fit"</label>
+    <div class="views" role="group" aria-label="View"><button data-view="cards" aria-pressed="true">▦ Cards</button><button data-view="map" aria-pressed="false">🗺 Map</button></div>
   </div>
   <section class="news" id="news" hidden><h2>What's new</h2><ul id="newsList"></ul></section>
   <div class="grid" id="grid"></div>
+  <section id="mapWrap" hidden>
+    <div id="map" role="region" aria-label="Map of offers"></div>
+    <div class="legend" id="legend"></div>
+  </section>
 </main>
 <dialog id="dlg">
   <h3 id="dlgTitle" style="margin:0 0 6px">Ask the hotel</h3>
@@ -109,7 +129,7 @@ function card(it){
   const why = [];
   if (it.excluded) why.push('✗ Doesn\'t fit: ' + f.failed.join(', '));
   if (it.capped) why.push('Rating capped until confirmed: ' + f.unknown_musts.join(', '));
-  return `<article class="card ${it.excluded?'out':''}">
+  return `<article class="card ${it.excluded?'out':''}" data-key="${esc(it.key)}">
     <div class="top"><div><div class="name">${esc(it.name)} ${'★'.repeat(it.stars||0)}${it.kind && it.kind!=='hotel' ? ` <span class="chip">${it.kind==='villa'?'🏡 Villa':'🏠 Apartment'}</span>` : ''}</div><div class="area">${esc(it.area)}</div></div>
       <div class="tier">${it.tier.icon} ${esc(it.tier.label)}<small>score ${Math.round(it.overall)}</small></div></div>
     <div><span class="price">${eur(it.price_eur)}</span>${it.was_eur?`<s>${eur(it.was_eur)}</s>`:''} <span class="meta">${occ}</span></div>
@@ -139,8 +159,69 @@ function render(){
   const s = $('#sort').value;
   const key = {score:i=>-i.overall, price:i=>i.price_eur, discount:i=>-(i.deal.real_pct ?? i.deal.stated_pct ?? -99), drive:i=>i.family.drive_minutes ?? 9999}[s];
   items.sort((a,b)=>key(a)-key(b));
+  document.querySelectorAll('.views button').forEach(b => b.setAttribute('aria-pressed', b.dataset.view===view));
+  const onMap = view === 'map';
+  $('#mapWrap').hidden = !onMap; $('#grid').hidden = onMap;
+  if (onMap) { drawMap(items); return; }
   $('#grid').innerHTML = items.length ? items.map(card).join('') : `<div class="empty">${season==='watch'?'Nothing on your watchlist yet — tap ☆ Watch on a deal.':'No offers match these filters.'}</div>`;
 }
+
+/* ---------------- map (Leaflet from cdnjs, loaded on first use) ---------------- */
+let view = store.get('view', 'cards'), mapObj = null, mapLayer = null, leafletP = null;
+function loadLeaflet(){
+  if (window.L) return Promise.resolve();
+  if (leafletP) return leafletP;
+  leafletP = new Promise((res, rej) => {
+    const l = document.createElement('link'); l.rel = 'stylesheet';
+    l.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'; document.head.appendChild(l);
+    const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    s.onload = res; s.onerror = () => { leafletP = null; rej(); }; document.head.appendChild(s);
+  });
+  return leafletP;
+}
+// Pin colour = drive time from Skopje (the hard 5h rule), so "how far" reads at a glance.
+const DRIVE_COLORS = [[240,'#1f8a4c','≤ 4h'],[300,'#d98a00','4–5h'],[Infinity,'#8a8f98','over 5h (borderline)']];
+const driveColor = m => m==null ? '#8a8f98' : DRIVE_COLORS.find(([lim]) => m <= lim)[1];
+
+function drawMap(items){
+  const pts = items.filter(i => typeof i.lat === 'number' && typeof i.lng === 'number');
+  $('#legend').innerHTML = `<span>📍 ${pts.length} offers at ${new Set(pts.map(i=>i.lat.toFixed(3)+','+i.lng.toFixed(3))).size} places</span>`
+    + DRIVE_COLORS.map(([,c,l]) => `<span><span class="dot" style="background:${c}"></span>${l} drive</span>`).join('')
+    + `<span>Bigger pin = more offers there · agency offers share their resort's pin</span>`;
+  loadLeaflet().then(() => {
+    if (!mapObj) {
+      mapObj = L.map('map', {scrollWheelZoom: true});
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(mapObj);
+    }
+    if (mapLayer) mapLayer.remove();
+    mapLayer = L.layerGroup().addTo(mapObj);
+    const home = [41.9961, 21.4317];
+    L.marker(home, {title: 'Skopje'}).addTo(mapLayer).bindPopup('<b>Home: Skopje</b>');
+    const groups = {};
+    pts.forEach(i => (groups[i.lat.toFixed(3)+','+i.lng.toFixed(3)] ||= []).push(i));
+    const bounds = [home];
+    Object.values(groups).forEach(g => {
+      g.sort((a,b) => b.overall - a.overall);
+      const top = g[0], ll = [top.lat, top.lng], cheapest = Math.min(...g.map(i=>i.price_eur));
+      bounds.push(ll);
+      const rows = g.slice(0, 6).map(i => `<li>${i.tier.icon} <button data-goto="${esc(i.key)}">${esc(i.name)}</button> — ${eur(i.price_eur)}${i.occupancy==='2+2'?'':' <small>(2 adults)</small>'}${i.deal.stated_pct||i.deal.real_pct?` · −${Math.round(i.deal.real_pct ?? i.deal.stated_pct)}%`:''}</li>`).join('');
+      const pop = `<div class="pop"><h4>${esc(top.area)}</h4><div class="meta">🚗 ${hm(top.family.drive_minutes)} from Skopje · ${g.length} offer${g.length>1?'s':''} · from ${eur(cheapest)}</div><ol>${rows}</ol>${g.length>6?`<div class="meta">+ ${g.length-6} more in the cards view</div>`:''}</div>`;
+      L.circleMarker(ll, {radius: Math.min(22, 7 + Math.sqrt(g.length) * 2.2), color: '#fff', weight: 2,
+        fillColor: driveColor(top.family.drive_minutes), fillOpacity: .9})
+        .addTo(mapLayer).bindPopup(pop).bindTooltip(`${esc(top.area)} · ${g.length} · from ${eur(cheapest)}`);
+    });
+    setTimeout(() => { mapObj.invalidateSize(); mapObj.fitBounds(bounds, {padding: [30, 30], maxZoom: 10}); }, 0);
+  }).catch(() => { $('#legend').innerHTML = 'The map library could not load (offline?). Use the cards view.'; });
+}
+
+function gotoCard(key){
+  view = 'cards'; store.set('view', view); render();
+  const el = [...document.querySelectorAll('.card')].find(c => c.dataset.key === key);
+  if (el) { el.scrollIntoView({behavior: 'smooth', block: 'center'}); el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 2000); }
+}
+document.querySelectorAll('.views button').forEach(b => b.addEventListener('click', () => { view = b.dataset.view; store.set('view', view); render(); }));
+$('#map').addEventListener('click', e => { const b = e.target.closest('[data-goto]'); if (b) gotoCard(b.dataset.goto); });
 
 function init(d){
   DATA = d;
