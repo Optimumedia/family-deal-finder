@@ -164,6 +164,77 @@ lng = 23.80
 nights = 7
 check_in = "2027-06-20"
 
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/grcka-promotivne-cene/olimpska-regija/"
+season = "summer"
+area = "Olympic Riviera (Paralia, Leptokaria)"
+country = "GR"
+lat = 40.27
+lng = 22.60
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/grcka-ostra-promotivne-cene/tasos/"
+season = "summer"
+area = "Thassos"
+country = "GR"
+lat = 40.70
+lng = 24.65
+nights = 7
+check_in = "2027-06-20"
+
+# ---------------------------------------------------------- hotels' own websites --
+[sources.hotel_direct]
+# Each hotel's own offers page: campaigns (discount %, deadline) are picked out of
+# the text and shown next to the agency prices. Sites that block robots are skipped.
+enabled = true
+
+[[sources.hotel_direct.pages]]
+hotel = "sani-beach"
+url = "https://www.sani-resort.com/offers"
+
+[[sources.hotel_direct.pages]]
+hotel = "porto-carras-meliton"
+url = "https://www.portocarras.com/offers"
+
+[[sources.hotel_direct.pages]]
+hotel = "st-ivan-rilski-bansko"
+url = "https://www.saintivanrilski.com/en/offers-and-vouchers"
+
+# ---------------------------------------------------------------- villa rentals --
+[sources.oliverstravels]
+# Whole villas (price per week, low end of the range = off-peak). Self-catering.
+enabled = true
+gbp_to_eur = 1.17
+
+[[sources.oliverstravels.pages]]
+url = "https://oliverstravels.com/greece/halkidiki/"
+season = "summer"
+area = "Halkidiki (villa)"
+country = "GR"
+lat = 40.10
+lng = 23.60
+nights = 7
+check_in = "2027-06-20"
+
+# --------------------------------------------------------- rentals from owners --
+[sources.micazu]
+# Holiday homes rented directly from the owner. Only rate periods that cover the
+# check-in are used (owners often enter next season's rates late).
+enabled = true
+max_listings = 15
+
+[[sources.micazu.pages]]
+url = "https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/"
+season = "winter"
+area = "Bansko, Bulgaria"
+country = "BG"
+lat = 41.83
+lng = 23.48
+nights = 5
+check_in = "2026-12-14"
+
 [email]
 # Daily digest. SMTP settings live in the git-ignored file .email
 # (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_TO). Without it the

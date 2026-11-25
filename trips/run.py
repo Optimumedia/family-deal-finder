@@ -10,13 +10,14 @@ import json
 import logging
 import re
 import tomllib
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from . import db, digest, geo, score
-from .sources import manual, olympic, travelland
+from .sources import hotel_direct, manual, micazu, oliverstravels, olympic, travelland
 
-AUTO_SOURCES = (travelland, olympic)
+# Sources that find hotels/villas and prices (agencies, villa sites, owner rentals).
+AUTO_SOURCES = (travelland, olympic, oliverstravels, micazu)
 
 log = logging.getLogger("trips")
 
@@ -31,6 +32,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
     drives = {hid: db.cached_drive(con, hid, h["lat"], h["lng"]) for hid, h in hotels.items()} if offline \
         else geo.drive_minutes(con, hotels, home)
     offers = db.offers(con)
+    camps = db.campaigns(con, since=(today - timedelta(days=3)).isoformat())
     items, alerts = [], []
     for o in offers:
         h = hotels.get(o["hotel_id"])
@@ -41,7 +43,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
         r = score.rate(h, o, peers, cfg, drives.get(h["id"]), today)
         now = o["history"][-1]
         item = {
-            "key": o["key"], "hotel_id": h["id"], "name": h["name"], "stars": h.get("stars"), "area": h.get("area"),
+            "key": o["key"], "hotel_id": h["id"], "kind": h.get("kind", "hotel"), "name": h["name"], "stars": h.get("stars"), "area": h.get("area"),
             "season": h["season"], "lat": h.get("lat"), "lng": h.get("lng"), "notes": h.get("notes"),
             "source": o["source"], "url": o["url"], "check_in": o["check_in"], "nights": o["nights"],
             "board": o["board"], "room": o["room"], "occupancy": o["occupancy"],
@@ -49,6 +51,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
             "valid_until": now.get("valid_until"), "first_seen": o["first_seen"], "last_seen": o["last_seen"],
             "history": [{"seen": s["seen"], "price_eur": s["price_eur"]} for s in o["history"]],
             **{k: r[k] for k in ("overall", "tier", "capped", "excluded", "family", "deal")},
+            "campaigns": [{k: c[k] for k in ("title", "pct", "valid_until", "url")} for c in camps.get(h["id"], [])],
             "email": score.email_draft(h, o, r["family"]["questions"], cfg) if r["family"]["questions"] else "",
         }
         items.append(item)
@@ -149,7 +152,15 @@ def main(argv=None) -> int:
     for h in curated:                      # curated facts always win
         db.upsert_hotel(con, h)
     new = sum(db.add_sighting(con, o) for o in sightings)
+    new_camps = []
+    if not args.offline:
+        names = {h["id"]: h["name"] for h in curated}
+        for c in hotel_direct.fetch(cfg, today):
+            if db.add_campaign(con, c):
+                new_camps.append({"icon": "🏨", "url": c["url"],
+                                  "text": f"New on {names.get(c['hotel'], c['hotel'])}'s own website: {c['title']}"})
     items, alerts = build(con, cfg, today, offline=args.offline)
+    alerts = new_camps + alerts
     con.commit()
     export(items, alerts, cfg)
     result = "off"

@@ -58,6 +58,7 @@ svg.spark{width:100%;height:34px}
     <label>Max drive <input type="range" id="drive" min="120" max="360" step="15" value="345"> <span id="driveTxt"></span></label>
     <label><input type="checkbox" id="hb"> Breakfast + dinner only</label>
     <label><input type="checkbox" id="family"> Real family price (2+2) only</label>
+    <label>Type <select id="kind"><option value="">All</option><option value="hotel">Hotels</option><option value="villa">Villas</option><option value="apartment">Apartments</option></select></label>
     <label><input type="checkbox" id="out"> Show "doesn't fit"</label>
   </div>
   <section class="news" id="news" hidden><h2>What's new</h2><ul id="newsList"></ul></section>
@@ -92,6 +93,7 @@ function dealChips(it){
   else if (d.verdict === 'flat') out.push(`<span class="chip">Same price as before</span>`);
   if (d.stated_pct != null) out.push(`<span class="chip ${d.verdict==='stated'?'warn':''}">Agency says −${Math.round(d.stated_pct)}%${d.verdict==='stated'?' (not yet checked by our history)':''}</span>`);
   if (d.peer_pct != null) out.push(`<span class="chip ${d.peer_pct>0?'good':''}">${d.peer_pct>0?'':'+'}${Math.abs(Math.round(d.peer_pct))}% ${d.peer_pct>0?'cheaper':'dearer'} per night than similar offers</span>`);
+  (it.campaigns || []).slice(0, 2).forEach(c => out.push(`<a class="chip good" href="${esc(c.url)}" target="_blank" rel="noopener" title="${esc(c.title)}">🏨 Hotel's own site: ${c.pct ? '−' + c.pct + '% ' : ''}${esc(c.title.length > 60 ? c.title.slice(0, 57) + '…' : c.title)}${c.valid_until ? ' (until ' + fmtDate(c.valid_until) + ')' : ''}</a>`));
   if (d.days_left != null && d.days_left >= 0) out.push(`<span class="chip ${d.days_left<=3?'bad':'warn'}">⏰ ends in ${d.days_left} day${d.days_left===1?'':'s'}</span>`);
   return out.join('');
 }
@@ -108,10 +110,10 @@ function card(it){
   if (it.excluded) why.push('✗ Doesn\'t fit: ' + f.failed.join(', '));
   if (it.capped) why.push('Rating capped until confirmed: ' + f.unknown_musts.join(', '));
   return `<article class="card ${it.excluded?'out':''}">
-    <div class="top"><div><div class="name">${esc(it.name)} ${'★'.repeat(it.stars||0)}</div><div class="area">${esc(it.area)}</div></div>
+    <div class="top"><div><div class="name">${esc(it.name)} ${'★'.repeat(it.stars||0)}${it.kind && it.kind!=='hotel' ? ` <span class="chip">${it.kind==='villa'?'🏡 Villa':'🏠 Apartment'}</span>` : ''}</div><div class="area">${esc(it.area)}</div></div>
       <div class="tier">${it.tier.icon} ${esc(it.tier.label)}<small>score ${Math.round(it.overall)}</small></div></div>
     <div><span class="price">${eur(it.price_eur)}</span>${it.was_eur?`<s>${eur(it.was_eur)}</s>`:''} <span class="meta">${occ}</span></div>
-    <div class="meta">${it.nights} nights from ${fmtDate(it.check_in)} · ${it.board==='?'?'board unknown':esc(it.board)} · ${esc(it.room||'')} · 🚗 ${hm(f.drive_minutes)} from Skopje</div>
+    <div class="meta">${it.nights} nights from ${fmtDate(it.check_in)} · ${it.board==='?'?'board unknown':it.board==='SC'?'self-catering':esc(it.board)} · ${esc(it.room||'')} · 🚗 ${hm(f.drive_minutes)} from Skopje</div>
     <div class="chips">${dealChips(it)}</div>
     <ul class="check">${checks}</ul>
     ${why.length?`<div class="warnbox">${why.map(esc).join('<br>')}</div>`:''}
@@ -133,6 +135,7 @@ function render(){
   items = items.filter(i => i.family.drive_minutes==null || i.family.drive_minutes <= maxDrive);
   if ($('#hb').checked) items = items.filter(i => ['HB','FB','AI'].includes(i.board));
   if ($('#family').checked) items = items.filter(i => i.occupancy==='2+2');
+  if ($('#kind').value) items = items.filter(i => (i.kind||'hotel') === $('#kind').value);
   const s = $('#sort').value;
   const key = {score:i=>-i.overall, price:i=>i.price_eur, discount:i=>-(i.deal.real_pct ?? i.deal.stated_pct ?? -99), drive:i=>i.family.drive_minutes ?? 9999}[s];
   items.sort((a,b)=>key(a)-key(b));
@@ -143,7 +146,7 @@ function init(d){
   DATA = d;
   $('#sub').textContent = `${d.family.adults} adults + ${d.family.kids} kids from ${d.family.home} · direct flight or ≤${hm(d.family.max_drive_minutes)} drive · updated ${d.generated.replace('T',' ')}`;
   if (d.alerts.length){ $('#news').hidden = false; $('#newsList').innerHTML = d.alerts.map(a => `<li>${a.icon} ${esc(a.text)}</li>`).join(''); }
-  ['sort','drive','hb','family','out'].forEach(id => { const el = $('#'+id), saved = store.get('f_'+id, null);
+  ['sort','drive','hb','family','kind','out'].forEach(id => { const el = $('#'+id), saved = store.get('f_'+id, null);
     if (saved!=null){ if (el.type==='checkbox') el.checked = saved; else el.value = saved; }
     el.addEventListener('input', () => { store.set('f_'+id, el.type==='checkbox'?el.checked:el.value); render(); }); });
   render();

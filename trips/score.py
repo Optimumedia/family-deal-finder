@@ -118,9 +118,13 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
                        "for small children?")
         bm = _fact(fam, "beach_m")
         check("beachfront", f"Beach ≤{s['max_beach_m']} m", None if bm is None else bm <= s["max_beach_m"], must=True)
-        check("board", "Breakfast + dinner", None if board == "?" else board in s["need_board"], must=True,
-              question="Is half board (breakfast + dinner) available, and what does it cost for 2 adults and 2 small "
-                       "children?" if board == "?" else None)
+        if board == "SC":
+            # Whole villa / apartment: kitchen instead of breakfast + dinner. Kept (capped), not thrown out.
+            check("board", "Self-catering — no breakfast/dinner", None, must=True)
+        else:
+            check("board", "Breakfast + dinner", None if board == "?" else board in s["need_board"], must=True,
+                  question="Is half board (breakfast + dinner) available, and what does it cost for 2 adults and 2 "
+                           "small children?" if board == "?" else None)
         shallow = _fact(fam, "shallow_entry")
         check("shallow_entry", "Shallow, gradual entry", shallow)
     else:
@@ -129,7 +133,8 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
         check("separate_bedroom", "Separate bedroom (cots in the other room)", sep, must=w["need_separate_bedroom"],
               question="Which room or apartment type has a separate bedroom for us, with space for 2 cots in the "
                        "other room?")
-        check("board", "Breakfast + dinner", None if board == "?" else board in FULL_BOARDS)
+        check("board", "Self-catering (own kitchen)" if board == "SC" else "Breakfast + dinner",
+              True if board == "SC" else None if board == "?" else board in FULL_BOARDS)
         check("ski_school", "Ski kindergarten from age 3", _fact(fam, "ski_school_from_3"),
               question="Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?")
 
@@ -164,7 +169,7 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     else:
         travel = clamp(1 - (total_drive - 180) / (reach_cfg["max_drive_minutes"] - 180))
     kids = 0.5 * tri(kc_ok, unk=0.25) + 0.5 * tri(_fact(fam, "kids_pool"), unk=0.25)
-    food = 1.0 if board in FULL_BOARDS else 0.5 if board == "?" else 0.3
+    food = 1.0 if board in FULL_BOARDS else 0.5 if board in ("?", "SC") else 0.3
     health = tri(_fact(fam, "doctor_near"))
     logistics = tri(_fact(fam, "stroller_ok"))
     reviews = clamp((hotel.get("stars") or 3) / 5)

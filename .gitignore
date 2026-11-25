@@ -5,3 +5,5 @@ data/digest.txt
 data/local-run.log
 .email
 .claude/
+data/live-run.txt
+.venv/

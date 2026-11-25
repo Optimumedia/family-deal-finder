@@ -40,6 +40,17 @@ CREATE TABLE IF NOT EXISTS drive_cache (
     lat REAL, lng REAL,
     minutes REAL                      -- router time, before the border buffer
 );
+CREATE TABLE IF NOT EXISTS campaign (       -- offers announced on a hotel's own website
+    key TEXT PRIMARY KEY,             -- hotel|title (first 60 chars)
+    hotel_id TEXT NOT NULL,
+    source TEXT NOT NULL,
+    url TEXT,
+    title TEXT NOT NULL,
+    pct INTEGER,
+    valid_until TEXT,
+    first_seen TEXT NOT NULL,
+    last_seen TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS alert_sent (
     key TEXT PRIMARY KEY,
     sent_at TEXT NOT NULL
@@ -81,6 +92,27 @@ def add_sighting(con, o: dict) -> bool:
                       (key, seen, float(o["price_eur"]), o.get("was_eur"), o.get("discount_label"),
                        str(o["valid_until"]) if o.get("valid_until") else None))
     return cur.rowcount > 0
+
+
+def add_campaign(con, c: dict) -> bool:
+    """Store a hotel-website campaign. Returns True when it is new."""
+    key = f"{c['hotel']}|{c['title'].lower()[:60]}"
+    new = con.execute("SELECT 1 FROM campaign WHERE key=?", (key,)).fetchone() is None
+    con.execute("""INSERT INTO campaign(key, hotel_id, source, url, title, pct, valid_until, first_seen, last_seen)
+                   VALUES(?,?,?,?,?,?,?,?,?)
+                   ON CONFLICT(key) DO UPDATE SET last_seen=excluded.last_seen, pct=excluded.pct,
+                     valid_until=excluded.valid_until, url=excluded.url""",
+                (key, c["hotel"], c["source"], c.get("url"), c["title"], c.get("pct"), c.get("valid_until"),
+                 c["seen"], c["seen"]))
+    return new
+
+
+def campaigns(con, since: str) -> dict[str, list[dict]]:
+    """Campaigns still seen on or after `since`, grouped by hotel."""
+    out: dict[str, list[dict]] = {}
+    for r in con.execute("SELECT * FROM campaign WHERE last_seen >= ? ORDER BY pct DESC", (since,)):
+        out.setdefault(r["hotel_id"], []).append(dict(r))
+    return out
 
 
 def hotels(con) -> dict[str, dict]:

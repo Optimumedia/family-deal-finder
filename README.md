@@ -55,10 +55,15 @@ MAIL_TO=you@gmail.com
 | Fibula (fibula.com.mk) | ⛔ **Not scraped.** Its prices load from a private API host, and its robots.txt disallows `/api/` and `/search?`. The proper route is to ask Fibula for B2B/XML access. |
 | **Travelland** (travelland.rs) | ✅ **Automatic.** robots.txt allows all paths. It reads Bansko, Borovets, Pamporovo, Kassandra and Sithonia. Cards give a "from" price per person per night, plus the old price, the discount % and a "valid until" date. They don't give the board or the kids' price, so offers are stored as 2 adults × nights with the board unknown. Halkidiki 2027 said "offers coming soon" on 25.11.2026; it's picked up automatically once published. |
 | **Olympic** (olympic.rs) | ✅ **Automatic.** robots.txt allows all paths. It runs on the same platform as Travelland. It reads Bansko, Borovets, Kopaonik, Kassandra and Sithonia. Cards give a "from" price (per day, per person per day, or per stay), the old price, an "early booking" badge, a "valid until" date, and the board when shown. Cards that say "on request" (no price) are skipped. There's no date window, so check-in is the page's default date. On 25.11.2026 it found **32 priced Halkidiki 2027 offers**. |
+| **Hotels' own websites** (Sani, Porto Carras, St. Ivan Rilski) | ✅ **Automatic.** Reads each hotel's offers page and picks out campaigns: discount %, deadline and short text (e.g. "Black Friday, save 40%"). They show as 🏨 chips on that hotel's cards, and a new campaign triggers an alert. To add a hotel, put `[[sources.hotel_direct.pages]]` with its hotel id in config.toml. WebHotelier booking engines block robots, so we leave them alone. |
+| **Oliver's Travels** (villas) | ✅ **Automatic.** Halkidiki whole villas: guests, bedrooms, weekly price range (the low end is used) and "% off" tags. Prices are converted from GBP. These are self-catering, so they're kept but capped: "no breakfast/dinner". |
+| **Micazu** (rentals from owners) | ✅ **Automatic.** Bansko apartments rented directly from the owner: persons, bedrooms, nightly or weekly rates, cleaning fee, and whether a cot or high chair is available. Only rates that cover the check-in date are used. |
 | Falcon (falcon.rs) | 🔜 robots.txt allows it. Its 2027 price tables were still empty on 25.11.2026. |
 | Hotels' own pages | 🔜 For child and cot policies. |
 | SerpApi Google Hotels (free tier) | 🔜 Price cross-check with real child ages. |
-| Booking.com, Airbnb, Wizz Air | ❌ Excluded: their terms forbid scraping. |
+| Booking.com, Airbnb, Vrbo, Wizz Air | ❌ Excluded: their terms forbid scraping. |
+| Marriott Homes & Villas | ❌ robots.txt blocks every date, guest and search parameter. |
+| WebHotelier (`*.reserve-online.net`, many Greek hotels' booking engine) | ❌ Blocks robots (403), so it's left alone. |
 
 The rules for every automatic source live in `trips/sources/__init__.py`: respect robots.txt, go slowly, stop at a bot wall and never get around it, store facts only, and link back to the source.
 
