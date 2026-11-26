@@ -1,10 +1,14 @@
 {
- "generated": "2026-11-26T12:24",
- "started": "2026-11-26T11:56:40",
- "duration_s": 1648.9,
- "status": "ok",
- "failed_sources": [],
- "problems": [],
+ "generated": "2026-11-26T13:26",
+ "started": "2026-11-26T13:00:08",
+ "duration_s": 1565.0,
+ "status": "fail",
+ "failed_sources": [
+  "Micazu (owner)"
+ ],
+ "problems": [
+  "Micazu (owner) refused us today (bot wall or robots.txt), 0 offers (Micazu stopped (respecting the block): 403 bot challenge at https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/)"
+ ],
  "sources": [
   {
    "name": "Travelland",
@@ -15,8 +19,8 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 149.4,
-   "avg_offers_7": 72.0,
+   "duration_s": 136.3,
+   "avg_offers_7": 71.5,
    "messages": []
   },
   {
@@ -28,8 +32,8 @@
    "offers_rejected": 1,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 369.9,
-   "avg_offers_7": 123.0,
+   "duration_s": 368.4,
+   "avg_offers_7": 124.0,
    "messages": []
   },
   {
@@ -41,7 +45,7 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 40.8,
+   "duration_s": 45.5,
    "avg_offers_7": 27.0,
    "messages": []
   },
@@ -54,7 +58,7 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 388.1,
+   "duration_s": 396.5,
    "avg_offers_7": 24.0,
    "messages": []
   },
@@ -67,7 +71,7 @@
    "offers_rejected": 3,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 72.8,
+   "duration_s": 73.0,
    "avg_offers_7": 47.0,
    "messages": []
   },
@@ -81,7 +85,7 @@
    "blocked": 0,
    "errors": 0,
    "duration_s": 83.7,
-   "avg_offers_7": null,
+   "avg_offers_7": 180.0,
    "messages": []
   },
   {
@@ -89,12 +93,12 @@
    "status": "ok",
    "pages_fetched": 1,
    "not_modified": 0,
-   "offers_parsed": 5,
+   "offers_parsed": 9,
    "offers_rejected": 1,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 12.6,
-   "avg_offers_7": 0.0,
+   "duration_s": 12.5,
+   "avg_offers_7": 2.5,
    "messages": []
   },
   {
@@ -106,47 +110,49 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 22.6,
+   "duration_s": 25.0,
    "avg_offers_7": 18.0,
    "messages": []
   },
   {
    "name": "Micazu (owner)",
-   "status": "ok",
-   "pages_fetched": 2,
+   "status": "blocked",
+   "pages_fetched": 0,
    "not_modified": 0,
-   "offers_parsed": 1,
+   "offers_parsed": 0,
    "offers_rejected": 0,
-   "blocked": 0,
+   "blocked": 1,
    "errors": 0,
-   "duration_s": 17.5,
+   "duration_s": 10.6,
    "avg_offers_7": 1.0,
-   "messages": []
+   "messages": [
+    "Micazu stopped (respecting the block): 403 bot challenge at https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/"
+   ]
   },
   {
    "name": "Detail pages",
    "status": "ok",
    "pages_fetched": 12,
    "not_modified": 0,
-   "offers_parsed": 498,
+   "offers_parsed": 501,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 104.2,
-   "avg_offers_7": 492.0,
+   "duration_s": 96.1,
+   "avg_offers_7": 495.0,
    "messages": []
   },
   {
    "name": "Hotel website",
    "status": "ok",
    "pages_fetched": 20,
-   "not_modified": 4,
+   "not_modified": 6,
    "offers_parsed": 40,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 183.6,
-   "avg_offers_7": 34.0,
+   "duration_s": 178.7,
+   "avg_offers_7": 37.0,
    "messages": []
   }
  ],
