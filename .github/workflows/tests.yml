@@ -1,0 +1,49 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.14"]
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONDONTWRITEBYTECODE: "1"
+      # The suite is offline (fixtures + tests/fakes.py); no key, no SMTP, no router needed.
+      ORS_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Private/local files are absent (tests must not need them)
+        run: |
+          for f in config.local.toml data/trips.db .email; do
+            if [ -e "$f" ]; then echo "::error::$f is in the checkout; it must stay git-ignored"; exit 1; fi
+          done
+
+      - name: Unit + end-to-end tests
+        run: python -m unittest discover -s tests -t . -v

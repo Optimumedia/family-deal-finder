@@ -1,43 +1,175 @@
 # Family Deal Finder
 
-Vacation deals for **2 adults + twins from Skopje**: family-first and discount-first.
-It's a personal tool with no paid services and no Telegram.
+Holiday deals for **2 adults + our twins, from Skopje**. It looks at travel agencies, hotels' own
+websites and holiday rentals, keeps only what fits our family, and checks whether a "discount" is
+really cheaper than before. It costs nothing to run and never books anything: every offer links
+to the page where you book.
 
-## What it does
+**Open it:** `.\open_dashboard.ps1` (on this PC, at http://localhost:8810), or the published GitHub Pages copy.
 
-1. Reads the hotels we track (`data/hotels.toml`) and the price sightings (`data/offers.toml`).
-2. Builds a **price history** for each offer, stored in `data/trips.db` on this PC.
-3. Works out the **drive time from Skopje** with the free OSRM router (cached), plus a border buffer.
-4. Applies the **hard family rules**:
-   - Reach: a direct flight from SKP or a drive of 5h or less.
-   - Summer: sandy beach within 150 m, plus breakfast and dinner.
-   - Winter: a separate bedroom, so the twins sleep in cots in the other room.
-   - 2 cots that take the twins **at their age on the trip date**.
-5. Scores each offer:
-   - **Family Fit (0–100):** sleep setup, beach or activities, travel, kids' facilities, food, health, logistics, reviews. This is multiplied by a confidence factor, which goes up as facts are verified.
-   - **Deal quality (0–100):** our own price history first, then a comparison with similar offers, then the agency's "was" price at half weight. A "discount" that isn't cheaper than before is flagged `fake?`.
-   - The rating is capped while a must-have is still unknown. Unknown must-haves show as "ask" in the checklist, so you know what to check with the hotel.
-6. Writes `docs/data.json` for the dashboard (`docs/index.html`). It has Summer, Winter and Watchlist tabs, filters, price history, the family checklist and a "What's new" panel.
-7. **Email digest:** new good deals, price drops of 7% or more, and offers ending within 3 days. Each alert goes out once. Without a `.email` file the digest is only written to `data/digest.txt`.
+---
 
-## Use it
+## What the dashboard shows
+
+- **Tabs:** **Summer** (beach holidays), **Winter** (ski holidays) and **Shortlist** (the hotels you
+  marked with the heart). From the Shortlist you can **Compare** hotels side by side.
+- **One row per hotel.** It shows the best offer for us, with the other agencies' prices for the
+  same hotel underneath. Click a row for the full details: photo, map, route from Skopje, price
+  history and the family checklist.
+- **The rating** (Once-in-a-lifetime 💎, Exceptional 🔥, Great ⭐, Good 👍, Worth a look 👀) combines:
+  - **Family fit:** how well the hotel suits the twins (sleeping, beach or ski, meals, drive, kids' facilities).
+  - **Deal quality:** how good the price is compared with what we have seen before.
+- **Hard rules.** A hotel is left out ("Doesn't fit") if it breaks one of these:
+  - It's more than about a 5-hour drive and has no direct flight from Skopje.
+  - In summer: no sandy beach close by, or no breakfast + dinner.
+  - In winter: no separate bedroom.
+  - It can't take 2 cots for the twins at their age on the trip date.
+
+  To see the hotels that were left out, tick **Show ruled-out hotels** in Filters.
+- **Filters:** a real family price only, has a discount, ends within 7 days, breakfast + dinner,
+  maximum drive time, area and type (hotel / villa / apartment).
+- **What's new:** price drops and new offers since your last visit.
+- **Yellow bar at the top:** one of the sources couldn't be read in the latest check (see
+  [When a source fails](#when-a-source-fails)).
+
+## How to read the prices
+
+Always check **who the price is for**, shown under each price:
+
+| Shown as | Means | What to do |
+|---|---|---|
+| **2+2 family** | The price for 2 adults + the twins. This is the real price we would pay. | Compare these with each other. |
+| **2 adults** (warning colour) | The agency only showed a price for 2 adults. The twins' cost is not included. | Don't compare it with a 2+2 price. Ask the agency for a quote for 2 adults + two 3-year-olds. |
+
+Other things to check:
+
+- **Price** is the **total for the whole stay** (all nights), in euros.
+- **Board:**
+  - BB = breakfast
+  - HB = half board (breakfast + dinner)
+  - FB = full board
+  - AI = all inclusive
+  - SC = self-catering
+  - "not stated" = the agency didn't say. Check on the agency's page.
+- **Dates:** the check-in date and number of nights the price is for. Other dates cost differently.
+- **"Book now" / "Can wait":** based on our own price history. For example, an offer ending soon at its lowest price says Book now, and a falling price says Can wait. With little history it says nothing.
+
+## How the checks work
+
+**Discounts.** Agencies often show a "was" price that was never charged. So we record every price we see,
+and judge discounts against **our own history**:
+
+- **"Verified −X% vs our recorded price"** (green): it really is cheaper than the prices we
+  recorded before.
+- **"not confirmed yet"** (grey): there's only the agency's "was" price, or too little
+  history. It counts for half until our history confirms it.
+- **"fake?"** (red): it's called a discount, but it isn't cheaper than before.
+
+Each price we record is one "check". The more checks an offer has, the more the price history means.
+
+**Family facts.** Each fact on a hotel's checklist is one of:
+
+- **✓ (confirmed)**: the hotel confirmed it in writing.
+- **hollow mark**: agency or website info, not yet confirmed by the hotel.
+- **ask**: we don't know yet. The details panel suggests the question to send to the hotel.
+
+While a must-have (for example, 2 cots) is still "ask", the rating is held below "Great". So a
+hotel can only be Great or better once it's confirmed.
+
+**When a hotel replies,** put the fact in `data/hotels.toml` (for example `cots_max = 2`,
+`cot_age_max = 4`) and add its name to the `verified` list, like `verified = ["cots_max", "cot_age_max"]`.
+
+**Checking every offer.** Every offer is checked before it's saved. An offer is thrown away (and
+logged) if:
+
+- its price per night is impossible
+- its date is in the past or too far ahead
+- its board is unknown
+- its link isn't https
+
+So one broken website can't spoil the price history.
+
+## Adding Fibula prices
+
+Fibula, the main Skopje agency, doesn't allow automatic reading of its prices, so we add them by
+hand. The helper below checks everything before saving it and builds the price history for you.
+
+Open PowerShell in the project folder (`family-deal-finder`) and run one of these.
+
+**The easy way: it asks one question at a time.**
 
 ```powershell
-pip install -r requirements.txt
-python -m trips.run                  # update everything
-.\open_dashboard.ps1                 # open the dashboard at http://localhost:8810
-python -m unittest discover -s tests -t .
+python -m trips.add_offer --interactive
 ```
 
-**Record a new price:** copy an entry in `data/offers.toml`, change `seen` to today, and set the new `price_eur`. The next run adds it to the price history.
+1. It asks you to paste a result line from Fibula, for example
+   `Xenios Anastasia Resort & Spa ... HB ... 1.721 € ВКУПНО ОД 1.205 €`.
+   It fills in the hotel, the price (1205), the "was" price (1721) and the board (HB) from it.
+2. Press **Enter** to accept a suggested value, shown in `[brackets]`.
+3. It then asks for anything still missing: check-in date (`20.06.2027` is fine), nights, room,
+   whether the price is for 2+2 or 2 adults, and the link.
+4. It shows a summary. Type `y` to save.
 
-**Record what a hotel confirmed in writing:** set the fact in `data/hotels.toml` (e.g. `cots_max = 2`, `cot_age_max = 4`) and add its name to `verified`.
+**In one line:**
 
-**Twins' age:** set `kids_birthdate` in `config.toml`. Until it's set, the engine assumes the oldest age the twins could be, which is the safe side for cot limits.
+```powershell
+python -m trips.add_offer --paste "Xenios Anastasia Resort & Spa ... HB ... 1.721 € ВКУПНО ОД 1.205 €" --check-in 20.06.2027 --nights 7 --room "Standard Room Limited View" --url "https://www.fibula.com.mk/promo/black-friday/grcija"
+python -m trips.add_offer --hotel "Sani Beach" --check-in 20.06.2027 --nights 7 --board HB --price 5990 --was 6800 --valid-until 30.11.2026
+```
 
-### Email digest (optional)
+Useful extras:
 
-Create a git-ignored `.email` file with these lines (use a Gmail **app password**):
+- `--occupancy 2+0` when Fibula only showed a price for 2 adults. The default is `2+2`.
+- `--label "Early Booking -30% + Black Friday -5%"` for the discount text.
+- `--dry-run` shows what would be saved, without saving.
+
+**Re-checking prices, to build the history:**
+
+```powershell
+python -m trips.add_offer --list                       # offers whose last price is more than 7 days old
+python -m trips.add_offer --list --all                 # every offer, with its number
+python -m trips.add_offer --again 3 --price 1180       # today's price for offer no. 3
+```
+
+`--again` copies everything from that offer and only changes the price and today's date. If the
+old promotion has ended, its "was" price and label aren't copied. Add `--was`, `--label` or
+`--valid-until` if Fibula shows new ones.
+
+**Good to know:**
+
+- **Hotel names don't have to be exact.** "Xenios Posidi Paradise" finds Xenios Possidi Paradise.
+  If the name is only *similar* to a hotel we track, it stops and asks "Did you mean …?" Use the
+  suggested `--hotel <id>`, or add `--new-hotel` if it really is a different hotel.
+- **New hotels** are added to `data/hotels.toml` as a short entry. The area and approximate map
+  position are copied from a hotel we already know in the same town (for example `--area Possidi`).
+  If the town is new to us, add `--season summer --area "Town, Region" --lat .. --lng ..` (from
+  Google Maps). Its family facts start as "ask", so check them with the hotel.
+- **One price per offer per day.** If you typed the wrong price today, fix `price_eur` in
+  `data/offers.toml` itself.
+- **Nothing broken is ever saved.** If something is wrong (a date in the past, a price like €40 for a
+  week, an unknown board), it says what's wrong and saves nothing.
+- **When it appears:** the new price shows on the dashboard after the next run, or right away with
+  `python -m trips.run --offline`.
+
+## Schedule
+
+The PC runs the check by itself at **13:00 and 17:30** (it's usually on 12:00–19:00). Each run:
+
+1. reads the sources
+2. checks and stores the prices
+3. scores everything
+4. publishes the dashboard
+5. emails the digest, if email is set up
+
+If the PC is off at those times, that check is simply skipped.
+
+- **Set it up** once: `.\setup_schedule.ps1`.
+- **Run it now:** `.\run_local.ps1`. A full run takes about 20 minutes, because it waits politely
+  between pages.
+
+**Email digest (optional).** It lists new good deals, price drops of 7% or more, and offers
+ending within 3 days. Each alert is sent only once. Create a git-ignored `.email` file with these
+lines (use a Gmail *app password*):
 
 ```
 SMTP_HOST=smtp.gmail.com
@@ -47,41 +179,79 @@ SMTP_PASSWORD=your-app-password
 MAIL_TO=you@gmail.com
 ```
 
-## Operations
+Without the file, the digest is only written to `data/digest.txt`.
 
-Two scheduled runs a day (13:00 and 17:30) via `setup_schedule.ps1`, each running `run_local.ps1`:
+## When a source fails
 
-- **One at a time:** `data\run.lock` is held open while a run is going; a second run exits with code 4.
-- **Logs:** `data\logs\run-YYYY-MM-DD.log`, one per day, deleted after 30 days.
-- **Exit codes** (Task Scheduler's "Last Run Result"): 0 ok · 3 a source failed but the rest was published · 4 skipped, a run was still going · 5 `git pull --rebase` failed · 6 commit failed · 7 push failed · anything else: Python crashed (see the log).
-- **Publishing:** commits only when `docs/data.json` changed beyond its timestamp. It runs `git pull --rebase --autostash` first, then commits just `docs/data.json` and `docs/health.json`, then pushes.
-- **Validation** (`trips/validate.py`): every offer is checked before it's stored. The checks: €15–2,500 per night, check-in from today up to 18 months ahead, 1–21 nights, a known board (RO/BB/HB/FB/AI/SC/?), occupancy 2+2 or 2+0, an https link, and an https photo or none. Rejected offers are logged with the reason and never reach the price history. Limits can be changed in an optional `[validate]` table in config.toml.
-- **Health** (`trips/health.py` → `docs/health.json`): per source, the pages fetched (and how many came back "not modified"), offers parsed and rejected, blocks, errors and duration. A source is flagged when it crashes, is blocked, or suddenly returns 0 offers after averaging 3 or more over its last 7 runs. The history is kept in `data\health-history.json`.
-- **Being polite** (`trips/http.py`): the same honest User-Agent as before, with a minimum delay per host (`delay_seconds` + jitter, or more for a host listed in `[sources] host_delays`). Pages that send an ETag or Last-Modified header are cached in `data\http-cache.sqlite` and asked for again conditionally, so an unchanged page costs the site a "304 Not Modified".
-- **Drive times** (`trips/geo.py`): OSRM first, then openrouteservice if an `ORS_API_KEY` environment variable is set (free key). If both fail, a straight-line estimate is used (1.2 min per km). It's flagged as an estimate, never cached, and the router is tried again next run.
+Websites change or go down. That's normal and nothing breaks:
 
-## Sources
+1. The other sources still update and the dashboard is still published. The failed source keeps
+   its offers from the previous check.
+2. The dashboard shows a **yellow bar** naming the source.
+3. `docs/health.json` shows the details for each source: pages read, offers found, blocks and errors.
 
-| Source | Status |
+**What to do:**
+
+- **Once:** nothing. It's usually fixed by the next run.
+- **Several runs in a row:** open the site in a browser.
+  - If it has moved or changed design, the reader for that site needs updating (`trips/sources/<site>.py`).
+  - If it says "blocked" in `docs/health.json`, the site doesn't want robots. We respect that and
+    never get around it, so turn that source off in `config.toml`.
+- **Fibula** is never read automatically, so it can't fail. Just re-check it with
+  `python -m trips.add_offer --list` about once a week.
+
+**Did the scheduled run work?** In Task Scheduler, the "Last Run Result" means:
+
+| Code | Means |
 |---|---|
-| **Manual sightings** (`data/offers.toml`) | ✅ Live. Seeded with Fibula Black Friday prices from 25.11.2026. |
-| Fibula (fibula.com.mk) | ⛔ **Not scraped.** Its prices load from a private API host, and its robots.txt disallows `/api/` and `/search?`. The proper route is to ask Fibula for B2B/XML access. |
-| **Travelland** (travelland.rs) | ✅ **Automatic.** robots.txt allows all paths. It reads Bansko, Borovets, Pamporovo, Kassandra and Sithonia. Cards give a "from" price per person per night, plus the old price, the discount % and a "valid until" date. They don't give the board or the kids' price, so offers are stored as 2 adults × nights with the board unknown. Halkidiki 2027 said "offers coming soon" on 25.11.2026; it's picked up automatically once published. |
-| **Olympic** (olympic.rs) | ✅ **Automatic.** robots.txt allows all paths. It runs on the same platform as Travelland. It reads Bansko, Borovets, Kopaonik, Kassandra and Sithonia. Cards give a "from" price (per day, per person per day, or per stay), the old price, an "early booking" badge, a "valid until" date, and the board when shown. Cards that say "on request" (no price) are skipped. There's no date window, so check-in is the page's default date. On 25.11.2026 it found **32 priced Halkidiki 2027 offers**. |
-| **Hotels' own websites** (Sani, Porto Carras, St. Ivan Rilski) | ✅ **Automatic.** Reads each hotel's offers page and picks out campaigns: discount %, deadline and short text (e.g. "Black Friday, save 40%"). They show as 🏨 chips on that hotel's cards, and a new campaign triggers an alert. To add a hotel, put `[[sources.hotel_direct.pages]]` with its hotel id in config.toml. WebHotelier booking engines block robots, so we leave them alone. |
-| **Oliver's Travels** (villas) | ✅ **Automatic.** Halkidiki whole villas: guests, bedrooms, weekly price range (the low end is used) and "% off" tags. Prices are converted from GBP. These are self-catering, so they're kept but capped: "no breakfast/dinner". |
-| **Micazu** (rentals from owners) | ✅ **Automatic.** Bansko apartments rented directly from the owner: persons, bedrooms, nightly or weekly rates, cleaning fee, and whether a cot or high chair is available. Only rates that cover the check-in date are used. |
-| Falcon (falcon.rs) | 🔜 robots.txt allows it. Its 2027 price tables were still empty on 25.11.2026. |
-| Hotels' own pages | 🔜 For child and cot policies. |
-| SerpApi Google Hotels (free tier) | 🔜 Price cross-check with real child ages. |
-| Booking.com, Airbnb, Vrbo, Wizz Air | ❌ Excluded: their terms forbid scraping. |
-| Marriott Homes & Villas | ❌ robots.txt blocks every date, guest and search parameter. |
-| WebHotelier (`*.reserve-online.net`, many Greek hotels' booking engine) | ❌ Blocks robots (403), so it's left alone. |
+| 0 | fine |
+| 3 | a source failed, but the rest was published |
+| 4 | skipped, because the previous run was still going |
+| 5 | `git pull --rebase` failed |
+| 6 | the commit failed |
+| 7 | the push failed |
+| anything else | Python crashed |
 
-The rules for every automatic source live in `trips/sources/__init__.py`: respect robots.txt, go slowly, stop at a bot wall and never get around it, store facts only, and link back to the source.
+The log is in `data\logs\run-YYYY-MM-DD.log`.
 
-## Roadmap
+---
 
-- **v1 (this):** engine, price history, family rules, deal check, dashboard, email digest, manual sightings.
-- **v2:** first automatic agency source (Falcon/Travelland), map with a 5h drive ring, scheduled runs, publishing to GitHub Pages.
-- **v3:** more winter resorts (Borovets, Pamporovo, Kopaonik), SerpApi cross-check, "book now or wait" from price history, comparing a package with booking flight and hotel separately.
+## Technical notes
+
+```powershell
+pip install -r requirements.txt
+python -m trips.run                 # full run (about 20 min, reads every site)
+python -m trips.run --offline       # rebuild from the local database, no internet
+$env:PYTHONIOENCODING="utf-8"; python -m unittest discover -s tests -t .
+```
+
+- **Run order:** sources → merge → enrich → validate → database → score → export.
+  - The price history lives in `data/trips.db`.
+  - The dashboard reads `docs/data.json`.
+  - Every rule and weight is in `config.toml`.
+  - The twins' birthdate is in the git-ignored `config.local.toml`. Without it, the engine
+    assumes the oldest age they could be, which is the safe side for cot limits.
+- **Drive times:** from the free OSRM router (cached), plus 30 minutes for each border crossing.
+  If the router is down, a straight-line estimate is used. It's marked as an estimate and
+  retried on the next run.
+- **Publishing:** commits only `docs/data.json` and `docs/health.json`, and only when they
+  changed. `data\run.lock` stops two runs at once.
+- **Being polite:**
+  - an honest User-Agent
+  - robots.txt obeyed
+  - at least 5 seconds between pages on the same site
+  - unchanged pages cost the site only a "304 Not Modified"
+
+  The rules are in `trips/sources/__init__.py`. Booking.com, Airbnb, Vrbo, Expedia and Fibula's
+  private API are never used.
+
+### Sources
+
+| Source | How |
+|---|---|
+| Fibula (fibula.com.mk) | **By hand** with `trips.add_offer`. Its robots.txt disallows its price API. |
+| Travelland, Olympic (Serbian agencies) | Automatic: Halkidiki, Bansko, Borovets, Pamporovo, Kopaonik. |
+| Other Macedonian agencies, Bulgarian ski sites, charters | Automatic, where robots.txt allows it. |
+| Hotels' own websites (Sani, Porto Carras, St. Ivan Rilski, …) | Automatic: their campaigns show as 🏨 chips. |
+| Oliver's Travels (villas), Micazu (owner apartments), other rentals | Automatic. Self-catering, so capped in summer. |
+| Booking.com, Airbnb, Vrbo, Expedia, Wizz Air, Marriott Homes & Villas, WebHotelier engines | ❌ Never: their terms or robots.txt forbid it. |

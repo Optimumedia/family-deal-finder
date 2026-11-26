@@ -22,6 +22,12 @@ pages per run, and caches the extracted facts in data/enrich_cache.json so a pag
 re-read at most once every `max_age_days` (7). It fills hotel["family"] facts that are
 still unknown (curated facts and "verified" are never touched) and sets an offer's board
 only when it is "?" and the page states exactly one board.
+
+Family prices (trips/family_prices.py): explicit 2-adults-2-kids price rows become extra
+"2+2" offers (appended to `offers`), 2+0 offers get `family_price_est` / `family_price_basis`
+when the child policy prices both twins, and "?"-board offers get `board_cheapest`. The page
+summary needed for that (child policy, room sizes, lowest price per board) is kept in
+hotel["enriched"] so trips/run.py can annotate offers read back from the database.
 """
 from __future__ import annotations
 
@@ -34,6 +40,7 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
+from . import family_prices
 from .http import Blocked, PoliteSession, Unavailable
 
 log = logging.getLogger(__name__)
@@ -566,10 +573,23 @@ def _host_of(url: str) -> str | None:
     return host if host in HOSTS else None
 
 
-def apply(facts: dict, hotel: dict | None, offers: list[dict]) -> tuple[int, int]:
-    """Copy page facts into a hotel (only unknown keys) and set a single stated board on
-    offers whose board is "?". Returns (facts_set, boards_set)."""
+def page_summary(facts: dict) -> dict:
+    """What run.py needs later to annotate offers: child policy, room sizes, price per board."""
+    return {
+        "url": facts.get("url"), "fetched": facts.get("fetched"),
+        "board_options": facts.get("board_options", []),
+        "child_policy": facts.get("child_policy", []),
+        "rooms": [{"name": r.get("name"), "max_persons": r.get("max_persons")} for r in facts.get("rooms") or []],
+        "board_prices": family_prices.board_prices(facts.get("price_table") or []),
+    }
+
+
+def apply(facts: dict, hotel: dict | None, offers: list[dict], cfg: dict | None = None) -> tuple[int, int]:
+    """Copy page facts into a hotel (only unknown keys), set a single stated board on
+    offers whose board is "?", and (with cfg) add family-price / cheapest-board fields to
+    the offers. Returns (facts_set, boards_set)."""
     n_facts = n_boards = 0
+    summary = page_summary(facts)
     if hotel is not None and facts.get("family"):
         fam = hotel.setdefault("family", {"verified": []})
         set_now = []
@@ -578,13 +598,13 @@ def apply(facts: dict, hotel: dict | None, offers: list[dict]) -> tuple[int, int
                 fam[k] = facts["family"][k]
                 set_now.append(k)
         n_facts = len(set_now)
-        if set_now or facts.get("board_options"):
+        if set_now or facts.get("board_options") or facts.get("child_policy"):
             hotel["enriched"] = {
-                "url": facts.get("url"), "fetched": facts.get("fetched"), "keys": sorted(set_now),
+                **summary, "keys": sorted(set_now),
                 "evidence": {k: facts.get("evidence", {}).get(k) for k in set_now},
-                "board_options": facts.get("board_options", []),
-                "child_policy": facts.get("child_policy", []),
             }
+    elif hotel is not None and (facts.get("board_options") or facts.get("child_policy")):
+        hotel["enriched"] = {**summary, "keys": [], "evidence": {}}
     boards = facts.get("board_options") or []
     if len(boards) == 1:
         for o in offers:
@@ -592,6 +612,9 @@ def apply(facts: dict, hotel: dict | None, offers: list[dict]) -> tuple[int, int
                 o["board"] = boards[0]
                 o["board_from"] = "detail page"
                 n_boards += 1
+    if cfg is not None:
+        for o in offers:
+            o.update(family_prices.annotate(o, summary, cfg))
     return n_facts, n_boards
 
 
@@ -600,6 +623,10 @@ def _priority(offer: dict, hotel: dict | None) -> tuple:
     musts = ("sand_beach", "beach_m") if (hotel or {}).get("season") == "summer" else ("separate_bedroom",)
     unknown = sum(fam.get(k) is None for k in musts)
     return (offer.get("board") != "?", -unknown)
+
+
+def _okey(o: dict) -> tuple:
+    return tuple(str(o.get(k, "")) for k in ("hotel", "check_in", "nights", "board", "room", "occupancy", "source"))
 
 
 def enrich(offers: list[dict], hotels, cfg: dict, today: date, budget: int | None = None,
@@ -620,7 +647,10 @@ def enrich(offers: list[dict], hotels, cfg: dict, today: date, budget: int | Non
     cache = load_cache(path)
     pages = cache["pages"]
     stats = {"pages": 0, "fetched": 0, "fresh_cache": 0, "stale_cache": 0, "no_budget": 0, "skipped_blocked": 0, "failed": 0,
-             "facts_set": 0, "boards_set": 0, "blocked": []}
+             "facts_set": 0, "boards_set": 0, "family_offers": 0, "family_estimates": 0, "board_cheapest": 0,
+             "blocked": []}
+    have = {_okey(o) for o in offers}
+    extra: list[dict] = []
 
     groups: dict[str, list[dict]] = {}
     for o in offers:
@@ -672,11 +702,21 @@ def enrich(offers: list[dict], hotels, cfg: dict, today: date, budget: int | Non
             continue
         for hid in {o.get("hotel") or o.get("hotel_id") for o in group}:
             mine = [o for o in group if (o.get("hotel") or o.get("hotel_id")) == hid]
-            f, b = apply(entry, by_id.get(hid), mine)
+            f, b = apply(entry, by_id.get(hid), mine, cfg)
             stats["facts_set"] += f
             stats["boards_set"] += b
+            stats["family_estimates"] += sum("family_price_est" in o for o in mine)
+            stats["board_cheapest"] += sum("board_cheapest" in o for o in mine)
+            for fo in family_prices.family_offers(entry, mine, cfg, today):
+                if _okey(fo) not in have:
+                    have.add(_okey(fo))
+                    extra.append(fo)
+    offers.extend(extra)
+    stats["family_offers"] = len(extra)
     if dirty:
         save_cache(path, cache)
     log.info("enrich: %(pages)d pages, %(fetched)d read live, %(fresh_cache)d from cache, %(stale_cache)d stale, "
-             "%(no_budget)d waiting for budget; %(facts_set)d facts and %(boards_set)d boards filled", stats)
+             "%(no_budget)d waiting for budget; %(facts_set)d facts and %(boards_set)d boards filled; "
+             "%(family_offers)d 2+2 offers from price tables, %(family_estimates)d family-price estimates, "
+             "%(board_cheapest)d cheapest boards", stats)
     return stats

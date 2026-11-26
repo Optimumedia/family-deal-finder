@@ -1,0 +1,143 @@
+{
+"version": 0.6,
+"generator": "Overpass API 0.7.62.11 87bfad18",
+"osm3s": {
+"timestamp_osm_base": "2026-11-26T10:33:51Z",
+"copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+},
+"elements": [
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "4",
+"ways": "0",
+"relations": "0",
+"total": "4"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "0",
+"relations": "0",
+"total": "0"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "1",
+"relations": "0",
+"total": "1"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "0",
+"relations": "0",
+"total": "0"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "2",
+"ways": "0",
+"relations": "0",
+"total": "2"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "24",
+"relations": "0",
+"total": "24"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "1",
+"relations": "0",
+"total": "1"
+}
+},
+{
+"type": "way",
+"id": 206805281,
+"center": {
+"lat": 42.3358923,
+"lon": 23.5520668
+},
+"tags": {
+"addr:housenumber": "49",
+"addr:street": "Македония",
+"amenity": "hospital",
+"email": "mbal_samokov@abv.bg",
+"healthcare": "hospital",
+"name": "МБАЛ Самоков",
+"official_name": "Многопрофилна болница за активно лечение Самоков",
+"website": "https://mbal-samokov.com/"
+}
+},
+{
+"type": "way",
+"id": 466456609,
+"center": {
+"lat": 42.3306661,
+"lon": 23.8718888
+},
+"tags": {
+"amenity": "hospital",
+"healthcare": "hospital"
+}
+},
+{
+"type": "way",
+"id": 473094507,
+"center": {
+"lat": 42.3071666,
+"lon": 23.8620876
+},
+"tags": {
+"addr:housenumber": "56",
+"addr:street": "Цариградско шосе",
+"amenity": "hospital",
+"healthcare": "hospital"
+}
+},
+{
+"type": "way",
+"id": 962799840,
+"center": {
+"lat": 42.4336109,
+"lon": 23.8249565
+},
+"tags": {
+"addr:housenumber": "30",
+"addr:street": "Шипка",
+"amenity": "hospital",
+"emergency": "yes",
+"healthcare": "hospital",
+"healthcare:speciality": "general;internal;neurology;cardiology;paediatrics;gynaecology;surgery;clinic",
+"name": "МБАЛ Ихтиман",
+"official_name": "Многопрофилна болница за активно лечение Ихтиман",
+"website": "https://www.mbalihtiman.com"
+}
+}
+]
+}

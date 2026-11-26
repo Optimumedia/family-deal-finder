@@ -1,0 +1,112 @@
+{
+"version": 0.6,
+"generator": "Overpass API 0.7.62.11 87bfad18",
+"osm3s": {
+"timestamp_osm_base": "2026-11-26T10:27:43Z",
+"copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+},
+"elements": [
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "0",
+"relations": "0",
+"total": "0"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "0",
+"relations": "0",
+"total": "0"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "0",
+"relations": "0",
+"total": "0"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "0",
+"ways": "0",
+"relations": "0",
+"total": "0"
+}
+},
+{
+"type": "count",
+"id": 0,
+"tags": {
+"nodes": "5",
+"ways": "0",
+"relations": "0",
+"total": "5"
+}
+},
+{
+"type": "node",
+"id": 1843490636,
+"lat": 40.2400793,
+"lon": 23.2923549,
+"tags": {
+"amenity": "hospital",
+"healthcare": "hospital"
+}
+},
+{
+"type": "node",
+"id": 9432992967,
+"lat": 39.9884417,
+"lon": 23.613566,
+"tags": {
+"addr:city": "Πευκοχώρι Κασσάνδρας Χαλκιδικής",
+"addr:postcode": "63085",
+"amenity": "hospital",
+"check_date": "2025-08-10",
+"healthcare": "yes",
+"healthcare:speciality": "general",
+"name": "AED POINT"
+}
+},
+{
+"type": "way",
+"id": 1436517174,
+"center": {
+"lat": 40.0515639,
+"lon": 23.4118811
+},
+"tags": {
+"amenity": "hospital",
+"building": "yes",
+"healthcare": "hospital",
+"name": "ΚΕΝΤΡΟ ΥΓΕΙΑΣ ΚΑΣΣΑΝΔΡΕΙΑΣ"
+}
+},
+{
+"type": "way",
+"id": 1535637525,
+"center": {
+"lat": 40.2856564,
+"lon": 23.4318255
+},
+"tags": {
+"amenity": "hospital",
+"name": "Νεφροξένια Κέντρο Αιμοκάθαρσης",
+"name:en": "Nephroxenia Dialysis Center"
+}
+}
+]
+}

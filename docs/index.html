@@ -29,6 +29,7 @@ body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 var(--font);
 a{color:var(--teal-d)} a:hover{text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:6px}
 [hidden]{display:none!important}
+.attrib{font-size:12px;color:var(--muted);margin:28px 0 0;text-align:center}
 .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;left:12px;top:-60px;background:var(--surface);color:var(--ink);padding:8px 12px;border-radius:var(--r-s);z-index:50}
 .skip:focus{top:12px}
@@ -102,9 +103,9 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .row.flash{outline:3px solid var(--teal);outline-offset:3px}
 .ph{position:relative;aspect-ratio:4/3;border-radius:var(--r-m);overflow:hidden;background:var(--sunk)}
 .ph img{width:100%;height:100%;object-fit:cover;display:block}
-.ph .none{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;padding:10px;background:linear-gradient(160deg,var(--teal-soft),var(--sunk))}
-.ph .none svg{width:26px;height:26px;display:block;margin:0 auto 4px;color:var(--teal)}
-.ph .none b{display:block;font-size:16px;color:var(--teal-d)}.ph .none .pd{display:block;font-size:13px;color:var(--ink-2);margin-top:2px}.ph .none .pn2{display:block;font-size:11.5px;margin-top:8px;color:var(--muted)}
+.ph .none,.dphoto .none{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;padding:10px;background:linear-gradient(160deg,var(--teal-soft),var(--sunk))}
+.ph .none svg,.dphoto .none svg{width:26px;height:26px;display:block;margin:0 auto 4px;color:var(--teal)}
+.ph .none b,.dphoto .none b{display:block;font-size:16px;color:var(--teal-d)}.ph .none .pd,.dphoto .none .pd{display:block;font-size:13px;color:var(--ink-2);margin-top:2px}.ph .none .pn2,.dphoto .none .pn2{display:block;font-size:11.5px;margin-top:8px;color:var(--muted)}
 .heart{position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.18)}
 .heart[aria-pressed=true]{color:var(--coral-solid)}
 .heart[aria-pressed=true] svg{fill:currentColor;animation:pop .32s cubic-bezier(.2,.9,.3,1.4)}
@@ -160,7 +161,7 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .actions{display:flex;flex-direction:row;gap:6px;width:100%;margin-top:auto;padding-top:6px}
 .actions .btn.primary{flex:1}
 .ptop{display:flex;gap:8px;align-items:center;justify-content:flex-end}
-.actions .btn{min-height:36px;padding:7px 12px;white-space:nowrap}
+.actions .btn{min-height:36px;padding:7px 12px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
 .btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:var(--r-s);padding:9px 14px;font:600 14px var(--font);cursor:pointer;text-decoration:none;min-height:40px}
 .btn:hover{background:var(--sunk)}
 .btn.primary{background:var(--teal);color:var(--teal-ink);border-color:var(--teal)}
@@ -204,7 +205,8 @@ dialog::backdrop{background:rgba(10,24,27,.55)}
 .cmp th,.cmp td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .cmp thead th{vertical-align:bottom}
 .cmp tbody th{color:var(--muted);font-weight:600;width:170px;position:sticky;left:0;background:var(--surface)}
-.cmp img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-s);display:block;margin-bottom:8px;background:var(--sunk)}
+.cmp .cph{aspect-ratio:16/10;border-radius:var(--r-s);overflow:hidden;background:var(--sunk);display:grid;place-items:center;color:var(--muted);margin-bottom:8px}
+.cmp .cph img{width:100%;height:100%;object-fit:cover;display:block}
 .cmp .diff{background:var(--teal-soft)}
 dialog.small{width:min(460px,calc(100vw - 32px))}
 html:has(dialog[open]){overflow:hidden}
@@ -279,8 +281,89 @@ dialog.drawer[open]{display:flex;flex-direction:column;animation:slidein .28s cu
 .btn[aria-pressed=true] svg{color:var(--coral-solid);fill:var(--coral-solid)}
 .name a[data-open]{cursor:pointer}
 
+/* ---------- price basis + per-night toggle ---------- */
+.bt{display:inline-flex;align-items:center;font-size:12px;font-weight:700;line-height:1.3;padding:1px 7px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.bt.fam{background:var(--good-bg);color:var(--good)}
+.bt.adults{background:var(--warn-bg);color:var(--warn)}
+.bt.est{background:transparent;color:var(--warn);border:1px dashed var(--warn)}
+.big small{font-size:14px;font-weight:600;letter-spacing:0;color:var(--ink-2);margin-left:2px}
+.note-b{min-width:0;flex:1}
+.basis{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font-size:13px;color:var(--ink-2);margin-top:7px;padding-top:7px;border-top:1px solid var(--teal-line)}
+.basis > b{color:var(--ink);font-size:13px}
+.basis span.it{display:inline-flex;align-items:center;gap:7px}
+.basis .c{color:var(--muted)}
+.pmode{display:flex;gap:4px;padding:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+.pmode button{appearance:none;border:0;background:none;font:600 13.5px var(--font);color:var(--ink-2);padding:7px 13px;border-radius:999px;cursor:pointer;min-height:34px;white-space:nowrap}
+.pmode button[aria-pressed=true]{background:var(--teal);color:var(--teal-ink)}
+.pmode button:hover:not([aria-pressed=true]){background:var(--sunk)}
+
+/* ---------- top picks ---------- */
+.picks{margin-bottom:16px}
+.picks-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin:0 0 8px}
+.picks-h h2{margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.picks-h p{margin:0;font-size:13.5px;color:var(--muted)}
+.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pick{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--shadow-1);overflow:hidden;transition:box-shadow .2s ease,border-color .2s ease;min-width:0}
+.pick:hover{box-shadow:var(--shadow-2);border-color:var(--line-2)}
+.pick .ph{aspect-ratio:2/1;border-radius:0}
+.pick .ph .none b{font-size:14px}
+.pick .pb{display:flex;flex-direction:column;gap:4px;padding:10px 12px 12px;flex:1}
+.pick h3{margin:0;font-size:15px;font-weight:700;line-height:1.3}
+.pick h3 a{color:var(--teal-d);text-decoration:none}.pick h3 a:hover{text-decoration:underline}
+.pick .ar{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick .pp{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;margin-top:2px}
+.pick .pp b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.pick .pp .pn{font-size:12.5px}
+.pick .pp b small{font-size:13px;font-weight:600;letter-spacing:0;color:var(--ink-2);margin-left:2px}
+.pick .wy{font-size:13px;color:var(--ink-2);line-height:1.4;margin-top:auto;padding-top:6px;border-top:1px solid var(--line)}
+.pick-empty{background:var(--surface);border:1px dashed var(--line-2);border-radius:var(--r-l);padding:14px 16px;font-size:13.5px;color:var(--ink-2)}
+.pick-empty b{color:var(--ink)}
+
+/* ---------- map clusters ---------- */
+.mk-c{display:grid;place-items:center;color:#fff;font:700 12.5px var(--font);border:3px solid #fff;box-shadow:0 2px 6px rgba(18,38,43,.35);width:100%;height:100%;box-sizing:border-box}
+.mk-c.near{background:var(--teal);border-radius:50%}
+.mk-c.mid{background:var(--warn);border-radius:50%}
+.mk-c.far{background:var(--muted);border-radius:6px}
+.mk-c.fly{background:var(--ink-2);border-radius:999px}
+.mk-c.unk{background:var(--muted);border-radius:50%;border-style:dashed}
+.leaflet-marker-icon:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:50%}
+.lg-dot{display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(18,38,43,.3)}
+.lg-dot.near{background:var(--teal);border-radius:50%}.lg-dot.mid{background:var(--warn);border-radius:50%}.lg-dot.far{background:var(--muted);border-radius:3px}.lg-dot.fly{background:var(--ink-2);border-radius:999px;width:20px}
+.places{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 12px}
+.places button{appearance:none;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:999px;font:600 12.5px var(--font);padding:4px 10px;cursor:pointer;min-height:30px}
+.places button:hover{background:var(--sunk)}
+.places button .c{color:var(--muted);font-weight:400;margin-left:4px}
+.pop .pl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;max-height:300px;overflow:auto}
+.pop .pl li{display:flex;gap:10px;align-items:center;margin:0}
+.pop .th{flex:none;width:64px;height:48px;border-radius:var(--r-s);overflow:hidden;background:var(--sunk);display:grid;place-items:center;color:var(--muted)}
+.pop .th img{width:100%;height:100%;object-fit:cover;display:block}
+.pop .pl .t{min-width:0;font-size:13px;color:var(--ink-2);line-height:1.35}
+.pop .pl .t b{color:var(--ink)}
+.pop .pl button{display:block;text-align:left;font-size:13.5px}
+.pop .more{margin-top:8px;font-size:13px}
+
+/* ---------- compare ---------- */
+.cmp td.best{background:var(--good-bg)}
+.cmp td.best::after{content:"Best";display:block;font-size:12px;font-weight:700;color:var(--good);margin-top:2px}
+.cmp .sm{display:block;font-size:12.5px;color:var(--muted)}
+.cmp .warn{color:var(--warn);font-weight:600}
+.cmp-pick{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px;font-size:13.5px;color:var(--ink-2)}
+.cmp-pick button{appearance:none;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);border-radius:999px;font:600 13px var(--font);padding:5px 12px;cursor:pointer;min-height:32px}
+.cmp-pick button[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
+.cmpwrap{overflow-x:auto}
+.cmp{min-width:640px;table-layout:fixed}.cmp thead td{width:150px}
+
 /* ---------- responsive ---------- */
 @media (max-width:1320px){.fit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1180px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){
+  .pgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;gap:10px;margin:0 -16px;padding:2px 16px 8px;scrollbar-width:none}
+  .pgrid::-webkit-scrollbar{display:none}
+  .pick{flex:0 0 78%;scroll-snap-align:start}
+  .pmode{width:100%}.pmode button{flex:1}
+  .cmp{min-width:560px;font-size:13.5px}.cmp thead td,.cmp tbody th{width:96px}.cmp th,.cmp td{padding:8px}
+  .basis{gap:6px 12px}
+}
 @media (max-width:1180px){.row{grid-template-columns:180px minmax(0,1fr) 226px}}
 @media (max-width:1000px){
   .wrap{grid-template-columns:minmax(0,1fr)}
@@ -360,6 +443,8 @@ main,.rhead > div,.mid{min-width:0}
   <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
   <symbol id="i-cmp" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="i-thumb" viewBox="0 0 24 24"><path d="M7 10v11H4V10h3zM7 10l4-7a2.5 2.5 0 0 1 2.5 2.5V9h5.2a2 2 0 0 1 2 2.4l-1.6 8A2 2 0 0 1 17.1 21H7"/></symbol>
 </svg>
 
 <header class="top">
@@ -431,6 +516,10 @@ main,.rhead > div,.mid{min-width:0}
         <input type="search" id="q" placeholder="Search hotel or area" aria-label="Search by hotel name or area" autocomplete="off" spellcheck="false">
         <kbd aria-hidden="true">/</kbd>
       </div>
+      <div class="pmode" role="group" aria-label="Show prices as">
+        <button type="button" data-pmode="total" aria-pressed="true">Total stay</button>
+        <button type="button" data-pmode="night" aria-pressed="false">Per night</button>
+      </div>
       <div class="sorts" role="group" aria-label="Sort by"><span class="sortlbl">Sort</span>
         <button data-sort="best" aria-pressed="true">Best for us</button>
         <button data-sort="price">Price</button>
@@ -440,10 +529,12 @@ main,.rhead > div,.mid{min-width:0}
       </div>
     </div>
     <div class="sr" id="live" role="status" aria-live="polite"></div>
-    <div class="note" id="note"><svg class="i"><use href="#i-info"/></svg><div id="note-t"></div></div>
+    <div class="note" id="note"><svg class="i"><use href="#i-info"/></svg><div class="note-b"><div id="note-t"></div><div class="basis" id="basis"></div></div></div>
+    <section class="picks" id="picks" aria-labelledby="picks-h" hidden></section>
     <details class="news" id="news" hidden><summary><h2 id="news-h">What's new</h2></summary><ul id="news-l"></ul></details>
     <div class="list" id="list"></div>
-    <section id="mapWrap" hidden><div id="map" role="region" aria-label="Map of hotels"></div><div class="legend" id="legend"></div></section>
+    <section id="mapWrap" hidden><div id="map" role="region" aria-label="Map of hotels"></div><div class="legend" id="legend"></div><div class="places" id="places" role="group" aria-label="Jump to a place on the map"></div></section>
+    <p class="attrib">Weather: Open-Meteo.com (CC BY 4.0) · Places and map: © OpenStreetMap contributors (ODbL) · Prices link back to each source.</p>
   </main>
 </div>
 
@@ -471,6 +562,7 @@ main,.rhead > div,.mid{min-width:0}
     <div><dt><kbd>Enter</kbd></dt><dd>Open the hotel's details</dd></div>
     <div><dt><kbd>s</kbd></dt><dd>Add to or remove from the shortlist</dd></div>
     <div><dt><kbd>m</kbd></dt><dd>Switch between list and map</dd></div>
+    <div><dt><kbd>p</kbd></dt><dd>Show prices for the whole stay or per night</dd></div>
     <div><dt><kbd>Esc</kbd></dt><dd>Close details, or clear the search</dd></div>
     <div><dt><kbd>?</kbd></dt><dd>Show these shortcuts</dd></div>
   </dl></div>
@@ -489,10 +581,35 @@ const LIMIT = 300, BOARD = {HB:'Half board',FB:'Full board',AI:'All inclusive',B
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let DATA = null, HOTELS = [], season = store.get('season','summer'), sort = store.get('sort','best'), view = store.get('view','list');
-let short = new Set(store.get('short',[])), shown = 30;
+let short = new Set(store.get('short',[])), shown = 30, pmode = store.get('pmode','total') === 'night' ? 'night' : 'total';
+
+/* ---------- price basis: who a price covers, and how sure we are ---------- */
+// fam = a real quote for 2 adults + 2 kids; est = our estimate for all four (from a 2-adult price);
+// adults = a 2-adult price, the twins' cost unknown.
+const famEst = o => { const e = o.family_price_est; const v = typeof e === 'number' ? e : e && typeof e === 'object' ? (e.price_eur ?? e.eur ?? e.value) : null; return typeof v === 'number' && v > 0 ? v : null; };
+const basisOf = o => o.occupancy === '2+2' ? 'fam' : famEst(o) ? 'est' : 'adults';
+const priceOf = o => basisOf(o) === 'est' ? famEst(o) : o.price_eur;
+const nightOf = o => priceOf(o) / Math.max(1, o.nights);
+const BASIS = {fam:['2+2','Real price for all four of us'], est:['est.','Our estimate for all four, not a quote'], adults:['2 adults','Agency price for 2 adults; the twins cost extra']};
+const btag = o => { const b = basisOf(o); return `<span class="bt ${b}" title="${esc(b === 'est' && o.family_price_basis ? o.family_price_basis : BASIS[b][1])}">${BASIS[b][0]}</span>`; };
+const isFlight = o => !!(o.direct_flight_skp || o.flight_included || o.source === 'Savana Travel' || /flight from Skopje/i.test(`${o.room || ''} ${o.notes || ''}`));
+const flexDates = o => /dates on request|dates not stated|agency's dates|lowest weekly rate|weekly price range/i.test(`${o.room || ''} ${o.notes || ''}`);
+const datesTxt = (o, short) => flexDates(o) ? `Dates on request · ${o.nights} nights` : `${fmtD(o.check_in)} · ${o.nights}${short ? 'n' : ' nights'}`;
+// The main number follows the Total / Per night toggle; the other figure is always one line below.
+function money(o){
+  const p = priceOf(o), n = Math.max(1, o.nights);
+  return pmode === 'night'
+    ? {big: `${eur(p / n)}<small>/night</small>`, alt: `${eur(p)} for ${n} night${n > 1 ? 's' : ''}`, plain: `${eur(p / n)} a night`}
+    : {big: eur(p), alt: `${n} night${n > 1 ? 's' : ''} · ≈ ${eur(p / n)} a night`, plain: eur(p)};
+}
+function whoTxt(o){
+  const b = basisOf(o);
+  // Always shown after the basis tag, so it adds what the tag doesn't say.
+  return (b === 'fam' ? 'all four of us' : b === 'est' ? 'estimate for all four' : 'kids extra') + (isFlight(o) ? ' · flight incl.' : '');
+}
 
 /* ---------- hotel grouping: one row per hotel, best comparable offer first ---------- */
-function rankOffer(o){ return [o.occupancy==='2+2'?0:1, o.board==='?'?1:0, o.price_eur]; }
+function rankOffer(o){ const b = basisOf(o); return [b === 'fam' ? 0 : b === 'est' ? 1 : 2, o.board==='?'?1:0, priceOf(o)]; }
 function cmpArr(a,b){ for(let i=0;i<a.length;i++){ if(a[i]!==b[i]) return a[i]<b[i]?-1:1; } return 0; }
 function group(items){
   const by = new Map();
@@ -504,7 +621,7 @@ function group(items){
     const camps = offers.flatMap(o => o.campaigns || []);
     const uniq = [...new Map(camps.map(c => [c.title, c])).values()];
     return {id: best.hotel_id, best, offers, img, campaigns: uniq, excluded: offers.every(o => o.excluded),
-            score: Math.max(...offers.map(o => o.overall)), season: best.season, kind: best.kind || 'hotel',
+            score: Math.max(...offers.map(o => o.overall)), season: best.season, kind: best.kind || 'hotel', flight: isFlight(best),
             txt: norm([best.name, ...new Set(offers.map(o => o.area))].join(' '))};
   });
 }
@@ -551,7 +668,7 @@ function pass(h, f, skip){
   if (season === 'short' && !short.has(h.id)) return false;
   if (!f.out && h.excluded && season !== 'short') return false;
   for (const k of ['family','deal','ending','hb','noboard']) if (k !== skip && f[k] && !tests[k](h)) return false;
-  if (skip !== 'drive' && f.drive < 360 && h.best.family.drive_minutes != null && h.best.family.drive_minutes > f.drive) return false;
+  if (skip !== 'drive' && f.drive < 360 && !h.flight && h.best.family.drive_minutes != null && h.best.family.drive_minutes > f.drive) return false;
   if (skip !== 'kind' && !f.kinds.includes(h.kind)) return false;
   if (skip !== 'area' && f.areas.includes(areaOf(h))) return false;
   if (f.q.length && !f.q.every(w => h.txt.includes(w))) return false;
@@ -562,10 +679,10 @@ function pass(h, f, skip){
 const disc = h => h.best.deal.real_pct ?? h.best.deal.stated_pct ?? -1;
 const SORTS = {
   best: (a,b) => (a.excluded - b.excluded) || (b.score - a.score),
-  price: (a,b) => (a.best.occupancy==='2+2'?0:1) - (b.best.occupancy==='2+2'?0:1) || a.best.price_eur - b.best.price_eur,
-  night: (a,b) => a.best.price_eur/a.best.nights - b.best.price_eur/b.best.nights,
+  price: (a,b) => cmpArr(rankOffer(a.best).filter((_, i) => i !== 1), rankOffer(b.best).filter((_, i) => i !== 1)),
+  night: (a,b) => nightOf(a.best) - nightOf(b.best),
   discount: (a,b) => disc(b) - disc(a),
-  drive: (a,b) => (a.best.family.drive_minutes ?? 9999) - (b.best.family.drive_minutes ?? 9999),
+  drive: (a,b) => (a.flight ? 9000 : a.best.family.drive_minutes ?? 9999) - (b.flight ? 9000 : b.best.family.drive_minutes ?? 9999),
 };
 
 /* ---------- row ---------- */
@@ -586,12 +703,40 @@ function newChip(h){
   if (!n) return '';
   return n === h.offers.length ? `<span class="chip new">New since your last visit</span>` : `<span class="chip new">${n} new offer${n > 1 ? 's' : ''} since your last visit</span>`;
 }
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const monthName = m => MONTHS[(+m || 1) - 1];
+function areaChip(o){
+  const a = o.area_info; if (!a) return '';
+  if (o.season === 'summer') {
+    if (a.sea_c == null) return '';
+    return `<span class="chip${a.sea_ok ? ' good' : ' warn'}" title="Typical sea in ${monthName(a.month)}, last 3 summers">Sea ${Math.round(a.sea_c)}°C · air ${Math.round(a.air_max_c)}°C</span>`;
+  }
+  if (a.air_max_c == null) return '';
+  return `<span class="chip" title="Typical ${monthName(a.month)} in the town, last 3 winters">${Math.round(a.air_max_c)}°C max · ${a.novice_pistes ?? 0} beginner runs${a.magic_carpets ? ' · kids\' lift' : ''}</span>`;
+}
+function nearbyLine(o){
+  const a = o.area_info; if (!a) return '';
+  const bits = [];
+  if (a.playgrounds) bits.push(`${a.playgrounds} playground${a.playgrounds > 1 ? 's' : ''}`);
+  if (a.water_parks) bits.push(`${a.water_parks} water park${a.water_parks > 1 ? 's' : ''}`);
+  if (a.pharmacies) bits.push(`${a.pharmacies} pharmac${a.pharmacies > 1 ? 'ies' : 'y'}`);
+  if (a.hospital_km != null) bits.push(`hospital ${a.hospital_km.toFixed(1)} km`);
+  const flags = (a.toddler_flags || []).join(' · ');
+  return `<div class="cap">${ic('pin')} Nearby (5 km, from OpenStreetMap): ${bits.length ? esc(bits.join(' · ')) : 'nothing mapped yet'}${flags ? ` · <span class="q">${esc(flags)}</span>` : ''}</div>`;
+}
 const hotelHref = h => `?season=${h.season}&hotel=${encodeURIComponent(h.id)}`;
-function driveChip(m){
+function driveChip(m, o){
+  if (o && isFlight(o)) return `<span class="chip good">${ic('plane')}incl. flight from Skopje</span>`;
   if (m == null) return `<span class="chip">${ic('car')}Drive time unknown</span>`;
   if (m <= LIMIT) return `<span class="chip good">${ic('car')}${hm(m)} drive</span>`;
   return `<span class="chip warn">${ic('car')}${hm(m)} · ${Math.round(m - LIMIT)} min over 5h</span>`;
 }
+function boardChip(o){
+  if (o.board === '?') return `<span class="chip ask">${ic('fork')}Board not stated</span>`;
+  if (o.board === 'SC' && o.season === 'summer') return `<span class="chip warn" title="Our summer rule is breakfast + dinner">${ic('fork')}Self-catering · no meals</span>`;
+  return `<span class="chip${['HB','FB','AI'].includes(o.board)?' good':''}">${ic('fork')}${BOARD[o.board] || esc(o.board)}</span>`;
+}
+const datesChip = o => flexDates(o) ? `<span class="chip ask">${ic('cal')}Dates on request · ${o.nights} nights</span>` : `<span class="chip">${ic('cal')}${fmtD(o.check_in)} · ${o.nights} nights</span>`;
 function fitList(o){
   const order = ['cots','sand_beach','beachfront','board','separate_bedroom','kids_club','kids_pool','ski_school','shallow_entry'];
   const cl = o.family.checklist.filter(c => c.key !== 'reach' && c.key !== 'family_room').sort((a,b) => order.indexOf(a.key) - order.indexOf(b.key));
@@ -599,6 +744,7 @@ function fitList(o){
     const label = c.key === 'cots' ? '2 cots for the twins' : c.label;
     if (c.state === 'yes') return `<li><span class="mk yes${c.verified?'':' unv'}" aria-hidden="true">${c.verified?ic('check','i mki'):''}</span><span>${esc(label)}${c.verified?' <span class="q">(confirmed)</span>':''}</span></li>`;
     if (c.state === 'no') return `<li><span class="mk no" aria-hidden="true">${ic('xmark','i mki')}</span><span><span class="sr">No: </span>${esc(label)}</span></li>`;
+    if (c.state === 'available') return `<li><span class="mk yes unv" aria-hidden="true"></span><span>${esc(label)}</span></li>`;
     return `<li><span class="mk unk" aria-hidden="true"></span><span><span class="sr">Not known yet: </span>${esc(label)} <span class="q">— ask</span></span></li>`;
   }).join('');
 }
@@ -625,26 +771,23 @@ function signal(o){
 }
 function priceBlock(h){
   const o = h.best, pct = o.deal.real_pct ?? o.deal.stated_pct;
-  const fam = o.occupancy === '2+2';
-  const qual = fam ? `2 adults + 2 kids` : `2 adults only · kids extra`;
-  const dl = o.deal.days_left;
+  const b = basisOf(o), mo = money(o);
+  const was = o.was_eur && pmode === 'night' ? eur(o.was_eur / Math.max(1, o.nights)) : o.was_eur ? eur(o.was_eur) : '';
   return `<div class="price">
-    ${pct || o.was_eur ? `<div class="ptop">${o.was_eur ? `<span class="was"><span class="sr">was </span>${eur(o.was_eur)}</span>` : ''}${pct ? `<span class="badge">${ic('tag')}${o.deal.verdict === 'real' ? 'Verified' : 'Agency says'} −${Math.round(pct)}%</span>` : ''}</div>` : ''}
-    <span class="big">${eur(o.price_eur)}</span>
-    <span class="qual${fam ? '' : ' warn'}" title="≈ ${eur(o.price_eur / o.nights)} a night · ${esc(o.source)}">${qual} · ${o.nights} nights</span>
-    
+    ${pct || o.was_eur ? `<div class="ptop">${was && b !== 'est' ? `<span class="was"><span class="sr">was </span>${was}</span>` : ''}${pct ? `<span class="badge">${ic('tag')}${o.deal.verdict === 'real' ? 'Verified' : 'Agency says'} −${Math.round(pct)}%</span>` : ''}</div>` : ''}
+    <span class="big">${mo.big}</span>
+    <span class="qual${b === 'fam' ? '' : ' warn'}">${btag(o)} ${whoTxt(o)}</span>
+    <span class="pn">${mo.alt}${b === 'est' ? ` · agency ${eur(o.price_eur)} for 2 adults` : ''}</span>
     ${verdict(o)}
     ${signal(o)}
     ${insight(o)}
     <div class="actions">
-      <a class="btn primary" href="${esc(o.url)}" target="_blank" rel="noopener" title="Opens ${esc(o.source.replace(' (manual)', ''))}">See offer at ${esc(o.source.replace(' (manual)', ''))} ${ic('ext')}</a>
+      <a class="btn primary" href="${esc(o.url)}" target="_blank" rel="noopener" title="Opens ${esc(o.source.replace(/\s*\(.*?\)/g, ''))}">See offer at ${esc(o.source.replace(/\s*\(.*?\)/g, ''))} ${ic('ext')}</a>
     </div></div>`;
 }
 function row(h){
   const o = h.best, f = o.family;
-  const chips = [newChip(h), driveChip(f.drive_minutes),
-    o.board === '?' ? `<span class="chip ask">${ic('fork')}Board not stated</span>` : `<span class="chip${['HB','FB','AI'].includes(o.board)?' good':''}">${ic('fork')}${BOARD[o.board]}</span>`,
-    `<span class="chip">${ic('cal')}${fmtD(o.check_in)} · ${o.nights} nights</span>`].join('');
+  const chips = [newChip(h), driveChip(f.drive_minutes, o), boardChip(o), datesChip(o), areaChip(o)].join('');
   const camp = h.campaigns[0];
   const others = h.offers.slice(1);
   const out = h.excluded ? `<div class="why">${ic('x')} Doesn't fit: ${esc(f.failed.join(', '))}</div>` : '';
@@ -659,10 +802,58 @@ function row(h){
       ${camp ? `<div class="camp">${ic('tag')}<span>Hotel's own website: <b>${camp.pct ? '−' + camp.pct + '% ' : ''}</b>${esc(camp.title.length > 90 ? camp.title.slice(0, 88) + '…' : camp.title)}</span></div>` : ''}
       ${out}<div class="foot">${capped}${others.length ? `<details class="more"><summary>${ic('list')}${others.length} more offer${others.length>1?'s':''} for this hotel</summary>
         <table><thead><tr><th>Source</th><th>Price</th><th>For</th><th>Board</th><th>Dates</th></tr></thead><tbody>${h.offers.map(x =>
-          `<tr><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.source)}</a></td><td>${eur(x.price_eur)}</td><td>${x.occupancy==='2+2'?'2+2 family':'2 adults'}</td><td>${BOARD[x.board]}</td><td>${fmtD(x.check_in)} · ${x.nights}n</td></tr>`).join('')}</tbody></table></details>` : ''}</div>
+          `<tr><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.source)}</a></td><td>${money(x).big.replace(/<\/?small>/g, '')}</td><td>${btag(x)}</td><td>${BOARD[x.board] || esc(x.board)}</td><td>${datesTxt(x, true)}</td></tr>`).join('')}</tbody></table></details>` : ''}</div>
     </div>
     ${priceBlock(h)}
   </article>`;
+}
+
+/* ---------- top picks: best family fit with a real 2+2 price ---------- */
+const cstate = (o, key) => o.family.checklist.find(c => c.key === key)?.state;
+function whyLine(o){
+  const P = o.family.parts || {}, win = o.season === 'winter';
+  const facts = [
+    ['food', ['HB','FB','AI'].includes(o.board) ? BOARD[o.board].toLowerCase() : ''],
+    [win ? 'activities' : 'beach', win ? (cstate(o, 'ski_school') === 'yes' ? 'ski school from age 3' : '') : (cstate(o, 'sand_beach') === 'yes' ? (cstate(o, 'beachfront') === 'yes' ? 'sandy beach on the doorstep' : 'sandy beach') : '')],
+    ['kids', cstate(o, 'kids_club') === 'yes' ? (cstate(o, 'kids_pool') === 'yes' ? "kids' club and pool" : "kids' club") : cstate(o, 'kids_pool') === 'yes' ? "kids' pool" : ''],
+    ['sleep', cstate(o, win ? 'separate_bedroom' : 'family_room') === 'yes' ? (win ? 'separate bedroom' : 'family room for four') : o.kind !== 'hotel' ? `whole ${o.kind === 'villa' ? 'villa' : 'apartment'} to ourselves` : ''],
+    ['travel', isFlight(o) ? 'flight from Skopje included' : (P.travel || 0) >= 7.5 && o.family.drive_minutes != null ? `${hm(o.family.drive_minutes)} drive` : ''],
+  ].filter(([, t]) => t).sort((a, b) => (P[b[0]] || 0) - (P[a[0]] || 0)).slice(0, 2).map(([, t]) => t);
+  const d = o.deal, dl = d.days_left;
+  if (d.verdict === 'real' && d.real_pct) facts.push(`verified −${Math.round(d.real_pct)}% vs our recorded price`);
+  else if (d.stated_pct) facts.push(`agency says −${Math.round(d.stated_pct)}%`);
+  if (d.signal === 'book now' && dl != null && dl >= 0 && dl <= 14) facts.push(`<span class="dead">ends ${dl === 0 ? 'today' : `in ${dl} day${dl === 1 ? '' : 's'}`}</span>`);
+  if (o.season === 'summer' && o.board === 'SC') facts.push('self-catering, so no meals included');
+  if (!facts.length) facts.push('highest family fit in this season so far');
+  const line = facts.join(' · ');
+  return line.charAt(0).toUpperCase() + line.slice(1);
+}
+let picksSig = null;
+function renderPicks(live, f){
+  const el = $('#picks');
+  if (!live || !live.length) { el.hidden = true; picksSig = null; return; }
+  const cand = live.filter(h => !h.excluded && h.best.occupancy === '2+2')
+    .sort((a, b) => (b.best.family.score - a.best.family.score) || (b.score - a.score) || (priceOf(a.best) - priceOf(b.best))).slice(0, 4);
+  const sig = pmode + '|' + live.length + '|' + cand.map(h => h.id).join(',');
+  el.hidden = false;
+  if (sig === picksSig) return;
+  picksSig = sig;
+  const filtered = f.family || f.deal || f.ending || f.hb || f.noboard || f.drive < DRIVE_DEFAULT || f.kinds.length < 3 || f.areas.length;
+  const head = `<div class="picks-h"><h2 id="picks-h">Top picks for us</h2><p>Best family fit with a real price for all four of us</p></div>`;
+  if (!cand.length) {
+    el.innerHTML = `${head}<div class="pick-empty"><b>No hotel here has a real 2+2 price yet${filtered ? ' with these filters' : ''}.</b> The ones below are priced for 2 adults; ask the agency for a quote for two adults and two 3-year-olds before comparing.</div>`;
+    return;
+  }
+  el.innerHTML = head + `<div class="pgrid">${cand.map(h => {
+    const o = h.best, mo = money(o);
+    const img = h.img ? `<img src="${esc(h.img)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="320" height="180" onerror="this.remove()">`
+      : `<div class="none"><span>${ic('pin')}<b>${esc((o.area || '').split(',')[0])}</b></span></div>`;
+    return `<article class="pick" data-id="${esc(h.id)}"><div class="ph">${img}</div><div class="pb">
+      <h3><a href="${esc(hotelHref(h))}" data-open="${esc(h.id)}" aria-haspopup="dialog">${esc(o.name)}</a></h3>
+      <div class="ar">${esc(o.area)}</div>
+      <div class="pp"><b>${mo.big}</b>${btag(o)}<span class="pn">${mo.alt}</span></div>
+      <div class="wy">${whyLine(o)}</div></div></article>`;
+  }).join('')}</div>`;
 }
 
 /* ---------- render ---------- */
@@ -673,6 +864,7 @@ function render(){
   $('#results').setAttribute('aria-labelledby', 'tab-' + season);
   $$('.sorts button').forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === sort));
   $$('.views button').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === view));
+  $$('.pmode button').forEach(b => b.setAttribute('aria-pressed', b.dataset.pmode === pmode));
   $('#drive-t').textContent = f.drive >= 360 ? 'any' : hm(f.drive) + (f.drive > LIMIT ? ' (incl. borderline)' : '');
 
   // counts per option (what you'd get if you ticked it)
@@ -691,21 +883,28 @@ function render(){
   const offers = live.reduce((n, h) => n + h.offers.length, 0);
   const sname = season === 'summer' ? 'Summer 2027' : season === 'winter' ? 'Winter 2026/27' : 'Shortlist';
   $('#title').textContent = season === 'short' ? `${live.length + out.length} shortlisted hotel${live.length + out.length === 1 ? '' : 's'}` : `${sname}: ${live.length} hotels for us`;
-  const within = live.filter(h => (h.best.family.drive_minutes ?? 0) <= LIMIT).length;
+  const flying = live.filter(h => h.flight).length;
+  const within = live.filter(h => !h.flight && (h.best.family.drive_minutes ?? 0) <= LIMIT).length;
   const fresh = live.filter(h => h.offers.some(offerIsNew)).length;
-  $('#subtitle').textContent = season === 'short' ? 'Your hearts are saved in this browser and in the page link.' : `${within} within 5h · ${live.length - within} borderline · ${offers} offers from ${new Set(live.flatMap(h => h.offers.map(o => o.source))).size} sources${out.length ? ' · ' + out.length + ' ruled out' : ''}${fresh ? ` · ${fresh} new since your last visit` : ''}`;
+  const nsrc = new Set(live.flatMap(h => h.offers.map(o => o.source))).size, border = live.length - within - flying;
+  $('#subtitle').textContent = season === 'short' ? 'Your hearts are saved in this browser and in the page link.' : [
+    within && `${within} within 5h`, border && `${border} borderline`, flying && `${flying} by flight from Skopje`,
+    `${offers} offer${offers === 1 ? '' : 's'} from ${nsrc} source${nsrc === 1 ? '' : 's'}`, out.length && `${out.length} ruled out`, fresh && `${fresh} new since your last visit`,
+  ].filter(Boolean).join(' · ');
   const qRaw = $('#q').value.trim();
   const msg = `${live.length} hotel${live.length === 1 ? '' : 's'} shown${qRaw ? ` for “${qRaw}”` : ''}${out.length ? `, ${out.length} ruled out` : ''}`;
   if ($('#live').textContent !== msg) $('#live').textContent = msg;
   const places = new Set(live.filter(h => typeof h.best.lat === 'number').map(h => h.best.lat.toFixed(2) + ',' + h.best.lng.toFixed(2))).size;
   $('#mapsum').innerHTML = `<b>${places} place${places === 1 ? '' : 's'} on the map</b>${live.length} hotels · pins coloured by drive time from Skopje`;
-  const fam = live.filter(h => h.best.occupancy === '2+2').length;
-  $('#note-t').innerHTML = `<b>${fam} of ${live.length}</b> have a real price for all four of you; the rest are 2-adult "from" prices. Discounts are the agency's claim until our price history confirms them. <span class="leg">Hollow ring = agency info, not confirmed by the hotel.</span>`;
+  const nb = {fam:0, est:0, adults:0}; live.forEach(h => nb[basisOf(h.best)]++);
+  $('#note-t').innerHTML = `<b>${nb.fam} of ${live.length}</b> have a real price for all four of you${nb.est ? `, ${nb.est} an estimated one` : ''}. Discounts are the agency's claim until our price history confirms them. <span class="leg">Hollow ring = agency info, not confirmed by the hotel.</span>`;
   $('#note').hidden = season === 'short' || !live.length;
+  $('#basis').innerHTML = `<b>Price basis</b>${['fam','adults','est'].map(k => `<span class="it"><span class="bt ${k}">${BASIS[k][0]}</span>${BASIS[k][1]} <span class="c">(${nb[k]})</span></span>`).join('')}`;
   const active = Object.entries(f).filter(([k,v]) => (v === true && k !== 'out') || (k === 'drive' && v < 345)).length + (f.kinds.length < 3) + f.areas.length;
   $('#fcount').textContent = active ? `(${active})` : '';
 
   $('#list').hidden = view !== 'list'; $('#mapWrap').hidden = view !== 'map';
+  renderPicks(view === 'list' && season !== 'short' && !qRaw ? live : null, f);
   if (view === 'map') { drawMap(live.concat(f.out ? out : [])); return; }
   if (!hs.length) {
     listSig = '';
@@ -738,8 +937,8 @@ function rowEl(h){
 }
 const later = (ms = 120) => { clearTimeout(debounce); debounce = setTimeout(() => { shown = 30; saveF(); render(); writeURL(false); }, ms); };
 
-/* ---------- map ---------- */
-let mapObj = null, layer = null, leafP = null;
+/* ---------- map: pins clustered by place, coloured by drive time ---------- */
+let mapObj = null, layer = null, leafP = null, mapPts = [], mapFit = '', mapClusters = [];
 function loadLeaflet(){
   if (window.L) return Promise.resolve();
   return leafP ||= new Promise((res, rej) => {
@@ -747,31 +946,100 @@ function loadLeaflet(){
     const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'; s.onload = res; s.onerror = () => { leafP = null; rej(); }; document.head.appendChild(s);
   });
 }
+const placeOf = h => (h.best.area || 'Unknown place').replace(/\s*\(.*?\)/g, '').split(',')[0].trim() || 'Unknown place';
+const DRV = {near:'Under 4h drive', mid:'4–5h drive', far:'Over 5h (borderline)', fly:'Flight from Skopje', unk:'Drive time unknown'};
+function driveCls(list){
+  const road = list.filter(h => !h.flight);
+  if (!road.length) return 'fly';
+  const ms = road.map(h => h.best.family.drive_minutes).filter(m => m != null);
+  if (!ms.length) return 'unk';
+  const m = Math.min(...ms);
+  return m <= 240 ? 'near' : m <= LIMIT ? 'mid' : 'far';
+}
+function bestPrice(list){
+  // Lowest price among the most comparable basis present: a real 2+2 price beats an estimate beats a 2-adult price.
+  for (const b of ['fam', 'est', 'adults']) {
+    const xs = list.filter(h => basisOf(h.best) === b);
+    if (xs.length) { const o = xs.map(h => h.best).sort((x, y) => (pmode === 'night' ? nightOf(x) - nightOf(y) : priceOf(x) - priceOf(y)))[0]; return o; }
+  }
+  return null;
+}
 function drawMap(hs){
-  const pts = hs.filter(h => typeof h.best.lat === 'number');
-  const css = getComputedStyle(document.documentElement);
-  const col = m => m == null ? '#8A979A' : m <= 240 ? css.getPropertyValue('--teal').trim() : m <= LIMIT ? '#D98A00' : '#8A979A';
-  $('#legend').innerHTML = `<span>${pts.length} hotels · pins grouped by place</span><span><span class="dot" style="background:${col(200)}"></span>under 4h drive</span><span><span class="dot" style="background:#D98A00"></span>4–5h</span><span><span class="dot sq" style="background:#8A979A"></span>over 5h (borderline)</span>`;
+  const pts = hs.filter(h => typeof h.best.lat === 'number' && typeof h.best.lng === 'number');
+  const kinds = new Set(pts.map(h => driveCls([h])));
+  $('#legend').innerHTML = `<span><b>${pts.length}</b> hotel${pts.length === 1 ? '' : 's'} · pins group nearby hotels, the number is how many</span>${['near','mid','far','fly'].filter(k => kinds.has(k) || k !== 'fly').map(k => `<span><span class="lg-dot ${k}" aria-hidden="true"></span>${DRV[k]}</span>`).join('')}<span>Price shown: ${pmode === 'night' ? 'per night' : 'total stay'}</span>`;
   $('#legend').insertAdjacentHTML('beforeend', '<span id="maploading">Loading map…</span>');
+  if (!pts.length) { $('#places').innerHTML = ''; $('#maploading').textContent = 'No hotels with a map position match these filters.'; }
   loadLeaflet().then(() => {
     $('#maploading')?.remove();
-    if (!mapObj) { mapObj = L.map('map'); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:18, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(mapObj); }
-    layer?.remove(); layer = L.layerGroup().addTo(mapObj);
+    if (!mapObj) {
+      mapObj = L.map('map', {keyboard:true});
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:18, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(mapObj);
+      mapObj.on('zoomend', drawClusters);
+    }
+    mapPts = pts;
     const home = [DATA.family.home_lat || 41.9961, DATA.family.home_lng || 21.4317];
-    L.marker(home, {title:'Skopje (home)', keyboard:true}).addTo(layer).bindPopup('<b>Home: Skopje</b>');
-    const g = {}; pts.forEach(h => (g[h.best.lat.toFixed(3)+','+h.best.lng.toFixed(3)] ||= []).push(h));
-    const b = [home];
-    Object.values(g).forEach(list => {
-      list.sort(SORTS.best); const t = list[0].best, ll = [t.lat, t.lng]; b.push(ll);
-      const low = Math.min(...list.map(h => h.best.price_eur));
-      const rows = list.slice(0, 6).map(h => `<li><button data-goto="${esc(h.id)}">${esc(h.best.name)}</button> · ${eur(h.best.price_eur)}${h.best.occupancy === '2+2' ? '' : ' (2 adults)'}</li>`).join('');
-      const m = t.family.drive_minutes;
-      const marker = L.marker(ll, {keyboard:true, title:`${t.area}: ${list.length} hotels from ${eur(low)}`, icon: L.divIcon({className:'', iconSize:[30,30], html:
-        `<div style="width:${Math.min(40,22+list.length*2)}px;height:${Math.min(40,22+list.length*2)}px;border-radius:${m > LIMIT ? '6px' : '50%'};background:${col(m)};border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);color:#fff;font:700 12px Onest,sans-serif;display:grid;place-items:center">${list.length}</div>`})});
-      marker.addTo(layer).bindPopup(`<div class="pop"><h4>${esc(t.area)}</h4><div class="m">${hm(m)} from Skopje · ${list.length} hotel${list.length>1?'s':''} · from ${eur(low)}</div><ol>${rows}</ol>${list.length>6?`<div class="m">+${list.length-6} more in the list</div>`:''}</div>`);
-    });
-    setTimeout(() => { mapObj.invalidateSize(); mapObj.fitBounds(b, {padding:[30,30], maxZoom:10, animate:!reduce}); }, 0);
-  }).catch(() => { $('#maploading').textContent = 'The map could not load. The list has the same hotels.'; });
+    const key = pts.map(h => h.id).join('|');
+    setTimeout(() => {
+      mapObj.invalidateSize();
+      if (key !== mapFit || !mapObj._loaded) { mapFit = key; mapObj.fitBounds([home, ...pts.map(h => [h.best.lat, h.best.lng])], {padding:[30,30], maxZoom:10, animate:!reduce}); }
+      drawClusters();
+    }, 0);
+  }).catch(() => { const el = $('#maploading'); if (el) el.textContent = 'The map could not load. The list has the same hotels.'; });
+}
+function drawClusters(){
+  if (!mapObj || !mapObj._loaded) return;
+  layer?.remove(); layer = L.layerGroup().addTo(mapObj);
+  const home = [DATA.family.home_lat || 41.9961, DATA.family.home_lng || 21.4317];
+  const hm_ = L.marker(home, {keyboard:true, title:'Home: Skopje', icon:L.divIcon({className:'', iconSize:[30,30], html:`<div class="mk-c" style="background:var(--surface);color:var(--teal-d);border-color:var(--teal-d);border-radius:50%">${ic('home')}</div>`})}).addTo(layer).bindPopup('<b>Home: Skopje</b>');
+  hm_.getElement()?.setAttribute('aria-label', 'Home: Skopje');
+  // Greedy screen-space clustering at the current zoom: hotels within ~46px share a pin.
+  const z = mapObj.getZoom(), R = 46, cs = [];
+  [...mapPts].sort(SORTS.best).forEach(h => {
+    const p = mapObj.project([h.best.lat, h.best.lng], z);
+    const c = cs.find(c => Math.abs(c.p.x - p.x) < R && Math.abs(c.p.y - p.y) < R);
+    if (c) { c.list.push(h); c.sx += h.best.lat; c.sy += h.best.lng; } else cs.push({p, list:[h], sx:h.best.lat, sy:h.best.lng});
+  });
+  mapClusters = cs.map((c, i) => {
+    const list = c.list, n = list.length, ll = [c.sx / n, c.sy / n];
+    // One town: name it. Several towns: name the region(s) instead (Halkidiki, Olympic Riviera…).
+    const rank = fn => { const c = {}; list.forEach(h => { const k = fn(h); c[k] = (c[k] || 0) + 1; }); return Object.entries(c).sort((a, b) => b[1] - a[1]).map(x => x[0]); };
+    const towns = rank(placeOf), regions = towns.length > 1 ? rank(areaOf) : [];
+    const place = towns.length === 1 ? towns[0] : regions.length === 1 ? regions[0] : regions.length === 2 ? regions.join(' & ') : `${regions[0]}, ${regions[1]} & more`;
+    const cls = driveCls(list), bp = bestPrice(list);
+    const road = list.filter(h => !h.flight).map(h => h.best.family.drive_minutes).filter(m => m != null);
+    const how = cls === 'fly' ? 'Flight from Skopje' : road.length ? `${hm(Math.min(...road))} drive from Skopje` : 'Drive time unknown';
+    const priceTxt = bp ? `from ${money(bp).plain} (${BASIS[basisOf(bp)][0]})` : '';
+    const size = Math.min(44, 26 + Math.round(Math.sqrt(n) * 4));
+    const label = `${place}: ${n} hotel${n > 1 ? 's' : ''}${priceTxt ? ', ' + priceTxt : ''}, ${how}`;
+    const m = L.marker(ll, {keyboard:true, title:label, riseOnHover:true,
+      icon:L.divIcon({className:'', iconSize:[size, size], html:`<div class="mk-c ${cls}">${n}</div>`})});
+    const SHOW = 8;
+    const rows = list.slice(0, SHOW).map(h => {
+      const o = h.best;
+      const th = h.img ? `<img src="${esc(h.img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ic('image');
+      return `<li><span class="th">${th}</span><span class="t"><button type="button" data-open="${esc(h.id)}" aria-haspopup="dialog">${esc(o.name)}</button><b>${money(o).plain}</b> ${btag(o)}${o.board !== '?' ? ` · ${esc(BOARD[o.board] || o.board)}` : ''}</span></li>`;
+    }).join('');
+    const more = n > SHOW ? `<div class="more">+${n - SHOW} more here · <button type="button" data-zoom="${i}">Zoom in</button></div>` : '';
+    m.addTo(layer).bindPopup(`<div class="pop"><h4>${esc(place)}</h4><div class="m">${how} · ${n} hotel${n > 1 ? 's' : ''}${priceTxt ? ' · ' + priceTxt : ''}</div><ul class="pl">${rows}</ul>${more}</div>`, {maxWidth:340, minWidth:250});
+    const el = m.getElement();
+    if (el) { el.setAttribute('role', 'button'); el.setAttribute('aria-label', label + '. Press Enter for the list.'); }
+    m.on('popupopen', e => setTimeout(() => e.popup.getElement()?.querySelector('button')?.focus({preventScroll:true}), 0));
+    m.on('popupclose', () => { const a = document.activeElement; if (!a || a === document.body || !a.isConnected) m.getElement()?.focus({preventScroll:true}); });
+    return {m, list, place, n, cls, ll};
+  });
+  $('#places').innerHTML = mapClusters.length > 1 ? mapClusters.map((c, i) => ({c, i})).sort((a, b) => b.c.n - a.c.n)
+    .map(({c, i}) => `<button type="button" data-place="${i}"><span class="lg-dot ${c.cls}" aria-hidden="true"></span>${esc(c.place)}<span class="c">${c.n}</span></button>`).join('') : '';
+}
+function openPlace(i){
+  const c = mapClusters[i]; if (!c) return;
+  mapObj.setView(c.ll, Math.max(mapObj.getZoom(), 7), {animate:!reduce});
+  setTimeout(() => { const k = mapClusters.findIndex(x => x.list.includes(c.list[0])); (mapClusters[k] || c).m.openPopup(); }, reduce ? 0 : 300);
+}
+function zoomCluster(i){
+  const c = mapClusters[i]; if (!c) return;
+  mapObj.closePopup();
+  mapObj.fitBounds(c.list.map(h => [h.best.lat, h.best.lng]), {padding:[40,40], maxZoom:15, animate:!reduce});
 }
 function gotoRow(id){
   view = 'list'; store.set('view', view); writeURL(true);
@@ -812,7 +1080,8 @@ function checklist(o){
   const groups = [
     ['Confirmed by the hotel', c => c.state === 'yes' && c.verified, c => `<span class="mk yes" aria-hidden="true">${ic('check','i mki')}</span>`],
     ['Agency info, not yet confirmed by the hotel', c => c.state === 'yes' && !c.verified, () => `<span class="mk yes unv" aria-hidden="true"></span>`],
-    ['Not known yet: ask the hotel', c => c.state !== 'yes' && c.state !== 'no', () => `<span class="mk unk" aria-hidden="true"></span>`],
+    ['Offered, but not in this price', c => c.state === 'available', () => `<span class="mk yes unv" aria-hidden="true"></span>`],
+    ['Not known yet: ask the hotel', c => c.state !== 'yes' && c.state !== 'no' && c.state !== 'available', () => `<span class="mk unk" aria-hidden="true"></span>`],
     ["Doesn't fit", c => c.state === 'no', () => `<span class="mk no" aria-hidden="true">${ic('xmark','i mki')}</span>`],
   ];
   const cl = o.family.checklist;
@@ -824,36 +1093,38 @@ function checklist(o){
 }
 function offersTable(h){
   return `<div class="otable"><table class="ot"><thead><tr><th scope="col">Source</th><th scope="col">Price</th><th scope="col">Meals</th><th scope="col">Room</th><th scope="col">Dates</th><th scope="col">Discount</th></tr></thead><tbody>${h.offers.map((x, i) => {
-    const fam = x.occupancy === '2+2', d = x.deal, pct = d.real_pct ?? d.stated_pct, dl = d.days_left;
+    const b = basisOf(x), mo = money(x), d = x.deal, pct = d.real_pct ?? d.stated_pct, dl = d.days_left;
     const disc = d.verdict === 'real' ? `<td class="real">Verified −${Math.round(d.real_pct)}%` : pct ? `<td><span class="badge">Agency says −${Math.round(pct)}%</span>` : `<td>—`;
     const ends = dl != null && dl >= 0 ? `<span class="sm"><span class="dead">ends ${dl === 0 ? 'today' : `in ${dl} day${dl === 1 ? '' : 's'}`}</span></span>` : '';
     return `<tr${i ? '' : ' class="best"'}><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.source)}</a>${i ? '' : '<span class="sm">Best comparable</span>'}${offerIsNew(x) ? '<span class="sm">New since your last visit</span>' : ''}</td>
-      <td class="n">${eur(x.price_eur)}<span class="sm${fam ? '' : ' warn'}">${fam ? '2 adults + 2 kids' : '2 adults only'}</span><span class="sm">≈ ${eur(x.price_eur / x.nights)}/night</span></td>
-      <td>${BOARD[x.board] || esc(x.board)}</td><td>${esc(x.room || '—')}</td><td>${fmtD(x.check_in)}<span class="sm">${x.nights} nights</span></td>${disc}${ends}</td></tr>`;
+      <td class="n">${mo.big.replace(/<\/?small>/g, '')} ${btag(x)}<span class="sm${b === 'fam' ? '' : ' warn'}">${whoTxt(x)}</span><span class="sm">${mo.alt}</span>${b === 'est' ? `<span class="sm">Agency: ${eur(x.price_eur)} for 2 adults</span>` : ''}</td>
+      <td>${BOARD[x.board] || esc(x.board)}</td><td>${esc(x.room || '—')}</td><td>${flexDates(x) ? 'On request' : fmtD(x.check_in)}<span class="sm">${x.nights} nights</span></td>${disc}${ends}</td></tr>`;
   }).join('')}</tbody></table></div>`;
 }
 function drawerHTML(h){
   const o = h.best, f = o.family, m = f.drive_minutes, hasLL = typeof o.lat === 'number' && typeof o.lng === 'number';
   const home = [DATA.family.home_lat || 41.9961, DATA.family.home_lng || 21.4317];
   const pic = h.img
-    ? `<img src="${esc(h.img)}" alt="Photo of ${esc(o.name)} from ${esc(o.source.replace(' (manual)', ''))}" referrerpolicy="no-referrer" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'none',textContent:'Photo unavailable'}))">`
+    ? `<img src="${esc(h.img)}" alt="Photo of ${esc(o.name)} from ${esc(o.source.replace(/\s*\(.*?\)/g, ''))}" referrerpolicy="no-referrer" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'none',textContent:'Photo unavailable'}))">`
     : `<div class="none"><span>${ic('pin')}<b>${esc((o.area || '').split(',')[0])}</b><span class="pd">${hm(m)} from Skopje</span><span class="pn2">No photo from the source</span></span></div>`;
   const links = hasLL ? `<div class="dlinks">
       <a href="https://www.openstreetmap.org/?mlat=${o.lat}&amp;mlon=${o.lng}#map=13/${o.lat}/${o.lng}" target="_blank" rel="noopener">${ic('map')}Open in OpenStreetMap</a>
-      <a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&amp;route=${home[0]}%2C${home[1]}%3B${o.lat}%2C${o.lng}" target="_blank" rel="noopener">${ic('route')}Route from Skopje</a>
+      ${isFlight(o) ? '' : `<a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&amp;route=${home[0]}%2C${home[1]}%3B${o.lat}%2C${o.lng}" target="_blank" rel="noopener">${ic('route')}Route from Skopje</a>`}
       <button type="button" class="tbtn" data-mapview>${ic('pin')}Show on our map</button></div>` : '<div class="cap">No map position for this hotel yet.</div>';
   const camps = h.campaigns.length ? `<section class="dsec"><h3>Hotel's own website <span class="c">${h.campaigns.length} campaign${h.campaigns.length > 1 ? 's' : ''}</span></h3><ul class="camps">${h.campaigns.map(c =>
       `<li>${ic('tag')} <span><b>${c.pct ? '−' + c.pct + '% ' : ''}</b>${esc(c.title)}${c.valid_until ? ` · <span class="dead">until ${fmtD(c.valid_until)}</span>` : ''}${c.url ? ` · <a href="${esc(c.url)}" target="_blank" rel="noopener">hotel website</a>` : ''}</span></li>`).join('')}</ul>
       <p class="cap" style="margin:8px 0 0">The hotel's claim; not compared with our price history.</p></section>` : '';
   return `<div class="dphoto">${pic}</div>
     <div class="dsum"><div class="dfacts">
-      <div class="chips">${newChip(h)}${driveChip(m)}${o.board === '?' ? `<span class="chip ask">${ic('fork')}Board not stated</span>` : `<span class="chip${['HB','FB','AI'].includes(o.board) ? ' good' : ''}">${ic('fork')}${BOARD[o.board]}</span>`}<span class="chip">${ic('cal')}${fmtD(o.check_in)} · ${o.nights} nights</span></div>
-      <div>${ic('car')} ${m == null ? 'Drive time from Skopje not known yet.' : `About <b>${hm(m)}</b> by car from Skopje${m > LIMIT ? `, ${Math.round(m - LIMIT)} min over our 5h rule` : ''}.`}</div>
+      <div class="chips">${newChip(h)}${driveChip(m, o)}${boardChip(o)}${datesChip(o)}${areaChip(o)}</div>
+      ${nearbyLine(o)}
+      <div>${isFlight(o) ? `${ic('plane')} A package with the flight from Skopje included; no drive.` : `${ic('car')} ${m == null ? 'Drive time from Skopje not known yet.' : `About <b>${hm(m)}</b> by car from Skopje${m > LIMIT ? `, ${Math.round(m - LIMIT)} min over our 5h rule` : ''}.`}`}</div>
       ${links}
+      ${basisOf(o) === 'est' ? `<div class="cap"><span class="bt est">est.</span> ${esc(o.family_price_basis || 'Our estimate for all four from the 2-adult price; not a quote.')} The agency's price is ${eur(o.price_eur)} for 2 adults.</div>` : ''}
       ${h.excluded ? `<div class="why">${ic('x')} Doesn't fit: ${esc(f.failed.join(', '))}</div>` : f.unknown_musts.length ? `<div class="cap">${f.unknown_musts.length} must-have${f.unknown_musts.length > 1 ? 's' : ''} to confirm with the hotel</div>` : ''}
     </div>${priceBlock(h)}</div>
     <section class="dsec"><h3>All offers <span class="c">${h.offers.length} from ${new Set(h.offers.map(x => x.source)).size} source${new Set(h.offers.map(x => x.source)).size > 1 ? 's' : ''}</span></h3>${offersTable(h)}</section>
-    <section class="dsec"><h3>Price history <span class="c">${esc(o.source)} · ${o.occupancy === '2+2' ? '2 adults + 2 kids' : '2 adults only'} · ${o.nights} nights</span></h3>${histChart(o)}</section>
+    <section class="dsec"><h3>Price history <span class="c">${esc(o.source)} · ${o.occupancy === '2+2' ? '2 adults + 2 kids' : '2 adults only'} · total for ${o.nights} nights</span></h3>${histChart(o)}</section>
     <section class="dsec"><h3>Does it fit the twins?</h3>${checklist(o)}</section>
     ${camps}`;
 }
@@ -865,7 +1136,7 @@ function openDrawer(id, from, push){
   $('#dArea').innerHTML = `${ic('pin')}<span>${esc(h.best.area)}</span>`;
   $('#dBody').innerHTML = drawerHTML(h);
   $('#dBody').querySelector('.price .actions')?.remove();
-  const src = esc(h.best.source.replace(' (manual)', ''));
+  const src = esc(h.best.source.replace(/\s*\(.*?\)/g, ''));
   $('#dFoot').innerHTML = `<a class="btn primary" href="${esc(h.best.url)}" target="_blank" rel="noopener">See offer at ${src} ${ic('ext')}</a>
     <button type="button" class="btn" data-short="${esc(h.id)}" data-name="${esc(h.best.name)}" aria-pressed="${short.has(h.id)}">${ic('heart')}Shortlist</button>`;
   if (!d.open) d.showModal();
@@ -890,40 +1161,78 @@ function syncTray(){
   $('#tray-names').textContent = ids.map(id => HOTELS.find(h => h.id === id).best.name).join(' · ');
   $('#tray-cmp').disabled = ids.length < 2; $('#tray-cmp').title = ids.length < 2 ? 'Shortlist at least 2 hotels to compare' : '';
 }
+let cmpSel = null;
+const BOARD_RANK = {AI:6, FB:5, HB:4, BB:2, RO:1, SC:1};
+function fitCell(o, key){
+  const c = o.family.checklist.find(x => x.key === key);
+  if (!c) return {html:'—', v:null};
+  if (c.state === 'yes') return {html: c.verified ? 'Yes <span class="sm">confirmed by the hotel</span>' : 'Yes <span class="sm">agency info, not confirmed</span>', v: c.verified ? 3 : 2};
+  if (c.state === 'no') return {html:'No', v:0};
+  return {html:'Not known <span class="sm">ask the hotel</span>', v:null};
+}
 function compare(){
-  const hs = [...short].map(id => HOTELS.find(h => h.id === id)).filter(Boolean).slice(0, 4);
-  const fit = (h, key) => { const c = h.best.family.checklist.find(x => x.key === key); return !c ? '—' : c.state === 'yes' ? (c.verified ? 'Yes (confirmed)' : 'Yes (agency info)') : c.state === 'no' ? 'No' : 'Not known — ask'; };
+  const all = [...short].map(id => HOTELS.find(h => h.id === id)).filter(Boolean);
+  cmpSel = all.length <= 4 || !cmpSel ? all.slice(0, 4).map(h => h.id) : cmpSel.filter(id => all.some(h => h.id === id));
+  const hs = cmpSel.map(id => all.find(h => h.id === id)).filter(Boolean);
+  const anySummer = hs.some(h => h.season === 'summer'), anyWinter = hs.some(h => h.season === 'winter');
+  const comparable = o => basisOf(o) !== 'adults';
   const rows = [
-    ['Price', h => `<b>${eur(h.best.price_eur)}</b>`],
-    ['For', h => h.best.occupancy === '2+2' ? '2 adults + 2 kids' : '2 adults only (kids extra)'],
-    ['Per night', h => eur(h.best.price_eur / h.best.nights)],
-    ['Meals', h => BOARD[h.best.board]],
-    ['Dates', h => `${fmtD(h.best.check_in)} · ${h.best.nights} nights`],
-    ['Drive', h => hm(h.best.family.drive_minutes)],
-    ['2 cots for the twins', h => fit(h, 'cots')],
-    ['Sandy beach', h => fit(h, 'sand_beach')],
-    ['Separate bedroom', h => fit(h, 'separate_bedroom')],
-    ["Kids' club", h => fit(h, 'kids_club')],
-    ['Discount', h => h.best.deal.real_pct ? `Verified −${Math.round(h.best.deal.real_pct)}%` : h.best.deal.stated_pct ? `Agency says −${Math.round(h.best.deal.stated_pct)}% (not checked)` : 'None claimed'],
-    ['Offer ends', h => h.best.deal.days_left != null && h.best.deal.days_left >= 0 ? `in ${h.best.deal.days_left} days` : '—'],
-    ['Source', h => `<a href="${esc(h.best.url)}" target="_blank" rel="noopener">${esc(h.best.source)}</a>`],
+    ['Family price', h => { const o = h.best; return {html:`<b>${eur(priceOf(o))}</b> ${btag(o)}<span class="sm${basisOf(o) === 'fam' ? '' : ' warn'}">${whoTxt(o)} · ${o.nights} nights</span>`, v: comparable(o) ? -priceOf(o) : null}; }],
+    ['Per night', h => { const o = h.best; return {html:`${eur(nightOf(o))} ${btag(o)}`, v: comparable(o) ? -nightOf(o) : null}; }],
+    ['Meals', h => { const o = h.best; return {html: o.board === '?' ? 'Not stated <span class="sm">ask</span>' : esc(BOARD[o.board] || o.board) + (o.board === 'SC' && o.season === 'summer' ? '<span class="sm warn">no meals; our summer rule is breakfast + dinner</span>' : ''), v: BOARD_RANK[o.board] ?? null}; }],
+    ["Kids' club", h => fitCell(h.best, 'kids_club')],
+    [anySummer && anyWinter ? 'Beach / ski school' : anyWinter ? 'Ski school from 3' : 'Beach', h => {
+      const o = h.best;
+      if (o.season === 'winter') return fitCell(o, 'ski_school');
+      const sand = cstate(o, 'sand_beach'), front = cstate(o, 'beachfront');
+      if (sand == null && front == null) return {html:'—', v:null};
+      if (sand !== 'yes' && sand !== 'no' && front !== 'yes' && front !== 'no') return {html:'Not known <span class="sm">ask the hotel</span>', v:null};
+      const t = [sand === 'yes' ? 'Sandy' : sand === 'no' ? 'Not sandy' : 'Sand not known', front === 'yes' ? 'within 150 m' : front === 'no' ? 'further than 150 m' : 'distance not known'];
+      return {html: t.join(', '), v: (sand === 'yes' ? 2 : 0) + (front === 'yes' ? 1 : 0)};
+    }],
+    ['2 cots for the twins', h => fitCell(h.best, 'cots')],
+    [anyWinter && !anySummer ? 'Separate bedroom' : anySummer && !anyWinter ? 'Family room' : 'Family room / bedroom', h => fitCell(h.best, h.best.season === 'winter' ? 'separate_bedroom' : 'family_room')],
+    ['Drive from Skopje', h => {
+      const o = h.best, m = o.family.drive_minutes;
+      if (h.flight) return {html:`${ic('plane')} Flight from Skopje <span class="sm">included in the package</span>`, v:null};
+      return {html: m == null ? 'Not known' : `${hm(m)}${m > LIMIT ? `<span class="sm warn">${Math.round(m - LIMIT)} min over 5h</span>` : ''}`, v: m == null ? null : -m};
+    }],
+    ['Signal', h => { const d = h.best.deal; const t = !d.signal || d.signal === 'watch' ? 'Watch' : d.signal === 'book now' ? 'Book now' : 'Can wait';
+      return {html:`<b>${t}</b>${d.signal_reason ? `<span class="sm">${esc(d.signal_reason)}</span>` : ''}${d.confidence === 'low' ? '<span class="sm">little price history yet</span>' : ''}`, v:null}; }],
+    ['Verified discount', h => { const d = h.best.deal;
+      if (d.verdict === 'real' && d.real_pct) return {html:`<b>−${Math.round(d.real_pct)}%</b><span class="sm">vs our recorded price</span>`, v:d.real_pct};
+      if (d.verdict === 'fake?') return {html:'<span class="warn">Not cheaper than before</span>', v:0};
+      if (d.stated_pct) return {html:`None yet <span class="sm"><span class="badge">Agency says −${Math.round(d.stated_pct)}%</span> not verified</span>`, v:0};
+      return {html:'None claimed', v:0}; }],
+    ['Dates', h => ({html: datesTxt(h.best), v:null})],
+    ['Offer ends', h => { const dl = h.best.deal.days_left; return {html: dl != null && dl >= 0 ? `<span class="dead">${dl === 0 ? 'today' : `in ${dl} day${dl === 1 ? '' : 's'}`}</span>` : '—', v:null}; }],
+    ['Source', h => ({html:`<a href="${esc(h.best.url)}" target="_blank" rel="noopener">${esc(h.best.source)}</a>`, v:null})],
   ];
-  $('#cmpBody').innerHTML = `<table class="cmp"><thead><tr><th></th>${hs.map(h => `<th scope="col">${h.img ? `<img src="${esc(h.img)}" alt="" referrerpolicy="no-referrer">` : ''}${esc(h.best.name)}<div style="font-weight:400;color:var(--muted);font-size:13px">${esc(h.best.area)}</div></th>`).join('')}</tr></thead><tbody>${
-    rows.map(([label, fn]) => { const vals = hs.map(fn); const same = vals.every(v => v === vals[0]); return `<tr><th scope="row">${label}</th>${vals.map(v => `<td class="${same ? '' : 'diff'}">${v}</td>`).join('')}</tr>`; }).join('')}</tbody></table>
-    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Shaded cells are where the hotels differ.${short.size > 4 ? ' Showing the first 4 of your shortlist.' : ''}</p>`;
-  $('#cmpDlg').showModal();
+  const pick = all.length > 4 ? `<div class="cmp-pick" role="group" aria-label="Choose up to 4 hotels to compare"><span>Compare up to 4:</span>${all.map(h =>
+    `<button type="button" data-cmp="${esc(h.id)}" aria-pressed="${cmpSel.includes(h.id)}">${esc(h.best.name)}</button>`).join('')}</div>` : '';
+  const body = hs.length ? `<div class="cmpwrap"><table class="cmp"><thead><tr><td></td>${hs.map(h => `<th scope="col"><div class="cph">${h.img ? `<img src="${esc(h.img)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ic('image')}</div>${esc(h.best.name)}<span class="sm">${esc(h.best.area)}</span></th>`).join('')}</tr></thead><tbody>${
+    rows.map(([label, fn]) => {
+      const cells = hs.map(fn), vs = cells.map(c => c.v).filter(v => v != null);
+      const best = vs.length >= 2 && new Set(vs).size > 1 ? Math.max(...vs) : null;
+      return `<tr><th scope="row">${label}</th>${cells.map(c => `<td${best != null && c.v === best ? ' class="best"' : ''}>${c.html}</td>`).join('')}</tr>`;
+    }).join('')}</tbody></table></div>
+    <p class="cap" style="margin:10px 0 0">Green cells are the best value in each row. Prices are only compared where they cover all four of us (real or estimated); a 2-adult price is never ranked against a family price. Signal, dates and deadlines are not ranked.</p>`
+    : `<div class="empty"><h2>Pick at least one hotel</h2><p>Choose up to four of your shortlisted hotels above.</p></div>`;
+  $('#cmpBody').innerHTML = pick + body;
+  const dlg = $('#cmpDlg'); if (!dlg.open) dlg.showModal();
 }
 
 /* ---------- state ---------- */
 function saveF(){ const {q, ...f} = F(); store.set('filters', f); }
 
 /* ---------- URL state: season, sort, view, filters, search, shortlist, open hotel ---------- */
-const VIEW_KEYS = ['season','sort','view','q','f','drive','type','hide'];
+const VIEW_KEYS = ['season','sort','view','price','q','f','drive','type','hide'];
 function stateParams(){
   const p = new URLSearchParams(), f = F(), q = $('#q').value.trim();
   if (season !== 'summer') p.set('season', season);
   if (sort !== 'best') p.set('sort', sort);
   if (view !== 'list') p.set('view', view);
+  if (pmode !== 'total') p.set('price', pmode);
   if (q) p.set('q', q);
   const fl = FLAGS.filter(k => f[k]); if (fl.length) p.set('f', fl.join(','));
   if (f.drive !== DRIVE_DEFAULT) p.set('drive', f.drive);
@@ -943,6 +1252,7 @@ function applyURL(p){
   season = ['summer','winter','short'].includes(p.get('season')) ? p.get('season') : 'summer';
   sort = SORTS[p.get('sort')] ? p.get('sort') : 'best';
   view = p.get('view') === 'map' ? 'map' : 'list';
+  pmode = p.get('price') === 'night' ? 'night' : 'total'; store.set('pmode', pmode); clearRows();
   $('#q').value = p.get('q') || '';
   const fl = (p.get('f') || '').split(',');
   FLAGS.forEach(k => $('#f-' + k).checked = fl.includes(k));
@@ -982,8 +1292,10 @@ function init(d){
   if (p.get('short')) { p.get('short').split(',').filter(Boolean).forEach(id => short.add(id)); store.set('short', [...short]); }
   const upd = () => {
     const hs = HOTELS.filter(h => h.season === season || season === 'short');
-    const dates = hs.map(h => h.best.check_in).sort();
-    $('#s-where').textContent = season === 'winter' ? 'Bansko, Borovets, Kopaonik…' : season === 'summer' ? 'Halkidiki, Olympic Riviera…' : 'Your shortlist';
+    const dates = hs.filter(h => !flexDates(h.best)).map(h => h.best.check_in).sort();
+    const cnt = {}; hs.filter(h => !h.excluded).forEach(h => { const a = areaOf(h); cnt[a] = (cnt[a] || 0) + 1; });
+    const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).map(x => x[0]);
+    $('#s-where').textContent = season === 'short' ? 'Your shortlist' : top.length ? top.slice(0, 3).join(', ') + (top.length > 3 ? '…' : '') : '—';
     $('#s-when').textContent = dates.length ? `from ${fmtD(dates[0])}` : '—';
   };
   if (d.alerts?.length) {
@@ -1008,6 +1320,10 @@ $('.tabs').addEventListener('keydown', e => {
 });
 $$('.sorts button').forEach(b => b.addEventListener('click', () => { if (sort === b.dataset.sort) return; sort = b.dataset.sort; store.set('sort', sort); shown = 30; render(); writeURL(true); }));
 $$('.views button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+function clearRows(){ rowCache.clear(); listSig = ''; picksSig = null; }
+function setPmode(m){ if (pmode === m) return; pmode = m; store.set('pmode', pmode); clearRows(); render(); writeURL(false);
+  $('#live').textContent = m === 'night' ? 'Prices now shown per night' : 'Prices now shown for the whole stay'; }
+$$('.pmode button').forEach(b => b.addEventListener('click', () => setPmode(b.dataset.pmode)));
 $('#mapbtn').addEventListener('click', () => { setView('map'); $('#results').focus(); });
 $('#filters').addEventListener('input', () => later(120));
 $('#q').addEventListener('input', () => later(160));
@@ -1044,6 +1360,7 @@ document.addEventListener('keydown', e => {
     case 's': { const row = r(); if (row) { e.preventDefault(); row.querySelector('[data-short]').click(); } break; }
     case 'Enter': { if (e.target.closest('a,button,summary,input,label')) return; const row = r(); if (row) { e.preventDefault(); openDrawer(row.dataset.id, row.querySelector('[data-open]'), true); } break; }
     case 'm': e.preventDefault(); setView(view === 'map' ? 'list' : 'map'); break;
+    case 'p': e.preventDefault(); setPmode(pmode === 'night' ? 'total' : 'night'); break;
     case '?': e.preventDefault(); $('#keysDlg')._from = document.activeElement; $('#keysDlg').showModal(); break;
   }
 });
@@ -1052,12 +1369,17 @@ document.addEventListener('click', e => {
   const s = e.target.closest('[data-short]');
   if (s) { const id = s.dataset.short; short.has(id) ? short.delete(id) : short.add(id); store.set('short', [...short]);
     const on = short.has(id); $$(`[data-short="${CSS.escape(id)}"]`).forEach(b => setHeart(b, on));
-    syncTray(); if (season === 'short' && !$('#drawer').open) render(); writeURL(false); return; }
+    syncTray(); if (season === 'short' && !$('#drawer').open) render(); if ($('#cmpDlg').open) compare(); writeURL(false); return; }
   const op = e.target.closest('[data-open]');
   if (op && !e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) { e.preventDefault(); curId = op.dataset.open; openDrawer(op.dataset.open, op, true); return; }
   if (e.target.closest('#showmore')) { const prev = shown; shown += 30; render(); $$('#list .row')[prev]?.querySelector('[data-open]').focus(); return; }
   if (e.target.closest('#empty-reset')) { $('#reset').click(); return; }
   const g = e.target.closest('[data-goto]'); if (g) { gotoRow(g.dataset.goto); return; }
+  const pl = e.target.closest('[data-place]'); if (pl) { openPlace(+pl.dataset.place); return; }
+  const zm = e.target.closest('[data-zoom]'); if (zm) { zoomCluster(+zm.dataset.zoom); return; }
+  const cb = e.target.closest('[data-cmp]'); if (cb) { const id = cb.dataset.cmp, i = cmpSel.indexOf(id);
+    if (i >= 0) cmpSel.splice(i, 1); else if (cmpSel.length < 4) cmpSel.push(id); else { $('#live').textContent = 'Four hotels already chosen; untick one first'; return; }
+    compare(); $(`[data-cmp="${CSS.escape(id)}"]`)?.focus(); return; }
   if (e.target.closest('[data-mapview]')) { const d = $('#drawer'); drawerPushed = false; d._from = $('#results'); d.addEventListener('close', () => setView('map'), {once:true}); d.close(); return; }
   if (e.target.closest('[data-close]')) e.target.closest('dialog').close();
 });

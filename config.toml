@@ -99,6 +99,7 @@ country = "GR"
 lat = 40.02
 lng = 23.43
 nights = 7
+check_in = "2027-06-20"
 
 [[sources.travelland.pages]]
 url = "https://www.travelland.rs/destinacije/grcka/letovanje/hoteli/halkidiki/sitonija/"
@@ -108,6 +109,7 @@ country = "GR"
 lat = 40.10
 lng = 23.80
 nights = 7
+check_in = "2027-06-20"
 
 [sources.olympic]
 # olympic.rs — robots.txt allows all paths. Same platform as Travelland; cards show
@@ -500,6 +502,17 @@ lng = 24.692
 nights = 5
 check_in = "2027-01-15"
 
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/grcka/letovanje/hoteli/tasos/"
+tag_category = 564
+season = "summer"
+area = "Thassos"
+country = "GR"
+lat = 40.70
+lng = 24.65
+nights = 7
+check_in = "2027-06-20"
+
 # ---------------------------------------------------------- hotels' own websites --
 [sources.hotel_direct]
 # Each hotel's own offers page: campaigns (discount %, deadline) are picked out of
@@ -698,6 +711,35 @@ enabled = true
 budget = 12                 # live detail pages per run (6-10 s apart: about 2 minutes)
 max_age_days = 7
 cache = "data/enrich_cache.json"
+
+# ------------------------------------------------------------ hotel locations --
+[geocode]
+# Hotel-level pins from OpenStreetMap (Nominatim, Photon fallback) for hotels that sit on a page's resort point.
+enabled = true             # approved 2026-11-26: light use per the OSM usage policies (robots.txt targets crawlers)
+budget = 40                 # live requests per run (each hotel needs 1-2); everything is cached
+delay_seconds = 5
+max_km = 15
+retry_miss_days = 30
+cache = "data/geocode_cache.json"
+photon = true
+kinds = ["hotel", "apartment"]
+beach = false               # Overpass natural=beach ≤300 m → geo.beach_m (estimate)
+fill_beach_m = false
+[geocode.area_km]           # region-wide pages: the resort point is the region's middle
+"Kassandra" = 30
+"Sithonia" = 30
+"Olympic Riviera" = 30
+
+# ---------------------------------------------------- sea, snow, places nearby --
+[conditions]
+# Sea/air temperature and snow (Open-Meteo, typical of the last 3 seasons) and family places
+# within 5 km (OpenStreetMap / Overpass), per area. Cached in data/conditions_cache.json for 30 days.
+enabled = true
+max_requests = 60          # live requests per run, all hosts together (a full refresh is ~37)
+places_radius_m = 5000
+ski_radius_m = 10000       # ski towns sit below the beginner areas
+hospital_radius_m = 30000
+years = 3
 
 [email]
 # Daily digest. SMTP settings live in the git-ignored file .email

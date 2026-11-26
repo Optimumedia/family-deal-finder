@@ -209,6 +209,32 @@ class Enrich(unittest.TestCase):
                        fetch=self.fetch)
         self.assertEqual(st["fetched"], 2)                             # a week old: re-read
 
+    def test_family_prices_added(self):
+        """2+2 rows → extra 2+2 offers; "?" boards → board_cheapest; summary kept on the hotel."""
+        hotels, offers = self.data()
+        hotels.append({"id": "ol-115313", "season": "winter", "family": {"verified": []}})
+        offers.append({"hotel": "ol-115313", "url": URLS["grandbansko"], "board": "?", "source": "Olympic",
+                       "seen": TODAY.isoformat(), "check_in": "2027-01-15", "nights": 5, "occupancy": "2+0",
+                       "room": "cheapest unit, dates on request (po jedinici po danu)", "price_eur": 1500.0})
+        n = len(offers)
+        st = en.enrich(offers, hotels, CFG, TODAY, budget=5, cache_path=self.cache, fetch=self.fetch)
+        fam = offers[n:]
+        self.assertEqual(st["family_offers"], len(fam))
+        self.assertGreater(len(fam), 0)
+        self.assertTrue(all(o["occupancy"] == "2+2" and o["hotel"] == "ol-115313"
+                            and "family price from hotel page" in o["room"] for o in fam))
+        self.assertEqual(offers[n - 1]["occupancy"], "2+0")            # the base offer is unchanged
+        self.assertEqual(offers[n - 1]["price_eur"], 1500.0)
+        self.assertNotIn("family_price_est", offers[n - 1])          # per-unit price: no estimate
+        self.assertEqual(offers[0]["board"], "?")
+        self.assertEqual(offers[0]["board_cheapest"], "BB")          # Mediterranean: BB cheaper than HB
+        self.assertEqual(st["board_cheapest"], 2)
+        h = {x["id"]: x for x in hotels}
+        self.assertEqual(h["ol-102986"]["enriched"]["board_prices"].keys(), {"BB", "HB"})
+        self.assertTrue(any(r["max_persons"] == 4 for r in h["ol-115313"]["enriched"]["rooms"]))
+        st = en.enrich(offers, hotels, CFG, TODAY, budget=5, cache_path=self.cache, fetch=self.fetch)
+        self.assertEqual(st["family_offers"], 0)                       # already there: not added twice
+
     def test_block_stops_that_host(self):
         def blocked(url):
             self.calls.append(url)

@@ -20,7 +20,7 @@ from .pagetext import html_to_text, image_url, money
 log = logging.getLogger(__name__)
 BASE = "https://oliverstravels.com"
 SOURCE = "Oliver's Travels"
-_CARD = re.compile(r"See more (?P<name>.+?) (?P<region>[A-Z][\w-]+) , (?P<country>[A-Z][\w ]+?) (?P<guests>\d+) guests · "
+_CARD = re.compile(r"See more (?P<name>(?:(?!See more).){1,90}?) (?P<region>[A-Z][\w-]+) , (?P<country>[A-Z][\w ]+?) (?:\d+\s*-\s*)?(?P<guests>\d+) guests · "
                    r"(?P<bedrooms>\d+) bedrooms? · (?P<baths>\d+) bathrooms? (?P<tags>.*?)£(?P<low>[\d,]+)"
                    r"(?: - £(?P<high>[\d,]+))? per week")
 # Each card's photo slider: <a … href="/greece/halkidiki/villa-x/"><img src="https://pms-images…jpg?profile=sm" …>

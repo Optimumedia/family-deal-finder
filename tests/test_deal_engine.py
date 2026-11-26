@@ -262,7 +262,7 @@ class BuildExportsSignal(unittest.TestCase):
             con = db.connect(Path(tmp) / "t.db")
             db.upsert_hotel(con, HOTEL)
             for n, p in ((6, 1000), (3, 1000), (0, 900)):
-                db.add_sighting(con, {"hotel": "h1", "source": "test", "url": "u", "seen": day(n),
+                db.add_sighting(con, {"hotel": "h1", "source": "test", "url": "https://example.test/offer", "seen": day(n),
                                       "check_in": "2027-06-20", "nights": 7, "board": "HB", "room": "Family",
                                       "occupancy": "2+2", "price_eur": p, "was_eur": None, "valid_until": None})
             items, _ = run.build(con, CFG, TODAY, offline=True)

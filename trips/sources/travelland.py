@@ -11,6 +11,19 @@ What we can't get from a card: board (BB/HB …), room type, the kids' price.
 So offers are stored as 2 adults × N nights ("2+0"), board unknown ("?"), and
 the dashboard says so. Polite: one destination page + a few list pages per run,
 6–10 s apart, through PoliteSession (robots.txt + bot-wall stop).
+
+Tag-category pages (Thassos, Olympic Riviera) have an empty `data-destination`
+and list by tag instead: /services/list/?destination=&tagCategoryId=564&…
+Configure them with `tag_category = 564` (or let the page's own
+`data-tagCategoryId` be read). Summer cards carry no date window, so give
+those pages a `check_in`.
+
+Paging: on 2026-11-26 the endpoint answered paginate=1, 2 and 3 with the same
+12 cards (Thassos). Bansko's 36 "offers" from 30 hotels on 25.11 were the same
+thing. So we send `_page` too (the parameter Olympic's copy of the platform
+honours) and stop as soon as a page brings no hotel we haven't seen.
+"Ponuda stiže uskoro!" (offer coming soon) answers have total 0: Travelland
+Kassandra and Sithonia were like that on 2026-11-26, which is why they gave 0.
 """
 from __future__ import annotations
 
@@ -50,8 +63,31 @@ def _num(s: str) -> float:
 
 
 def destination_code(page_html: str) -> str | None:
-    m = re.search(r'data-destination="([\d:]+)"', page_html)
+    """The code the page's own offer list uses (`list-featured`), else the first one on the page."""
+    m = (re.search(r'class="list-featured"[^>]*data-destination="([\d:]+)"', page_html)
+         or re.search(r'data-destination="([\d:]+)"', page_html))
     return m.group(1) if m else None
+
+
+def tag_category(page_html: str) -> str | None:
+    m = re.search(r'data-tagCategoryId="(\d+)"', page_html, re.I)
+    return m.group(1) if m else None
+
+
+def list_query(page: dict, page_html: str | None = None) -> dict | None:
+    """The /services/list/ filter for a configured page: a destination code or a tag category.
+    Config keys win; the page HTML (fetched only when the config has neither) fills the gap."""
+    if page.get("destination"):
+        return {"destination": page["destination"]}
+    if page.get("tag_category"):
+        return {"destination": "", "tagCategoryId": str(page["tag_category"])}
+    if page_html is None:
+        return None
+    code = destination_code(page_html)
+    if code:
+        return {"destination": code}
+    tag = tag_category(page_html)
+    return {"destination": "", "tagCategoryId": tag} if tag else None
 
 
 def parse_list(payload: str) -> tuple[list[dict], int]:
@@ -85,6 +121,12 @@ def parse_list(payload: str) -> tuple[list[dict], int]:
             "image": image_url(img.group(1), BASE) if img else None,
         })
     return cards, int(data.get("total") or 0)
+
+
+def listed_ids(payload: str) -> list[str]:
+    """Every hotel id on one list answer, priced or not (for paging; parse_list keeps priced cards only)."""
+    html = (json.loads(payload or "{}").get("html") or "")
+    return list(dict.fromkeys(re.findall(r'<a href="/smestaj/[^"]+/(\d+)/"', html)))
 
 
 def _title_case(name: str) -> str:
@@ -144,24 +186,28 @@ def fetch(cfg: dict, today: date, session: PoliteSession | None = None) -> tuple
     hotels, offers = [], []
     for page in tl.get("pages", []):
         try:
-            code = page.get("destination") or destination_code(s.get(page["url"]))
-            if not code:
-                log.warning("Travelland: no destination code on %s", page["url"])
+            query = list_query(page) or list_query(page, s.get(page["url"]))
+            if not query:
+                log.warning("Travelland: no destination code or tag category on %s", page["url"])
                 continue
-            seen_total = 0
+            seen: set[str] = set()
+            n_offers, total = 0, 0
             for n in range(1, int(tl.get("max_list_pages", 5)) + 1):
-                q = urlencode({"destination": code, "transportationType": "", "template": "featured",
-                               "perPage": 12, "sortBy": "", "paginate": n})
-                cards, total = parse_list(s.get(f"{BASE}/services/list/?{q}"))
-                for c in cards:
+                q = urlencode({**query, "transportationType": "", "template": "featured",
+                               "perPage": 12, "sortBy": "", "_page": n, "paginate": n})
+                payload = s.get(f"{BASE}/services/list/?{q}") or '{"html": "", "total": 0}'
+                cards, total = parse_list(payload)
+                fresh = [i for i in listed_ids(payload) if i not in seen]
+                seen.update(fresh)
+                for c in (c for c in cards if c["object_id"] in fresh):
                     pair = to_hotel_and_offer(c, page, cfg, today)
                     if pair:
                         hotels.append(pair[0])
                         offers.append(pair[1])
-                seen_total += len(cards)
-                if not cards or seen_total >= total:
-                    break
-            log.info("Travelland %s: %d offers", page["area"], seen_total)
+                        n_offers += 1
+                if not fresh or len(seen) >= total:
+                    break                      # a page that only repeats cards means paging is ignored
+            log.info("Travelland %s: %d hotels of %d listed, %d offers", page["area"], len(seen), total, n_offers)
         except Blocked as e:
             log.warning("Travelland stopped (respecting the block): %s", e)
             break

@@ -20,3 +20,5 @@ data/http-cache.sqlite
 data/health-history.json
 data/enrich_cache.json
 data/*.bak*
+data/geocode_cache.json.bak*
+data/geocode_cache.json

@@ -8,6 +8,14 @@
 #             "2+0" = the agency price was for 2 adults only (kids' cost unknown).
 #  was_eur:   the agency's "before discount" price (stated, not trusted until
 #             our own history backs it up).
+#
+#  Easiest way to add one (it checks the entry before saving; see README,
+#  "Adding Fibula prices"):
+#      python -m trips.add_offer --interactive
+#      python -m trips.add_offer --list                    # which ones to re-check
+#      python -m trips.add_offer --again 3 --price 1180    # today's price for no. 3
+#  New entries go at the end of this file. Editing by hand still works, but
+#  keep to one price per offer per day: a second price on the same day is ignored.
 # ============================================================================
 
 # Fibula Black Friday Greece — search 20.06.2027, 7 nights, 2 adults + 2 kids aged 3, half board.

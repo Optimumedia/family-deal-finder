@@ -1,15 +1,15 @@
 """Scoring: hard family rules → Family Fit (0–100) → Deal quality (0–100) → tier.
 
-Family Fit weights follow the family-first research:
-    sleep setup 20 · beach (summer) / activities (winter) 20 · travel effort 15 ·
-    kids' facilities 12 · food 10 · health & safety 8 · logistics 7 · reviews 8
-times a confidence factor 0.6 + 0.4 × (share of known facts that are verified).
+Family Fit weights follow the family-first research (see FAMILY_W below):
+    sleep setup 18 · beach (summer) / activities (winter) 22 · travel effort 15 ·
+    kids' facilities 12 · kids' cost 8 · food 10 · health 5 · logistics 4 · reviews 6
+times a confidence factor 0.85 + 0.15 × (share of known facts that are verified).
 
 Deal quality ignores the agency's "was" price as proof. It trusts our own price
 history first (≥3% below this offer's lowest price of the last N days, with at
 least 3 checks over 2 days, blended with the median price), then the peer
 comparison (cheaper per night than similar offers), and only then — at a
-reduced weight — the stated discount. A price pushed up shortly before a "was"
+reduced weight — the stated discount (which alone can't lift an offer above "Great deal"). A price pushed up shortly before a "was"
 claim is flagged `fake?`. Each offer also gets a "book now / can wait / watch"
 signal with a reason and a confidence level. A "2+0" (adults-only) price never
 outranks a comparable "2+2" one on price grounds.
@@ -19,6 +19,7 @@ excludes a hotel, but caps the rating and creates a question for the hotel.
 """
 from __future__ import annotations
 
+import re
 from datetime import date, timedelta
 from statistics import median
 
@@ -55,9 +56,61 @@ def tier(score: float) -> dict:
 
 
 # ----------------------------------------------------------------- family ---
+#
+# Family Fit = the sum of the points in `parts` (out of 100) × a confidence factor.
+#
+#   part        pts  summer                                   winter
+#   sleep        18  family room / separate bedroom + 2 cots  separate bedroom + 2 cots + fits 4
+#   beach        22  sand · distance (or beachfront) · shallow —
+#   activities   22  —                                        ski kindergarten · kids' pool · playroom
+#   travel       15  ≤3h drive = full, 5h limit = 40%, a direct flight 80%
+#   kids         12  kids' club for age 3 · kids' pool · playground / playroom / animation
+#   kids_cost     8  free-child age limits vs the twins' age on check-in
+#   food         10  breakfast + dinner (HB offered but not priced = 75%)
+#   health        5  doctor nearby
+#   logistics     4  stroller-friendly
+#   reviews       6  stars
+#
+# Each fact is worth 1 when yes and 0 when no. An unknown nice-to-have is worth 0.5 (neutral);
+# an unknown must-have only 0.35, because it is a real risk for the parents (and it caps the rating). The confidence factor is 0.85 + 0.15 × the share of
+# known facts the hotel itself confirmed, so agency/detail-page info counts 85 %.
+# `explain` says in words where the non-obvious points come from.
+
+FAMILY_W = {"sleep": 18, "place": 22, "travel": 15, "kids": 12, "kids_cost": 8, "food": 10,
+            "health": 5, "logistics": 4, "reviews": 6}
+UNK_MUST = 0.35                 # an unknown must-have (an unknown nice-to-have is 0.5)
+UNVERIFIED_CONF = 0.85          # confidence when every known fact is agency / detail-page info
+AVAILABLE = "available"        # checklist state: offered by the hotel, not included in this price
+# Room names that mean a unit with a separate bedroom / two or more rooms.
+ROOM_SEP = re.compile(r"\b(?:one|two|three|[1-4])[\s-]*bed[\s-]*rooms?\b|\b(?:two|three|[2-4])[\s-]*rooms?\b|"
+                      r"\b(?:dvo|tro|[cč]etvoro)sob\w*|\bseparate\s+bedroom|spava[cć]\w*\s+sob\w*|"
+                      r"\bmaisonette\b|\bduplex\b", re.I)
+ROOM_CAP = re.compile(r"up to (\d+) guests|\bmax\.?\s*(\d+)\b", re.I)
+
 
 def _fact(fam: dict, key: str):
     return fam.get(key)          # None = unknown
+
+
+def _age_txt(age: float) -> str:
+    return f"{int(age)}y {int((age % 1) * 12)}m"
+
+
+def kids_cost(fam: dict, offer: dict, kids_age: float) -> tuple[float, str]:
+    """0..1: how little the twins add to a stay here, from the detail page's free-child age limits
+    vs the twins' age on check-in ("0–2 free" = free while younger than 2: the safe side for the
+    family). Same for 2+0 and 2+2 offers: whether the price includes them is the deal's job."""
+    both, first = _fact(fam, "kids_free_max_age"), _fact(fam, "first_child_free_max_age")
+    age = _age_txt(kids_age)
+    if both is not None and kids_age < both:
+        return 1.0, f"Children stay free up to {both:g}: both twins ({age}) free"
+    if first is not None and kids_age < first:
+        return 0.6, f"1st child free up to {first:g}: one twin ({age}) free, the other pays"
+    if both is not None or first is not None:
+        lim = max(x for x in (both, first) if x is not None)
+        return 0.15, f"Children free only up to {lim:g}: both twins ({age}) pay"
+    return 0.4, ("Free-child age limit unknown (this price includes the twins)" if offer.get("occupancy") == "2+2"
+                 else "Free-child age limit unknown: ask what the twins cost")
 
 
 def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> dict:
@@ -70,30 +123,35 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     failed: list[str] = []
     unknown_musts: list[str] = []
     questions: list[str] = []
+    explain: dict[str, str] = {}
 
     def check(key, label, state, must=False, question=None):
-        status = "unknown" if state is None else ("yes" if state else "no")
+        status = state if state == AVAILABLE else "unknown" if state is None else ("yes" if state else "no")
         checklist.append({"key": key, "label": label, "state": status, "must": must,
                           "verified": key in verified})
-        if must and state is False:
+        if must and status == "no":
             failed.append(label)
-        if must and state is None:
+        if must and status == "unknown":
             unknown_musts.append(label)
-        if question and (state is None or key not in verified) and status != "no":
+        if question and (status in ("unknown", AVAILABLE) or key not in verified) and status != "no":
             questions.append(question)
+
+    def tri(v, unk=0.5):
+        return unk if v is None else (1.0 if v else 0.0)
 
     # --- reach: direct flight from SKP or ≤ max drive (plus border buffer)
     total_drive = None
     if drive_min is not None:
         total_drive = drive_min + (reach_cfg["border_buffer_minutes"] if hotel.get("border") else 0)
     direct = bool(hotel.get("direct_flight_skp"))
+    limit = reach_cfg["max_drive_minutes"]
     if direct:
         reach = True
     elif total_drive is None:
         reach = None
-    elif total_drive <= reach_cfg["max_drive_minutes"]:
+    elif total_drive <= limit:
         reach = True
-    elif total_drive <= reach_cfg["max_drive_minutes"] + reach_cfg.get("tolerance_minutes", 0):
+    elif total_drive <= limit + reach_cfg.get("tolerance_minutes", 0):
         reach = None            # borderline: the free router is conservative — check the real route
     else:
         reach = False
@@ -114,35 +172,95 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
           question=f"Can you guarantee {need} cots in one room for our twins, who will be {age_txt} old on "
                    f"{_d(offer['check_in']).strftime('%d.%m.%Y')}? What is your cot age limit, and are they "
                    f"full-size cots or travel cots?")
+    cots_v = tri(cots_ok, unk=0.45 if fam.get("cots_mentioned") else UNK_MUST)
 
     board = offer.get("board", "")
+    hb_offered = bool(_fact(fam, "half_board"))
+    room = offer.get("room") or ""
     if season == "summer":
         s = cfg["summer"]
         sand = _fact(fam, "sand_beach")
         check("sand_beach", "Sandy beach", sand if s["need_sand"] else True, must=s["need_sand"],
               question="Is the beach in front of the hotel sand or pebbles, and how far out does the water stay shallow "
                        "for small children?")
-        bm = _fact(fam, "beach_m")
-        check("beachfront", f"Beach ≤{s['max_beach_m']} m", None if bm is None else bm <= s["max_beach_m"], must=True)
-        if board == "SC":
+        bm, front = _fact(fam, "beach_m"), bool(_fact(fam, "beachfront"))
+        if front:
+            near_ok, near = True, 1.0
+        elif bm is None:
+            near_ok, near = None, UNK_MUST
+        else:
+            near_ok = bm <= s["max_beach_m"]
+            near = 1.0 if bm <= 50 else 0.8 if near_ok else 0.1
+        check("beachfront", "On the beach" if front else f"Beach ≤{s['max_beach_m']} m", near_ok, must=True)
+        if board in s["need_board"]:
+            check("board", "Breakfast + dinner", True, must=True)
+            food = 1.0
+        elif board == "SC":
             # Whole villa / apartment: kitchen instead of breakfast + dinner. Kept (capped), not thrown out.
             check("board", "Self-catering — no breakfast/dinner", None, must=True)
-        else:
-            check("board", "Breakfast + dinner", None if board == "?" else board in s["need_board"], must=True,
+            food = 0.5
+        elif board == "?" and hb_offered:
+            check("board", "Breakfast + dinner — available (check price)", AVAILABLE, must=True,
+                  question="This price may be for bed & breakfast: what does half board (breakfast + dinner) add for "
+                           "2 adults and 2 small children?")
+            food = 0.75
+            explain["food"] = "Half board is offered; the price shown may not include it"
+        elif board == "?":
+            check("board", "Breakfast + dinner", None, must=True,
                   question="Is half board (breakfast + dinner) available, and what does it cost for 2 adults and 2 "
-                           "small children?" if board == "?" else None)
+                           "small children?")
+            food = UNK_MUST
+        else:
+            check("board", "Breakfast + dinner", False, must=True)
+            food = 0.2
         shallow = _fact(fam, "shallow_entry")
         check("shallow_entry", "Shallow, gradual entry", shallow)
+        sand_v = 0.5 if sand is None and fam.get("beach_type") == "mixed" else tri(sand, unk=UNK_MUST)
+        place = 0.5 * sand_v + 0.35 * near + 0.15 * tri(shallow)
+        if sand is False:
+            place *= 0.5                       # pebbles: the beach is half as useful to two toddlers
+            explain["beach"] = "Pebble beach: beach points halved"
+        elif front:
+            explain["beach"] = "Beachfront (detail page)"
+        sep = _fact(fam, "separate_bedroom")
+        fr = _fact(fam, "family_room")
+        room_v = 1.0 if sep else 0.85 if fr else 0.0 if fr is False else UNK_MUST
+        sleep = 0.6 * room_v + 0.4 * cots_v
+        check("family_room", "Family room fits 2+2", fr if not sep else True)
     else:
         w = cfg["winter"]
         sep = _fact(fam, "separate_bedroom")
+        if sep is None and ROOM_SEP.search(room):
+            sep = True
+            explain["sleep"] = f"Separate bedroom from the room name ({ROOM_SEP.search(room).group(0)})"
         check("separate_bedroom", "Separate bedroom (cots in the other room)", sep, must=w["need_separate_bedroom"],
               question="Which room or apartment type has a separate bedroom for us, with space for 2 cots in the "
                        "other room?")
-        check("board", "Self-catering (own kitchen)" if board == "SC" else "Breakfast + dinner",
-              True if board == "SC" else None if board == "?" else board in FULL_BOARDS)
-        check("ski_school", "Ski kindergarten from age 3", _fact(fam, "ski_school_from_3"),
+        if board == "SC":
+            check("board", "Self-catering (own kitchen)", True)
+            food = 0.9
+        elif board in FULL_BOARDS:
+            check("board", "Breakfast + dinner", True)
+            food = 1.0
+        elif board == "?" and hb_offered:
+            check("board", "Breakfast + dinner — available (check price)", AVAILABLE)
+            food = 0.8
+        elif board == "?":
+            check("board", "Breakfast + dinner", None)
+            food = 0.5
+        else:
+            check("board", "Breakfast + dinner", False)
+            food = 0.5
+        ski = _fact(fam, "ski_school_from_3")
+        check("ski_school", "Ski kindergarten from age 3", ski,
               question="Is there a ski kindergarten or snow play area that takes 3-year-olds, and how far is it?")
+        cap = ROOM_CAP.search(room)
+        cap = int(cap.group(1) or cap.group(2)) if cap else None
+        fits4 = True if _fact(fam, "family_room") or (cap or 0) >= 4 else _fact(fam, "family_room")
+        sleep = 0.55 * tri(sep, unk=UNK_MUST) + 0.3 * cots_v + 0.15 * tri(fits4)
+        check("family_room", "Family room fits 2+2", sep)
+        play = True if any(_fact(fam, k) for k in ("playroom", "kids_club", "kids_animation")) else None
+        place = 0.6 * tri(ski) + 0.2 * tri(_fact(fam, "kids_pool")) + 0.2 * tri(play)
 
     kc = _fact(fam, "kids_club")
     kc_age = _fact(fam, "kids_club_min_age")
@@ -150,47 +268,39 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     check("kids_club", "Kids' club takes age 3", kc_ok,
           question="What is the minimum age for the kids' club, and do children need to be potty-trained?")
     check("kids_pool", "Kids' pool", _fact(fam, "kids_pool"))
-    check("family_room", "Family room fits 2+2", _fact(fam, "family_room") if season == "summer" else
-          _fact(fam, "separate_bedroom"))
     if offer.get("occupancy") != "2+2":
         questions.append("What is the total price for 2 adults and two 3-year-olds for these dates, including the cots "
                          "and the children's meals?")
 
     # --- component scores (0..1)
-    def tri(v, yes=1.0, unk=0.5, no=0.0):
-        return unk if v is None else (yes if v else no)
-
-    sleep = 0.6 * tri(_fact(fam, "family_room") if season == "summer" else _fact(fam, "separate_bedroom")) \
-        + 0.4 * tri(cots_ok)
-    if season == "summer":
-        bm = _fact(fam, "beach_m")
-        near = 0.5 if bm is None else (1.0 if bm <= 50 else 0.7 if bm <= 150 else 0.2)
-        place = 0.5 * tri(_fact(fam, "sand_beach")) + 0.35 * near + 0.15 * tri(_fact(fam, "shallow_entry"))
-    else:
-        place = 0.6 * tri(_fact(fam, "ski_school_from_3")) + 0.4 * tri(_fact(fam, "kids_pool"))
     if direct:
         travel = 0.8
     elif total_drive is None:
         travel = 0.5
+    elif total_drive <= limit:
+        travel = 1.0 - 0.6 * clamp((total_drive - 180) / (limit - 180))
     else:
-        travel = clamp(1 - (total_drive - 180) / (reach_cfg["max_drive_minutes"] - 180))
-    kids = 0.5 * tri(kc_ok, unk=0.25) + 0.5 * tri(_fact(fam, "kids_pool"), unk=0.25)
-    food = 1.0 if board in FULL_BOARDS else 0.5 if board in ("?", "SC") else 0.3
+        travel = 0.2                           # borderline: over the limit but within the tolerance
+    extras = True if any(_fact(fam, k) for k in ("playground", "playroom", "kids_animation")) else None
+    kids = 0.4 * tri(kc_ok) + 0.35 * tri(_fact(fam, "kids_pool")) + 0.25 * tri(extras)
+    cost, explain["kids_cost"] = kids_cost(fam, offer, kids_age)
     health = tri(_fact(fam, "doctor_near"))
     logistics = tri(_fact(fam, "stroller_ok"))
     reviews = clamp((hotel.get("stars") or 3) / 5)
-    parts = {"sleep": 20 * sleep, "beach" if season == "summer" else "activities": 20 * place,
-             "travel": 15 * travel, "kids": 12 * kids, "food": 10 * food, "health": 8 * health,
-             "logistics": 7 * logistics, "reviews": 8 * reviews}
+    vals = {"sleep": sleep, "place": place, "travel": travel, "kids": kids, "kids_cost": cost, "food": food,
+            "health": health, "logistics": logistics, "reviews": reviews}
+    parts = {("beach" if season == "summer" else "activities") if k == "place" else k: FAMILY_W[k] * v
+             for k, v in vals.items()}
     raw = sum(parts.values())
     known = [c for c in checklist if c["state"] != "unknown"]
-    conf = 0.6 + 0.4 * (sum(c["verified"] for c in known) / len(known) if known else 0)
+    conf = UNVERIFIED_CONF + (1 - UNVERIFIED_CONF) * (sum(c["verified"] for c in known) / len(known) if known else 0)
     return {
         "score": round(raw * conf, 1),
         "raw": round(raw, 1),
         "confidence": round(conf, 2),
         # points before the confidence factor; occupancy never changes them (price is the deal's job)
         "parts": {k: round(v, 1) for k, v in parts.items()},
+        "explain": explain,
         "price_covers_kids": offer.get("occupancy") == "2+2",
         "checklist": checklist,
         "failed": failed,
@@ -239,6 +349,11 @@ ADULTS_ONLY_FAMILY_PRICE = 0.3   # share of the family-price points a 2+0 price 
 # (same family fit, deadline and reach) on price grounds, whatever either price does.
 ADULTS_ONLY_PRICE_WEIGHT = W_FAMILY_PRICE * (1 - ADULTS_ONLY_FAMILY_PRICE) / (W_HISTORY + W_PEERS)
 FAKE_CAP = 54
+# A discount only the agency states (no price history of ours behind it) earns history points
+# in proportion to the claim, full points only for a −50% claim (× stated_weight), and the offer
+# can't rise above "Great deal": "Exceptional" and "Once-in-a-lifetime" need a verified saving.
+STATED_FULL = 0.5
+UNPROVEN_CAP = 79
 
 
 def deal_settings(cfg: dict) -> dict:
@@ -386,7 +501,7 @@ def deal_quality(offer: dict, peers: list[dict], cfg: dict, today: date, reach_o
         notes.append(f"{vs_low * 100:.0f}% below our recorded low, but only {observations} checks over "
                      f"{obs_days} days (needs {d['min_observations']} over {d['min_days']})")
     elif claim:
-        verdict, real_n = "stated", clamp(stated_pct / 0.25) * sw
+        verdict, real_n = "stated", clamp(stated_pct / STATED_FULL) * sw
     elif vs_low is not None:
         verdict, real_n = "flat", 0.0
     else:
@@ -469,6 +584,10 @@ def _rate_one(hotel: dict, offer: dict, peers: list[dict], cfg: dict, drive_min,
         overall, capped = cfg["score"]["unknown_cap"], True
     if deal["verdict"] == "fake?":
         overall = min(overall, FAKE_CAP)
+    elif deal["verdict"] != "real" and overall > UNPROVEN_CAP:
+        overall = UNPROVEN_CAP
+        deal["notes"].append(f"Held at {UNPROVEN_CAP}: without a saving our own price history confirms, an "
+                             f"offer can't go above Great deal")
     return {"overall": overall, "capped": capped, "excluded": bool(fam["failed"]), "family": fam, "deal": deal}
 
 

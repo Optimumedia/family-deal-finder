@@ -104,5 +104,69 @@ class Travelland(unittest.TestCase):
         self.assertIsNone(image_url(None, tl.BASE))
 
 
+SUMMER = {"url": "https://www.travelland.rs/destinacije/grcka/letovanje/hoteli/tasos/", "tag_category": 564,
+          "season": "summer", "area": "Thassos, Greece", "country": "GR", "lat": 40.68, "lng": 24.65, "nights": 7,
+          "check_in": "2027-06-20"}
+
+
+class TravellandTagPagesAndPaging(unittest.TestCase):
+    """Saved 2026-11-26: Thassos tag 564 list answer, and a "Ponuda stiže uskoro" answer (Kassandra)."""
+
+    def setUp(self):
+        self.thassos = (FIX / "travelland_list_thassos_tag564.json").read_text(encoding="utf-8")
+        self.bansko = (FIX / "travelland_list_bansko.json").read_text(encoding="utf-8")
+
+    def cfg(self, *pages):
+        return {**CFG, "sources": {**CFG["sources"], "travelland": {"enabled": True, "max_list_pages": 5,
+                                                                 "pages": list(pages)}}}
+
+    def test_list_query_from_config_or_page(self):
+        self.assertEqual(tl.list_query({"destination": "1:2"}), {"destination": "1:2"})
+        self.assertEqual(tl.list_query({"tag_category": 564}), {"destination": "", "tagCategoryId": "564"})
+        self.assertIsNone(tl.list_query({"url": "x"}))                       # -> fetch the page
+        form_then_list = ('<form data-destination="89:60" data-tagCategoryId="">'
+                          '<div class="list-featured" data-destination="89:60:2364"></div>')
+        self.assertEqual(tl.list_query({}, form_then_list), {"destination": "89:60:2364"})
+        tag_page = '<form data-destination="" data-tagCategoryId="564"><div class="list-featured" data-destination="">'
+        self.assertEqual(tl.list_query({}, tag_page), {"destination": "", "tagCategoryId": "564"})
+        self.assertIsNone(tl.list_query({}, '<div data-destination="">'))
+
+    def test_thassos_summer_cards_without_date_window(self):
+        cards, total = tl.parse_list(self.thassos)
+        self.assertEqual((total, len(cards), len(tl.listed_ids(self.thassos))), (31, 7, 12))
+        by = {c["object_id"]: c for c in cards}
+        a = by["102901"]                                       # Atrium of Thassos, "po danu od", VAŽE DO
+        self.assertEqual((a["price_pp"], a["old_pp"], a["pct"], a["valid_until"], a["date_from"]),
+                         (69.0, 94.0, 27, "2026-11-30", None))
+        h, o = tl.to_hotel_and_offer(a, SUMMER, CFG, date(2026, 11, 26))
+        self.assertEqual((o["check_in"], o["nights"], o["price_eur"]), ("2027-06-20", 7, 69 * 7))   # per unit
+        _, pp = tl.to_hotel_and_offer(by["102892"], SUMMER, CFG, date(2026, 11, 26))                # per person
+        self.assertEqual(pp["price_eur"], 43 * 2 * 7)
+        self.assertEqual(pp["discount_label"], "Travelland -20%")
+
+    def test_tag_page_fetch_uses_tag_and_stops_on_repeated_cards(self):
+        s = FakeSession({"tagCategoryId=564": self.thassos})  # the site answers every page with the same 12
+        hotels, offers = tl.fetch(self.cfg(SUMMER), date(2026, 11, 26), session=s)
+        self.assertEqual(len(offers), 7)
+        self.assertEqual(len({o["hotel"] for o in offers}), 7)
+        self.assertFalse(any("/destinacije/" in u for u in s.urls))          # tag in config: no page request
+        self.assertEqual(len(s.urls), 2)                                     # page 2 repeats page 1 -> stop
+        self.assertIn("destination=&tagCategoryId=564", s.urls[0])
+        self.assertIn("_page=2", s.urls[1])
+
+    def test_repeating_pages_not_double_counted(self):
+        s = FakeSession({"destination=e2e": self.bansko})     # 30 listed, but every page = the same 12
+        _, offers = tl.fetch(self.cfg({**PAGE, "destination": "e2e"}), date(2026, 11, 25), session=s)
+        self.assertEqual(len(offers), 12)                     # was 36 (3 pages x the same 12) on 25.11
+        self.assertEqual(len(s.urls), 2)
+
+    def test_coming_soon_answer_is_empty(self):
+        payload = (FIX / "travelland_list_coming_soon.json").read_text(encoding="utf-8")
+        self.assertEqual(tl.parse_list(payload), ([], 0))
+        s = FakeSession({"destination=89": payload})
+        _, offers = tl.fetch(self.cfg({**PAGE, "destination": "89:60:2364"}), date(2026, 11, 26), session=s)
+        self.assertEqual((offers, len(s.urls)), ([], 1))
+
+
 if __name__ == "__main__":
     unittest.main()

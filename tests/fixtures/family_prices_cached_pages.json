@@ -1,0 +1,1300 @@
+{
+ "note": "page_summary() of the Olympic pages cached on 25.11.2026 (child policy, room sizes, price per board)",
+ "pages": {
+  "olympic.rs/letovanje/grcka/hanioti/hotel-calypso/102769/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/hanioti/hotel-calypso/102769/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "BB"
+   ],
+   "child_policy": [
+    {
+     "age_from": 6.0,
+     "age_to": 11.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (6 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 5.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (2 - 5)",
+     "pct": 70,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (2 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (2 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "ECO Room",
+     "max_persons": 3
+    },
+    {
+     "name": "Single room",
+     "max_persons": 1
+    },
+    {
+     "name": "Double/twin room",
+     "max_persons": 3
+    },
+    {
+     "name": "Double/twin room sea or pool view",
+     "max_persons": 3
+    },
+    {
+     "name": "Triple room",
+     "max_persons": 4
+    }
+   ],
+   "board_prices": {
+    "BB": 36.71
+   }
+  },
+  "olympic.rs/letovanje/grcka/hanioti/hotel-elinotel-polis/102988/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/hanioti/hotel-elinotel-polis/102988/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "HB"
+   ],
+   "child_policy": [
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (2 - 11)",
+     "pct": 80,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 11.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (0 - 11)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "Family Room",
+     "max_persons": 4
+    },
+    {
+     "name": "Single Room",
+     "max_persons": 1
+    },
+    {
+     "name": "Double Room",
+     "max_persons": 2
+    },
+    {
+     "name": "Superior Room",
+     "max_persons": 3
+    }
+   ],
+   "board_prices": {
+    "HB": 35.99
+   }
+  },
+  "olympic.rs/letovanje/grcka/kalithea/hotel-aegean-melathron/102886/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/kalithea/hotel-aegean-melathron/102886/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "HB"
+   ],
+   "child_policy": [
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (2 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (2 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "ECO Room Street View",
+     "max_persons": 2
+    },
+    {
+     "name": "Junior Suite Pool View",
+     "max_persons": 4
+    },
+    {
+     "name": "Junior Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Maisonette Pool View",
+     "max_persons": 4
+    },
+    {
+     "name": "Maisonette sea view*",
+     "max_persons": 4
+    },
+    {
+     "name": "Double Room Pool View",
+     "max_persons": 2
+    },
+    {
+     "name": "Double Room Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Bungalow Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Comfort Suite Sea View",
+     "max_persons": 5
+    },
+    {
+     "name": "Comfort Suite Sea View with Private Pool",
+     "max_persons": 5
+    },
+    {
+     "name": "Deluxe Room Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Elegance Suite Sea view",
+     "max_persons": 3
+    },
+    {
+     "name": "Elegance Suite with Private Pool",
+     "max_persons": 3
+    },
+    {
+     "name": "Loft SPA Suite Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Presidential Suite",
+     "max_persons": 5
+    },
+    {
+     "name": "Signature Suite Sea View with Private Pool",
+     "max_persons": 4
+    },
+    {
+     "name": "Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Superior Suite with Private Pool",
+     "max_persons": 5
+    },
+    {
+     "name": "Deluxe Room Pool View",
+     "max_persons": 2
+    },
+    {
+     "name": "Deluxe Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Bungalow Suite Pool View",
+     "max_persons": 4
+    }
+   ],
+   "board_prices": {
+    "HB": 51.18
+   }
+  },
+  "olympic.rs/letovanje/grcka/kasandra/hotel-ammon-zeus-luxury-beach-hotel/114234/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/kasandra/hotel-ammon-zeus-luxury-beach-hotel/114234/",
+   "fetched": "2026-11-25",
+   "board_options": [],
+   "child_policy": [
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": null,
+     "eur_max": 14.42,
+     "eur_min": 14.42,
+     "kind": "supplement",
+     "label": "Doplata HB za dete (2 - 11)",
+     "pct": null,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za prvu dete (2 - 11)",
+     "pct": 20,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za prvu dete (2 - 11)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "Apartman Deluxe Double Room | Garden View",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Premium Double Room | Garden View",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Executive Double Room | Sea Front",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Deluxe Double Room | Sea Front",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Eco Room (1st Floor) | Garden View",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Penthouse Suite | Sea Front",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Room DeLuxe Garden view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room DeLuxe Garden view",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Double Room DeLuxe Sea front",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Room Eco (1 st floor) Garden view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room Premium Sea front",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Suite Penthouse Sea front",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Single Room DeLuxe Garden view",
+     "max_persons": 1
+    },
+    {
+     "name": "Apartman Double Room Executive Sea front",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Premium Double Room Sea Front",
+     "max_persons": 1
+    }
+   ],
+   "board_prices": {}
+  },
+  "olympic.rs/letovanje/grcka/kriopigi/hotel-kassandra-palace-seaside-resort/114032/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/kriopigi/hotel-kassandra-palace-seaside-resort/114032/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "HB",
+    "FB"
+   ],
+   "child_policy": [
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": null,
+     "eur_max": 25.75,
+     "eur_min": 25.75,
+     "kind": "supplement",
+     "label": "Doplata FB za dete (2 - 11)",
+     "pct": null,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za prvu dete (2 - 11)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "Apartman NEW! One Bedroom Suite Private Pool",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman NEW! One Bedroom Suite Sea view",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman NEW! Two Bedroom Suite Private Pool",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman Double Room Inland View",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Deluxe Room Garden View",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Deluxe Room Side Sea View",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Family Suite with Garden Access",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman Family Suite Garden View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Family Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Grand Suite Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double for Single Mountain view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double for Single Sea view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double Mountain view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double Sea view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double DeLuxe Garden view",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Room Double DeLuxe Side sea view",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Suite Family Sea view",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Suite Family Garden view",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Suite Family Sea view",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Suite Family Garden Access",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman Suite Grand Sea view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double for Single Inland view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Room Double Inland view",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Suite 1 BedRoom Sea view",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Suite 1 BedRoom Private Pool",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Suite NEW! One Bedroom Suite Private Pool",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Suite NEW! One Bedroom Suite Sea view",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Double Room Panoramic Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room Panoramic Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Suite Two Bedroom Private Pool",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman Family Suite Garden View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Family Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Family Suite with Garden Access",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman Suite NEW! Two Bedroom Suite Private Pool",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman Bed in dormitory STANDARD",
+     "max_persons": 1
+    },
+    {
+     "name": "Apartman DOUBLE MOUNTAIN VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin DELUXE GARDEN VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin DELUXE SIDE SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin MOUNTAIN VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman DOUBLE SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman FAMILY ROOM DELUXE",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman FAMILY ROOM DELUXE GARDEN VIEW",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman FAMILY ROOM DELUXE SEA VIEW",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman FAMILY ROOM SEA VIEW",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman FAMILY ROOM SEA VIEW",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman Room COMFORT",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room DELUXE",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room DELUXE GARDEN VIEW",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room DELUXE SEA VIEW",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room DELUXE SIDE SEA VIEW",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room INNER",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room MOUNTAIN VIEW",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room SEA VIEW",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman Room STANDARD",
+     "max_persons": 10
+    },
+    {
+     "name": "Apartman SUITE DELUXE",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE DELUXE",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE DELUXE",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE DELUXE",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE DELUXE",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE DELUXE GARDEN VIEW",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE DELUXE SEA VIEW",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE GARDEN VIEW",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE GRAND",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE GRAND",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE GRAND",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE SEA VIEW",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE SEA VIEW",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman SUITE STANDARD",
+     "max_persons": 8
+    },
+    {
+     "name": "Apartman TWIN DELUXE WITH VIEWS",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman TWIN MOUNTAIN VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman TWIN SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman *PENDING DISCONNECTION* Family Suite Sea view",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Deluxe Family Suite Garden View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Deluxe Family Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Deluxe Family Suite with Garden Access",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman One Bedroom Suite Garden View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman One Bedroom Suite Sea View",
+     "max_persons": 4
+    }
+   ],
+   "board_prices": {}
+  },
+  "olympic.rs/letovanje/grcka/nea-kalikratia/hotel-alkyonis-hotel/114134/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/nea-kalikratia/hotel-alkyonis-hotel/114134/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "BB"
+   ],
+   "child_policy": [
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "Room Double Standard",
+     "max_persons": 3
+    },
+    {
+     "name": "Room Double Sea view",
+     "max_persons": 2
+    },
+    {
+     "name": "Room Triple Standard",
+     "max_persons": 3
+    },
+    {
+     "name": "Room Double Superior Sea view",
+     "max_persons": 2
+    },
+    {
+     "name": "Room Single Standard",
+     "max_persons": 1
+    },
+    {
+     "name": "Family Room Standard",
+     "max_persons": 4
+    },
+    {
+     "name": "Room Double Standard",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman SUPERIOR SEA VIEW DOUBLE",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman SEA VIEW DOUBLE",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman STANDARD FAMILY ROOM",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman STANDARD DOUBLE",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman STANDARD TRIPLE",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Double or Twin SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin STANDARD",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman TRIPLE STANDARD",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman FAMILY ROOM STANDARD",
+     "max_persons": 6
+    },
+    {
+     "name": "Apartman SINGLE STANDARD",
+     "max_persons": 1
+    },
+    {
+     "name": "Apartman DOUBLE STANDARD",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin STANDARD",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman DOUBLE SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Double or Twin SUPERIOR SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman DOUBLE SUPERIOR SEA VIEW",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Room STANDARD",
+     "max_persons": 10
+    }
+   ],
+   "board_prices": {}
+  },
+  "olympic.rs/letovanje/grcka/nea-kalikratia/hotel-alkyonis/103028/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/nea-kalikratia/hotel-alkyonis/103028/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "BB"
+   ],
+   "child_policy": [],
+   "rooms": [
+    {
+     "name": "Single Room",
+     "max_persons": 1
+    },
+    {
+     "name": "Double Room City View",
+     "max_persons": 2
+    },
+    {
+     "name": "Double Room Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Superior Room Sea View",
+     "max_persons": 2
+    },
+    {
+     "name": "Triple Room",
+     "max_persons": 3
+    },
+    {
+     "name": "Family Room",
+     "max_persons": 4
+    }
+   ],
+   "board_prices": {
+    "BB": 35.63
+   }
+  },
+  "olympic.rs/letovanje/grcka/paliouri/hotel-chrousso-village/102768/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/paliouri/hotel-chrousso-village/102768/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "AI"
+   ],
+   "child_policy": [
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 2,
+     "eur_max": 29.99,
+     "eur_min": 29.99,
+     "kind": "supplement",
+     "label": "Doplata za 2 dete (2 - 11)",
+     "pct": null,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 3,
+     "eur_max": 29.99,
+     "eur_min": 29.99,
+     "kind": "supplement",
+     "label": "Doplata za 3 dete (2 - 11)",
+     "pct": null,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 11.0,
+     "child": 1,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 1 dete (0 - 11)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 3,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 3 dete (2 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": 2,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 2 dete (2 - 11)",
+     "pct": 50,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": 3,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "discount",
+     "label": "Popust za 3 dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "Family Apartment Garden View*",
+     "max_persons": 5
+    },
+    {
+     "name": "Family Suite Open Plan",
+     "max_persons": 4
+    },
+    {
+     "name": "Junior Suite",
+     "max_persons": 4
+    },
+    {
+     "name": "Promo Studio*",
+     "max_persons": 2
+    },
+    {
+     "name": "Promo Superior Room*",
+     "max_persons": 2
+    },
+    {
+     "name": "Double Studio",
+     "max_persons": 3
+    },
+    {
+     "name": "Superior Double Room",
+     "max_persons": 3
+    },
+    {
+     "name": "1-Bedroom Family Room",
+     "max_persons": 4
+    },
+    {
+     "name": "1-Bedroom Deluxe Suite",
+     "max_persons": 5
+    },
+    {
+     "name": "VIP Suite*",
+     "max_persons": 5
+    },
+    {
+     "name": "Family Maisonette",
+     "max_persons": 5
+    },
+    {
+     "name": "One Bedroom Deluxe Suite",
+     "max_persons": 5
+    },
+    {
+     "name": "One Bedroom Family Room",
+     "max_persons": 4
+    },
+    {
+     "name": "Superior Triple Room",
+     "max_persons": 3
+    }
+   ],
+   "board_prices": {
+    "AI": 66.84
+   }
+  },
+  "olympic.rs/letovanje/grcka/pefkohori/hotel-agnes-deluxe-hotel/113841/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/pefkohori/hotel-agnes-deluxe-hotel/113841/",
+   "fetched": "2026-11-25",
+   "board_options": [],
+   "child_policy": [
+    {
+     "age_from": 2.0,
+     "age_to": 11.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za prvu dete (2 - 11)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    },
+    {
+     "age_from": 0.0,
+     "age_to": 1.0,
+     "child": null,
+     "eur_max": null,
+     "eur_min": null,
+     "kind": "supplement",
+     "label": "Dodatni ležaj za dete (0 - 1)",
+     "pct": 100,
+     "unit": "po osobi po danu"
+    }
+   ],
+   "rooms": [
+    {
+     "name": "Apartman Double Comfort",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Deluxe Double | Pool View",
+     "max_persons": 4
+    },
+    {
+     "name": "Apartman Junior Suite",
+     "max_persons": 5
+    },
+    {
+     "name": "Apartman Premium Double",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Standard Double",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Standard Triple",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Superior Double",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room Standard",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room Comfort",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Double Room Superior",
+     "max_persons": 2
+    },
+    {
+     "name": "Apartman Triple Room Standard",
+     "max_persons": 3
+    },
+    {
+     "name": "Apartman Double Room Premium",
+     "max_persons": 2
+    }
+   ],
+   "board_prices": {}
+  },
+  "olympic.rs/letovanje/grcka/polihrono/hotel-al-mare/102765/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/polihrono/hotel-al-mare/102765/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "HB"
+   ],
+   "child_policy": [],
+   "rooms": [
+    {
+     "name": "Front Sea View Room",
+     "max_persons": 3
+    },
+    {
+     "name": "Garden View Room",
+     "max_persons": 4
+    },
+    {
+     "name": "Ground Floor Room",
+     "max_persons": 5
+    },
+    {
+     "name": "Side Sea View Room",
+     "max_persons": 3
+    }
+   ],
+   "board_prices": {}
+  },
+  "olympic.rs/letovanje/grcka/siviri/hotel-alkioni-by-the-sea/111645/": {
+   "url": "https://www.olympic.rs/letovanje/grcka/siviri/hotel-alkioni-by-the-sea/111645/",
+   "fetched": "2026-11-25",
+   "board_options": [],
+   "child_policy": [],
+   "rooms": [
+    {
+     "name": "Comfort Room",
+     "max_persons": 3
+    },
+    {
+     "name": "Comfort Room Sea View",
+     "max_persons": 3
+    },
+    {
+     "name": "Elegant Room Sea View",
+     "max_persons": 3
+    },
+    {
+     "name": "Family Room",
+     "max_persons": 4
+    },
+    {
+     "name": "Junior Suite",
+     "max_persons": 4
+    },
+    {
+     "name": "One Bedroom Suite",
+     "max_persons": 4
+    },
+    {
+     "name": "One Bedroom Suite Sea View",
+     "max_persons": 4
+    },
+    {
+     "name": "Standard Room",
+     "max_persons": 2
+    }
+   ],
+   "board_prices": {}
+  },
+  "travelland.rs/smestaj/crna-gora/ulcinj/hotel-azul-beach-resort-montenegro-by-karisma/690/": {
+   "url": "https://www.travelland.rs/smestaj/crna-gora/ulcinj/hotel-azul-beach-resort-montenegro-by-karisma/690/",
+   "fetched": "2026-11-25",
+   "board_options": [
+    "AI"
+   ],
+   "child_policy": [],
+   "rooms": [
+    {
+     "name": "Double room",
+     "max_persons": 2
+    },
+    {
+     "name": "Two bedroom suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Garden junior suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Garden louge junior suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Two bedroom family suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Premium suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Premium two bedroom suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Kiwi double or twin",
+     "max_persons": 2
+    },
+    {
+     "name": "Premium seaview suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Premium two bedroom seaview suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Premium two bedroom swimup suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Two bedroom large family suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Two bedroom swim up suite",
+     "max_persons": 2
+    },
+    {
+     "name": "Two bedroom swim up family suite",
+     "max_persons": 2
+    }
+   ],
+   "board_prices": {}
+  }
+ }
+}

@@ -1,26 +1,22 @@
 {
- "generated": "2026-11-26T10:25",
- "started": "2026-11-25T23:42:32",
- "duration_s": 38563.6,
- "status": "fail",
- "failed_sources": [
-  "Oliver's Travels"
- ],
- "problems": [
-  "Oliver's Travels failed today (request failed (1): HTTPSConnectionPool(host='oliverstravels.com', port=443): Max retries exceeded with url: /greece/halkidiki/ (Caused by NameResolutionError(\"HTTPSConnection(host='oliverstravels.com', port=443): Failed to resolve 'oliverstravels.com' ([Errno 11001] getaddrinfo failed)\")))"
- ],
+ "generated": "2026-11-26T12:24",
+ "started": "2026-11-26T11:56:40",
+ "duration_s": 1648.9,
+ "status": "ok",
+ "failed_sources": [],
+ "problems": [],
  "sources": [
   {
    "name": "Travelland",
    "status": "ok",
-   "pages_fetched": 17,
+   "pages_fetched": 18,
    "not_modified": 0,
-   "offers_parsed": 72,
+   "offers_parsed": 71,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 135.1,
-   "avg_offers_7": null,
+   "duration_s": 149.4,
+   "avg_offers_7": 72.0,
    "messages": []
   },
   {
@@ -28,15 +24,13 @@
    "status": "ok",
    "pages_fetched": 46,
    "not_modified": 0,
-   "offers_parsed": 123,
-   "offers_rejected": 0,
+   "offers_parsed": 125,
+   "offers_rejected": 1,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 374.5,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-   ]
+   "duration_s": 369.9,
+   "avg_offers_7": 123.0,
+   "messages": []
   },
   {
    "name": "AtlantiS (MK)",
@@ -47,8 +41,8 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 45.3,
-   "avg_offers_7": null,
+   "duration_s": 40.8,
+   "avg_offers_7": 27.0,
    "messages": []
   },
   {
@@ -60,8 +54,8 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 402.6,
-   "avg_offers_7": null,
+   "duration_s": 388.1,
+   "avg_offers_7": 24.0,
    "messages": []
   },
   {
@@ -70,43 +64,38 @@
    "pages_fetched": 4,
    "not_modified": 0,
    "offers_parsed": 47,
-   "offers_rejected": 0,
+   "offers_rejected": 3,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 72.5,
-   "avg_offers_7": null,
+   "duration_s": 72.8,
+   "avg_offers_7": 47.0,
    "messages": []
   },
   {
-   "name": "trips.sources.kopaonik",
+   "name": "Kopaonik apartments",
    "status": "ok",
    "pages_fetched": 10,
-   "not_modified": 0,
+   "not_modified": 4,
    "offers_parsed": 180,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 85.3,
+   "duration_s": 83.7,
    "avg_offers_7": null,
    "messages": []
   },
   {
    "name": "Oliver's Travels",
-   "status": "error",
-   "pages_fetched": 0,
+   "status": "ok",
+   "pages_fetched": 1,
    "not_modified": 0,
-   "offers_parsed": 0,
-   "offers_rejected": 0,
+   "offers_parsed": 5,
+   "offers_rejected": 1,
    "blocked": 0,
-   "errors": 1,
-   "duration_s": 37054.8,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): HTTPSConnectionPool(host='oliverstravels.com', port=443): Max retries exceeded with url: /greece/halkidiki/ (Caused by NameResolutionError(\"HTTPSConnection(host='oliverstravels.com', port=443): Failed to resolve 'oliverstravels.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (2): HTTPSConnectionPool(host='oliverstravels.com', port=443): Max retries exceeded with url: /greece/halkidiki/ (Caused by NameResolutionError(\"HTTPSConnection(host='oliverstravels.com', port=443): Failed to resolve 'oliverstravels.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (3): HTTPSConnectionPool(host='oliverstravels.com', port=443): Max retries exceeded with url: /greece/halkidiki/ (Caused by NameResolutionError(\"HTTPSConnection(host='oliverstravels.com', port=443): Failed to resolve 'oliverstravels.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "Oliver's Travels Halkidiki (villa) skipped: gave up after retries: https://oliverstravels.com/greece/halkidiki/"
-   ]
+   "errors": 0,
+   "duration_s": 12.6,
+   "avg_offers_7": 0.0,
+   "messages": []
   },
   {
    "name": "Clickstay",
@@ -117,8 +106,8 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 24.0,
-   "avg_offers_7": null,
+   "duration_s": 22.6,
+   "avg_offers_7": 18.0,
    "messages": []
   },
   {
@@ -130,36 +119,55 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 17.2,
-   "avg_offers_7": null,
+   "duration_s": 17.5,
+   "avg_offers_7": 1.0,
    "messages": []
   },
   {
    "name": "Detail pages",
    "status": "ok",
-   "pages_fetched": 0,
+   "pages_fetched": 12,
    "not_modified": 0,
-   "offers_parsed": 492,
+   "offers_parsed": 498,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 108.6,
-   "avg_offers_7": null,
+   "duration_s": 104.2,
+   "avg_offers_7": 492.0,
    "messages": []
   },
   {
    "name": "Hotel website",
    "status": "ok",
-   "pages_fetched": 27,
+   "pages_fetched": 20,
    "not_modified": 4,
-   "offers_parsed": 34,
+   "offers_parsed": 40,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 242.6,
-   "avg_offers_7": null,
+   "duration_s": 183.6,
+   "avg_offers_7": 34.0,
    "messages": []
   }
  ],
- "rejected_by_source": {}
+ "rejected_by_source": {
+  "Olympic": {
+   "rejected": 1,
+   "reasons": {
+    "duplicate": 1
+   }
+  },
+  "Savana Travel": {
+   "rejected": 3,
+   "reasons": {
+    "duplicate": 3
+   }
+  },
+  "Oliver's Travels": {
+   "rejected": 1,
+   "reasons": {
+    "price per night": 1
+   }
+  }
+ }
 }

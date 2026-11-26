@@ -31,6 +31,7 @@ from ..http import Blocked, PoliteSession, Unavailable
 from .pagetext import html_to_text, image_url, money
 
 log = logging.getLogger(__name__)
+SOURCE = "Kopaonik apartments"
 JAT_BASE = "https://jatapartmani.com"
 SOURCES = {"jat": "JAT Apartmani (own site)", "supernova": "Supernova Travel"}
 SR_MONTHS = {"JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAJ": 5, "JUN": 6, "JUL": 7, "AVG": 8,

@@ -13,7 +13,7 @@ HOTEL = {"id": "h1", "name": "Test Beach", "stars": 4, "season": "summer", "area
 
 
 def offer(price, seen, was=None, valid_until=None, hotel="h1", occ="2+2", board="HB"):
-    return {"hotel": hotel, "source": "test", "url": "u", "seen": seen, "check_in": "2027-06-20", "nights": 7,
+    return {"hotel": hotel, "source": "test", "url": "https://example.test/offer", "seen": seen, "check_in": "2027-06-20", "nights": 7,
             "board": board, "room": "Family", "occupancy": occ, "price_eur": price, "was_eur": was,
             "valid_until": valid_until}
 

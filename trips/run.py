@@ -13,7 +13,7 @@ import tomllib
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from . import db, digest, enrich, geo, health, score, validate
+from . import conditions, db, dedupe, digest, enrich, family_prices, geo, geocode, health, score, validate
 from .http import PoliteSession
 from .sources import bgski, charters, hotel_direct, kopaonik, manual, micazu, mk_agencies, oliverstravels, olympic, rentals, travelland
 
@@ -39,11 +39,13 @@ def load_config(path: str | Path = "config.toml", local: str | None = "config.lo
 
 def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict], list[dict]]:
     hotels = db.hotels(con)
+    geocode.apply(hotels, cfg, today, offline=offline)   # hotel-level pins (off unless [geocode] enabled)
     home = (cfg["family"]["home_lat"], cfg["family"]["home_lng"])
     drives = {hid: db.cached_drive(con, hid, h["lat"], h["lng"]) for hid, h in hotels.items()} if offline \
         else geo.drive_minutes(con, hotels, home)
     estimated = set() if offline else set(geo.last_estimated)
     offers = db.offers(con)
+    lim = validate.limits(cfg)
     photos = db.images(con)
     camps = db.campaigns(con, since=(today - timedelta(days=3)).isoformat())
     items, alerts = [], []
@@ -51,6 +53,12 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
         h = hotels.get(o["hotel_id"])
         if not h:
             log.warning("offer for unknown hotel %s — add it to data/hotels.toml", o["hotel_id"])
+            continue
+        last = o["history"][-1]
+        why = validate.problems({**o, "hotel": o["hotel_id"], "price_eur": last["price_eur"],
+                                 "was_eur": last.get("was_eur")}, today, lim, h)
+        if why:                       # past stay date, or saved before a rule existed: keep history, don't publish
+            log.info("not published %s: %s", o["key"], "; ".join(why))
             continue
         peers = [p for p in offers if hotels.get(p["hotel_id"], {}).get("season") == h["season"]]
         r = score.rate(h, o, peers, cfg, drives.get(h["id"]), today)
@@ -68,6 +76,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
             **{k: r[k] for k in ("overall", "tier", "capped", "excluded", "family", "deal")},
             "campaigns": [{k: c[k] for k in ("title", "pct", "valid_until", "url")} for c in camps.get(h["id"], [])],
         }
+        item.update(family_prices.annotate(item, h.get("enriched"), cfg))
         items.append(item)
         alerts += _alerts(con, item, cfg, today)
     items.sort(key=lambda i: (i["excluded"], -i["overall"]))
@@ -175,7 +184,10 @@ def main(argv=None) -> int:
                              host_delays=sc.get("host_delays"), cache_path="data/http-cache.sqlite")
 
     if not args.offline:
-        known = list(curated)
+        curated_ids = {h["id"] for h in curated}
+        # auto hotels already in the DB are known too, so a re-found duplicate folds into the id
+        # its price history is under (curated first in line, so curated still wins)
+        known = list(curated) + [h for hid, h in db.hotels(con).items() if hid not in curated_ids]
         added_all: list[dict] = []
         photos: dict[str, str] = {}        # known hotel id -> photo of an agency card folded into it
         for src in AUTO_SOURCES:
@@ -187,23 +199,28 @@ def main(argv=None) -> int:
             for h in auto_hotels:
                 if validate.bad_image(h):
                     h["image"] = None
-            added = merge_auto(known, auto_hotels, auto_offers, photos)  # also matches hotels found by earlier sources
+            added = dedupe.merge_auto_v2(known, auto_hotels, auto_offers, photos)  # + earlier sources, + DB
             added_all += added
-            known += added
+            ids = {k["id"] for k in known}
+            known += [h for h in added if h["id"] not in ids]
             auto_sightings += auto_offers
         if cfg["sources"].get("enrich", {}).get("enabled"):
             # detail pages fill unknown family facts and a single stated board (cached, weekly, budgeted)
-            with hl.track("Detail pages", session()) as st:
-                enrich.enrich(auto_sightings, known, cfg, today)
+            es = session()
+            with hl.track("Detail pages", es) as st:
+                enrich.enrich(auto_sightings, known, cfg, today, session=es)
                 st.offers_parsed = len(auto_sightings)
-        for h in added_all:
-            db.upsert_hotel(con, h)
+        # every non-curated hotel: new ones, plus DB ones enrich may have filled in this run
+        for h in known:
+            if h["id"] not in curated_ids:
+                db.upsert_hotel(con, h)
         for hid, url in photos.items():
             db.save_image(con, hid, url, today.isoformat())
     for h in curated:                      # curated facts always win
         db.upsert_hotel(con, h)
-    sightings, rejects = validate.split(sightings, today, cfg)
-    auto_sightings, auto_rejects = validate.split(auto_sightings, today, cfg)
+    hv = db.hotels(con)                    # every hotel is upserted by now (auto + curated)
+    sightings, rejects = validate.split(sightings, today, cfg, hv)
+    auto_sightings, auto_rejects = validate.split(auto_sightings, today, cfg, hv)
     validate.log_rejects(rejects + auto_rejects)
     hl.add_rejects(validate.by_source(rejects + auto_rejects))
     new = sum(db.add_sighting(con, o) for o in sightings) \
@@ -220,8 +237,11 @@ def main(argv=None) -> int:
                 new_camps.append({"type": "campaign", "icon": "🏨", "url": c["url"],
                                   "text": f"New on {names.get(c['hotel'], c['hotel'])}'s own website: {c['title']}"})
     items, alerts = build(con, cfg, today, offline=args.offline)
+    area = conditions.update(items, cfg, today, offline=args.offline)   # sea/snow + family places per area
+    conditions.attach(items, area)
     alerts = new_camps + alerts
     con.commit()
+    con.close()
     export(items, alerts, cfg)
     result = "off"
     if cfg["email"].get("enabled"):
