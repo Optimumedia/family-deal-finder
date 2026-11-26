@@ -513,6 +513,524 @@ lng = 24.65
 nights = 7
 check_in = "2027-06-20"
 
+[sources.rs_agencies]
+# argus.rs (ArgusTours) — robots.txt "User-agent: * / Disallow:" (all allowed). Own-transport
+# price lists: price PER UNIT for 10 nights. Units sleeping 4 (A4, S4, S2+2) → real 2+2 prices.
+enabled = true
+min_beds = 4
+check_in_from = "2027-06-01"
+check_in_to = "2027-09-15"
+
+[[sources.rs_agencies.pages]]
+url = "https://argus.rs/aranzmani/letovanje/grcka/kasandra-sopstveni-prevoz-2027"
+season = "summer"
+area = "Kassandra, Halkidiki"
+country = "GR"
+lat = 40.02
+lng = 23.43
+
+[[sources.rs_agencies.pages]]
+url = "https://argus.rs/aranzmani/letovanje/grcka/sitonija-sopstveni-prevoz-2027"
+season = "summer"
+area = "Sithonia, Halkidiki"
+country = "GR"
+lat = 40.10
+lng = 23.80
+
+[[sources.rs_agencies.pages]]
+url = "https://argus.rs/aranzmani/letovanje/grcka/tasos-sopstveni-prevoz-2027"
+season = "summer"
+area = "Thassos"
+country = "GR"
+lat = 40.70
+lng = 24.65
+
+# Hotel price lists (with board) are announced but empty today ("Aranžmani nisu postavljeni").
+# Cheap to keep: 1 request each, 0 offers until they open.
+[[sources.rs_agencies.pages]]
+url = "https://argus.rs/aranzmani/letovanje/grcka/halkidiki-hoteli-sopstveni-prevoz-2027"
+season = "summer"
+area = "Kassandra, Halkidiki"
+country = "GR"
+lat = 40.02
+lng = 23.43
+
+[[sources.rs_agencies.pages]]
+url = "https://argus.rs/aranzmani/letovanje/grcka/tasos-hoteli-sopstveni-prevoz-2027"
+season = "summer"
+area = "Thassos"
+country = "GR"
+lat = 40.70
+lng = 24.65
+
+[sources.al_me_coast]
+# vlero.com — Albanian portal, owners/hotels list their own rooms (pay the property).
+# robots.txt allows these pages. One request per area per run. Rooms that don't sleep 2+2 are dropped.
+enabled = true
+# all_per_eur = 100        # set to also keep rooms priced in Lek (skipped by default)
+
+[[sources.al_me_coast.pages]]
+# ~330 km, ~4h15 + 2 borders (A1 to Milot, then Thumanë–Durrës)
+url = "https://www.vlero.com/dhoma-plazhi-ne-golem/l-al-c-26.html"
+season = "summer"
+area = "Durrës / Golem, Albania"
+country = "AL"
+lat = 41.245
+lng = 19.523
+nights = 7
+check_in = "2027-06-20"
+zones = ["Golem", "Shkembi Kavajes"]
+
+[[sources.al_me_coast.pages]]
+# ~300 km, ~3h55 + 2 borders (exit A1 at Fushë-Krujë/Hamallaj)
+url = "https://www.vlero.com/dhoma-plazhi-gjiri-lalzit/l-al-c-26.html"
+season = "summer"
+area = "Lalzi Bay, Albania"
+country = "AL"
+lat = 41.43
+lng = 19.47
+nights = 7
+check_in = "2027-06-20"
+zones = ["Gjiri i Lalzit"]
+
+[[sources.al_me_coast.pages]]
+# ~280 km, ~3h40 + 2 borders (A1 to Milot, then Lezhë)
+url = "https://www.vlero.com/banesa-me-qera-ne-shengjin/l-al-c-26.html"
+season = "summer"
+area = "Shëngjin, Albania"
+country = "AL"
+lat = 41.807
+lng = 19.593
+nights = 7
+check_in = "2027-06-20"
+zones = ["Shengjin"]
+
+[[sources.al_me_coast.pages]]
+# ~300 km, ~4h05 + 2 borders (A1 to Milot, Lezhë, then Velipojë road)
+url = "https://www.vlero.com/hotele-ne-velipoje-after-plazhit/l-al-c-26.html"
+season = "summer"
+area = "Velipojë, Albania"
+country = "AL"
+lat = 41.86
+lng = 19.42
+nights = 7
+check_in = "2027-06-20"
+zones = ["Velipoje"]
+
+[sources.bg_more]
+# pochivka.bg — owners' and aparthotels' own price tables (EUR per whole unit per night, by
+# season). Cards for fewer than 4 places are skipped unopened; winter stays use the HIGH-winter
+# rate (season dates aren't published). robots.txt allows list and listing pages.
+enabled = true
+list_pages = 2              # list pages per resort (10 cards each)
+max_listings = 12           # listing pages opened per resort (~6-10 s each)
+
+[[sources.bg_more.pages]]
+url = "https://pochivka.bg/apartamenti-bansko-t6"
+season = "winter"
+area = "Bansko, Bulgaria"
+country = "BG"
+lat = 41.83
+lng = 23.48
+nights = 5
+check_in = "2027-01-15"
+list_pages = 3
+
+[[sources.bg_more.pages]]
+url = "https://pochivka.bg/apartamenti-razlog-t53"
+season = "winter"
+area = "Razlog, Bulgaria"
+country = "BG"
+lat = 41.886
+lng = 23.465
+nights = 5
+check_in = "2027-01-15"
+list_pages = 1
+
+[[sources.bg_more.pages]]
+url = "https://pochivka.bg/apartamenti-dobrinishte-t80"
+season = "winter"
+area = "Dobrinishte, Bulgaria"
+country = "BG"
+lat = 41.822
+lng = 23.563
+nights = 5
+check_in = "2027-01-15"
+list_pages = 1
+
+[[sources.bg_more.pages]]
+url = "https://pochivka.bg/apartamenti-borovets-t11"
+season = "winter"
+area = "Borovets, Bulgaria"
+country = "BG"
+lat = 42.266
+lng = 23.606
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.bg_more.pages]]
+url = "https://pochivka.bg/apartamenti-pamporovo-t46"
+season = "winter"
+area = "Pamporovo, Bulgaria"
+country = "BG"
+lat = 41.652
+lng = 24.692
+nights = 5
+check_in = "2027-01-15"
+list_pages = 1             # this list shows 20 cards per page
+
+[sources.gr_apartments]
+# Grčka Info (grckainfo.com): owners' per-unit price tables (EUR/unit/night) for private
+# apartments, studios and small hotels. robots.txt disallows only /api/, /login/, /sr/search/.
+# Lists use the site's own "beach up to 200 m" filter; only units for 4+ are opened.
+enabled = true
+max_list_pages = 2        # 12 cards per list page
+max_properties = 12       # property pages opened per list (each one is a request)
+max_unit_guests = 6       # skip "2 families / 9 adults" units
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1"
+towns = ["Sarti", "Nikiti", "Neos Marmaras"]
+max_list_pages = 6
+max_properties = 15
+beach_filter_m = 200
+season = "summer"
+area = "Sithonia, Halkidiki"
+country = "GR"
+lat = 40.10
+lng = 23.80
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/halkidiki-kasandra/209/?udaljenost%5B0%5D=1"
+towns = ["Pefkohori", "Hanioti", "Polihrono"]
+max_list_pages = 6
+max_properties = 15
+beach_filter_m = 200
+season = "summer"
+area = "Kassandra, Halkidiki"
+country = "GR"
+lat = 40.02
+lng = 23.43
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/paralia/333/?udaljenost%5B0%5D=1"
+beach_filter_m = 200
+season = "summer"
+area = "Paralia, Olympic Riviera"
+country = "GR"
+lat = 40.27
+lng = 22.60
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/leptokarija/335/?udaljenost%5B0%5D=1"
+beach_filter_m = 200
+season = "summer"
+area = "Leptokaria, Olympic Riviera"
+country = "GR"
+lat = 40.06
+lng = 22.56
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/nei-pori/337/?udaljenost%5B0%5D=1"
+beach_filter_m = 200
+season = "summer"
+area = "Nei Pori, Olympic Riviera"
+country = "GR"
+lat = 39.97
+lng = 22.62
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/stavros/344/?udaljenost%5B0%5D=1"
+beach_filter_m = 200
+season = "summer"
+area = "Stavros, Thessaloniki region"
+country = "GR"
+lat = 40.665
+lng = 23.70
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/asprovalta/342/?udaljenost%5B0%5D=1"
+beach_filter_m = 200
+season = "summer"
+area = "Asprovalta, Thessaloniki region"
+country = "GR"
+lat = 40.72
+lng = 23.71
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.gr_apartments.pages]]
+url = "https://grckainfo.com/sr/smestaji/tasos/228/?udaljenost%5B0%5D=1"
+max_list_pages = 3
+beach_filter_m = 200
+season = "summer"
+area = "Thassos"
+country = "GR"
+lat = 40.70
+lng = 24.65
+nights = 7
+check_in = "2027-06-20"
+
+[sources.gr_hotel_prices]
+# Family hotels' owner price lists, as published on Grčka Info (grckainfo.com) hotel pages in English.
+# robots.txt allows /en/accommodation/ (it disallows /api/, /login/, /hotels/search/, /sr/search/).
+# Per room type: the smallest occupancy variant that takes 2 adults + 2 kids ("2+2"); BB / room-only
+# prices get the stated half-board supplement added (HB total). One page = one hotel.
+enabled = true
+season = "summer"
+country = "GR"
+nights = 7
+check_in = "2027-06-20"
+max_rooms = 3                # cheapest fitting room types kept per hotel and check-in
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/thalassies-hotel/2413/"
+area = "Limenaria, Thassos"
+lat = 40.626
+lng = 24.572
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/boutique-hotel-thalassies-nouveau/2409/"
+area = "Limenaria, Thassos"
+lat = 40.626
+lng = 24.573
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/grand-beach-hotel/4338/"
+area = "Limenaria, Thassos"
+lat = 40.626
+lng = 24.562
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/royal-paradise-beach-resort-and-spa/4378/"
+area = "Potos, Thassos"
+stars = 5
+lat = 40.595
+lng = 24.620
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/hotel-al-mare/1384/"
+area = "Polichrono, Kassandra, Halkidiki"
+stars = 3
+lat = 40.027
+lng = 23.506
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/hotel-mallas/1145/"
+area = "Nea Kallikratia, Kassandra, Halkidiki"
+stars = 3
+lat = 40.311
+lng = 23.062
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/hotel-alkioni-by-the-sea/2760/"
+area = "Siviri, Kassandra, Halkidiki"
+stars = 3
+lat = 40.038
+lng = 23.359
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/simeon-hotel/3329/"
+area = "Metamorfosi, Sithonia, Halkidiki"
+stars = 3
+lat = 40.229
+lng = 23.606
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/toroni-blue-sea-hotel-spa/1395/"
+area = "Toroni, Sithonia, Halkidiki"
+lat = 39.982
+lng = 23.905
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/akrothalassia-hotel/5783/"
+area = "Leptokaria, Olympic Riviera"
+lat = 40.048
+lng = 22.576
+
+[[sources.gr_hotel_prices.pages]]
+url = "https://grckainfo.com/en/accommodation/achillion-hotel-apartments/1141/"
+area = "Paralia Katerinis, Olympic Riviera"
+kind = "apartment"
+lat = 40.268
+lng = 22.597
+
+[sources.mk_local]
+# Kajak.mk — Macedonian accommodation portal (hosts' own listings, requests go to the host; not a
+# Booking/Airbnb reseller). robots.txt allows /smestuvanja/ (region lists) and /smestuvanje/ (listings);
+# /search, /api/, /ajax/, /rezervacija/ are disallowed and never used.
+# Prices are per-night "from" prices in MKD; see trips/sources/mk_local.py for when a price counts as 2+2.
+enabled = true
+mkd_per_eur = 61.5
+max_list_pages = 2          # region list pages read (≈20 cards each)
+max_listings = 15           # listing pages read per region (one request each)
+max_capacity = 8            # skip whole villas for bigger groups
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/b588801e-mavrovski-region"
+location = "Mavrovo"
+season = "winter"
+area = "Mavrovo (Zare Lazarevski ski centre), North Macedonia"
+country = "MK"
+lat = 41.66
+lng = 20.74
+nights = 5
+check_in = "2027-01-16"
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/3a80c2dd-popova-shapka-region"
+location = "Popova Shapka"
+season = "winter"
+area = "Popova Šapka, North Macedonia"
+country = "MK"
+lat = 42.016
+lng = 20.88
+nights = 5
+check_in = "2027-01-16"
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/1de7eefe-krushevski-region"
+location = "Krushevo"
+season = "winter"
+area = "Kruševo, North Macedonia"
+country = "MK"
+lat = 41.37
+lng = 21.25
+nights = 5
+check_in = "2027-01-16"
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/a16107ff-bitolski-region"
+location = "Bitola"
+title_match = "Пелистер|Нижеполе|Трново|Магарево|Pelister"
+max_list_pages = 4
+season = "winter"
+area = "Pelister, North Macedonia"
+country = "MK"
+lat = 41.03
+lng = 21.25
+nights = 5
+check_in = "2027-01-16"
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/84bcd5d1-ohridski-region"
+location = "Ohrid"
+season = "summer"
+area = "Ohrid, North Macedonia"
+country = "MK"
+lat = 41.117
+lng = 20.80
+nights = 7
+check_in = "2027-07-03"
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/3a6fa0bd-strushki-region"
+location = "Struga"
+season = "summer"
+area = "Struga, North Macedonia"
+country = "MK"
+lat = 41.178
+lng = 20.678
+nights = 7
+check_in = "2027-07-03"
+
+[[sources.mk_local.pages]]
+url = "https://kajak.mk/smestuvanja/586fa8f0-dojranski-region"
+location = "Dojran"
+season = "summer"
+area = "Dojran, North Macedonia"
+country = "MK"
+lat = 41.18
+lng = 22.72
+nights = 7
+check_in = "2027-07-03"
+
+[sources.flight_hotels]
+# relaxo.bg (Sofia tour operator) — hotel-only ("собствен транспорт") Turkish beach hotels near
+# AYT / ADB / BJV (direct SKP flights). robots.txt disallows only /locale/ and /go/. The hotel's own
+# result page gives a real total for 2 adults + 2 children (ages sent) for the stay.
+# Kemer is left out on purpose (pebble beaches).
+enabled = true
+max_hotels = 4              # per resort: cheapest "from" price first (or list `hotels = [slugs]`)
+nights = 7
+check_ins = ["2027-07-03"]  # Saturdays; add dates for more offers (+1 request per hotel per date)
+detail = true               # hotel page: pin, sandy beach, kids' club, rating, bookable window
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/lara"
+season = "summer"
+area = "Lara, Antalya coast"
+country = "TR"
+lat = 36.85
+lng = 30.85
+airport = "AYT"
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/belek"
+season = "summer"
+area = "Belek, Antalya coast"
+country = "TR"
+lat = 36.86
+lng = 31.06
+airport = "AYT"
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/side"
+season = "summer"
+area = "Side, Antalya coast"
+country = "TR"
+lat = 36.77
+lng = 31.39
+airport = "AYT"
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/alaniia"
+season = "summer"
+area = "Alanya, Antalya coast"
+country = "TR"
+lat = 36.54
+lng = 32.00
+airport = "AYT"
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/kushadasa"
+season = "summer"
+area = "Kusadasi, Aegean coast"
+country = "TR"
+lat = 37.86
+lng = 27.26
+airport = "ADB"
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/cheshme"
+season = "summer"
+area = "Cesme, Aegean coast"
+country = "TR"
+lat = 38.32
+lng = 26.30
+airport = "ADB"
+
+[[sources.flight_hotels.pages]]
+url = "https://relaxo.bg/oferti-za/bodrum"
+season = "summer"
+area = "Bodrum peninsula, Turkey"
+country = "TR"
+lat = 37.03
+lng = 27.43
+airport = "BJV"
+
 # ---------------------------------------------------------- hotels' own websites --
 [sources.hotel_direct]
 # Each hotel's own offers page: campaigns (discount %, deadline) are picked out of
@@ -741,8 +1259,144 @@ ski_radius_m = 10000       # ski towns sit below the beginner areas
 hospital_radius_m = 30000
 years = 3
 
+# ------------------------------------------------------------------ guest ratings --
+[ratings]
+# The family's rule: never show a hotel rated below 4.3 / 5 (Google and other 5-point sites)
+# or 8.2 / 10 (Booking and other 10-point sites). Ratings with fewer reviews than min_reviews are ignored.
+# Google ratings come from the official Places API: put google_api_key = "..." in config.local.toml.
+enabled = true
+min_5 = 4.3
+min_10 = 8.2
+min_reviews = 10
+unknown_is_must = true      # no rating known yet: shown, but capped and marked "check rating"
+budget = 50                 # Google lookups per run (cached 60 days)
+refresh_days = 60
+max_km = 15
+cache = "data/ratings_cache.json"
+
 [email]
 # Daily digest. SMTP settings live in the git-ignored file .email
 # (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_TO). Without it the
 # digest is only written to data/digest.txt.
 enabled = true
+
+[flights]
+# Direct flights from Skopje (SKP). A summer hotel within max_transfer_km (straight line) of a
+# route's airport, in a month the route flies, counts as "direct flight" (hotel-only is fine:
+# the parents book the flight). Routes from the CAA summer-2026 timetable + 2027 agency programmes.
+# Re-check the CAA "Time-Table-Summer-2027" PDF when it appears (usually March).
+enabled = true
+max_transfer_km = 90            # default; per-route overrides below
+seasons = ["summer"]
+trip_months = [6, 7, 8, 9]      # for hotels without offer dates
+min_confidence = "likely"       # confirmed | likely | possible
+
+[[flights.routes]]
+airport = "AYT"
+name = "Antalya"
+lat = 36.900
+lng = 30.793
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "daily (SunExpress XQ630/631; Pegasus 4/week)"
+max_transfer_km = 130           # Lara ~15, Belek ~30, Side ~65, Alanya ~115 km
+confidence = "confirmed"        # Savana sells SKP flight packages 02.06–07.09.2027
+evidence = "https://www.online.savana.travel/vacations/turkey/antalya/from-skopje/vacations/with-plane/"
+
+[[flights.routes]]
+airport = "ADB"
+name = "Izmir"
+lat = 38.292
+lng = 27.157
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "daily (Pegasus PC1571/1572, SunExpress XQ896/897)"
+max_transfer_km = 90            # Kusadasi ~50, Cesme ~75, Ozdere ~45 km
+confidence = "confirmed"        # Savana Kusadasi "by plane from Skopje" weekly from 02.04.2027
+evidence = "https://www.online.savana.travel/vacations/turkey/kusadasi/from-skopje/vacations/with-plane/"
+
+[[flights.routes]]
+airport = "BJV"
+name = "Bodrum"
+lat = 37.250
+lng = 27.664
+months = [7, 8, 9, 10]
+frequency = "weekly, Wednesday (AJet VF1213/1214, 01.07–22.10.2026)"
+max_transfer_km = 60            # Bodrum town ~30, Bitez ~35, Turgutreis ~50 km
+confidence = "likely"           # scheduled 2026, no 2027 filing yet
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"
+
+[[flights.routes]]
+airport = "NAP"
+name = "Naples"
+lat = 40.886
+lng = 14.291
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "3/week, Mon/Wed/Fri (Wizz W6 4817/4818)"
+max_transfer_km = 70            # Sorrento ~35, Maiori ~40 km
+confidence = "confirmed"        # Atlantik Turs sells 14.07–01.09.2027 "direct flight from Skopje"
+evidence = "https://atlantikturs.com/leto-2027"
+
+[[flights.routes]]
+airport = "BRI"
+name = "Bari"
+lat = 41.139
+lng = 16.761
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "3/week, Tue/Thu/Sat (Wizz W6 4811/4812)"
+max_transfer_km = 80            # Polignano ~45, Monopoli ~55, Torre Canne ~70 km
+confidence = "likely"
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"
+
+[[flights.routes]]
+airport = "BCN"
+name = "Barcelona"
+lat = 41.297
+lng = 2.078
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "3/week, Tue/Thu/Sat (Wizz W6 4737/4738)"
+max_transfer_km = 100           # Maresme ~40-60, Salou ~85, Cambrils ~95 km
+confidence = "likely"
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"
+
+[[flights.routes]]
+airport = "LCA"
+name = "Larnaca"
+lat = 34.875
+lng = 33.625
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "2/week, Mon/Fri (Wizz W6 4767/4768)"
+max_transfer_km = 70            # Ayia Napa ~40, Protaras ~50 km
+confidence = "likely"
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"
+
+[[flights.routes]]
+airport = "MLA"
+name = "Malta"
+lat = 35.857
+lng = 14.477
+months = [4, 5, 6, 7, 8, 9, 10]
+frequency = "3/week, Mon/Wed/Fri (Wizz W6 4765/4766)"
+max_transfer_km = 40            # whole island; Mellieha ~25 km
+confidence = "likely"
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"
+
+[[flights.routes]]
+airport = "PMO"
+name = "Palermo"
+lat = 38.176
+lng = 13.091
+months = [7, 8, 9]              # 15.07–11.09 only
+frequency = "seasonal, mid-July to mid-September (Wizz W6 4775/4776)"
+max_transfer_km = 80
+confidence = "likely"
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"
+
+[[flights.routes]]
+airport = "AHO"
+name = "Alghero"
+lat = 40.632
+lng = 8.291
+months = [7, 8, 9]              # 18.07–12.09 only
+frequency = "seasonal, mid-July to mid-September (Wizz W6 4777/4778)"
+max_transfer_km = 60            # Alghero Lido ~10, Stintino ~45 km
+confidence = "likely"
+evidence = "https://www.caa.gov.mk/wp-content/uploads/2026/05/Time-Table-Summer-2026.pdf"

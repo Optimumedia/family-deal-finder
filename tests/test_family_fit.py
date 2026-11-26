@@ -153,7 +153,8 @@ class Tiers(unittest.TestCase):
     def confirmed(self, **extra):
         fam = dict(cots_max=2, cot_age_max=5, family_room=True, separate_bedroom=True, kids_club=True,
                    kids_club_min_age=3, kids_pool=True, playground=True, shallow_entry=True, doctor_near=True,
-                   stroller_ok=True, kids_free_max_age=6, verified=ALL)
+                   stroller_ok=True, kids_free_max_age=6, verified=ALL,
+                   ratings=[{"source": "Google", "score": 4.7, "scale": 5, "count": 900}])
         fam.update(extra)
         return summer(**fam)
 
@@ -204,7 +205,8 @@ class Tiers(unittest.TestCase):
         self.assertEqual(sum(score.FAMILY_W.values()), 100)
         self.assertEqual(f["confidence"], 1.0)
         unverified = fit(self.confirmed(verified=[]), offer())
-        self.assertEqual(unverified["confidence"], score.UNVERIFIED_CONF)
+        # only the guest rating (a published fact) counts as verified here
+        self.assertAlmostEqual(unverified["confidence"], score.UNVERIFIED_CONF, delta=0.02)
 
 
 if __name__ == "__main__":

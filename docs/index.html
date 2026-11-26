@@ -592,7 +592,9 @@ const priceOf = o => basisOf(o) === 'est' ? famEst(o) : o.price_eur;
 const nightOf = o => priceOf(o) / Math.max(1, o.nights);
 const BASIS = {fam:['2+2','Real price for all four of us'], est:['est.','Our estimate for all four, not a quote'], adults:['2 adults','Agency price for 2 adults; the twins cost extra']};
 const btag = o => { const b = basisOf(o); return `<span class="bt ${b}" title="${esc(b === 'est' && o.family_price_basis ? o.family_price_basis : BASIS[b][1])}">${BASIS[b][0]}</span>`; };
-const isFlight = o => !!(o.direct_flight_skp || o.flight_included || o.source === 'Savana Travel' || /flight from Skopje/i.test(`${o.room || ''} ${o.notes || ''}`));
+const pkgFlight = o => !!(o.direct_flight_skp || o.flight_included || o.source === 'Savana Travel' || /flight from Skopje/i.test(`${o.room || ''} ${o.notes || ''}`));
+const isFlight = o => !!(o && (pkgFlight(o) || o.flight));   // package with the flight, or hotel only near a direct SKP route
+const flightTo = o => o && o.flight ? `${o.flight.name}${o.flight.transfer_km != null ? ` (${o.flight.transfer_km} km to the hotel)` : ''}` : '';
 const flexDates = o => /dates on request|dates not stated|agency's dates|lowest weekly rate|weekly price range/i.test(`${o.room || ''} ${o.notes || ''}`);
 const datesTxt = (o, short) => flexDates(o) ? `Dates on request · ${o.nights} nights` : `${fmtD(o.check_in)} · ${o.nights}${short ? 'n' : ' nights'}`;
 // The main number follows the Total / Per night toggle; the other figure is always one line below.
@@ -605,7 +607,7 @@ function money(o){
 function whoTxt(o){
   const b = basisOf(o);
   // Always shown after the basis tag, so it adds what the tag doesn't say.
-  return (b === 'fam' ? 'all four of us' : b === 'est' ? 'estimate for all four' : 'kids extra') + (isFlight(o) ? ' · flight incl.' : '');
+  return (b === 'fam' ? 'all four of us' : b === 'est' ? 'estimate for all four' : 'kids extra') + (pkgFlight(o) ? ' · flight incl.' : '');
 }
 
 /* ---------- hotel grouping: one row per hotel, best comparable offer first ---------- */
@@ -726,7 +728,8 @@ function nearbyLine(o){
 }
 const hotelHref = h => `?season=${h.season}&hotel=${encodeURIComponent(h.id)}`;
 function driveChip(m, o){
-  if (o && isFlight(o)) return `<span class="chip good">${ic('plane')}incl. flight from Skopje</span>`;
+  if (o && pkgFlight(o)) return `<span class="chip good">${ic('plane')}incl. flight from Skopje</span>`;
+  if (o && o.flight) return `<span class="chip good">${ic('plane')}direct flight SKP → ${esc(o.flight.name)}</span>`;
   if (m == null) return `<span class="chip">${ic('car')}Drive time unknown</span>`;
   if (m <= LIMIT) return `<span class="chip good">${ic('car')}${hm(m)} drive</span>`;
   return `<span class="chip warn">${ic('car')}${hm(m)} · ${Math.round(m - LIMIT)} min over 5h</span>`;
@@ -817,7 +820,7 @@ function whyLine(o){
     [win ? 'activities' : 'beach', win ? (cstate(o, 'ski_school') === 'yes' ? 'ski school from age 3' : '') : (cstate(o, 'sand_beach') === 'yes' ? (cstate(o, 'beachfront') === 'yes' ? 'sandy beach on the doorstep' : 'sandy beach') : '')],
     ['kids', cstate(o, 'kids_club') === 'yes' ? (cstate(o, 'kids_pool') === 'yes' ? "kids' club and pool" : "kids' club") : cstate(o, 'kids_pool') === 'yes' ? "kids' pool" : ''],
     ['sleep', cstate(o, win ? 'separate_bedroom' : 'family_room') === 'yes' ? (win ? 'separate bedroom' : 'family room for four') : o.kind !== 'hotel' ? `whole ${o.kind === 'villa' ? 'villa' : 'apartment'} to ourselves` : ''],
-    ['travel', isFlight(o) ? 'flight from Skopje included' : (P.travel || 0) >= 7.5 && o.family.drive_minutes != null ? `${hm(o.family.drive_minutes)} drive` : ''],
+    ['travel', pkgFlight(o) ? 'flight from Skopje included' : o.flight ? `direct flight to ${o.flight.name}` : (P.travel || 0) >= 7.5 && o.family.drive_minutes != null ? `${hm(o.family.drive_minutes)} drive` : ''],
   ].filter(([, t]) => t).sort((a, b) => (P[b[0]] || 0) - (P[a[0]] || 0)).slice(0, 2).map(([, t]) => t);
   const d = o.deal, dl = d.days_left;
   if (d.verdict === 'real' && d.real_pct) facts.push(`verified −${Math.round(d.real_pct)}% vs our recorded price`);
@@ -1118,7 +1121,7 @@ function drawerHTML(h){
     <div class="dsum"><div class="dfacts">
       <div class="chips">${newChip(h)}${driveChip(m, o)}${boardChip(o)}${datesChip(o)}${areaChip(o)}</div>
       ${nearbyLine(o)}
-      <div>${isFlight(o) ? `${ic('plane')} A package with the flight from Skopje included; no drive.` : `${ic('car')} ${m == null ? 'Drive time from Skopje not known yet.' : `About <b>${hm(m)}</b> by car from Skopje${m > LIMIT ? `, ${Math.round(m - LIMIT)} min over our 5h rule` : ''}.`}`}</div>
+      <div>${pkgFlight(o) ? `${ic('plane')} A package with the flight from Skopje included; no drive.` : o.flight ? `${ic('plane')} Hotel only. Direct flight from Skopje to <b>${esc(flightTo(o))}</b>${o.flight.frequency ? `, ${esc(o.flight.frequency)}` : ''}; book the flight yourself.` : `${ic('car')} ${m == null ? 'Drive time from Skopje not known yet.' : `About <b>${hm(m)}</b> by car from Skopje${m > LIMIT ? `, ${Math.round(m - LIMIT)} min over our 5h rule` : ''}.`}`}</div>
       ${links}
       ${basisOf(o) === 'est' ? `<div class="cap"><span class="bt est">est.</span> ${esc(o.family_price_basis || 'Our estimate for all four from the 2-adult price; not a quote.')} The agency's price is ${eur(o.price_eur)} for 2 adults.</div>` : ''}
       ${h.excluded ? `<div class="why">${ic('x')} Doesn't fit: ${esc(f.failed.join(', '))}</div>` : f.unknown_musts.length ? `<div class="cap">${f.unknown_musts.length} must-have${f.unknown_musts.length > 1 ? 's' : ''} to confirm with the hotel</div>` : ''}
@@ -1194,7 +1197,7 @@ function compare(){
     [anyWinter && !anySummer ? 'Separate bedroom' : anySummer && !anyWinter ? 'Family room' : 'Family room / bedroom', h => fitCell(h.best, h.best.season === 'winter' ? 'separate_bedroom' : 'family_room')],
     ['Drive from Skopje', h => {
       const o = h.best, m = o.family.drive_minutes;
-      if (h.flight) return {html:`${ic('plane')} Flight from Skopje <span class="sm">included in the package</span>`, v:null};
+      if (h.flight) return {html: pkgFlight(o) ? `${ic('plane')} Flight from Skopje <span class="sm">included in the package</span>` : `${ic('plane')} Direct flight to ${esc(flightTo(o))} <span class="sm">hotel only, book the flight</span>`, v:null};
       return {html: m == null ? 'Not known' : `${hm(m)}${m > LIMIT ? `<span class="sm warn">${Math.round(m - LIMIT)} min over 5h</span>` : ''}`, v: m == null ? null : -m};
     }],
     ['Signal', h => { const d = h.best.deal; const t = !d.signal || d.signal === 'watch' ? 'Watch' : d.signal === 'book now' ? 'Book now' : 'Can wait';

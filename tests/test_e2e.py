@@ -77,6 +77,27 @@ ROUTES = [
     (r"supernovatravel\.rs/.*stara-planina", "kopaonik_sn_stara_planina.html"),
     # villas / owner rentals
     (r"oliverstravels\.com/greece/halkidiki/", "oliver_halkidiki.html"),
+    (r"argus\.rs/.*kasandra-sopstveni", "rs_agencies_argus_kassandra.html"),
+    (r"argus\.rs/.*tasos-sopstveni", "rs_agencies_argus_thassos.html"),
+    (r"argus\.rs/.*hoteli-sopstveni", "rs_agencies_argus_empty.html"),
+    (r"grckainfo\.com/sr/smestaji/halkidiki-sitonija/210/\?", "gr_apartments_list_sithonia.html"),
+    (r"grckainfo\.com/sr/smestaj/likno-apartments/1917/", "gr_apartments_likno.html"),
+    (r"grckainfo\.com/en/accommodation/hotel-mallas/1145/", "gr_hotel_prices_mallas.html"),
+    (r"grckainfo\.com/en/accommodation/simeon-hotel/3329/", "gr_hotel_prices_simeon.html"),
+    (r"kajak\.mk/smestuvanja/b588801e-mavrovski-region", "mk_local_list_mavrovo.html"),
+    (r"kajak\.mk/smestuvanje/6c9243b4-nov-i-moderen-apartman-vo-mavrovo-so-dve-spali-sobi-mia", "mk_local_mavrovo_mia.html"),
+    (r"relaxo\.bg/oferti-za/kushadasa$", "flight_hotels_list_kusadasi.html"),
+    (r"relaxo\.bg/oferta/palm-wings-ephesus-beach-resort-5-kusadasi/rezultati\?", "flight_hotels_results_palmwings.html"),
+    (r"relaxo\.bg/oferta/palm-wings-ephesus-beach-resort-5-kusadasi$", "flight_hotels_detail_palmwings.html"),
+    (r"pochivka\.bg/apartamenti-bansko-t6", "bg_more_list_bansko.html"),
+    (r"pochivka\.bg/apartament-glazne-bansko-o48410", "bg_more_glazne.html"),
+    (r"pochivka\.bg/marand-butik-apartamenti-o59046", "bg_more_marand.html"),
+    (r"pochivka\.bg/apartament-paskalina-blizo-do-lifta-o62800", "bg_more_paskalina.html"),
+    (r"pochivka\.bg/florimont-hayts-apartkompleks-o63098", "bg_more_florimont.html"),
+    (r"vlero\.com/dhoma-plazhi-ne-golem", "al_me_coast_golem.html"),
+    (r"vlero\.com/dhoma-plazhi-gjiri-lalzit", "al_me_coast_lalzi.html"),
+    (r"vlero\.com/banesa-me-qera-ne-shengjin", "al_me_coast_shengjin.html"),
+    (r"vlero\.com/hotele-ne-velipoje", "al_me_coast_velipoje.html"),
     (r"clickstay\.com/greece/chalkidiki", "rentals_clickstay_chalkidiki.html"),
     (r"clickstay\.com/greece/nikiti", "rentals_clickstay_nikiti.html"),
     (r"micazu\.com/.*/bansko/comfortable-ski-retreat-51700/", "micazu_listing_bansko.html"),
@@ -122,6 +143,8 @@ def e2e_config() -> dict:
         "https://www.olympic.rs/zimovanje/srbija/kopaonik-zimovanje-skijanje/": {"destination": "e2e-ol-kopaonik"}})
     sc["mk_agencies"]["pages"] = _pages(cfg, "mk_agencies", "/bansko?", "/borovets?")
     sc["bgski"]["pages"] = _pages(cfg, "bgski", "/bansko/")
+    sc["flight_hotels"]["pages"] = [{**pg, "hotels": ["palm-wings-ephesus-beach-resort-5-kusadasi"]}
+                                    for pg in sc["flight_hotels"]["pages"] if pg["url"].endswith("/kushadasa")]
     sc["charters"]["pages"] = _pages(cfg, "charters", "/antalya/", "/kusadasi/")
     sc["kopaonik"]["pages"] = _pages(cfg, "kopaonik", "jatapartmani", "supernovatravel")
     sc["oliverstravels"]["pages"] = _pages(cfg, "oliverstravels", "/halkidiki/")

@@ -158,6 +158,15 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     check("reach", "Direct flight or ≤5h drive", reach, must=True)
     if fam.get("adults_only"):                 # detail page says "adults only": never fits the twins
         check("adults_only", "Children welcome", False, must=True)
+    # --- guest rating: the family's rule, 4.3+/5 (Google etc.) and 8.2+/10 (Booking etc.)
+    from . import ratings as _ratings          # local import: ratings imports nothing from score
+    rok, rwhy = _ratings.verdict(fam.get("ratings", []), _ratings.settings(cfg))
+    if rok is False:
+        check("rating", rwhy, False, must=True)
+    else:
+        check("rating", rwhy, rok, must=cfg.get("ratings", {}).get("unknown_is_must", True))
+    if rok is not None:
+        checklist[-1]["verified"] = True       # a published rating is a fact, not agency marketing
 
     # --- cots: 2 cots that take the twins at their age on the trip date
     cots_max = _fact(fam, "cots_max")

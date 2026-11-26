@@ -13,12 +13,12 @@ import tomllib
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from . import conditions, db, dedupe, digest, enrich, family_prices, geo, geocode, health, score, validate
+from . import conditions, db, dedupe, digest, enrich, family_prices, flights, geo, geocode, health, ratings, score, validate
 from .http import PoliteSession
-from .sources import bgski, charters, hotel_direct, kopaonik, manual, micazu, mk_agencies, oliverstravels, olympic, rentals, travelland
+from .sources import al_me_coast, bg_more, bgski, charters, flight_hotels, gr_apartments, gr_hotel_prices, hotel_direct, kopaonik, manual, micazu, mk_agencies, mk_local, oliverstravels, olympic, rentals, rs_agencies, travelland
 
 # Sources that find hotels/villas and prices (agencies, villa sites, owner rentals).
-AUTO_SOURCES = (travelland, olympic, mk_agencies, bgski, charters, kopaonik, oliverstravels, rentals, micazu)
+AUTO_SOURCES = (travelland, olympic, mk_agencies, bgski, charters, kopaonik, rs_agencies, al_me_coast, bg_more, gr_apartments, gr_hotel_prices, mk_local, flight_hotels, oliverstravels, rentals, micazu)
 
 log = logging.getLogger("trips")
 
@@ -40,11 +40,13 @@ def load_config(path: str | Path = "config.toml", local: str | None = "config.lo
 def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict], list[dict]]:
     hotels = db.hotels(con)
     geocode.apply(hotels, cfg, today, offline=offline)   # hotel-level pins (off unless [geocode] enabled)
+    ratings.apply(hotels, cfg, today, offline=offline)   # Google rating via the official Places API (needs a key)
+    offers = db.offers(con)
+    flights.apply(hotels, cfg, offers)                   # direct SKP flight to an airport near the hotel, in the trip month
     home = (cfg["family"]["home_lat"], cfg["family"]["home_lng"])
     drives = {hid: db.cached_drive(con, hid, h["lat"], h["lng"]) for hid, h in hotels.items()} if offline \
         else geo.drive_minutes(con, hotels, home)
     estimated = set() if offline else set(geo.last_estimated)
-    offers = db.offers(con)
     lim = validate.limits(cfg)
     photos = db.images(con)
     camps = db.campaigns(con, since=(today - timedelta(days=3)).isoformat())
@@ -66,6 +68,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
         item = {
             "key": o["key"], "hotel_id": h["id"], "kind": h.get("kind", "hotel"), "name": h["name"], "stars": h.get("stars"), "area": h.get("area"),
             "season": h["season"], "lat": h.get("lat"), "lng": h.get("lng"), "notes": h.get("notes"),
+            "flight": h.get("flight"),
             "drive_estimate": h["id"] in estimated,   # straight-line guess: the router was down this run
             "image": h.get("image") or photos.get(h["id"]),
             "source": o["source"], "url": o["url"], "check_in": o["check_in"], "nights": o["nights"],

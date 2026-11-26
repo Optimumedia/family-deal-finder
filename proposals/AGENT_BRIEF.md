@@ -8,6 +8,12 @@ Hard rules:
 - Winter: a 1-bedroom apartment (separate bedroom) with cots and family activities.
 - Real discounts matter.
 
+**Round 3 note:** these sources already exist, so don't rebuild them:
+- trips/sources/: olympic, travelland, mk_agencies (AtlantiS), bgski (bulgariaski.com), charters (Savana Travel), kopaonik (JAT, Supernova), rentals (Clickstay), oliverstravels, micazu, hotel_direct
+- Fibula is entered by hand
+
+`docs/data.json` shows what is covered today (564 offers). The biggest gap is **real family prices (2+2) for Greek summer beaches**: most Halkidiki offers are 2-adult "from" prices.
+
 Read first: `README.md`, `PRODUCT.md`, `config.toml`, and these existing sources: `trips/sources/olympic.py` and `trips/sources/travelland.py` (both agencies), `trips/sources/hotel_direct.py`, `trips/sources/oliverstravels.py`, `trips/sources/micazu.py`. Also read `trips/http.py` (PoliteSession) and `trips/sources/pagetext.py`.
 
 ## Rules (non-negotiable)
