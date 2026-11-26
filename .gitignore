@@ -14,3 +14,9 @@ config.local.toml
 .impeccable/answer.txt
 .impeccable/sample-offers.jsonl
 .impeccable/decision-direction.json
+data/logs/
+data/run.lock
+data/http-cache.sqlite
+data/health-history.json
+data/enrich_cache.json
+data/*.bak*

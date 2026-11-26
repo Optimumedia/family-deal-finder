@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from datetime import datetime
 from pathlib import Path
 
 SCHEMA = """
@@ -28,11 +29,12 @@ CREATE TABLE IF NOT EXISTS offer (
 );
 CREATE TABLE IF NOT EXISTS snapshot (
     offer_key TEXT NOT NULL,
-    seen TEXT NOT NULL,               -- YYYY-MM-DD
+    seen TEXT NOT NULL,               -- YYYY-MM-DD, or YYYY-MM-DDTHH:MM for a same-day price change
     price_eur REAL NOT NULL,
     was_eur REAL,
     discount_label TEXT,
     valid_until TEXT,
+    checks INTEGER NOT NULL DEFAULT 1, -- unchanged repeat checks folded into this row
     PRIMARY KEY (offer_key, seen)
 );
 CREATE TABLE IF NOT EXISTS drive_cache (
@@ -68,6 +70,8 @@ def connect(path: str | Path = "data/trips.db") -> sqlite3.Connection:
     con = sqlite3.connect(path)
     con.row_factory = sqlite3.Row
     con.executescript(SCHEMA)
+    if "checks" not in {r[1] for r in con.execute("PRAGMA table_info(snapshot)")}:
+        con.execute("ALTER TABLE snapshot ADD COLUMN checks INTEGER NOT NULL DEFAULT 1")
     return con
 
 
@@ -80,8 +84,10 @@ def upsert_hotel(con, h: dict) -> None:
                 (h["id"], json.dumps(h, ensure_ascii=False)))
 
 
-def add_sighting(con, o: dict) -> bool:
-    """Store one price sighting. Returns True if it was new (not seen before on that day)."""
+def add_sighting(con, o: dict, live: bool = False, at: str | None = None) -> bool:
+    """Store one price sighting. Returns True when it adds a price point. A live repeat check with
+    the same price on the same day bumps `checks`; a changed price gets its own HH:MM row.
+    Manual sightings (live=False) are re-read every run, so they never count as repeat checks."""
     key = offer_key(o)
     seen = str(o["seen"])
     con.execute("""INSERT INTO offer(key, hotel_id, source, url, check_in, nights, board, room, occupancy, first_seen, last_seen)
@@ -92,10 +98,20 @@ def add_sighting(con, o: dict) -> bool:
                      last_seen=max(offer.last_seen, excluded.last_seen)""",
                 (key, o["hotel"], o["source"], o.get("url"), str(o["check_in"]), int(o["nights"]), o["board"],
                  o.get("room"), o.get("occupancy", "2+2"), seen, seen))
-    cur = con.execute("""INSERT OR IGNORE INTO snapshot(offer_key, seen, price_eur, was_eur, discount_label, valid_until)
-                         VALUES(?,?,?,?,?,?)""",
-                      (key, seen, float(o["price_eur"]), o.get("was_eur"), o.get("discount_label"),
-                       str(o["valid_until"]) if o.get("valid_until") else None))
+    vu = str(o["valid_until"]) if o.get("valid_until") else None
+    row = (float(o["price_eur"]), o.get("was_eur"), o.get("discount_label"), vu)
+    last = con.execute("SELECT seen, price_eur, was_eur, valid_until FROM snapshot WHERE offer_key=? "
+                       "AND substr(seen,1,10)=? ORDER BY seen DESC LIMIT 1", (key, seen[:10])).fetchone()
+    if last is not None:
+        if (last["price_eur"], last["was_eur"], last["valid_until"]) == (row[0], row[1], vu):
+            if live:
+                con.execute("UPDATE snapshot SET checks=checks+1 WHERE offer_key=? AND seen=?", (key, last["seen"]))
+            return False
+        if not live:
+            return False
+        seen = f"{seen[:10]}T{at or datetime.now().strftime('%H:%M')}"
+    cur = con.execute("INSERT OR IGNORE INTO snapshot(offer_key, seen, price_eur, was_eur, discount_label, valid_until)"
+                      " VALUES(?,?,?,?,?,?)", (key, seen, *row))
     return cur.rowcount > 0
 
 
@@ -129,7 +145,7 @@ def offers(con) -> list[dict]:
     for r in con.execute("SELECT * FROM offer ORDER BY hotel_id, check_in"):
         o = dict(r)
         o["history"] = [dict(s) for s in con.execute(
-            "SELECT seen, price_eur, was_eur, discount_label, valid_until FROM snapshot WHERE offer_key=? ORDER BY seen",
+            "SELECT seen, price_eur, was_eur, discount_label, valid_until, checks FROM snapshot WHERE offer_key=? ORDER BY seen",
             (r["key"],))]
         out.append(o)
     return out

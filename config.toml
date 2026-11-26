@@ -185,6 +185,321 @@ lng = 24.65
 nights = 7
 check_in = "2027-06-20"
 
+# --- added by proposals/destinations.md: priced offers on 2026-11-25 ---
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/makedonija-letovanje/ohrid/"
+destination = "144:158:263:9157"
+season = "summer"
+area = "Ohrid, North Macedonia"
+country = "MK"
+lat = 41.117
+lng = 20.802
+border = false
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/zimovanje/bugarska/pamporovo/"
+destination = "22:1252:2432:12625"
+season = "winter"
+area = "Pamporovo, Bulgaria"
+country = "BG"
+lat = 41.652
+lng = 24.692
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/zimovanje/srbija/stara-planina/"
+destination = "190:25:2354:12470"
+season = "winter"
+area = "Stara Planina, Serbia"
+country = "RS"
+lat = 43.373
+lng = 22.612
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/crna-gora-promotivne-cene/ulcinj/"
+destination = "140:26:496:9725"
+season = "summer"
+area = "Ulcinj / Velika Plaža, Montenegro"
+country = "ME"
+lat = 41.90
+lng = 19.27
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/crna-gora-promotivne-cene/dobre-vode/"
+destination = "140:26:492:12127"
+season = "summer"
+area = "Dobre Vode, Montenegro"
+country = "ME"
+lat = 42.03
+lng = 19.13
+nights = 7
+check_in = "2027-06-20"
+
+# --- watch list: codes work, no prices yet (each costs one list request per run) ---
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/albanija/drac/"
+destination = "6:516:847:10073"
+season = "summer"
+area = "Durrës / Golem, Albania"
+country = "AL"
+lat = 41.28
+lng = 19.48
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/albanija/valona/"
+destination = "6:1011:2089:12118"
+season = "summer"
+area = "Vlorë, Albania"
+country = "AL"
+lat = 40.45
+lng = 19.49
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.olympic.pages]]
+url = "https://www.olympic.rs/letovanje/grcka-promotivne-cene/kavala/"
+destination = "89:1044:2129:12164"
+season = "summer"
+area = "Kavala, Greece"
+country = "GR"
+lat = 40.94
+lng = 24.41
+nights = 7
+check_in = "2027-06-20"
+
+# --- Travelland summer pages (need the date-window fallback) ---
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/crna-gora/ulcinj/"
+destination = "140:26:496:9725"
+season = "summer"
+area = "Ulcinj / Velika Plaža, Montenegro"
+country = "ME"
+lat = 41.90
+lng = 19.27
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.travelland.pages]]
+url = "https://www.travelland.rs/destinacije/grcka/stavros/"
+destination = "89:129:2467:13429"
+season = "summer"
+area = "Stavros, Greece"
+country = "GR"
+lat = 40.665
+lng = 23.70
+nights = 7
+check_in = "2027-06-20"
+
+# ------------------------------------------------- Macedonian agencies (AtlantiS) --
+[sources.mk_agencies]
+# atlantis.mk — Skopje agency, robots.txt has no Disallow rules. Saved-search result pages:
+# stay total for 2 adults, every room type with board; the stay dates are the agency's and
+# aren't shown, so check_in below is our assumption. Greece there is "on request" (no prices).
+enabled = true
+home = "https://www.atlantis.mk/"
+
+[[sources.mk_agencies.pages]]
+url = "https://www.atlantis.mk/hotels/bansko?PartialGuid=1f54d4c1-4682-415e-a6b3-854b99efbc22"
+season = "winter"
+area = "Bansko, Bulgaria"
+country = "BG"
+lat = 41.83
+lng = 23.48
+nights = 4
+check_in = "2027-01-15"
+
+[[sources.mk_agencies.pages]]
+url = "https://atlantisonline.mk/hotels/razlog?PartialGuid=468975a6-b120-4ef1-8036-2daf601b04f6"
+season = "winter"
+area = "Razlog (Bansko area), Bulgaria"
+country = "BG"
+lat = 41.886
+lng = 23.462
+nights = 4
+check_in = "2027-01-15"
+
+[[sources.mk_agencies.pages]]
+url = "https://atlantisonline.mk/hotels/borovets?PartialGuid=cf76af02-5ce1-415f-a46a-3fb269306d0b"
+season = "winter"
+area = "Borovets, Bulgaria"
+country = "BG"
+lat = 42.266
+lng = 23.606
+nights = 4
+check_in = "2027-01-15"
+
+[[sources.mk_agencies.pages]]
+url = "https://atlantisonline.mk/hotels/pamporovo?PartialGuid=65ef5dd6-0a9a-4aac-8e78-7e318678387a"
+season = "winter"
+area = "Pamporovo, Bulgaria"
+country = "BG"
+lat = 41.652
+lng = 24.692
+nights = 4
+check_in = "2027-01-15"
+
+[sources.charters]
+# Savana Travel (Skopje): flight-from-Skopje + hotel packages. "From" price for 2 adults
+# for the whole stay (flight included); board and exact date are not on the card.
+enabled = true
+max_list_pages = 3          # 20 cards per page
+
+[[sources.charters.pages]]
+url = "https://www.online.savana.travel/vacations/turkey/antalya/from-skopje/vacations/with-plane/"
+season = "summer"
+area = "Antalya region, Turkey"
+region = "Antalya region, Turkey"   # area shown as "<town from slug>, <region>"
+country = "TR"
+lat = 36.88
+lng = 30.70
+nights = 7
+check_in = "2027-06-20"
+direct_flight_skp = true
+
+[[sources.charters.pages]]
+url = "https://www.online.savana.travel/vacations/turkey/kusadasi/from-skopje/vacations/with-plane/"
+season = "summer"
+area = "Kusadasi, Turkey"
+region = "Aegean coast, Turkey"
+country = "TR"
+lat = 37.86
+lng = 27.26
+nights = 7
+check_in = "2027-06-20"
+direct_flight_skp = true
+
+[sources.kopaonik]
+# Kopaonik / Stara Planina winter price lists, read as tables (no booking engines, no APIs).
+# parser "jat": JAT Apartmani's own price list (robots.txt: only /api/ disallowed).
+# parser "supernova": Supernova Travel per-property price pages (robots.txt: Joomla system dirs only).
+# Prices are per unit (RSD converted at rsd_per_eur), so 4+ guest units are stored as "2+2".
+enabled = true
+rsd_per_eur = 117.2
+
+[[sources.kopaonik.pages]]
+parser = "jat"
+url = "https://jatapartmani.com/en/price-list"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 7
+
+[[sources.kopaonik.pages]]
+parser = "supernova"
+url = "https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/apartments-konaci-kopaonik-cenovnik.html"
+name = "Apartmani Konaci"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 7
+
+[[sources.kopaonik.pages]]
+parser = "supernova"
+url = "https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/apartmani-kraljevi-cardaci-kopaonik-cenovnik.html"
+name = "Apartmani Kraljevi Čardaci"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.30
+lng = 20.84
+nights = 7
+
+[[sources.kopaonik.pages]]
+parser = "supernova"
+url = "https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/apartmani-marija-lux-kopaonik-cenovnik.html"
+name = "Apartmani Marija Lux"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 7
+
+[[sources.kopaonik.pages]]
+parser = "supernova"
+url = "https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/apartmani-srbijasume-kopaonik-cenovnik.html"
+name = "Apartmani Šumarstvo (ex Srbijašume)"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 7
+
+[[sources.kopaonik.pages]]
+parser = "supernova"
+url = "https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/vila-zvoncica-kopaonik-cenovnik.html"
+name = "Vila Zvončica"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 7
+
+[[sources.kopaonik.pages]]
+parser = "supernova"
+url = "https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/hotel-stara-planina-cenovnik.html"
+name = "Hotel Stara Planina"
+kind = "hotel"
+season = "winter"
+area = "Stara Planina, Serbia"
+country = "RS"
+lat = 43.373
+lng = 22.606
+nights = 7
+
+[sources.bgski]
+# bulgariaski.com — robots.txt allows the resort hotel lists and hotel pages. Each hotel page has
+# the full price list (EUR per night per room/apartment, by season). We keep the cheapest
+# 1-/2-bedroom apartment row per meal plan; hotels with only rooms/studios are skipped.
+enabled = true
+max_hotels = 30             # hotel pages per resort (after the name filter); ~6-10 s each
+# match = "apart|residen|complex|club|chalet|holiday|family|villa|house|resort|suite"   # default name filter
+
+[[sources.bgski.pages]]
+url = "https://www.bulgariaski.com/bansko/hotels/"
+season = "winter"
+area = "Bansko, Bulgaria"
+country = "BG"
+lat = 41.83
+lng = 23.48
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.bgski.pages]]
+url = "https://www.bulgariaski.com/borovets/hotels/"
+season = "winter"
+area = "Borovets, Bulgaria"
+country = "BG"
+lat = 42.266
+lng = 23.606
+nights = 5
+check_in = "2027-01-15"
+
+[[sources.bgski.pages]]
+url = "https://www.bulgariaski.com/pamporovo/hotels/"
+season = "winter"
+area = "Pamporovo, Bulgaria"
+country = "BG"
+lat = 41.652
+lng = 24.692
+nights = 5
+check_in = "2027-01-15"
+
 # ---------------------------------------------------------- hotels' own websites --
 [sources.hotel_direct]
 # Each hotel's own offers page: campaigns (discount %, deadline) are picked out of
@@ -202,6 +517,145 @@ url = "https://www.portocarras.com/offers"
 [[sources.hotel_direct.pages]]
 hotel = "st-ivan-rilski-bansko"
 url = "https://www.saintivanrilski.com/en/offers-and-vouchers"
+
+# summer — Halkidiki
+[[sources.hotel_direct.pages]]
+hotel = "ol-102809"
+url = "https://www.portesbeach.com/special-offers"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-103035"
+url = "https://www.secretparadise.gr/special-offers-halkidiki-hotel"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-114144"
+url = "https://www.secretparadise.gr/special-offers-halkidiki-hotel"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-102886"
+url = "https://www.aegeanmelathron.gr/en-gb/offers-kassandra-halkidiki/melathron-members-club"
+
+[[sources.hotel_direct.pages]]
+hotel = "lagomandra-beach"
+url = "https://www.lagomandra.gr/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-114032"
+url = "https://www.kassandrapalace.com/bg/промоции-намаления.html"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-102951"
+url = "https://www.acrotel.gr/promotions-offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-102957"
+url = "https://www.acrotel.gr/promotions-offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-102955"
+url = "https://www.acrotel.gr/promotions-offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-102912"
+url = "https://anthemussea.gr/special-offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-102768"
+url = "https://www.chroussovillage.com/sr/promocije-popusti.html"
+
+# winter — Bansko, Borovets, Pamporovo, Kopaonik
+[[sources.hotel_direct.pages]]
+hotel = "royal-park-bansko"
+url = "https://www.royalparkbansko.com/deals-discounts.html"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115324"
+url = "https://www.regnumbansko.com/special-offers"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115318"
+url = "https://luckybansko.com/offers-lucky-bansko-packages-c92/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-1825"
+url = "https://hotelpirin.com/en/offers"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115328"
+url = "https://mpmhotels.bg/offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115316"
+url = "https://mpmhotels.bg/offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115343"
+url = "https://mpmhotels.bg/offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "tl-111208"
+url = "https://mpmhotels.bg/offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "tl-111117"
+url = "https://mpmhotels.bg/offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "tl-111164"
+url = "https://grandroyale.bg/en/special-offers/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115314"
+url = "https://www.greenlifebansko.bg/bg/bansko/oferti"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-115335"
+url = "https://www.festahotels.com/bg/oferti"
+
+[[sources.hotel_direct.pages]]
+hotel = "tl-111143"
+url = "https://www.perelikhotel.com/category/оферти/"
+
+[[sources.hotel_direct.pages]]
+hotel = "ol-1116"
+url = "https://www.grandkopaonik.com/"
+
+# --------------------------------------------------- villa/apartment rentals --
+[sources.rentals]
+# clickstay.com — robots.txt is "User-Agent: *" with no Disallow. Whole villas/apartments from owners
+# and agents; "From £… per week" = lowest weekly rate (GBP, converted). Self-catering.
+enabled = true
+gbp_to_eur = 1.17
+
+[[sources.rentals.pages]]
+url = "https://www.clickstay.com/greece/chalkidiki"
+season = "summer"
+area = "Halkidiki (villa)"
+country = "GR"
+lat = 40.10
+lng = 23.60
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.rentals.pages]]
+url = "https://www.clickstay.com/greece/nikiti"
+season = "summer"
+area = "Nikiti, Sithonia (rental)"
+country = "GR"
+lat = 40.22
+lng = 23.67
+nights = 7
+check_in = "2027-06-20"
+
+[[sources.rentals.pages]]
+url = "https://www.clickstay.com/greece/pefkohori"
+season = "summer"
+area = "Pefkohori, Kassandra (rental)"
+country = "GR"
+lat = 39.99
+lng = 23.62
+nights = 7
+check_in = "2027-06-20"
 
 # ---------------------------------------------------------------- villa rentals --
 [sources.oliverstravels]
@@ -235,6 +689,15 @@ lat = 41.83
 lng = 23.48
 nights = 5
 check_in = "2026-12-14"
+
+# ------------------------------------------------------------ detail pages --
+[sources.enrich]
+# Read each Olympic/Travelland offer's hotel page for board, child policy, beach and kids' facts.
+# Facts are cached per page and re-read at most once a week.
+enabled = true
+budget = 12                 # live detail pages per run (6-10 s apart: about 2 minutes)
+max_age_days = 7
+cache = "data/enrich_cache.json"
 
 [email]
 # Daily digest. SMTP settings live in the git-ignored file .email

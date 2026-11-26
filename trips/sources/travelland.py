@@ -32,7 +32,7 @@ _CARD = re.compile(r'<a href="(?P<href>/smestaj/[^"]+/(?P<oid>\d+)/)"[^>]*class=
                    re.S)
 _TITLE = re.compile(r'<h4 class="title">\s*(.*?)\s*</h4>', re.S)
 _HIDDEN = re.compile(r'<div style="display: none">\s*\d+\s*-\s*(\d{4}-\d{2}-\d{2})\s*-\s*(\d{4}-\d{2}-\d{2})')
-_VALID = re.compile(r'VAŽI DO\s*(\d{1,2})\.(\d{1,2})\.(\d{4})', re.I)
+_VALID = re.compile(r'VA[ŽZ][IE] DO\s*(\d{1,2})\.(\d{1,2})\.(\d{4})', re.I)
 _OLD = re.compile(r'unit-price-old">\s*€\s*([\d.,]+)')
 _NEW = re.compile(r'unit-price-total">\s*€\s*([\d.,]+)')
 _PCT = re.compile(r'percent-content-percent">\s*(\d+)\s*%')
@@ -93,7 +93,8 @@ def _title_case(name: str) -> str:
 
 def to_hotel_and_offer(card: dict, page: dict, cfg: dict, today: date) -> tuple[dict, dict] | None:
     if not card.get("date_from"):
-        return None
+        # summer cards carry no hidden date window: use the page's default check-in
+        card = {**card, "date_from": str(page.get("check_in", today.isoformat()))}
     if card.get("date_to") and card["date_to"] < today.isoformat():
         return None                          # price window already over
     check_in = max(card["date_from"], today.isoformat())

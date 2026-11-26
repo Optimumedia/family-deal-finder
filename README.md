@@ -47,6 +47,19 @@ SMTP_PASSWORD=your-app-password
 MAIL_TO=you@gmail.com
 ```
 
+## Operations
+
+Two scheduled runs a day (13:00 and 17:30) via `setup_schedule.ps1`, each running `run_local.ps1`:
+
+- **One at a time:** `data\run.lock` is held open while a run is going; a second run exits with code 4.
+- **Logs:** `data\logs\run-YYYY-MM-DD.log`, one per day, deleted after 30 days.
+- **Exit codes** (Task Scheduler's "Last Run Result"): 0 ok · 3 a source failed but the rest was published · 4 skipped, a run was still going · 5 `git pull --rebase` failed · 6 commit failed · 7 push failed · anything else: Python crashed (see the log).
+- **Publishing:** commits only when `docs/data.json` changed beyond its timestamp. It runs `git pull --rebase --autostash` first, then commits just `docs/data.json` and `docs/health.json`, then pushes.
+- **Validation** (`trips/validate.py`): every offer is checked before it's stored. The checks: €15–2,500 per night, check-in from today up to 18 months ahead, 1–21 nights, a known board (RO/BB/HB/FB/AI/SC/?), occupancy 2+2 or 2+0, an https link, and an https photo or none. Rejected offers are logged with the reason and never reach the price history. Limits can be changed in an optional `[validate]` table in config.toml.
+- **Health** (`trips/health.py` → `docs/health.json`): per source, the pages fetched (and how many came back "not modified"), offers parsed and rejected, blocks, errors and duration. A source is flagged when it crashes, is blocked, or suddenly returns 0 offers after averaging 3 or more over its last 7 runs. The history is kept in `data\health-history.json`.
+- **Being polite** (`trips/http.py`): the same honest User-Agent as before, with a minimum delay per host (`delay_seconds` + jitter, or more for a host listed in `[sources] host_delays`). Pages that send an ETag or Last-Modified header are cached in `data\http-cache.sqlite` and asked for again conditionally, so an unchanged page costs the site a "304 Not Modified".
+- **Drive times** (`trips/geo.py`): OSRM first, then openrouteservice if an `ORS_API_KEY` environment variable is set (free key). If both fail, a straight-line estimate is used (1.2 min per km). It's flagged as an estimate, never cached, and the router is tried again next run.
+
 ## Sources
 
 | Source | Status |

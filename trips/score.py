@@ -6,9 +6,13 @@ Family Fit weights follow the family-first research:
 times a confidence factor 0.6 + 0.4 × (share of known facts that are verified).
 
 Deal quality ignores the agency's "was" price as proof. It trusts our own price
-history first (below this offer's lowest price of the last N days), then the
-peer comparison (cheaper per night than similar offers), and only then — at a
-reduced weight — the stated discount.
+history first (≥3% below this offer's lowest price of the last N days, with at
+least 3 checks over 2 days, blended with the median price), then the peer
+comparison (cheaper per night than similar offers), and only then — at a
+reduced weight — the stated discount. A price pushed up shortly before a "was"
+claim is flagged `fake?`. Each offer also gets a "book now / can wait / watch"
+signal with a reason and a confidence level. A "2+0" (adults-only) price never
+outranks a comparable "2+2" one on price grounds.
 
 A must-have that is unknown (2 cots, sandy beach, separate bedroom …) never
 excludes a hotel, but caps the rating and creates a question for the hotel.
@@ -94,6 +98,8 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     else:
         reach = False
     check("reach", "Direct flight or ≤5h drive", reach, must=True)
+    if fam.get("adults_only"):                 # detail page says "adults only": never fits the twins
+        check("adults_only", "Children welcome", False, must=True)
 
     # --- cots: 2 cots that take the twins at their age on the trip date
     cots_max = _fact(fam, "cots_max")
@@ -173,13 +179,19 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     health = tri(_fact(fam, "doctor_near"))
     logistics = tri(_fact(fam, "stroller_ok"))
     reviews = clamp((hotel.get("stars") or 3) / 5)
-    raw = (20 * sleep + 20 * place + 15 * travel + 12 * kids + 10 * food + 8 * health + 7 * logistics + 8 * reviews)
+    parts = {"sleep": 20 * sleep, "beach" if season == "summer" else "activities": 20 * place,
+             "travel": 15 * travel, "kids": 12 * kids, "food": 10 * food, "health": 8 * health,
+             "logistics": 7 * logistics, "reviews": 8 * reviews}
+    raw = sum(parts.values())
     known = [c for c in checklist if c["state"] != "unknown"]
     conf = 0.6 + 0.4 * (sum(c["verified"] for c in known) / len(known) if known else 0)
     return {
         "score": round(raw * conf, 1),
         "raw": round(raw, 1),
         "confidence": round(conf, 2),
+        # points before the confidence factor; occupancy never changes them (price is the deal's job)
+        "parts": {k: round(v, 1) for k, v in parts.items()},
+        "price_covers_kids": offer.get("occupancy") == "2+2",
         "checklist": checklist,
         "failed": failed,
         "unknown_musts": unknown_musts,
@@ -190,62 +202,263 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
 
 
 # ------------------------------------------------------------------- deal ---
+#
+# Deal quality = points for (our price history · peer comparison · family price ·
+# deadline · flexibility · reach). Every part is exported in `deal["parts"]`, so the
+# dashboard can show where the score comes from.
+#
+# Verdicts:
+#   real         ≥ real_min_pct below this offer's lowest price of the last history_days,
+#                backed by ≥ min_observations checks over ≥ min_days days
+#   unconfirmed  cheaper than our recorded low, but the history is still too thin to call it
+#   fake?        a "was" claim while the price is not cheaper than before, or the price was
+#                pushed up ≥ inflation_pct in the inflation_days before the claim appeared
+#   stated       only the agency's "was" price (no history to check it against)
+#   flat         history, no real saving, no claim
+#   none         nothing to go on
+
+DEAL_DEFAULTS = {
+    "history_days": 30,          # baseline window
+    "stated_weight": 0.5,        # unverified savings count this much
+    "real_min_pct": 3,           # "real" = at least this far below the window's low
+    "min_observations": 3,       # … backed by this many price checks
+    "min_days": 2,               # … on at least this many different days
+    "inflation_pct": 15,         # a rise this big shortly before a "was" claim = pre-sale inflation
+    "inflation_days": 14,
+    "book_now_days": 7,          # a deadline this close + price at its low → book now
+    "near_low_pct": 3,           # "at or near its low" = within this of the window's low
+    "trend_days": 14,            # trend looks at this many recent days
+    "trend_pct": 3,              # fitted change over that span to count as rising / falling
+}
+# Deal-score weights (points out of 100).
+W_HISTORY, W_PEERS, W_FAMILY_PRICE, W_DEADLINE, W_FLEX, W_REACH = 35, 20, 15, 10, 10, 10
+ADULTS_ONLY_FAMILY_PRICE = 0.3   # share of the family-price points a 2+0 price earns
+# A "2+0" price leaves the twins' cost unknown, so its price evidence (history + peers) is
+# scaled down until even the best 2+0 price can't beat the family-price points a 2+2 offer
+# gets for free: 55·w + 4.5 ≤ 15. A 2+0 offer then never outranks a comparable 2+2 offer
+# (same family fit, deadline and reach) on price grounds, whatever either price does.
+ADULTS_ONLY_PRICE_WEIGHT = W_FAMILY_PRICE * (1 - ADULTS_ONLY_FAMILY_PRICE) / (W_HISTORY + W_PEERS)
+FAKE_CAP = 54
+
+
+def deal_settings(cfg: dict) -> dict:
+    return {**DEAL_DEFAULTS, **(cfg.get("deal") or {})}
+
 
 def per_night(o: dict) -> float:
     return o["history"][-1]["price_eur"] / max(1, o["nights"])
 
 
+def _t(seen) -> float:
+    """Snapshot time as fractional days (a date, or a 'YYYY-MM-DDTHH:MM' timestamp)."""
+    s = str(seen)
+    t = float(_d(s).toordinal())
+    if len(s) >= 16 and s[10] in "T ":
+        t += (int(s[11:13]) * 60 + int(s[14:16])) / 1440
+    return t
+
+
+def _checks(h: dict) -> int:
+    """Price checks one snapshot stands for (db may fold repeat same-day checks into one row)."""
+    return max(1, int(h.get("checks") or 1))
+
+
+def _claim(h: dict) -> bool:
+    return bool(h.get("was_eur")) and h["was_eur"] > h["price_eur"]
+
+
+def _inflation(hist: list[dict], d: dict) -> dict | None:
+    """Pre-sale inflation: the price rose ≥ inflation_pct within inflation_days before the
+    current run of "was" claims began. Returns {"rise_pct", "claim_seen"} or None."""
+    i = len(hist)
+    while i > 0 and _claim(hist[i - 1]):
+        i -= 1
+    if i == len(hist) or i == 0:          # no claim now, or claimed since the first sighting
+        return None
+    claim_day = _d(hist[i]["seen"])
+    start = claim_day - timedelta(days=d["inflation_days"])
+    before = hist[:i]
+    pre = [h for h in before if _d(h["seen"]) >= start]
+    # the price in force when that window opened (if we saw it within the baseline window)
+    anchor = [h for h in before if claim_day - timedelta(days=d["history_days"]) <= _d(h["seen"]) < start][-1:]
+    lo, rise = None, 0.0
+    for h in anchor + pre:
+        p = h["price_eur"]
+        lo = p if lo is None else min(lo, p)
+        rise = max(rise, (p - lo) / lo)
+    if rise * 100 >= d["inflation_pct"]:
+        return {"rise_pct": round(rise * 100, 1), "claim_seen": str(hist[i]["seen"])[:10]}
+    return None
+
+
+def _trend(window: list[dict], d: dict) -> tuple[str, float | None, int]:
+    """Least-squares price trend over the last trend_days: ("rising"|"falling"|"flat"|"unknown",
+    fitted change in % over the span, span in days). Needs 3 checks on 2+ days."""
+    if not window:
+        return "unknown", None, 0
+    end = _t(window[-1]["seen"])
+    pts = [(_t(h["seen"]), h["price_eur"]) for h in window if _t(h["seen"]) >= end - d["trend_days"]]
+    if len(pts) < 3 or len({int(x) for x, _ in pts}) < 2:
+        return "unknown", None, 0
+    mx = sum(x for x, _ in pts) / len(pts)
+    my = sum(y for _, y in pts) / len(pts)
+    slope = sum((x - mx) * (y - my) for x, y in pts) / sum((x - mx) ** 2 for x, _ in pts)
+    span = pts[-1][0] - pts[0][0]
+    pct = slope * span / my * 100
+    word = "rising" if pct >= d["trend_pct"] else "falling" if pct <= -d["trend_pct"] else "flat"
+    return word, round(pct, 1), max(1, round(span))
+
+
+def _confidence(obs: int, days: int, d: dict) -> tuple[str, str]:
+    if obs >= 2 * d["min_observations"] and days >= 2 * d["min_days"]:
+        level = "high"
+    elif obs >= d["min_observations"] and days >= d["min_days"]:
+        level = "medium"
+    else:
+        level = "low"
+    note = f"{obs} price check{'s' if obs != 1 else ''} over {days} day{'s' if days != 1 else ''}"
+    if level == "low":
+        note += " — too little history, treat as a hint"
+    return level, note
+
+
+def _signal(price: float, low: float | None, days_left: int | None, trend: str, trend_pct, span: int,
+            d: dict) -> tuple[str, str]:
+    """'book now' / 'can wait' / 'watch', with a one-line reason."""
+    near_low = low is None or price <= low * (1 + d["near_low_pct"] / 100)
+    ends = None if days_left is None else ("today" if days_left == 0 else
+                                           f"in {days_left} day{'s' if days_left != 1 else ''}")
+    if days_left is not None and 0 <= days_left <= d["book_now_days"]:
+        if near_low:
+            return "book now", (f"Offer ends {ends} and the price is at its {d['history_days']}-day low"
+                                if low is not None else f"Offer ends {ends}; no earlier price to compare")
+        return "watch", f"Offer ends {ends}, but it is €{price - low:,.0f} above its {d['history_days']}-day low"
+    if days_left is not None and days_left < 0:
+        return "watch", "The offer's deadline has passed — check it is still on"
+    if trend == "rising":
+        return "book now", f"Price up {trend_pct:.0f}% over the last {span} days"
+    if trend == "flat":
+        return "can wait", "Price steady and no deadline" if days_left is None else f"Price steady; offer runs {ends}"
+    if trend == "falling":
+        return "can wait", f"Price falling ({trend_pct:.0f}% over {span} days) — waiting may pay"
+    return "watch", "Not enough price history to call it yet"
+
+
 def deal_quality(offer: dict, peers: list[dict], cfg: dict, today: date, reach_ok: bool | None) -> dict:
-    d = cfg["deal"]
+    d = deal_settings(cfg)
     hist = offer["history"]
     now = hist[-1]
     price = now["price_eur"]
-    window_start = _d(now["seen"]) - timedelta(days=d["history_days"])
-    earlier = [h["price_eur"] for h in hist[:-1] if _d(h["seen"]) >= window_start]
-    real_pct = (min(earlier) - price) / min(earlier) if earlier else None
-    was = now.get("was_eur")
-    stated_pct = (was - price) / was if was else None
+    now_day = _d(now["seen"])
+    window = [h for h in hist if _d(h["seen"]) >= now_day - timedelta(days=d["history_days"])]
+    earlier = [h["price_eur"] for h in window[:-1]]
+    low = min(earlier) if earlier else None
+    mid = median(earlier) if earlier else None
+    vs_low = (low - price) / low if low else None
+    vs_mid = (mid - price) / mid if mid else None
+    observations = sum(_checks(h) for h in window)
+    obs_days = len({_d(h["seen"]) for h in window})
+    enough = observations >= d["min_observations"] and obs_days >= d["min_days"]
+    claim = _claim(now)
+    stated_pct = (now["was_eur"] - price) / now["was_eur"] if claim else None
+    inflated = _inflation(hist, d) if claim else None
+    real_min = d["real_min_pct"] / 100
+    sw = d["stated_weight"]
+    notes: list[str] = []
 
-    if real_pct is not None:
-        real_n = clamp(real_pct / 0.25)
-        verdict = "real" if real_pct > 0 else ("fake?" if (stated_pct or 0) > 0 else "flat")
-    elif stated_pct is not None:
-        real_n = clamp(stated_pct / 0.25) * d["stated_weight"]
-        verdict = "stated"
+    if vs_low is not None and vs_low >= real_min and enough:
+        verdict = "real"
+        real_n = clamp((vs_low + vs_mid) / 2 / 0.25)       # vs the low and vs the typical price
+        if inflated:
+            notes.append(f"The \"was\" price looks inflated (up {inflated['rise_pct']:.0f}% before the sale), "
+                         f"but it is still {vs_low * 100:.0f}% below our recorded low")
+    elif inflated:
+        verdict, real_n = "fake?", 0.0
+        notes.append(f"Price rose {inflated['rise_pct']:.0f}% in the {d['inflation_days']} days before the "
+                     f"\"was\" price appeared ({inflated['claim_seen']})")
+    elif vs_low is not None and claim and (vs_low <= 0 or (enough and vs_low < real_min)):
+        verdict, real_n = "fake?", 0.0
+        notes.append(f"Agency says −{stated_pct * 100:.0f}%, but it is not cheaper than our recorded low "
+                     f"(€{low:,.0f})")
+    elif vs_low is not None and vs_low >= real_min:
+        verdict = "unconfirmed"
+        real_n = clamp(vs_low / 0.25) * sw
+        notes.append(f"{vs_low * 100:.0f}% below our recorded low, but only {observations} checks over "
+                     f"{obs_days} days (needs {d['min_observations']} over {d['min_days']})")
+    elif claim:
+        verdict, real_n = "stated", clamp(stated_pct / 0.25) * sw
+    elif vs_low is not None:
+        verdict, real_n = "flat", 0.0
     else:
-        real_n, verdict = 0.0, "none"
+        verdict, real_n = "none", 0.0
 
     # Peers = same source, same occupancy and board: prices are only comparable like for like.
-    same = [p for p in peers if p["key"] != offer["key"] and p["occupancy"] == offer["occupancy"]
-            and p["source"] == offer["source"] and p["board"] == offer["board"]]
+    same = [p for p in peers if p.get("key") != offer.get("key") and p.get("occupancy") == offer.get("occupancy")
+            and p.get("source") == offer.get("source") and p.get("board") == offer.get("board")]
     peer_pct = None
     if len(same) >= 2:
         m = median(per_night(p) for p in same)
         peer_pct = (m - per_night(offer)) / m
     peer_n = 0.5 if peer_pct is None else clamp(0.5 + peer_pct / 0.5)
 
-    family_cost = 1.0 if offer["occupancy"] == "2+2" else 0.3
+    family_price = offer.get("occupancy") == "2+2"
+    price_w = 1.0 if family_price else ADULTS_ONLY_PRICE_WEIGHT
+    if not family_price:
+        notes.append(f"Price for 2 adults only: the twins' cost is unknown, so price evidence counts "
+                     f"{price_w * 100:.0f}%")
     urgency, days_left = 0.0, None
     if now.get("valid_until"):
         days_left = (_d(now["valid_until"]) - today).days
         urgency = 1.0 if 0 <= days_left <= 7 else 0.5 if 0 <= days_left <= 30 else 0.0
     flex = 0.5                     # cancellation terms unknown for manual offers
     fit = 1.0 if reach_ok else 0.5 if reach_ok is None else 0.0
-    score = 35 * real_n + 20 * peer_n + 15 * family_cost + 10 * urgency + 10 * flex + 10 * fit
+    parts = {
+        "history": W_HISTORY * real_n * price_w,
+        "peers": W_PEERS * peer_n * price_w,
+        "family_price": W_FAMILY_PRICE * (1.0 if family_price else ADULTS_ONLY_FAMILY_PRICE),
+        "deadline": W_DEADLINE * urgency,
+        "flex": W_FLEX * flex,
+        "reach": W_REACH * fit,
+    }
+    score = sum(parts.values())
+
+    trend, trend_pct, span = _trend(window, d)
+    signal, reason = _signal(price, low, days_left, trend, trend_pct, span, d)
+    confidence, conf_note = _confidence(observations, obs_days, d)
+
+    def pct(x):
+        return None if x is None else round(x * 100, 1)
+
     return {
         "score": round(score, 1),
         "verdict": verdict,
-        "real_pct": None if real_pct is None else round(real_pct * 100, 1),
-        "stated_pct": None if stated_pct is None else round(stated_pct * 100, 1),
-        "peer_pct": None if peer_pct is None else round(peer_pct * 100, 1),
+        # real_pct is only set for a verified saving (the dashboard shows it as "Verified −x%")
+        "real_pct": pct(vs_low) if verdict == "real" else None,
+        "vs_low_pct": pct(vs_low),
+        "vs_median_pct": pct(vs_mid),
+        "stated_pct": pct(stated_pct),
+        "peer_pct": pct(peer_pct),
         "days_left": days_left,
         "history_points": len(hist),
+        "baseline_low": None if low is None else round(low, 2),
+        "baseline_median": None if mid is None else round(mid, 2),
+        "observations": observations,
+        "observed_days": obs_days,
+        "inflated": inflated,
+        "trend": trend,
+        "trend_pct": trend_pct,
+        "signal": signal,
+        "signal_reason": reason,
+        "confidence": confidence,
+        "confidence_note": conf_note,
+        "parts": {k: round(v, 1) for k, v in parts.items()},
+        "notes": notes,
     }
 
 
 # ---------------------------------------------------------------- combine ---
 
-def rate(hotel: dict, offer: dict, peers: list[dict], cfg: dict, drive_min, today: date) -> dict:
+def _rate_one(hotel: dict, offer: dict, peers: list[dict], cfg: dict, drive_min, today: date) -> dict:
     fam = family_fit(hotel, offer, cfg, drive_min)
     reach = next(c for c in fam["checklist"] if c["key"] == "reach")["state"]
     deal = deal_quality(offer, peers, cfg, today, {"yes": True, "no": False}.get(reach))
@@ -255,15 +468,41 @@ def rate(hotel: dict, offer: dict, peers: list[dict], cfg: dict, drive_min, toda
     if fam["unknown_musts"] and overall > cfg["score"]["unknown_cap"]:
         overall, capped = cfg["score"]["unknown_cap"], True
     if deal["verdict"] == "fake?":
-        overall = min(overall, 54)
-    excluded = bool(fam["failed"])
+        overall = min(overall, FAKE_CAP)
+    return {"overall": overall, "capped": capped, "excluded": bool(fam["failed"]), "family": fam, "deal": deal}
+
+
+def comparable_family_offers(offer: dict, peers: list[dict], days: int = 7) -> list[dict]:
+    """2+2 offers for the same hotel, nights and board, checking in within `days` of this one."""
+    hid = offer.get("hotel_id")
+    if hid is None:
+        return []
+    ci = _d(offer["check_in"])
+    return [p for p in peers if p.get("hotel_id") == hid and p.get("occupancy") == "2+2"
+            and p.get("key") != offer.get("key") and p.get("nights") == offer.get("nights")
+            and p.get("board") == offer.get("board") and abs((_d(p["check_in"]) - ci).days) <= days]
+
+
+def rate(hotel: dict, offer: dict, peers: list[dict], cfg: dict, drive_min, today: date) -> dict:
+    r = _rate_one(hotel, offer, peers, cfg, drive_min, today)
+    if offer.get("occupancy") != "2+2" and not r["excluded"]:
+        # A 2+0 offer never outranks a 2+2 offer for the same stay: its low price leaves the twins out.
+        rivals = [x for x in (_rate_one(hotel, p, peers, cfg, drive_min, today)
+                              for p in comparable_family_offers(offer, peers)) if not x["excluded"]]
+        if rivals:
+            ceiling = min(x["overall"] for x in rivals)
+            if r["overall"] > ceiling:
+                r["overall"] = ceiling
+                r["deal"]["notes"].append(f"Held at {ceiling:.0f}: a 2+2 price for the same stay scores "
+                                          f"{ceiling:.0f}, and an adults-only price can't beat it")
+    overall = r["overall"]
     return {
         "overall": round(overall, 1),
-        "tier": tier(overall) if not excluded else {"key": "out", "icon": "✗", "label": "Doesn't fit"},
-        "capped": capped,
-        "excluded": excluded,
-        "family": fam,
-        "deal": deal,
+        "tier": tier(overall) if not r["excluded"] else {"key": "out", "icon": "✗", "label": "Doesn't fit"},
+        "capped": r["capped"],
+        "excluded": r["excluded"],
+        "family": r["family"],
+        "deal": r["deal"],
     }
 
 

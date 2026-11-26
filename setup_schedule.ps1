@@ -2,6 +2,9 @@
 # don't overlap the property finder's 12:15 / 16:45 runs) that run run_local.ps1.
 # Re-run this script any time; it replaces the existing tasks.
 # Remove with:  Unregister-ScheduledTask -TaskName "Family Deal Finder*" -Confirm:$false
+# "Last Run Result" in Task Scheduler is run_local.ps1's exit code: 0 ok, 3 a source failed
+# (docs\health.json says which), 4 skipped (a run was still going), 5/6/7 git pull/commit/push failed.
+# Overlaps are stopped twice: IgnoreNew below, and run_local.ps1's own data\run.lock.
 # A project venv: scheduled tasks don't always see per-user site-packages.
 $venv = Join-Path $PSScriptRoot ".venv"
 if (-not (Test-Path "$venv\Scripts\python.exe")) {

@@ -43,6 +43,8 @@ class Engine(unittest.TestCase):
         stated = self._rate()["deal"]
         self.assertEqual(stated["verdict"], "stated")
         db.add_sighting(self.con, offer(1000, "2026-11-01"))
+        self.assertEqual(self._rate()["deal"]["verdict"], "unconfirmed")   # 2 checks: too thin to call "real"
+        db.add_sighting(self.con, offer(1000, "2026-11-10"))
         real = self._rate()["deal"]
         self.assertEqual(real["verdict"], "real")
         self.assertEqual(real["real_pct"], 20.0)

@@ -33,10 +33,10 @@ _TITLE = re.compile(r'<h4 class="h5[^"]*">\s*(.*?)\s*</h4>', re.S)
 _LOC = re.compile(r'<h5 class="fw-normal text-muted[^"]*">\s*(.*?)\s*</h5>', re.S)
 _NEW = re.compile(r'text-primary mb-0">\s*€\s*([\d.,]+)')
 _OLD = re.compile(r'<del[^>]*>\s*€\s*([\d.,]+)')
-_VALID = re.compile(r'VAŽI DO\s*(\d{1,2})\.(\d{1,2})\.(\d{4})', re.I)
+_VALID = re.compile(r'VA[ŽZ][IE] DO\s*(\d{1,2})\.(\d{1,2})\.(\d{4})', re.I)
 _UNIT = re.compile(r'<div class="small text-end">\s*([^<]+?)\s*</div>')
 _BADGE = re.compile(r'bg-danger[^"]*">\s*([^<]+?)\s*</div>')
-_BOARD_TXT = re.compile(r'Najbolja cena</h5>\s*<div class="text-uppercase">\s*([^<]+?)\s*</div>')
+_BOARD_TXT = re.compile(r'Najbolja cena</h5>\s*<div class="text-uppercase[^"]*">\s*([^<]+?)\s*</div>')
 
 
 def board_code(text: str) -> str:
@@ -52,7 +52,7 @@ def parse_list(payload: str) -> tuple[list[dict], int]:
         m = _HREF.search(block)
         new = _NEW.search(block)
         t = _TITLE.search(block)
-        if not m or not new or not t:
+        if not m or not new or not t or _num(new.group(1)) <= 0:
             continue                              # "Dostupno na upit" cards have no price
         title = unescape(re.sub(r"\s+", " ", t.group(1)))
         old, valid, unit = _OLD.search(block), _VALID.search(block), _UNIT.search(block)

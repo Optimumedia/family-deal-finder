@@ -25,7 +25,7 @@ SOURCE = "Hotel website"
 KEYWORDS = re.compile(r"early|black friday|cyber|offer|save|off\b|discount|deal|last minute|promo|popust|"
                       r"rani buking|kids? (stay|free)|children free|free night", re.I)
 _PCT = re.compile(r"(\d{1,2})\s?%")
-_NOISE = re.compile(r"cookie|newsletter|subscribe|privacy|vat\b|tax", re.I)
+_NOISE = re.compile(r"cookie|newsletter|subscribe|privacy|vat\b|tax|deposit|prepayment|advance payment|avans|kapar", re.I)
 
 
 def campaigns(html: str, today: date, max_items: int = 6) -> list[dict]:

@@ -13,11 +13,12 @@ import tomllib
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from . import db, digest, geo, score
-from .sources import hotel_direct, manual, micazu, oliverstravels, olympic, travelland
+from . import db, digest, enrich, geo, health, score, validate
+from .http import PoliteSession
+from .sources import bgski, charters, hotel_direct, kopaonik, manual, micazu, mk_agencies, oliverstravels, olympic, rentals, travelland
 
 # Sources that find hotels/villas and prices (agencies, villa sites, owner rentals).
-AUTO_SOURCES = (travelland, olympic, oliverstravels, micazu)
+AUTO_SOURCES = (travelland, olympic, mk_agencies, bgski, charters, kopaonik, oliverstravels, rentals, micazu)
 
 log = logging.getLogger("trips")
 
@@ -41,6 +42,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
     home = (cfg["family"]["home_lat"], cfg["family"]["home_lng"])
     drives = {hid: db.cached_drive(con, hid, h["lat"], h["lng"]) for hid, h in hotels.items()} if offline \
         else geo.drive_minutes(con, hotels, home)
+    estimated = set() if offline else set(geo.last_estimated)
     offers = db.offers(con)
     photos = db.images(con)
     camps = db.campaigns(con, since=(today - timedelta(days=3)).isoformat())
@@ -56,6 +58,7 @@ def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict
         item = {
             "key": o["key"], "hotel_id": h["id"], "kind": h.get("kind", "hotel"), "name": h["name"], "stars": h.get("stars"), "area": h.get("area"),
             "season": h["season"], "lat": h.get("lat"), "lng": h.get("lng"), "notes": h.get("notes"),
+            "drive_estimate": h["id"] in estimated,   # straight-line guess: the router was down this run
             "image": h.get("image") or photos.get(h["id"]),
             "source": o["source"], "url": o["url"], "check_in": o["check_in"], "nights": o["nights"],
             "board": o["board"], "room": o["room"], "occupancy": o["occupancy"],
@@ -77,20 +80,26 @@ def _alerts(con, it: dict, cfg: dict, today: date) -> list[dict]:
     price = f"€{it['price_eur']:,.0f} ({it['occupancy']}, {it['nights']} nights {it['board']}, from {it['check_in']})"
     if it["excluded"]:
         return out
+    d = it["deal"]
+    sig = {"signal": d.get("signal"), "signal_reason": d.get("signal_reason")}
     if it["tier"]["key"] in ("great", "exceptional", "once") or it["overall"] >= 60:
         if db.mark_alert(con, f"new|{it['key']}", when):
-            out.append({"icon": it["tier"]["icon"], "url": it["url"],
+            out.append({"type": "new", **sig, "icon": it["tier"]["icon"], "url": it["url"],
                         "text": f"New: {it['name']} — {price}, score {it['overall']:.0f}"})
     h = it["history"]
     if len(h) >= 2:
         prev = min(x["price_eur"] for x in h[:-1])
         drop = (prev - h[-1]["price_eur"]) / prev * 100
         if drop >= cfg["deal"]["drop_alert_pct"] and db.mark_alert(con, f"drop|{it['key']}|{h[-1]['seen']}", when):
-            out.append({"icon": "📉", "url": it["url"], "text": f"Price drop −{drop:.0f}%: {it['name']} — {price}"})
-    dl = it["deal"]["days_left"]
+            out.append({"type": "drop", **sig, "icon": "📉", "url": it["url"],
+                        "text": f"Price drop −{drop:.0f}%: {it['name']} — {price}"})
+    dl = d["days_left"]
     if dl is not None and 0 <= dl <= 3 and db.mark_alert(con, f"deadline|{it['key']}|{it['valid_until']}", when):
-        out.append({"icon": "⏰", "url": it["url"],
+        out.append({"type": "deadline", **sig, "icon": "⏰", "url": it["url"],
                     "text": f"Offer ends in {dl} day{'s' if dl != 1 else ''} ({it['valid_until']}): {it['name']} — {price}"})
+    if d.get("signal") == "book now" and d.get("confidence") != "low" and it["overall"] >= 55 \
+            and db.mark_alert(con, f"book|{it['key']}|{h[-1]['seen'][:10]}", when):
+        out.append({"type": "new", **sig, "icon": "🛎️", "url": it["url"], "text": f"Book now: {it['name']} — {price}"})
     return out
 
 
@@ -157,27 +166,58 @@ def main(argv=None) -> int:
     today = date.today()
     curated = manual.load_hotels()
     sightings = manual.load() if cfg["sources"].get("manual") else []
+    auto_sightings: list[dict] = []
+    hl = health.RunHealth()
+
+    def session() -> PoliteSession:
+        sc = cfg["sources"]
+        return PoliteSession(sc["delay_seconds"], sc["jitter_seconds"], sc["timeout_seconds"],
+                             host_delays=sc.get("host_delays"), cache_path="data/http-cache.sqlite")
+
     if not args.offline:
         known = list(curated)
+        added_all: list[dict] = []
         photos: dict[str, str] = {}        # known hotel id -> photo of an agency card folded into it
         for src in AUTO_SOURCES:
-            auto_hotels, auto_offers = src.fetch(cfg, today)
+            s = session()
+            auto_hotels, auto_offers = [], []
+            with hl.track(getattr(src, "SOURCE", src.__name__), s) as st:   # a crashing source can't stop the run
+                auto_hotels, auto_offers = src.fetch(cfg, today, session=s)
+                st.offers_parsed = len(auto_offers)
+            for h in auto_hotels:
+                if validate.bad_image(h):
+                    h["image"] = None
             added = merge_auto(known, auto_hotels, auto_offers, photos)  # also matches hotels found by earlier sources
-            for h in added:
-                db.upsert_hotel(con, h)
+            added_all += added
             known += added
-            sightings += auto_offers
+            auto_sightings += auto_offers
+        if cfg["sources"].get("enrich", {}).get("enabled"):
+            # detail pages fill unknown family facts and a single stated board (cached, weekly, budgeted)
+            with hl.track("Detail pages", session()) as st:
+                enrich.enrich(auto_sightings, known, cfg, today)
+                st.offers_parsed = len(auto_sightings)
+        for h in added_all:
+            db.upsert_hotel(con, h)
         for hid, url in photos.items():
             db.save_image(con, hid, url, today.isoformat())
     for h in curated:                      # curated facts always win
         db.upsert_hotel(con, h)
-    new = sum(db.add_sighting(con, o) for o in sightings)
+    sightings, rejects = validate.split(sightings, today, cfg)
+    auto_sightings, auto_rejects = validate.split(auto_sightings, today, cfg)
+    validate.log_rejects(rejects + auto_rejects)
+    hl.add_rejects(validate.by_source(rejects + auto_rejects))
+    new = sum(db.add_sighting(con, o) for o in sightings) \
+        + sum(db.add_sighting(con, o, live=True) for o in auto_sightings)
     new_camps = []
     if not args.offline:
-        names = {h["id"]: h["name"] for h in curated}
-        for c in hotel_direct.fetch(cfg, today):
+        names = {hid: h["name"] for hid, h in db.hotels(con).items()}
+        s, camps = session(), []
+        with hl.track(hotel_direct.SOURCE, s) as st:
+            camps = hotel_direct.fetch(cfg, today, session=s)
+            st.offers_parsed = len(camps)
+        for c in camps:
             if db.add_campaign(con, c):
-                new_camps.append({"icon": "🏨", "url": c["url"],
+                new_camps.append({"type": "campaign", "icon": "🏨", "url": c["url"],
                                   "text": f"New on {names.get(c['hotel'], c['hotel'])}'s own website: {c['title']}"})
     items, alerts = build(con, cfg, today, offline=args.offline)
     alerts = new_camps + alerts
@@ -189,7 +229,11 @@ def main(argv=None) -> int:
     shown = sum(not i["excluded"] for i in items)
     log.info("%d offers (%d new sightings), %d fit the family, %d alerts, digest: %s",
              len(items), new, shown, len(alerts), result)
-    return 0
+    if args.offline:
+        return 0
+    report = hl.write("docs/health.json")   # + data/health-history.json (last runs, for the 7-run average)
+    # 3 = finished, but a source crashed / was blocked / suddenly returned 0. run_local.ps1 still publishes.
+    return 3 if report["status"] == "fail" else 0
 
 
 if __name__ == "__main__":
