@@ -102,6 +102,57 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|asprovalta, thessaloniki region": {
+   "climate": {
+    "06": {
+     "air_max_c": 29.4,
+     "air_mean_c": 25.8,
+     "rain_days": 5,
+     "sea_c": 25.6,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 31.8,
+     "air_mean_c": 27.9,
+     "rain_days": 6,
+     "sea_c": 28.0,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 31.5,
+     "air_mean_c": 27.4,
+     "rain_days": 4,
+     "sea_c": 27.7,
+     "sea_ok": true,
+     "sun_h": 12.8
+    },
+    "09": {
+     "air_max_c": 26.9,
+     "air_mean_c": 23.1,
+     "rain_days": 5,
+     "sea_c": 25.3,
+     "sea_ok": true,
+     "sun_h": 11.3
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.72,
+   "lng": 23.7077,
+   "name": "Asprovalta, Thessaloniki region",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 27.7,
+    "hospital_name": "NHPO",
+    "paediatric": 0,
+    "pharmacies": 3,
+    "playgrounds": 7,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|belek, antalya coast": {
    "climate": {
     "06": {
@@ -306,6 +357,108 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|durrës / golem, albania": {
+   "climate": {
+    "06": {
+     "air_max_c": 29.1,
+     "air_mean_c": 24.9,
+     "rain_days": 3,
+     "sea_c": 24.9,
+     "sea_ok": true,
+     "sun_h": 14.1
+    },
+    "07": {
+     "air_max_c": 31.5,
+     "air_mean_c": 27.2,
+     "rain_days": 1,
+     "sea_c": 26.7,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 32.2,
+     "air_mean_c": 27.5,
+     "rain_days": 3,
+     "sea_c": 27.9,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.5,
+     "air_mean_c": 23.2,
+     "rain_days": 8,
+     "sea_c": 26.3,
+     "sea_ok": true,
+     "sun_h": 10.9
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 41.245,
+   "lng": 19.523,
+   "name": "Durrës / Golem, Albania",
+   "places": {
+    "doctors_clinics": 3,
+    "hospital_km": 7.2,
+    "hospital_name": "Spitali Kavajë",
+    "paediatric": 0,
+    "pharmacies": 6,
+    "playgrounds": 1,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|golden beach, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 31.7,
+     "air_mean_c": 27.2,
+     "rain_days": 3,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 33.8,
+     "air_mean_c": 29.2,
+     "rain_days": 5,
+     "sea_c": 26.9,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 32.7,
+     "air_mean_c": 28.1,
+     "rain_days": 2,
+     "sea_c": 26.4,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.4,
+     "air_mean_c": 23.4,
+     "rain_days": 5,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 11.3
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.7308,
+   "lng": 24.7603,
+   "name": "Golden Beach, Thassos",
+   "places": {
+    "doctors_clinics": 2,
+    "hospital_km": 15.6,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 2,
+    "playgrounds": 4,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|halkidiki": {
    "climate": {
     "06": {
@@ -360,41 +513,41 @@
   "summer|hanioti, kassandra, halkidiki": {
    "climate": {
     "06": {
-     "air_max_c": 27.8,
-     "air_mean_c": 24.4,
+     "air_max_c": 29.4,
+     "air_mean_c": 25.9,
      "rain_days": 2,
      "sea_c": 24.9,
      "sea_ok": true,
      "sun_h": 14.1
     },
     "07": {
-     "air_max_c": 30.0,
-     "air_mean_c": 26.7,
+     "air_max_c": 31.6,
+     "air_mean_c": 28.3,
      "rain_days": 4,
      "sea_c": 27.8,
      "sea_ok": true,
      "sun_h": 13.9
     },
     "08": {
-     "air_max_c": 29.6,
-     "air_mean_c": 26.2,
+     "air_max_c": 31.2,
+     "air_mean_c": 27.8,
      "rain_days": 2,
      "sea_c": 27.2,
      "sea_ok": true,
      "sun_h": 12.9
     },
     "09": {
-     "air_max_c": 25.3,
-     "air_mean_c": 22.4,
+     "air_max_c": 26.9,
+     "air_mean_c": 23.9,
      "rain_days": 6,
-     "sea_c": 25.9,
+     "sea_c": 25.8,
      "sea_ok": true,
      "sun_h": 11.2
     }
    },
-   "climate_fetched": "2026-11-26",
-   "lat": 39.958,
-   "lng": 23.588,
+   "climate_fetched": "2026-11-28",
+   "lat": 40.0009,
+   "lng": 23.574,
    "name": "Hanioti, Kassandra, Halkidiki",
    "places": {
     "doctors_clinics": 4,
@@ -414,7 +567,7 @@
      "air_max_c": 29.4,
      "air_mean_c": 25.8,
      "rain_days": 4,
-     "sea_c": 24.7,
+     "sea_c": 24.8,
      "sea_ok": true,
      "sun_h": 14.1
     },
@@ -443,9 +596,9 @@
      "sun_h": 11.2
     }
    },
-   "climate_fetched": "2026-11-26",
+   "climate_fetched": "2026-11-28",
    "lat": 40.02,
-   "lng": 23.4529,
+   "lng": 23.43,
    "name": "Kassandra, Halkidiki",
    "places": {
     "doctors_clinics": 0,
@@ -663,6 +816,57 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|lalzi bay, albania": {
+   "climate": {
+    "06": {
+     "air_max_c": 29.7,
+     "air_mean_c": 24.6,
+     "rain_days": 2,
+     "sea_c": 24.1,
+     "sea_ok": true,
+     "sun_h": 14.1
+    },
+    "07": {
+     "air_max_c": 32.2,
+     "air_mean_c": 27.1,
+     "rain_days": 2,
+     "sea_c": 25.6,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 32.9,
+     "air_mean_c": 27.3,
+     "rain_days": 2,
+     "sea_c": 27.1,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.8,
+     "air_mean_c": 22.7,
+     "rain_days": 8,
+     "sea_c": 26.0,
+     "sea_ok": true,
+     "sun_h": 10.9
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 41.43,
+   "lng": 19.47,
+   "name": "Lalzi Bay, Albania",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 11.5,
+    "hospital_name": "Kryqi i Kuq",
+    "paediatric": 0,
+    "pharmacies": 0,
+    "playgrounds": 0,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|lara, antalya coast": {
    "climate": {
     "06": {
@@ -712,6 +916,159 @@
     "water_parks": 22
    },
    "places_fetched": "2026-11-26",
+   "season": "summer"
+  },
+  "summer|leptokaria, olympic riviera": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.3,
+     "air_mean_c": 26.2,
+     "rain_days": 4,
+     "sea_c": 25.1,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "07": {
+     "air_max_c": 32.9,
+     "air_mean_c": 28.5,
+     "rain_days": 3,
+     "sea_c": 28.0,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 32.0,
+     "air_mean_c": 27.6,
+     "rain_days": 3,
+     "sea_c": 27.8,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 26.9,
+     "air_mean_c": 22.8,
+     "rain_days": 7,
+     "sea_c": 26.0,
+     "sea_ok": true,
+     "sun_h": 11.0
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.0586,
+   "lng": 22.5685,
+   "name": "Leptokaria, Olympic Riviera",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 28.2,
+    "hospital_name": "Γενικό Νοσοκομείο Κατερίνης",
+    "paediatric": 0,
+    "pharmacies": 0,
+    "playgrounds": 3,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|limenaria, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 31.5,
+     "air_mean_c": 27.4,
+     "rain_days": 4,
+     "sea_c": 24.6,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 33.3,
+     "air_mean_c": 29.3,
+     "rain_days": 7,
+     "sea_c": 27.0,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 32.7,
+     "air_mean_c": 28.3,
+     "rain_days": 4,
+     "sea_c": 26.6,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.3,
+     "air_mean_c": 23.4,
+     "rain_days": 6,
+     "sea_c": 24.9,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.6262,
+   "lng": 24.5617,
+   "name": "Limenaria, Thassos",
+   "places": {
+    "doctors_clinics": 1,
+    "hospital_km": 12.6,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 3,
+    "playgrounds": 1,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|limenas, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.5,
+     "air_mean_c": 25.5,
+     "rain_days": 2,
+     "sea_c": 25.5,
+     "sea_ok": true,
+     "sun_h": 14.1
+    },
+    "07": {
+     "air_max_c": 33.1,
+     "air_mean_c": 27.9,
+     "rain_days": 3,
+     "sea_c": 27.9,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 33.1,
+     "air_mean_c": 27.7,
+     "rain_days": 2,
+     "sea_c": 27.2,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 28.2,
+     "air_mean_c": 22.9,
+     "rain_days": 4,
+     "sea_c": 25.2,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.7779,
+   "lng": 24.701,
+   "name": "Limenas, Thassos",
+   "places": {
+    "doctors_clinics": 1,
+    "hospital_km": 11.5,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 4,
+    "playgrounds": 2,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|nea propontida, halkidiki": {
@@ -816,13 +1173,64 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|nei pori, olympic riviera": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.3,
+     "air_mean_c": 26.2,
+     "rain_days": 4,
+     "sea_c": 25.1,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "07": {
+     "air_max_c": 32.9,
+     "air_mean_c": 28.5,
+     "rain_days": 3,
+     "sea_c": 28.0,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 32.0,
+     "air_mean_c": 27.6,
+     "rain_days": 3,
+     "sea_c": 27.8,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 26.9,
+     "air_mean_c": 22.8,
+     "rain_days": 7,
+     "sea_c": 26.0,
+     "sea_ok": true,
+     "sun_h": 11.0
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 39.9779,
+   "lng": 22.6509,
+   "name": "Nei Pori, Olympic Riviera",
+   "places": {
+    "doctors_clinics": 3,
+    "hospital_km": null,
+    "hospital_name": null,
+    "paediatric": 0,
+    "pharmacies": 4,
+    "playgrounds": 7,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|neos marmaras, sithonia, halkidiki": {
    "climate": {
     "06": {
      "air_max_c": 31.3,
      "air_mean_c": 26.5,
      "rain_days": 4,
-     "sea_c": 24.9,
+     "sea_c": 25.3,
      "sea_ok": true,
      "sun_h": 14.2
     },
@@ -830,7 +1238,7 @@
      "air_max_c": 33.1,
      "air_mean_c": 28.4,
      "rain_days": 5,
-     "sea_c": 28.0,
+     "sea_c": 28.3,
      "sea_ok": true,
      "sun_h": 13.9
     },
@@ -838,7 +1246,7 @@
      "air_max_c": 32.6,
      "air_mean_c": 27.7,
      "rain_days": 4,
-     "sea_c": 27.6,
+     "sea_c": 27.8,
      "sea_ok": true,
      "sun_h": 12.9
     },
@@ -846,14 +1254,14 @@
      "air_max_c": 27.6,
      "air_mean_c": 23.6,
      "rain_days": 4,
-     "sea_c": 26.0,
+     "sea_c": 26.1,
      "sea_ok": true,
      "sun_h": 11.3
     }
    },
-   "climate_fetched": "2026-11-26",
-   "lat": 40.083,
-   "lng": 23.802,
+   "climate_fetched": "2026-11-28",
+   "lat": 40.1039,
+   "lng": 23.777,
    "name": "Neos Marmaras, Sithonia, Halkidiki",
    "places": {
     "doctors_clinics": 0,
@@ -916,6 +1324,57 @@
     "water_parks": 0
    },
    "places_fetched": "2026-11-26",
+   "season": "summer"
+  },
+  "summer|nikiti, sithonia, halkidiki": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.4,
+     "air_mean_c": 26.3,
+     "rain_days": 3,
+     "sea_c": 25.6,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 32.6,
+     "air_mean_c": 28.5,
+     "rain_days": 5,
+     "sea_c": 28.6,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 32.1,
+     "air_mean_c": 28.1,
+     "rain_days": 2,
+     "sea_c": 27.9,
+     "sea_ok": true,
+     "sun_h": 12.8
+    },
+    "09": {
+     "air_max_c": 27.4,
+     "air_mean_c": 23.8,
+     "rain_days": 5,
+     "sea_c": 26.2,
+     "sea_ok": true,
+     "sun_h": 11.3
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.2154,
+   "lng": 23.67,
+   "name": "Nikiti, Sithonia, Halkidiki",
+   "places": {
+    "doctors_clinics": 2,
+    "hospital_km": 4.5,
+    "hospital_name": "Health Center Agios Nikolaos",
+    "paediatric": 0,
+    "pharmacies": 4,
+    "playgrounds": 2,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|ohrid, north macedonia": {
@@ -1071,6 +1530,57 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|paradise beach, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 31.3,
+     "air_mean_c": 26.8,
+     "rain_days": 3,
+     "sea_c": 24.5,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 33.4,
+     "air_mean_c": 28.8,
+     "rain_days": 5,
+     "sea_c": 26.8,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 32.3,
+     "air_mean_c": 27.7,
+     "rain_days": 2,
+     "sea_c": 26.3,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.0,
+     "air_mean_c": 23.0,
+     "rain_days": 5,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 11.3
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.6458,
+   "lng": 24.7639,
+   "name": "Paradise Beach, Thassos",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 19.0,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 0,
+    "playgrounds": 0,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|paralia katerinis, olympic riviera": {
    "climate": {
     "06": {
@@ -1110,6 +1620,67 @@
    "lat": 40.2677,
    "lng": 22.5969,
    "name": "Paralia Katerinis, Olympic Riviera",
+   "places": {
+    "doctors_clinics": 6,
+    "hospital_km": 13.2,
+    "hospital_name": "Γενικό Νοσοκομείο Κατερίνης",
+    "paediatric": 0,
+    "pharmacies": 7,
+    "playgrounds": 13,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|paralia, olympic riviera": {
+   "climate": {
+    "06": {
+     "air_max_c": 29.9,
+     "air_mean_c": 25.0,
+     "rain_days": 4,
+     "sea_c": 25.1,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 32.5,
+     "air_mean_c": 27.5,
+     "rain_days": 2,
+     "sea_c": 28.0,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 31.5,
+     "air_mean_c": 26.5,
+     "rain_days": 3,
+     "sea_c": 27.8,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 26.7,
+     "air_mean_c": 21.7,
+     "rain_days": 5,
+     "sea_c": 26.1,
+     "sea_ok": true,
+     "sun_h": 11.1
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.2695,
+   "lng": 22.5971,
+   "name": "Paralia, Olympic Riviera",
+   "places": {
+    "doctors_clinics": 6,
+    "hospital_km": 13.2,
+    "hospital_name": "Γενικό Νοσοκομείο Κατερίνης",
+    "paediatric": 0,
+    "pharmacies": 7,
+    "playgrounds": 13,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|pefkohori, kassandra": {
@@ -1163,6 +1734,108 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|pefkohori, kassandra, halkidiki": {
+   "climate": {
+    "06": {
+     "air_max_c": 29.3,
+     "air_mean_c": 25.9,
+     "rain_days": 2,
+     "sea_c": 24.9,
+     "sea_ok": true,
+     "sun_h": 14.1
+    },
+    "07": {
+     "air_max_c": 31.6,
+     "air_mean_c": 28.3,
+     "rain_days": 4,
+     "sea_c": 27.8,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 31.1,
+     "air_mean_c": 27.8,
+     "rain_days": 2,
+     "sea_c": 27.2,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 26.9,
+     "air_mean_c": 23.9,
+     "rain_days": 6,
+     "sea_c": 25.9,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 39.9909,
+   "lng": 23.6103,
+   "name": "Pefkohori, Kassandra, Halkidiki",
+   "places": {
+    "doctors_clinics": 4,
+    "hospital_km": 18.2,
+    "hospital_name": "ΚΕΝΤΡΟ ΥΓΕΙΑΣ ΚΑΣΣΑΝΔΡΕΙΑΣ",
+    "paediatric": 0,
+    "pharmacies": 4,
+    "playgrounds": 0,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|polihrono, kassandra, halkidiki": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.7,
+     "air_mean_c": 26.6,
+     "rain_days": 3,
+     "sea_c": 24.9,
+     "sea_ok": true,
+     "sun_h": 14.1
+    },
+    "07": {
+     "air_max_c": 32.8,
+     "air_mean_c": 28.8,
+     "rain_days": 4,
+     "sea_c": 27.8,
+     "sea_ok": true,
+     "sun_h": 13.8
+    },
+    "08": {
+     "air_max_c": 32.2,
+     "air_mean_c": 28.3,
+     "rain_days": 3,
+     "sea_c": 27.2,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.5,
+     "air_mean_c": 24.1,
+     "rain_days": 6,
+     "sea_c": 25.8,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.017,
+   "lng": 23.5286,
+   "name": "Polihrono, Kassandra, Halkidiki",
+   "places": {
+    "doctors_clinics": 5,
+    "hospital_km": 10.7,
+    "hospital_name": "ΚΕΝΤΡΟ ΥΓΕΙΑΣ ΚΑΣΣΑΝΔΡΕΙΑΣ",
+    "paediatric": 0,
+    "pharmacies": 2,
+    "playgrounds": 1,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|possidi, kassandra, halkidiki": {
    "climate": {
     "06": {
@@ -1212,6 +1885,57 @@
     "water_parks": 0
    },
    "places_fetched": "2026-11-26",
+   "season": "summer"
+  },
+  "summer|potos, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 31.5,
+     "air_mean_c": 27.4,
+     "rain_days": 4,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 33.3,
+     "air_mean_c": 29.3,
+     "rain_days": 7,
+     "sea_c": 27.0,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 32.8,
+     "air_mean_c": 28.4,
+     "rain_days": 4,
+     "sea_c": 26.6,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.3,
+     "air_mean_c": 23.5,
+     "rain_days": 6,
+     "sea_c": 24.9,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.6107,
+   "lng": 24.6065,
+   "name": "Potos, Thassos",
+   "places": {
+    "doctors_clinics": 1,
+    "hospital_km": 14.5,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 2,
+    "playgrounds": 1,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|sani, kassandra, halkidiki": {
@@ -1265,6 +1989,108 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|sarti, sithonia, halkidiki": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.6,
+     "air_mean_c": 26.4,
+     "rain_days": 3,
+     "sea_c": 24.5,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 32.6,
+     "air_mean_c": 28.4,
+     "rain_days": 6,
+     "sea_c": 27.2,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 32.1,
+     "air_mean_c": 27.8,
+     "rain_days": 3,
+     "sea_c": 26.9,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.4,
+     "air_mean_c": 23.7,
+     "rain_days": 5,
+     "sea_c": 25.6,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.0935,
+   "lng": 23.9785,
+   "name": "Sarti, Sithonia, Halkidiki",
+   "places": {
+    "doctors_clinics": 2,
+    "hospital_km": 16.3,
+    "hospital_name": "Aegean Medical Centre",
+    "paediatric": 0,
+    "pharmacies": 1,
+    "playgrounds": 5,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|shëngjin, albania": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.9,
+     "air_mean_c": 25.7,
+     "rain_days": 4,
+     "sea_c": 23.5,
+     "sea_ok": false,
+     "sun_h": 14.1
+    },
+    "07": {
+     "air_max_c": 33.2,
+     "air_mean_c": 27.8,
+     "rain_days": 3,
+     "sea_c": 24.9,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 34.0,
+     "air_mean_c": 28.3,
+     "rain_days": 3,
+     "sea_c": 25.9,
+     "sea_ok": true,
+     "sun_h": 12.8
+    },
+    "09": {
+     "air_max_c": 28.0,
+     "air_mean_c": 23.0,
+     "rain_days": 9,
+     "sea_c": 25.5,
+     "sea_ok": true,
+     "sun_h": 10.8
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 41.807,
+   "lng": 19.593,
+   "name": "Shëngjin, Albania",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 5.3,
+    "hospital_name": "Qendra Shendetsore Lezhe",
+    "paediatric": 0,
+    "pharmacies": 3,
+    "playgrounds": 6,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|side, antalya coast": {
    "climate": {
     "06": {
@@ -1304,6 +2130,16 @@
    "lat": 36.77,
    "lng": 31.39,
    "name": "Side, Antalya coast",
+   "places": {
+    "doctors_clinics": 7,
+    "hospital_km": 1.9,
+    "hospital_name": "Anatolia Hospital",
+    "paediatric": 1,
+    "pharmacies": 69,
+    "playgrounds": 52,
+    "water_parks": 9
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|side, antalya region, turkey": {
@@ -1360,41 +2196,41 @@
   "summer|sithonia, halkidiki": {
    "climate": {
     "06": {
-     "air_max_c": 31.2,
-     "air_mean_c": 26.5,
-     "rain_days": 2,
-     "sea_c": 25.4,
+     "air_max_c": 30.2,
+     "air_mean_c": 25.4,
+     "rain_days": 4,
+     "sea_c": 25.3,
      "sea_ok": true,
      "sun_h": 14.2
     },
     "07": {
-     "air_max_c": 33.3,
-     "air_mean_c": 28.7,
-     "rain_days": 4,
-     "sea_c": 28.5,
+     "air_max_c": 32.1,
+     "air_mean_c": 27.3,
+     "rain_days": 5,
+     "sea_c": 28.3,
      "sea_ok": true,
      "sun_h": 13.9
     },
     "08": {
-     "air_max_c": 32.7,
-     "air_mean_c": 28.1,
-     "rain_days": 3,
-     "sea_c": 28.0,
+     "air_max_c": 31.5,
+     "air_mean_c": 26.7,
+     "rain_days": 4,
+     "sea_c": 27.8,
      "sea_ok": true,
      "sun_h": 12.9
     },
     "09": {
-     "air_max_c": 27.8,
-     "air_mean_c": 24.0,
+     "air_max_c": 26.6,
+     "air_mean_c": 22.5,
      "rain_days": 4,
-     "sea_c": 26.2,
+     "sea_c": 26.1,
      "sea_ok": true,
      "sun_h": 11.3
     }
    },
-   "climate_fetched": "2026-11-26",
+   "climate_fetched": "2026-11-28",
    "lat": 40.1,
-   "lng": 23.7322,
+   "lng": 23.8,
    "name": "Sithonia, Halkidiki",
    "places": {
     "doctors_clinics": 0,
@@ -1406,6 +2242,159 @@
     "water_parks": 0
    },
    "places_fetched": "2026-11-26",
+   "season": "summer"
+  },
+  "summer|skala kalirahi, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 31.5,
+     "air_mean_c": 27.4,
+     "rain_days": 4,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 33.3,
+     "air_mean_c": 29.3,
+     "rain_days": 7,
+     "sea_c": 27.1,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 32.8,
+     "air_mean_c": 28.4,
+     "rain_days": 4,
+     "sea_c": 26.8,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.4,
+     "air_mean_c": 23.5,
+     "rain_days": 6,
+     "sea_c": 25.0,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.7078,
+   "lng": 24.5365,
+   "name": "Skala Kalirahi, Thassos",
+   "places": {
+    "doctors_clinics": 1,
+    "hospital_km": 4.7,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 1,
+    "playgrounds": 0,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|skala potamia, thassos": {
+   "climate": {
+    "06": {
+     "air_max_c": 31.7,
+     "air_mean_c": 27.2,
+     "rain_days": 3,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 33.8,
+     "air_mean_c": 29.2,
+     "rain_days": 5,
+     "sea_c": 26.9,
+     "sea_ok": true,
+     "sun_h": 14.0
+    },
+    "08": {
+     "air_max_c": 32.7,
+     "air_mean_c": 28.1,
+     "rain_days": 2,
+     "sea_c": 26.4,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.4,
+     "air_mean_c": 23.4,
+     "rain_days": 5,
+     "sea_c": 24.7,
+     "sea_ok": true,
+     "sun_h": 11.3
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.7138,
+   "lng": 24.7565,
+   "name": "Skala Potamia, Thassos",
+   "places": {
+    "doctors_clinics": 2,
+    "hospital_km": 15.6,
+    "hospital_name": "Κέντρο Υγείας Πρίνου",
+    "paediatric": 0,
+    "pharmacies": 2,
+    "playgrounds": 4,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
+  "summer|stavros, thessaloniki region": {
+   "climate": {
+    "06": {
+     "air_max_c": 29.4,
+     "air_mean_c": 25.8,
+     "rain_days": 5,
+     "sea_c": 25.6,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 31.8,
+     "air_mean_c": 28.0,
+     "rain_days": 6,
+     "sea_c": 28.0,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 31.5,
+     "air_mean_c": 27.5,
+     "rain_days": 4,
+     "sea_c": 27.7,
+     "sea_ok": true,
+     "sun_h": 12.8
+    },
+    "09": {
+     "air_max_c": 27.0,
+     "air_mean_c": 23.1,
+     "rain_days": 5,
+     "sea_c": 25.3,
+     "sea_ok": true,
+     "sun_h": 11.3
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 40.6678,
+   "lng": 23.6936,
+   "name": "Stavros, Thessaloniki region",
+   "places": {
+    "doctors_clinics": 3,
+    "hospital_km": 27.0,
+    "hospital_name": "NHPO",
+    "paediatric": 0,
+    "pharmacies": 3,
+    "playgrounds": 5,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|struga, north macedonia": {
@@ -1510,6 +2499,57 @@
    "places_fetched": "2026-11-26",
    "season": "summer"
   },
+  "summer|toroni, sithonia, halkidiki": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.3,
+     "air_mean_c": 26.5,
+     "rain_days": 4,
+     "sea_c": 24.6,
+     "sea_ok": true,
+     "sun_h": 14.2
+    },
+    "07": {
+     "air_max_c": 32.1,
+     "air_mean_c": 28.4,
+     "rain_days": 6,
+     "sea_c": 27.3,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 31.8,
+     "air_mean_c": 27.9,
+     "rain_days": 3,
+     "sea_c": 26.8,
+     "sea_ok": true,
+     "sun_h": 12.9
+    },
+    "09": {
+     "air_max_c": 27.1,
+     "air_mean_c": 23.7,
+     "rain_days": 5,
+     "sea_c": 25.7,
+     "sea_ok": true,
+     "sun_h": 11.2
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 39.9818,
+   "lng": 23.9055,
+   "name": "Toroni, Sithonia, Halkidiki",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 15.9,
+    "hospital_name": "Aegean Medical Centre",
+    "paediatric": 0,
+    "pharmacies": 0,
+    "playgrounds": 1,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
+   "season": "summer"
+  },
   "summer|ulcinj / velika plaža, montenegro": {
    "climate": {
     "06": {
@@ -1545,9 +2585,9 @@
      "sun_h": 10.8
     }
    },
-   "climate_fetched": "2026-11-26",
-   "lat": 41.9,
-   "lng": 19.27,
+   "climate_fetched": "2026-11-28",
+   "lat": 41.9057,
+   "lng": 19.2578,
    "name": "Ulcinj / Velika Plaža, Montenegro",
    "places": {
     "doctors_clinics": 1,
@@ -1559,6 +2599,57 @@
     "water_parks": 0
    },
    "places_fetched": "2026-11-26",
+   "season": "summer"
+  },
+  "summer|velipojë, albania": {
+   "climate": {
+    "06": {
+     "air_max_c": 30.3,
+     "air_mean_c": 25.4,
+     "rain_days": 4,
+     "sea_c": 23.7,
+     "sea_ok": false,
+     "sun_h": 14.0
+    },
+    "07": {
+     "air_max_c": 32.3,
+     "air_mean_c": 27.4,
+     "rain_days": 3,
+     "sea_c": 25.1,
+     "sea_ok": true,
+     "sun_h": 13.9
+    },
+    "08": {
+     "air_max_c": 33.2,
+     "air_mean_c": 27.8,
+     "rain_days": 3,
+     "sea_c": 26.0,
+     "sea_ok": true,
+     "sun_h": 12.8
+    },
+    "09": {
+     "air_max_c": 27.5,
+     "air_mean_c": 22.9,
+     "rain_days": 7,
+     "sea_c": 25.5,
+     "sea_ok": true,
+     "sun_h": 10.7
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 41.86,
+   "lng": 19.42,
+   "name": "Velipojë, Albania",
+   "places": {
+    "doctors_clinics": 6,
+    "hospital_km": 18.3,
+    "hospital_name": "D.Z. Budo Tomovic",
+    "paediatric": 0,
+    "pharmacies": 2,
+    "playgrounds": 11,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
    "season": "summer"
   },
   "summer|vourvourou, halkidiki": {
@@ -1734,6 +2825,67 @@
    "places_fetched": "2026-11-26",
    "season": "winter"
   },
+  "winter|dobrinishte, bulgaria": {
+   "climate": {
+    "01": {
+     "air_max_c": 7.6,
+     "air_mean_c": 1.3,
+     "air_min_c": -3.4,
+     "snow_depth_cm": 13,
+     "snow_sure_pct": 10,
+     "snowfall_cm": 10
+    },
+    "02": {
+     "air_max_c": 9.1,
+     "air_mean_c": 3.0,
+     "air_min_c": -1.7,
+     "snow_depth_cm": 4,
+     "snow_sure_pct": 0,
+     "snowfall_cm": 4
+    },
+    "03": {
+     "air_max_c": 13.4,
+     "air_mean_c": 6.2,
+     "air_min_c": 0.5,
+     "snow_depth_cm": 1,
+     "snow_sure_pct": 0,
+     "snowfall_cm": 0
+    },
+    "11": {
+     "air_max_c": 12.9,
+     "air_mean_c": 6.8,
+     "air_min_c": 2.1,
+     "snow_depth_cm": 2,
+     "snow_sure_pct": 0,
+     "snowfall_cm": 2
+    },
+    "12": {
+     "air_max_c": 9.3,
+     "air_mean_c": 3.1,
+     "air_min_c": -1.0,
+     "snow_depth_cm": 12,
+     "snow_sure_pct": 11,
+     "snowfall_cm": 0
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 41.8216,
+   "lng": 23.5618,
+   "name": "Dobrinishte, Bulgaria",
+   "places": {
+    "doctors_clinics": 1,
+    "hospital_km": 6.0,
+    "hospital_name": "hospital",
+    "magic_carpets": 0,
+    "novice_pistes": 16,
+    "paediatric": 0,
+    "pharmacies": 2,
+    "playgrounds": 1,
+    "water_parks": 1
+   },
+   "places_fetched": "2026-11-28",
+   "season": "winter"
+  },
   "winter|kopaonik, serbia": {
    "climate": {
     "01": {
@@ -1903,6 +3055,18 @@
    "lat": 41.66,
    "lng": 20.74,
    "name": "Mavrovo (Zare Lazarevski ski centre), North Macedonia",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 12.8,
+    "hospital_name": "Rostuše Hospital",
+    "magic_carpets": 0,
+    "novice_pistes": 2,
+    "paediatric": 0,
+    "pharmacies": 1,
+    "playgrounds": 0,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
    "season": "winter"
   },
   "winter|pamporovo, bulgaria": {
@@ -2147,6 +3311,67 @@
     "water_parks": 0
    },
    "places_fetched": "2026-11-26",
+   "season": "winter"
+  },
+  "winter|razlog, bulgaria": {
+   "climate": {
+    "01": {
+     "air_max_c": 6.6,
+     "air_mean_c": 0.8,
+     "air_min_c": -4.0,
+     "snow_depth_cm": 14,
+     "snow_sure_pct": 23,
+     "snowfall_cm": 20
+    },
+    "02": {
+     "air_max_c": 8.2,
+     "air_mean_c": 2.0,
+     "air_min_c": -2.9,
+     "snow_depth_cm": 6,
+     "snow_sure_pct": 0,
+     "snowfall_cm": 11
+    },
+    "03": {
+     "air_max_c": 12.5,
+     "air_mean_c": 5.4,
+     "air_min_c": -0.6,
+     "snow_depth_cm": 1,
+     "snow_sure_pct": 0,
+     "snowfall_cm": 3
+    },
+    "11": {
+     "air_max_c": 11.7,
+     "air_mean_c": 6.1,
+     "air_min_c": 1.7,
+     "snow_depth_cm": 2,
+     "snow_sure_pct": 0,
+     "snowfall_cm": 12
+    },
+    "12": {
+     "air_max_c": 8.4,
+     "air_mean_c": 2.4,
+     "air_min_c": -1.7,
+     "snow_depth_cm": 14,
+     "snow_sure_pct": 9,
+     "snowfall_cm": 14
+    }
+   },
+   "climate_fetched": "2026-11-28",
+   "lat": 41.8554,
+   "lng": 23.4236,
+   "name": "Razlog, Bulgaria",
+   "places": {
+    "doctors_clinics": 0,
+    "hospital_km": 5.5,
+    "hospital_name": "МБАЛ „Д-р Асен Велев“ - Разлог",
+    "magic_carpets": 1,
+    "novice_pistes": 14,
+    "paediatric": 0,
+    "pharmacies": 3,
+    "playgrounds": 5,
+    "water_parks": 0
+   },
+   "places_fetched": "2026-11-28",
    "season": "winter"
   },
   "winter|stara planina, serbia": {

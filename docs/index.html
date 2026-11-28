@@ -146,6 +146,10 @@ aside{position:sticky;top:16px;display:flex;flex-direction:column;gap:14px;max-h
 .price{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:2px;border-left:1px solid var(--line);padding-left:14px}
 .badge{display:inline-flex;gap:6px;align-items:center;background:var(--coral-bg);color:var(--coral);font-weight:700;font-size:12.5px;border-radius:6px;padding:3px 8px}
 .was{color:var(--muted);text-decoration:line-through;font-size:14px}
+.move{display:inline-flex;align-items:center;gap:4px;font-weight:700;font-size:12.5px;border-radius:6px;padding:3px 8px;white-space:nowrap}
+.move.down{background:var(--good-bg);color:var(--good)}
+.move.up{background:var(--bad-bg);color:var(--bad)}
+.ot .move{margin-top:4px}
 .big{font-size:27px;font-weight:800;letter-spacing:-.02em;line-height:1}
 .qual{font-size:12.5px;color:var(--ink-2);line-height:1.35}
 .qual.warn{color:var(--warn);font-weight:600}
@@ -525,6 +529,7 @@ main,.rhead > div,.mid{min-width:0}
         <button data-sort="price">Price</button>
         <button data-sort="night">Per night</button>
         <button data-sort="discount">Discount</button>
+        <button data-sort="change">Price change</button>
         <button data-sort="drive">Drive time</button>
       </div>
     </div>
@@ -576,6 +581,24 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const eur = n => '€' + Math.round(n).toLocaleString('en-GB');
 const hm = m => m == null ? '—' : `${Math.floor(m/60)}h${String(Math.round(m%60)).padStart(2,'0')}`;
 const fmtD = s => new Date(s + 'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+const fmtDM = s => new Date(s.slice(0, 10) + 'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+/* Price change since the check before the latest one (same offer: source, dates, board, room, people). */
+function priceMove(o){
+  const h = (o.history || []).filter(x => typeof x.price_eur === 'number');
+  if (h.length < 2) return null;
+  const now = h[h.length - 1], day = s => String(s.seen || '').slice(0, 10);
+  // compare with the last check on an earlier day: two prices from one run are units, not a change
+  const prev = [...h].reverse().find(x => day(x) < day(now));
+  if (!prev) return null;
+  const diff = now.price_eur - prev.price_eur;
+  if (Math.abs(diff) < Math.max(5, prev.price_eur * 0.005)) return null;   // rounding noise
+  return {diff, pct: diff / prev.price_eur * 100, since: prev.seen, at: now.seen};
+}
+function moveChip(o, tag = 'span'){
+  const m = priceMove(o); if (!m) return '';
+  const n = o.nights > 0 && pmode === 'night' ? Math.max(1, o.nights) : 1, down = m.diff < 0;
+  return `<${tag} class="move ${down ? 'down' : 'up'}" title="${eur(m.diff < 0 ? -m.diff : m.diff)} ${down ? 'cheaper' : 'dearer'} than on ${fmtDM(m.since)}">${down ? '▼' : '▲'} ${eur(Math.abs(m.diff) / n)}${n > 1 ? '/night' : ''} (${down ? '−' : '+'}${Math.abs(m.pct).toFixed(m.pct > -10 && m.pct < 10 ? 1 : 0)}%) since ${fmtDM(m.since)}</${tag}>`;
+}
 const ic = (id, cls='i') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
 const LIMIT = 300, BOARD = {HB:'Half board',FB:'Full board',AI:'All inclusive',BB:'Breakfast only',RO:'Room only',SC:'Self-catering','?':'Board not stated'};
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -684,6 +707,7 @@ const SORTS = {
   price: (a,b) => cmpArr(rankOffer(a.best).filter((_, i) => i !== 1), rankOffer(b.best).filter((_, i) => i !== 1)),
   night: (a,b) => nightOf(a.best) - nightOf(b.best),
   discount: (a,b) => disc(b) - disc(a),
+  change: (a,b) => (priceMove(a.best)?.pct ?? 0) - (priceMove(b.best)?.pct ?? 0),
   drive: (a,b) => (a.flight ? 9000 : a.best.family.drive_minutes ?? 9999) - (b.flight ? 9000 : b.best.family.drive_minutes ?? 9999),
 };
 
@@ -778,6 +802,7 @@ function priceBlock(h){
   const was = o.was_eur && pmode === 'night' ? eur(o.was_eur / Math.max(1, o.nights)) : o.was_eur ? eur(o.was_eur) : '';
   return `<div class="price">
     ${pct || o.was_eur ? `<div class="ptop">${was && b !== 'est' ? `<span class="was"><span class="sr">was </span>${was}</span>` : ''}${pct ? `<span class="badge">${ic('tag')}${o.deal.verdict === 'real' ? 'Verified' : 'Agency says'} −${Math.round(pct)}%</span>` : ''}</div>` : ''}
+    ${moveChip(o, 'div')}
     <span class="big">${mo.big}</span>
     <span class="qual${b === 'fam' ? '' : ' warn'}">${btag(o)} ${whoTxt(o)}</span>
     <span class="pn">${mo.alt}${b === 'est' ? ` · agency ${eur(o.price_eur)} for 2 adults` : ''}</span>
@@ -889,10 +914,11 @@ function render(){
   const flying = live.filter(h => h.flight).length;
   const within = live.filter(h => !h.flight && (h.best.family.drive_minutes ?? 0) <= LIMIT).length;
   const fresh = live.filter(h => h.offers.some(offerIsNew)).length;
+  const mv = live.map(h => priceMove(h.best)).filter(Boolean), cheaper = mv.filter(m => m.diff < 0).length, dearer = mv.length - cheaper;
   const nsrc = new Set(live.flatMap(h => h.offers.map(o => o.source))).size, border = live.length - within - flying;
   $('#subtitle').textContent = season === 'short' ? 'Your hearts are saved in this browser and in the page link.' : [
     within && `${within} within 5h`, border && `${border} borderline`, flying && `${flying} by flight from Skopje`,
-    `${offers} offer${offers === 1 ? '' : 's'} from ${nsrc} source${nsrc === 1 ? '' : 's'}`, out.length && `${out.length} ruled out`, fresh && `${fresh} new since your last visit`,
+    `${offers} offer${offers === 1 ? '' : 's'} from ${nsrc} source${nsrc === 1 ? '' : 's'}`, out.length && `${out.length} ruled out`, fresh && `${fresh} new since your last visit`, cheaper && `${cheaper} cheaper`, dearer && `${dearer} dearer since the last check`,
   ].filter(Boolean).join(' · ');
   const qRaw = $('#q').value.trim();
   const msg = `${live.length} hotel${live.length === 1 ? '' : 's'} shown${qRaw ? ` for “${qRaw}”` : ''}${out.length ? `, ${out.length} ruled out` : ''}`;
@@ -1100,7 +1126,7 @@ function offersTable(h){
     const disc = d.verdict === 'real' ? `<td class="real">Verified −${Math.round(d.real_pct)}%` : pct ? `<td><span class="badge">Agency says −${Math.round(pct)}%</span>` : `<td>—`;
     const ends = dl != null && dl >= 0 ? `<span class="sm"><span class="dead">ends ${dl === 0 ? 'today' : `in ${dl} day${dl === 1 ? '' : 's'}`}</span></span>` : '';
     return `<tr${i ? '' : ' class="best"'}><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.source)}</a>${i ? '' : '<span class="sm">Best comparable</span>'}${offerIsNew(x) ? '<span class="sm">New since your last visit</span>' : ''}</td>
-      <td class="n">${mo.big.replace(/<\/?small>/g, '')} ${btag(x)}<span class="sm${b === 'fam' ? '' : ' warn'}">${whoTxt(x)}</span><span class="sm">${mo.alt}</span>${b === 'est' ? `<span class="sm">Agency: ${eur(x.price_eur)} for 2 adults</span>` : ''}</td>
+      <td class="n">${mo.big.replace(/<\/?small>/g, '')} ${btag(x)}<span class="sm${b === 'fam' ? '' : ' warn'}">${whoTxt(x)}</span><span class="sm">${mo.alt}</span>${b === 'est' ? `<span class="sm">Agency: ${eur(x.price_eur)} for 2 adults</span>` : ''}${moveChip(x)}</td>
       <td>${BOARD[x.board] || esc(x.board)}</td><td>${esc(x.room || '—')}</td><td>${flexDates(x) ? 'On request' : fmtD(x.check_in)}<span class="sm">${x.nights} nights</span></td>${disc}${ends}</td></tr>`;
   }).join('')}</tbody></table></div>`;
 }

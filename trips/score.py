@@ -156,6 +156,9 @@ def family_fit(hotel: dict, offer: dict, cfg: dict, drive_min: float | None) -> 
     else:
         reach = False
     check("reach", "Direct flight or ≤5h drive", reach, must=True)
+    banned = {c.upper() for c in cfg.get(hotel.get("season", ""), {}).get("exclude_countries", [])}
+    if banned and (hotel.get("country") or "").upper() in banned:
+        check("country", f"Not in {hotel['country'].upper()} (our {hotel['season']} rule)", False, must=True)
     if fam.get("adults_only"):                 # detail page says "adults only": never fits the twins
         check("adults_only", "Children welcome", False, must=True)
     # --- guest rating: the family's rule, 4.3+/5 (Google etc.) and 8.2+/10 (Booking etc.)

@@ -1,23 +1,15 @@
 {
- "generated": "2026-11-26T16:39",
- "started": "2026-11-26T14:51:45",
- "duration_s": 6442.4,
+ "generated": "2026-11-28T09:53",
+ "started": "2026-11-28T08:13:07",
+ "duration_s": 6042.9,
  "status": "fail",
  "failed_sources": [
-  "ArgusTours",
-  "Vlero (Albania)",
-  "Pochivka.bg (owner)",
-  "Grčka Info",
   "Micazu (owner)"
  ],
  "problems": [
-  "Kopaonik apartments: 5 page(s) failed",
-  "ArgusTours failed today (request failed (1): HTTPSConnectionPool(host='argus.rs', port=443): Max retries exceeded with url: /aranzmani/letovanje/grcka/kasandra-sopstveni-prevoz-2027 (Caused by NameResolutionError(\"HTTPSConnection(host='argus.rs', port=443): Failed to resolve 'argus.rs' ([Errno 11001] getaddrinfo failed)\")))",
-  "Vlero (Albania) failed today (request failed (1): HTTPSConnectionPool(host='www.vlero.com', port=443): Max retries exceeded with url: /dhoma-plazhi-ne-golem/l-al-c-26.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.vlero.com', port=443): Failed to resolve 'www.vlero.com' ([Errno 11001] getaddrinfo failed)\")))",
-  "Pochivka.bg (owner) failed today (request failed (1): HTTPSConnectionPool(host='pochivka.bg', port=443): Max retries exceeded with url: /apartamenti-bansko-t6 (Caused by NameResolutionError(\"HTTPSConnection(host='pochivka.bg', port=443): Failed to resolve 'pochivka.bg' ([Errno 11001] getaddrinfo failed)\")))",
-  "Grčka Info failed today (request failed (1): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1 (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrin)",
-  "Grčka Info (hotel price list): 10 page(s) failed",
-  "Micazu (owner) refused us today (bot wall or robots.txt), 0 offers (Micazu stopped (respecting the block): 403 bot challenge at https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/)"
+  "ArgusTours: 2 page(s) failed",
+  "Micazu (owner) refused us today (bot wall or robots.txt), 0 offers (Micazu stopped (respecting the block): 403 bot challenge at https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/)",
+  "Hotel website: blocked part-way, 1 page(s) failed"
  ],
  "sources": [
   {
@@ -29,22 +21,25 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 150.7,
-   "avg_offers_7": 71.3,
+   "duration_s": 150.9,
+   "avg_offers_7": 71.2,
    "messages": []
   },
   {
    "name": "Olympic",
    "status": "ok",
-   "pages_fetched": 46,
+   "pages_fetched": 45,
    "not_modified": 0,
-   "offers_parsed": 125,
+   "offers_parsed": 130,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 363.5,
-   "avg_offers_7": 124.3,
-   "messages": []
+   "duration_s": 375.6,
+   "avg_offers_7": 124.5,
+   "messages": [
+    "request failed (1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+    "request failed (1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+   ]
   },
   {
    "name": "AtlantiS (MK)",
@@ -55,11 +50,9 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 85.0,
+   "duration_s": 42.3,
    "avg_offers_7": 27.0,
-   "messages": [
-    "request failed (1): HTTPSConnectionPool(host='atlantisonline.mk', port=443): Read timed out. (read timeout=30)"
-   ]
+   "messages": []
   },
   {
    "name": "BulgariaSki",
@@ -70,7 +63,7 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 410.4,
+   "duration_s": 383.1,
    "avg_offers_7": 24.0,
    "messages": []
   },
@@ -83,123 +76,92 @@
    "offers_rejected": 3,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 71.7,
+   "duration_s": 73.0,
    "avg_offers_7": 47.0,
    "messages": []
   },
   {
    "name": "Kopaonik apartments",
-   "status": "partial",
-   "pages_fetched": 5,
+   "status": "ok",
+   "pages_fetched": 10,
    "not_modified": 4,
-   "offers_parsed": 74,
+   "offers_parsed": 180,
    "offers_rejected": 0,
    "blocked": 0,
-   "errors": 5,
-   "duration_s": 233.0,
-   "avg_offers_7": 180.0,
+   "errors": 0,
+   "duration_s": 85.4,
+   "avg_offers_7": 144.7,
    "messages": [
-    "request failed (1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-    "request failed (2): HTTPSConnectionPool(host='www.supernovatravel.rs', port=443): Max retries exceeded with url: /cenovnici/austrija-cenovnici/apartmani-kraljevi-cardaci-kopaonik-cenovnik.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.supernovatravel.rs', port=443) at 0x1c6f0f95810>,",
-    "request failed (3): HTTPSConnectionPool(host='www.supernovatravel.rs', port=443): Max retries exceeded with url: /cenovnici/austrija-cenovnici/apartmani-kraljevi-cardaci-kopaonik-cenovnik.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.supernovatravel.rs', port=443): Failed to resolve",
-    "Kopaonik/supernova https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/apartmani-kraljevi-cardaci-kopaonik-cenovnik.html skipped: gave up after retries: https://www.supernovatravel.rs/cenovnici/austrija-cenovnici/apartmani-kraljevi-cardaci-kopaonik-cenovnik.html",
-    "request failed (1): HTTPSConnectionPool(host='www.supernovatravel.rs', port=443): Max retries exceeded with url: /cenovnici/austrija-cenovnici/apartmani-marija-lux-kopaonik-cenovnik.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.supernovatravel.rs', port=443): Failed to resolve 'www."
+    "request failed (1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
    ]
   },
   {
    "name": "ArgusTours",
-   "status": "error",
-   "pages_fetched": 0,
+   "status": "partial",
+   "pages_fetched": 3,
    "not_modified": 0,
-   "offers_parsed": 0,
+   "offers_parsed": 77,
    "offers_rejected": 0,
    "blocked": 0,
-   "errors": 5,
-   "duration_s": 172.7,
-   "avg_offers_7": null,
+   "errors": 2,
+   "duration_s": 94.7,
+   "avg_offers_7": 0.0,
    "messages": [
-    "request failed (1): HTTPSConnectionPool(host='argus.rs', port=443): Max retries exceeded with url: /aranzmani/letovanje/grcka/kasandra-sopstveni-prevoz-2027 (Caused by NameResolutionError(\"HTTPSConnection(host='argus.rs', port=443): Failed to resolve 'argus.rs' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (2): HTTPSConnectionPool(host='argus.rs', port=443): Max retries exceeded with url: /aranzmani/letovanje/grcka/kasandra-sopstveni-prevoz-2027 (Caused by NameResolutionError(\"HTTPSConnection(host='argus.rs', port=443): Failed to resolve 'argus.rs' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (3): HTTPSConnectionPool(host='argus.rs', port=443): Max retries exceeded with url: /aranzmani/letovanje/grcka/kasandra-sopstveni-prevoz-2027 (Caused by NameResolutionError(\"HTTPSConnection(host='argus.rs', port=443): Failed to resolve 'argus.rs' ([Errno 11001] getaddrinfo failed)\"))",
-    "ArgusTours Kassandra, Halkidiki skipped: gave up after retries: https://argus.rs/aranzmani/letovanje/grcka/kasandra-sopstveni-prevoz-2027",
-    "request failed (1): HTTPSConnectionPool(host='argus.rs', port=443): Max retries exceeded with url: /aranzmani/letovanje/grcka/sitonija-sopstveni-prevoz-2027 (Caused by NameResolutionError(\"HTTPSConnection(host='argus.rs', port=443): Failed to resolve 'argus.rs' ([Errno 11001] getaddrinfo failed)\"))"
+    "ArgusTours Kassandra, Halkidiki skipped: gave up after retries: https://argus.rs/aranzmani/letovanje/grcka/halkidiki-hoteli-sopstveni-prevoz-2027",
+    "ArgusTours Thassos skipped: gave up after retries: https://argus.rs/aranzmani/letovanje/grcka/tasos-hoteli-sopstveni-prevoz-2027"
    ]
   },
   {
    "name": "Vlero (Albania)",
-   "status": "error",
-   "pages_fetched": 0,
+   "status": "ok",
+   "pages_fetched": 4,
    "not_modified": 0,
-   "offers_parsed": 0,
-   "offers_rejected": 0,
+   "offers_parsed": 45,
+   "offers_rejected": 8,
    "blocked": 0,
-   "errors": 4,
-   "duration_s": 139.6,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): HTTPSConnectionPool(host='www.vlero.com', port=443): Max retries exceeded with url: /dhoma-plazhi-ne-golem/l-al-c-26.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.vlero.com', port=443): Failed to resolve 'www.vlero.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (2): HTTPSConnectionPool(host='www.vlero.com', port=443): Max retries exceeded with url: /dhoma-plazhi-ne-golem/l-al-c-26.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.vlero.com', port=443): Failed to resolve 'www.vlero.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (3): HTTPSConnectionPool(host='www.vlero.com', port=443): Max retries exceeded with url: /dhoma-plazhi-ne-golem/l-al-c-26.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.vlero.com', port=443): Failed to resolve 'www.vlero.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "Vlero Durrës / Golem, Albania skipped: gave up after retries: https://www.vlero.com/dhoma-plazhi-ne-golem/l-al-c-26.html",
-    "request failed (1): HTTPSConnectionPool(host='www.vlero.com', port=443): Max retries exceeded with url: /dhoma-plazhi-gjiri-lalzit/l-al-c-26.html (Caused by NameResolutionError(\"HTTPSConnection(host='www.vlero.com', port=443): Failed to resolve 'www.vlero.com' ([Errno 11001] getaddrinfo failed)\"))"
-   ]
+   "errors": 0,
+   "duration_s": 29.5,
+   "avg_offers_7": 0.0,
+   "messages": []
   },
   {
    "name": "Pochivka.bg (owner)",
-   "status": "error",
-   "pages_fetched": 0,
+   "status": "ok",
+   "pages_fetched": 52,
    "not_modified": 0,
-   "offers_parsed": 0,
+   "offers_parsed": 33,
    "offers_rejected": 0,
    "blocked": 0,
-   "errors": 5,
-   "duration_s": 176.8,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): HTTPSConnectionPool(host='pochivka.bg', port=443): Max retries exceeded with url: /apartamenti-bansko-t6 (Caused by NameResolutionError(\"HTTPSConnection(host='pochivka.bg', port=443): Failed to resolve 'pochivka.bg' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (2): HTTPSConnectionPool(host='pochivka.bg', port=443): Max retries exceeded with url: /apartamenti-bansko-t6 (Caused by NameResolutionError(\"HTTPSConnection(host='pochivka.bg', port=443): Failed to resolve 'pochivka.bg' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (3): HTTPSConnectionPool(host='pochivka.bg', port=443): Max retries exceeded with url: /apartamenti-bansko-t6 (Caused by NameResolutionError(\"HTTPSConnection(host='pochivka.bg', port=443): Failed to resolve 'pochivka.bg' ([Errno 11001] getaddrinfo failed)\"))",
-    "Pochivka.bg Bansko, Bulgaria skipped: gave up after retries: https://pochivka.bg/apartamenti-bansko-t6",
-    "request failed (1): HTTPSConnectionPool(host='pochivka.bg', port=443): Max retries exceeded with url: /apartamenti-razlog-t53 (Caused by NameResolutionError(\"HTTPSConnection(host='pochivka.bg', port=443): Failed to resolve 'pochivka.bg' ([Errno 11001] getaddrinfo failed)\"))"
-   ]
+   "errors": 0,
+   "duration_s": 446.7,
+   "avg_offers_7": 0.0,
+   "messages": []
   },
   {
    "name": "Grčka Info",
-   "status": "error",
-   "pages_fetched": 0,
+   "status": "ok",
+   "pages_fetched": 99,
    "not_modified": 0,
-   "offers_parsed": 0,
-   "offers_rejected": 0,
+   "offers_parsed": 161,
+   "offers_rejected": 19,
    "blocked": 0,
-   "errors": 8,
-   "duration_s": 278.3,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1 (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrin",
-    "request failed (2): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1 (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrin",
-    "request failed (3): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1 (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrin",
-    "Grčka Info list https://grckainfo.com/sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1 skipped: gave up after retries: https://grckainfo.com/sr/smestaji/halkidiki-sitonija/210/?udaljenost%5B0%5D=1",
-    "request failed (1): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /sr/smestaji/halkidiki-kasandra/209/?udaljenost%5B0%5D=1 (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrin"
-   ]
+   "errors": 0,
+   "duration_s": 784.6,
+   "avg_offers_7": 0.0,
+   "messages": []
   },
   {
    "name": "Grčka Info (hotel price list)",
-   "status": "partial",
-   "pages_fetched": 1,
+   "status": "ok",
+   "pages_fetched": 11,
    "not_modified": 0,
-   "offers_parsed": 3,
-   "offers_rejected": 0,
+   "offers_parsed": 22,
+   "offers_rejected": 1,
    "blocked": 0,
-   "errors": 10,
-   "duration_s": 337.3,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /en/accommodation/thalassies-hotel/2413/ (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (2): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /en/accommodation/thalassies-hotel/2413/ (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "request failed (3): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /en/accommodation/thalassies-hotel/2413/ (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddrinfo failed)\"))",
-    "Grčka Info https://grckainfo.com/en/accommodation/thalassies-hotel/2413/ skipped: gave up after retries: https://grckainfo.com/en/accommodation/thalassies-hotel/2413/",
-    "request failed (1): HTTPSConnectionPool(host='grckainfo.com', port=443): Max retries exceeded with url: /en/accommodation/boutique-hotel-thalassies-nouveau/2409/ (Caused by NameResolutionError(\"HTTPSConnection(host='grckainfo.com', port=443): Failed to resolve 'grckainfo.com' ([Errno 11001] getaddri"
-   ]
+   "errors": 0,
+   "duration_s": 94.5,
+   "avg_offers_7": 3.0,
+   "messages": []
   },
   {
    "name": "Kajak.mk",
@@ -210,11 +172,9 @@
    "offers_rejected": 1,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 1940.3,
-   "avg_offers_7": null,
-   "messages": [
-    "request failed (1): ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
-   ]
+   "duration_s": 904.8,
+   "avg_offers_7": 88.0,
+   "messages": []
   },
   {
    "name": "Relaxo (hotel only)",
@@ -225,9 +185,11 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 434.2,
-   "avg_offers_7": null,
-   "messages": []
+   "duration_s": 468.8,
+   "avg_offers_7": 18.0,
+   "messages": [
+    "request failed (1): ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+   ]
   },
   {
    "name": "Oliver's Travels",
@@ -238,8 +200,8 @@
    "offers_rejected": 1,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 9.0,
-   "avg_offers_7": 4.7,
+   "duration_s": 8.6,
+   "avg_offers_7": 5.8,
    "messages": []
   },
   {
@@ -251,7 +213,7 @@
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 28.0,
+   "duration_s": 26.5,
    "avg_offers_7": 18.0,
    "messages": []
   },
@@ -264,8 +226,8 @@
    "offers_rejected": 0,
    "blocked": 1,
    "errors": 0,
-   "duration_s": 7.2,
-   "avg_offers_7": 0.7,
+   "duration_s": 8.5,
+   "avg_offers_7": 0.5,
    "messages": [
     "Micazu stopped (respecting the block): 403 bot challenge at https://www.micazu.com/vacation-rentals/bulgaria/pirin-mountains/bansko/"
    ]
@@ -275,28 +237,29 @@
    "status": "ok",
    "pages_fetched": 12,
    "not_modified": 0,
-   "offers_parsed": 504,
+   "offers_parsed": 950,
    "offers_rejected": 0,
    "blocked": 0,
    "errors": 0,
-   "duration_s": 99.5,
-   "avg_offers_7": 497.0,
-   "messages": [
-    "request failed (1): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-   ]
+   "duration_s": 99.7,
+   "avg_offers_7": 498.8,
+   "messages": []
   },
   {
    "name": "Hotel website",
-   "status": "ok",
-   "pages_fetched": 20,
-   "not_modified": 4,
-   "offers_parsed": 40,
+   "status": "partial",
+   "pages_fetched": 18,
+   "not_modified": 3,
+   "offers_parsed": 36,
    "offers_rejected": 0,
-   "blocked": 0,
-   "errors": 0,
-   "duration_s": 176.9,
-   "avg_offers_7": 38.0,
-   "messages": []
+   "blocked": 1,
+   "errors": 1,
+   "duration_s": 213.4,
+   "avg_offers_7": 38.5,
+   "messages": [
+    "hotel site https://www.secretparadise.gr/special-offers-halkidiki-hotel unavailable: gave up after retries: https://www.secretparadise.gr/special-offers-halkidiki-hotel",
+    "hotel site https://www.acrotel.gr/promotions-offers/ blocked us, skipping (not getting around it): 403 bot challenge at https://www.acrotel.gr/promotions-offers/"
+   ]
   }
  ],
  "rejected_by_source": {
@@ -304,6 +267,24 @@
    "rejected": 3,
    "reasons": {
     "duplicate": 3
+   }
+  },
+  "Vlero (Albania)": {
+   "rejected": 8,
+   "reasons": {
+    "duplicate": 8
+   }
+  },
+  "Grčka Info": {
+   "rejected": 19,
+   "reasons": {
+    "duplicate": 19
+   }
+  },
+  "Grčka Info (hotel price list)": {
+   "rejected": 1,
+   "reasons": {
+    "duplicate": 1
    }
   },
   "Kajak.mk": {

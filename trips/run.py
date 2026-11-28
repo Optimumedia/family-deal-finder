@@ -15,10 +15,10 @@ from pathlib import Path
 
 from . import conditions, db, dedupe, digest, enrich, family_prices, flights, geo, geocode, health, ratings, score, validate
 from .http import PoliteSession
-from .sources import al_me_coast, bg_more, bgski, charters, flight_hotels, gr_apartments, gr_hotel_prices, hotel_direct, kopaonik, manual, micazu, mk_agencies, mk_local, oliverstravels, olympic, rentals, rs_agencies, travelland
+from .sources import bg_more, bgski, charters, flight_hotels, gr_apartments, gr_hotel_prices, hotel_direct, it_hotels, kopaonik, manual, me_coast, micazu, mk_agencies, mk_local, oliverstravels, olympic, rentals, rs_agencies, tr_more, travelland, winter_more
 
 # Sources that find hotels/villas and prices (agencies, villa sites, owner rentals).
-AUTO_SOURCES = (travelland, olympic, mk_agencies, bgski, charters, kopaonik, rs_agencies, al_me_coast, bg_more, gr_apartments, gr_hotel_prices, mk_local, flight_hotels, oliverstravels, rentals, micazu)
+AUTO_SOURCES = (travelland, olympic, mk_agencies, bgski, charters, kopaonik, rs_agencies, bg_more, gr_apartments, gr_hotel_prices, mk_local, flight_hotels, winter_more, it_hotels, me_coast, tr_more, oliverstravels, rentals, micazu)
 
 log = logging.getLogger("trips")
 
@@ -35,6 +35,24 @@ def load_config(path: str | Path = "config.toml", local: str | None = "config.lo
             else:
                 cfg[section] = values
     return cfg
+
+
+def drop_excluded_pages(cfg: dict) -> int:
+    """Skip source pages in countries the family ruled out for that season ([summer] exclude_countries)."""
+    dropped = 0
+    for src in cfg.get("sources", {}).values():
+        if not isinstance(src, dict) or not isinstance(src.get("pages"), list):
+            continue
+        keep = []
+        for p in src["pages"]:
+            season = (p.get("season") or "summer") if isinstance(p, dict) else ""
+            banned = {c.upper() for c in cfg.get(season, {}).get("exclude_countries", [])} if season else set()
+            if isinstance(p, dict) and (p.get("country") or "").upper() in banned:
+                dropped += 1
+            else:
+                keep.append(p)
+        src["pages"] = keep
+    return dropped
 
 
 def build(con, cfg: dict, today: date, offline: bool = False) -> tuple[list[dict], list[dict]]:
@@ -174,6 +192,8 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     cfg = load_config()
+    if (n := drop_excluded_pages(cfg)):
+        logging.getLogger("trips").info("skipping %d source page(s) in ruled-out countries", n)
     con = db.connect(args.db)
     today = date.today()
     curated = manual.load_hotels()

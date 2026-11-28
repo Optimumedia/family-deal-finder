@@ -146,6 +146,22 @@ class AdultsOnly(unittest.TestCase):
         self.assertIn("Children welcome", r["family"]["failed"])
 
 
+class Countries(unittest.TestCase):
+    def test_albania_and_bulgaria_out_in_summer_only(self):
+        self.assertIn("Not in AL (our summer rule)", fit({**summer(), "country": "AL"}, offer())["failed"])
+        self.assertIn("Not in BG (our summer rule)", fit({**summer(), "country": "BG"}, offer())["failed"])
+        self.assertFalse(any("rule)" in x for x in fit({**summer(), "country": "GR"}, offer())["failed"]))
+        w = fit({**winter(separate_bedroom=True), "country": "BG"}, offer(board="SC", room="Apartment"))
+        self.assertFalse(any("rule)" in x for x in w["failed"]))
+
+    def test_pages_skipped(self):
+        cfg = {"summer": {"exclude_countries": ["AL"]}, "winter": {},
+               "sources": {"x": {"pages": [{"country": "AL", "season": "summer"}, {"country": "ME"},
+                                           {"country": "AL", "season": "winter"}]}}}
+        self.assertEqual(run.drop_excluded_pages(cfg), 1)
+        self.assertEqual(len(cfg["sources"]["x"]["pages"]), 2)
+
+
 class Tiers(unittest.TestCase):
     """A well-matched, fully-confirmed family offer reaches Great deal; an unknown must-have still
     caps it; a stated-only discount can't push it to the top."""

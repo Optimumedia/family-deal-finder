@@ -217,6 +217,7 @@ def _hb_supplement(bullets: list[str]) -> dict | None:
                 more.append(nxt)
             seg = " • ".join([b] + more)
         adult = (re.search(rf"adults?\s*(?:-|:)\s*{_MONEY}", seg, re.I)
+                 or re.search(rf"half board\s*(?:-|:)\s*{_MONEY}\s*/?\s*(?:per\s+)?day", seg, re.I)
                  or re.search(rf"{_MONEY}\s*(?:/\s*)?(?:per\s+)?(?:day\s*(?:/\s*)?)?(?:per\s+)?(?:person|adult)", seg, re.I)
                  or re.search(rf"{_MONEY}\s*(?:/\s*)?(?:per\s+)?(?:day\s*(?:/\s*)?)?per\s+(?:person|adult)", seg, re.I))
         if not adult:

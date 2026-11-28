@@ -31,6 +31,7 @@ tolerance_minutes = 45
 need_board = ["HB", "FB", "AI"]     # breakfast + dinner at least
 max_beach_m = 150
 need_sand = true
+exclude_countries = ["AL", "BG"]  # family rule: no Albania or Bulgaria for the summer (pages skipped, hotels ruled out)
 
 [winter]
 # Hard rules for the winter season.
@@ -566,7 +567,7 @@ lng = 24.65
 [sources.al_me_coast]
 # vlero.com — Albanian portal, owners/hotels list their own rooms (pay the property).
 # robots.txt allows these pages. One request per area per run. Rooms that don't sleep 2+2 are dropped.
-enabled = true
+enabled = false   # Albania only: off by the family rule (no Albania/Bulgaria in summer)
 # all_per_eur = 100        # set to also keep rooms priced in Lek (skipped by default)
 
 [[sources.al_me_coast.pages]]
@@ -867,6 +868,178 @@ kind = "apartment"
 lat = 40.268
 lng = 22.597
 
+# gr_family round: 24 more family hotels (HB/AI, then BB, then board not stated)
+[[sources.gr_hotel_prices.pages]]
+# Anthemus Sea Beach Hotel & Spa: beachfront chip; HB in price
+url = "https://grckainfo.com/en/accommodation/anthemus-sea-beach-hotel-and-spa/4155/"
+area = "Nikiti, Sithonia, Halkidiki"
+lat = 40.145
+lng = 23.736
+
+[[sources.gr_hotel_prices.pages]]
+# Golden Beach Hotel: HB family rooms 2+2; beach distance not stated (site filter: up to 200 m)
+url = "https://grckainfo.com/en/accommodation/golden-beach-hotel/3751/"
+area = "Metamorfosi, Sithonia, Halkidiki"
+lat = 40.228
+lng = 23.605
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Esperia: 10 m from beach; HB per apartment
+url = "https://grckainfo.com/en/accommodation/hotel-esperia/1663/"
+area = "Pefkari, Thassos"
+lat = 40.618
+lng = 24.597
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Siokas: on a wide sandy beach; HB
+url = "https://grckainfo.com/en/accommodation/hotel-siokas/1501/"
+area = "Nei Pori, Olympic Riviera"
+lat = 39.978
+lng = 22.651
+
+[[sources.gr_hotel_prices.pages]]
+# Porto Matina Hotel: beachfront chip; HB studio
+url = "https://grckainfo.com/en/accommodation/porto-matina-hotel/3651/"
+area = "Metamorfosi, Sithonia, Halkidiki"
+lat = 40.228
+lng = 23.606
+
+[[sources.gr_hotel_prices.pages]]
+# Village Mare Hotel: all inclusive; family rooms with bunk bed
+url = "https://grckainfo.com/en/accommodation/village-mare-hotel/4802/"
+area = "Metamorfosi, Sithonia, Halkidiki"
+lat = 40.229
+lng = 23.583
+
+[[sources.gr_hotel_prices.pages]]
+# Akti Belvedere Color & Essence: beachfront chip; HB supplement 35/25 EUR not yet read by the parser (shows RO)
+url = "https://grckainfo.com/en/accommodation/akti-belvedere-color-and-essence/2920/"
+area = "Skala Rachoni, Thassos"
+lat = 40.792
+lng = 24.630
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Paradise Kriopigi: 160 m (borderline); HB included
+url = "https://grckainfo.com/en/accommodation/hotel-paradise-kriopigi/4775/"
+area = "Kriopigi, Kassandra, Halkidiki"
+lat = 40.047
+lng = 23.474
+
+[[sources.gr_hotel_prices.pages]]
+# Alexander Inn: 80 m; BB only
+url = "https://grckainfo.com/en/accommodation/alexander-inn/3877/"
+area = "Stavros, Thessaloniki coast"
+lat = 40.671
+lng = 23.691
+
+[[sources.gr_hotel_prices.pages]]
+# Ammon Garden Hotel: 100 m; BB only
+url = "https://grckainfo.com/en/accommodation/ammon-garden-hotel/3016/"
+area = "Pefkochori, Kassandra, Halkidiki"
+lat = 39.987
+lng = 23.619
+
+[[sources.gr_hotel_prices.pages]]
+# By the Sea Luxury Suites: beachfront chip; BB only
+url = "https://grckainfo.com/en/accommodation/by-the-sea-luxury-suites/2410/"
+area = "Limenas, Thassos"
+lat = 40.777
+lng = 24.697
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Palladium Sithonia: 30 m; BB only
+url = "https://grckainfo.com/en/accommodation/hotel-palladium-sithonia/3252/"
+area = "Kalamitsi, Sithonia, Halkidiki"
+lat = 39.993
+lng = 23.991
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Thalassokipos: BB only; distance not stated (site filter: up to 200 m)
+url = "https://grckainfo.com/en/accommodation/hotel-thalassokipos/1932/"
+area = "Vourvourou, Sithonia, Halkidiki"
+lat = 40.229
+lng = 23.760
+
+[[sources.gr_hotel_prices.pages]]
+# Vozina Hotel: 150 m; BB only
+url = "https://grckainfo.com/en/accommodation/vozina-hotel/4140/"
+area = "Metamorfosi, Sithonia, Halkidiki"
+lat = 40.230
+lng = 23.603
+
+[[sources.gr_hotel_prices.pages]]
+# Xenonas Apollon: 50 m; BB only
+url = "https://grckainfo.com/en/accommodation/xenonas-apollon/4244/"
+area = "Sarti, Sithonia, Halkidiki"
+lat = 40.081
+lng = 23.979
+
+[[sources.gr_hotel_prices.pages]]
+# Saint George Hotel: 100 m; BB, meal 15 EUR/person/day not yet read
+url = "https://grckainfo.com/en/accommodation/saint-george-hotel/3457/"
+area = "Asprovalta, Thessaloniki coast"
+lat = 40.721
+lng = 23.707
+
+[[sources.gr_hotel_prices.pages]]
+# Plaza Hotel: 40 m; room only, breakfast 7 EUR
+url = "https://grckainfo.com/en/accommodation/plaza-hotel/4899/"
+area = "Hanioti, Kassandra, Halkidiki"
+lat = 40.002
+lng = 23.575
+
+[[sources.gr_hotel_prices.pages]]
+# Kristal Hotel: 100 m; board not stated, breakfast 7.5 EUR
+url = "https://grckainfo.com/en/accommodation/kristal-hotel/3810/"
+area = "Skala Prinos, Thassos"
+lat = 40.761
+lng = 24.564
+
+[[sources.gr_hotel_prices.pages]]
+# Aeollos Hotel: 20 m; board not stated (studios/suites)
+url = "https://grckainfo.com/en/accommodation/aeollos-hotel/4190/"
+area = "Pefkochori, Kassandra, Halkidiki"
+lat = 39.988
+lng = 23.620
+
+[[sources.gr_hotel_prices.pages]]
+# ASTRO Hotel Apartments: 150 m; apartments, self-catering
+url = "https://grckainfo.com/en/accommodation/astro-hotel-apartments/1001/"
+area = "Paralia Katerinis, Olympic Riviera"
+kind = "apartment"
+lat = 40.266
+lng = 22.596
+
+[[sources.gr_hotel_prices.pages]]
+# Corali Hotel: beachfront chip; apartments, board not stated
+url = "https://grckainfo.com/en/accommodation/corali-hotel/5736/"
+area = "Sarti, Sithonia, Halkidiki"
+kind = "apartment"
+lat = 40.091
+lng = 23.979
+
+[[sources.gr_hotel_prices.pages]]
+# Sithon Apartment Hotel: 50 m; apartment hotel, board not stated
+url = "https://grckainfo.com/en/accommodation/sithon-apartment-hotel/5350/"
+area = "Sarti, Sithonia, Halkidiki"
+kind = "apartment"
+lat = 40.081
+lng = 23.979
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Konstantinoupolis: 100 m; board not stated
+url = "https://grckainfo.com/en/accommodation/hotel-konstantinoupolis/1443/"
+area = "Asprovalta, Thessaloniki coast"
+lat = 40.714
+lng = 23.703
+
+[[sources.gr_hotel_prices.pages]]
+# Hotel Golden Sand: board not stated; distance not stated (site filter: up to 200 m)
+url = "https://grckainfo.com/en/accommodation/hotel-golden-sand/2400/"
+area = "Golden Beach (Chrysi Ammoudia), Thassos"
+lat = 40.731
+lng = 24.760
+
 [sources.mk_local]
 # Kajak.mk — Macedonian accommodation portal (hosts' own listings, requests go to the host; not a
 # Booking/Airbnb reseller). robots.txt allows /smestuvanja/ (region lists) and /smestuvanje/ (listings);
@@ -1030,6 +1203,334 @@ country = "TR"
 lat = 37.03
 lng = 27.43
 airport = "BJV"
+
+[sources.winter_more]
+# Halo Oglasi (halooglasi.com) — owners' holiday-rental ads, Odmor › Planine. robots.txt allows the
+# lists and ads (only /profil, /prijava, /postavite-oglas, ?print and small thumbnails are off-limits).
+# Owner's advertised EUR/night for the whole unit (season not stated) × nights; 4–8 guest units = "2+2".
+# "Dogovor" (price on request) cards are skipped unopened.
+enabled = true
+list_pages = 2              # list pages per resort (20 ads each)
+max_listings = 12           # ads opened per resort (one request each)
+max_capacity = 8
+max_night_eur = 400
+
+[[sources.winter_more.pages]]
+url = "https://www.halooglasi.com/odmor/planine/kopaonik"
+place = "kopaonik"
+season = "winter"
+area = "Kopaonik, Serbia"
+country = "RS"
+lat = 43.285
+lng = 20.81
+nights = 5
+check_in = "2027-01-16"
+
+[[sources.winter_more.pages]]
+url = "https://www.halooglasi.com/odmor/planine/stara-planina"
+place = "stara planina"
+season = "winter"
+area = "Stara Planina, Serbia"
+country = "RS"
+lat = 43.373
+lng = 22.606
+nights = 5
+check_in = "2027-01-16"
+list_pages = 1
+
+[sources.it_hotels]
+# Italian family resorts near BRI / NAP / AHO: hotel-only ("solo soggiorno") 2+2 prices from the
+# resort price sheets (PDF) that Radio Radio Viaggi publishes. robots.txt disallows only /wp-admin/.
+# `discover` looks for a newer sheet with one /wp-json/wp/v2/media?search= call per hotel; without
+# one, `pdf` (last summer's) is read, its dates are moved to the coming summer and the offers say
+# "2026 price list". Every `check` phrase must still be in the sheet, otherwise the hotel is skipped.
+# Needs pypdf (pip install pypdf).
+enabled = true
+discover = true
+season = "summer"
+country = "IT"
+nights = 7
+kid_ages = [3, 13]           # the sheets' 3rd/4th bed band ("3/13 anni", age not yet reached)
+
+[[sources.it_hotels.pages]]
+key = "porto-giardino"
+name = "Porto Giardino"
+stars = 4
+file_key = "puglia-porto-giardino"
+search = "porto giardino"
+pdf = "https://viaggi.radioradio.it/wp-content/uploads/2026/01/2026-puglia-porto-giardino-IN4.pdf"
+area = "Capitolo, Monopoli (Apulia)"
+lat = 40.905
+lng = 17.355
+months = [6, 7, 8, 9]
+unit = "night"               # per person per night; a 7-night stay is priced night by night
+columns = ["price", "was", "kid3", "kid4", "teen"]
+board = "AI"
+room = "Family room (2 areas), twins in 3rd/4th bed"
+notes = "Sandy lido ~100 m (cove 50 m). Mini club 05.07–30.08. Bari airport ~50 km."
+[sources.it_hotels.pages.family]
+sand_beach = true
+beach_m = 100
+family_room = true
+kids_club = true
+
+[[sources.it_hotels.pages]]
+key = "baia-domizia"
+name = "Baia Domizia Resort"
+stars = 4
+file_key = "campania-baia-domizia"
+search = "baia domizia"
+pdf = "https://viaggi.radioradio.it/wp-content/uploads/2026/01/2026-campania-baia-domizia-IN4-1.pdf"
+area = "Baia Domizia (Campania)"
+lat = 41.215
+lng = 13.790
+months = [6, 7, 8, 9]
+unit = "night"
+columns = ["price", "was", "fb", "fb_was", "kid34"]
+board = "HB"
+room = "standard room, twins in 3rd/4th bed"
+notes = "Resort on its own sandy beach (Blue Flag). Naples airport ~50 min. Stays preferably Saturday; 9–23.08 min 7 nights."
+[sources.it_hotels.pages.family]
+sand_beach = true
+beachfront = true
+half_board = true
+
+[[sources.it_hotels.pages]]
+key = "le-tonnare"
+name = "Le Tonnare di Stintino Beach Resort"
+stars = 4
+file_key = "sardegna-le-tonnare"
+search = "tonnare"
+pdf = "https://viaggi.radioradio.it/wp-content/uploads/2026/01/2026-sardegna-le-tonnare-IN4.pdf"
+area = "Stintino (Sardinia)"
+lat = 40.917
+lng = 8.225
+months = [7, 8, 9]           # AHO flights mid-July to mid-September
+unit = "stay"                # per person per 7 nights
+columns = ["ship", "price", "was", "kid3", "teen"]
+board = "FB"
+room = "standard room, twins in 3rd/4th bed"
+notes = "Beach in front (sand and pebbles); La Pelosa a few km. Mini club 3–12 (out of nappies). Alghero airport 48 km."
+[sources.it_hotels.pages.family]
+beachfront = true
+beach_type = "mixed"
+kids_club = true
+[[sources.it_hotels.pages.kid_rules]]
+bed = "kid4"
+reduction = 0.5
+check = "rid. 4°/5° letto 3/18 anni(*) 50%"
+[[sources.it_hotels.pages.extras]]
+per = "person_night"
+eur = 7
+min_age = 3
+from = "06-12"
+to = "09-11"
+check = "obbligatoria dal 12/06 al 11/09 € 7 a persona al giorno dai 3 anni"
+
+[[sources.it_hotels.pages]]
+key = "mclub-golfo"
+name = "MClub del Golfo"
+stars = 4
+file_key = "sardegna-mclub-del-golfo"
+search = "mclub golfo"
+pdf = "https://viaggi.radioradio.it/wp-content/uploads/2026/01/2026-sardegna-mclub-del-golfo-IN4.pdf"
+area = "Platamona, Sorso (Sardinia)"
+lat = 40.810
+lng = 8.470
+months = [7, 8, 9]
+unit = "stay"
+columns = ["ship", "price", "was", "kid3"]
+board = "AI"
+room = "standard room, twins in 3rd bed + 4th bed (bunk)"
+notes = "White-sand beach a few metres away. Tessera club included. 4th bed is a bunk. Sorso tourist tax €2.50/adult/day (kids under 12 exempt). Alghero airport ~40 km."
+[sources.it_hotels.pages.family]
+sand_beach = true
+beach_m = 50
+[[sources.it_hotels.pages.kid_rules]]
+bed = "kid4"
+reduction = 0.5
+check = "4° letto (**)3/13 anni 50%"
+[[sources.it_hotels.pages.extras]]
+per = "kid_night"
+eur = 50
+from = "07-31"
+to = "08-20"
+check = "quota forfait obbligatoria di € 50 a notte"
+
+[sources.me_coast]
+# planatravel.rs (Plan A Travel) — hotels' own 2027 price lists, own transport. robots.txt allows these pages.
+# Only hotels with the "leto 2027" sticker on the area page are read (1 request per area + 1 per priced hotel).
+enabled = true
+only_stickered = true
+
+[[sources.me_coast.pages]]
+# ~4h45 via Prizren–Kukës–Shkodër–Sukobin (transit only, 3 borders). Velika plaža: sand.
+url = "https://www.planatravel.rs/letovanje/crna-gora/ulcinjska-rivijera/ulcinj.html"
+season = "summer"
+area = "Ulcinj / Velika Plaža, Montenegro"
+country = "ME"
+lat = 41.90
+lng = 19.27
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+sand_beach = true
+
+[[sources.me_coast.pages]]
+# ~5h05 (Ulcinj → Bar coast road). Mixed sand/pebble: left to the hotel page.
+url = "https://www.planatravel.rs/letovanje/crna-gora/barska-rivijera/dobre-vode.html"
+season = "summer"
+area = "Dobre Vode, Montenegro"
+country = "ME"
+lat = 42.05
+lng = 19.13
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+
+[[sources.me_coast.pages]]
+# ~5h15. Sutomore: sand + fine gravel; the page decides (Sato says sandy, Korali says pebble).
+url = "https://www.planatravel.rs/letovanje/crna-gora/barska-rivijera/sutomore.html"
+season = "summer"
+area = "Sutomore, Montenegro"
+country = "ME"
+lat = 42.143
+lng = 19.047
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+
+[[sources.me_coast.pages]]
+# ~5h10. Bar town beaches are mostly pebble (no sand_beach default).
+url = "https://www.planatravel.rs/letovanje/crna-gora/barska-rivijera/bar.html"
+season = "summer"
+area = "Bar, Montenegro"
+country = "ME"
+lat = 42.10
+lng = 19.09
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+
+[[sources.me_coast.pages]]
+# ~5h30 (borderline). Petrovac: fine reddish gravel/sand mix; Lučice cove is sandy.
+url = "https://www.planatravel.rs/letovanje/crna-gora/budvanska-rivijera/petrovac.html"
+season = "summer"
+area = "Petrovac, Montenegro"
+country = "ME"
+lat = 42.205
+lng = 18.943
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+
+[[sources.me_coast.pages]]
+# ~5h45 (edge of the tolerance). Bečići beach: hotels describe it as sandy (fine sand/gravel).
+url = "https://www.planatravel.rs/letovanje/crna-gora/budvanska-rivijera/becici.html"
+season = "summer"
+area = "Bečići, Montenegro"
+country = "ME"
+lat = 42.282
+lng = 18.870
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+sand_beach = true
+
+[[sources.me_coast.pages]]
+url = "https://www.planatravel.rs/letovanje/crna-gora/budvanska-rivijera/rafailovici.html"
+season = "summer"
+area = "Rafailovići, Montenegro"
+country = "ME"
+lat = 42.278
+lng = 18.877
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+sand_beach = true
+
+[[sources.me_coast.pages]]
+# second page of Rafailovići cards (10 per page)
+url = "https://www.planatravel.rs/letovanje/crna-gora/budvanska-rivijera/rafailovici.html?start=10"
+season = "summer"
+area = "Rafailovići, Montenegro"
+country = "ME"
+lat = 42.278
+lng = 18.877
+nights = 7
+check_ins = ["2027-06-20", "2027-07-04"]
+sand_beach = true
+
+# Off until a 2+2 July search URL is pasted into pages (see proposals/es_mt_cy.md)
+[sources.es_mt_cy]
+# Itaka (itaka.pl) "Dojazd własny" = hotel only, no flight/transfer, near BCN / MLA / LCA.
+# Off until the URLs carry the twins + July dates (see proposals/es_mt_cy.md); the plain URLs give
+# 2-adult shoulder-season short stays only. 1 request per page.
+enabled = false
+pln_eur = 0.235             # PLN -> EUR (update now and then)
+months = [6, 7, 8, 9]       # check-in months kept
+
+[[sources.es_mt_cy.pages]]
+url = "https://www.itaka.pl/wyniki-wyszukiwania/wakacje/?ownTransport=true&destinations=costa-dorada"
+season = "summer"
+area = "Costa Daurada (Salou, Cambrils, La Pineda)"
+country = "ES"
+lat = 41.07
+lng = 1.13
+max_km = 15                 # rates further than this from lat/lng are dropped
+airport = "BCN"
+
+[[sources.es_mt_cy.pages]]
+url = "https://www.itaka.pl/wyniki-wyszukiwania/wakacje/?ownTransport=true&destinations=costa-brava"
+season = "summer"
+area = "Maresme / southern Costa Brava (Calella, Santa Susanna, Malgrat)"
+country = "ES"
+lat = 41.635
+lng = 2.72
+max_km = 20                 # keeps Calella..Lloret, drops Sant Feliu / Roses
+airport = "BCN"
+
+[[sources.es_mt_cy.pages]]
+url = "https://www.itaka.pl/wyniki-wyszukiwania/wakacje/?ownTransport=true&destinations=malta"
+season = "summer"
+area = "Malta (Mellieħa, Qawra, St Julian's)"
+country = "MT"
+lat = 35.93
+lng = 14.42
+max_km = 30
+airport = "MLA"
+
+[[sources.es_mt_cy.pages]]
+url = "https://www.itaka.pl/wyniki-wyszukiwania/wakacje/?ownTransport=true&destinations=cypr"
+season = "summer"
+area = "Ayia Napa / Protaras / Larnaca bay"
+country = "CY"
+lat = 34.98
+lng = 33.85
+max_km = 30                 # drops Paphos
+airport = "LCA"
+
+[sources.tr_more]
+# beetravel.bg (Bulgarian agency): hotel-only Turkish Aegean hotels with the hotel's own 2027
+# price list (per person per night by period) and child rules on the page, so a 2+2 total can be
+# worked out without any search. robots.txt is empty (everything allowed). 1 list + 1 page per hotel.
+enabled = true
+nights = 7
+check_ins = ["2027-07-03"]      # Saturdays; more dates cost nothing extra (same pages)
+max_hotels = 12
+
+[[sources.tr_more.pages]]
+url = "https://beetravel.bg/produkt-kategoriya/turciya/kusadasi/"
+season = "summer"
+area = "Kusadasi, Aegean coast"
+region = "Aegean coast, Turkey"   # area shown as "<town from the title>, <region>" (Kusadasi / Ozdere)
+country = "TR"
+lat = 37.86
+lng = 27.26
+airport = "ADB"
+
+[[sources.tr_more.pages]]
+url = "https://beetravel.bg/produkt-kategoriya/turciya/didim/"
+season = "summer"
+area = "Didim, Aegean coast"
+region = "Aegean coast, Turkey"
+country = "TR"
+lat = 37.37
+lng = 27.26
+airport = "BJV"                   # BJV ~37 km; the SKP–BJV flight runs Jul–Oct only
 
 # ---------------------------------------------------------- hotels' own websites --
 [sources.hotel_direct]

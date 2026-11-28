@@ -87,6 +87,15 @@ ROUTES = [
     (r"kajak\.mk/smestuvanja/b588801e-mavrovski-region", "mk_local_list_mavrovo.html"),
     (r"kajak\.mk/smestuvanje/6c9243b4-nov-i-moderen-apartman-vo-mavrovo-so-dve-spali-sobi-mia", "mk_local_mavrovo_mia.html"),
     (r"relaxo\.bg/oferti-za/kushadasa$", "flight_hotels_list_kusadasi.html"),
+    (r"halooglasi\.com/odmor/planine/kopaonik$", "winter_more_list_kopaonik.html"),
+    (r"beetravel\.bg/produkt-kategoriya/turciya/kusadasi/$", "tr_more_list_kusadasi.html"),
+    (r"beetravel\.bg/tours/palm-wings-ephesus-beach-resort-kushadasa/$", "tr_more_palm_wings_ephesus.html"),
+    (r"beetravel\.bg/tours/aqua-fantasy-aquapark-kushadasa/$", "tr_more_aqua_fantasy.html"),
+    (r"planatravel\.rs/letovanje/crna-gora/budvanska-rivijera/becici\.html", "me_coast_list_becici.html"),
+    (r"planatravel\.rs/.*/becici/hotel-splendid-conference-spa-resort\.html", "me_coast_splendid.html"),
+    (r"halooglasi\.com/odmor/planine/stara-planina$", "winter_more_list_stara_planina.html"),
+    (r"halooglasi\.com/odmor/planine/kopaonik-apartman-sa-odvojenom-spavacom-sobom/5425643961373", "winter_more_kop_bedroom.html"),
+    (r"halooglasi\.com/odmor/planine/wild---stara-planina/5425647913171", "winter_more_sp_wild.html"),
     (r"relaxo\.bg/oferta/palm-wings-ephesus-beach-resort-5-kusadasi/rezultati\?", "flight_hotels_results_palmwings.html"),
     (r"relaxo\.bg/oferta/palm-wings-ephesus-beach-resort-5-kusadasi$", "flight_hotels_detail_palmwings.html"),
     (r"pochivka\.bg/apartamenti-bansko-t6", "bg_more_list_bansko.html"),
@@ -124,6 +133,9 @@ def _pages(cfg: dict, name: str, *needles: str, **extra) -> list[dict]:
     pages = [p for p in cfg["sources"][name]["pages"] if any(n in p["url"] for n in needles)]
     assert pages, f"config.toml has no {name} page matching {needles}"
     return [{**p, **extra.get(p["url"], {})} for p in pages]
+
+
+PDF_ONLY = {"Radio Radio Viaggi (price sheet)"}
 
 
 def e2e_config() -> dict:
@@ -277,6 +289,7 @@ class EndToEnd(unittest.TestCase):
         self.assertIn(self.health["status"], ("ok", "warn"))
         names = {s["name"] for s in self.health["sources"]}
         want = {getattr(m, "SOURCE", m.__name__) for m in run.AUTO_SOURCES} | {"Detail pages", hotel_direct.SOURCE}
+        want -= PDF_ONLY   # PDF price-sheet sources: covered by their own tests, not by these HTML routes
         self.assertTrue(want <= names, want - names)
         by = {s["name"]: s for s in self.health["sources"]}
         for name in want:
